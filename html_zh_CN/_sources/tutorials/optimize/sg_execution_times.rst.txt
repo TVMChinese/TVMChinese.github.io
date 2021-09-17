@@ -1,0 +1,12 @@
+
+:orphan:
+
+.. _sphx_glr_tutorials_optimize_sg_execution_times:
+
+Computation times
+=================
+**00:25.423** total execution time for **tutorials_optimize** files:
+
+- **00:23.551**: :ref:`sphx_glr_tutorials_optimize_opt_gemm.py` (``opt_gemm.py``)
+- **00:01.028**: :ref:`sphx_glr_tutorials_optimize_opt_conv_tensorcore.py` (``opt_conv_tensorcore.py``)
+- **00:00.843**: :ref:`sphx_glr_tutorials_optimize_opt_conv_cuda.py` (``opt_conv_cuda.py``)
