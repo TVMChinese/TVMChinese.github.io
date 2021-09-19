@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deploy and Integration &mdash; tvm 0.8.dev1709+gfb306e499 文档</title>
+  <title>部署和集成 &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1709+gfb306e499
+                  0.8.dev1719+g83c3846d0
                 </div>
             
           
@@ -195,12 +195,12 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Deploy and Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#build-the-tvm-runtime-library">Build the TVM runtime library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">部署和集成</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#build-the-tvm-runtime-library">构建 TVM 运行 runtime 库</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cross-compile-the-tvm-runtime-for-other-architectures">Cross compile the TVM runtime for other architectures</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#cross-compile-for-aarch64">cross-compile for aarch64</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross-compile-for-risc-v">cross-compile for RISC-V</a></li>
@@ -225,7 +225,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
@@ -237,23 +237,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
 </ul>
 
             
@@ -310,7 +310,7 @@
     
       <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-      <li>Deploy and Integration</li>
+      <li>部署和集成</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -330,23 +330,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="deploy-and-integration">
-<span id="id1"></span><h1>Deploy and Integration<a class="headerlink" href="#deploy-and-integration" title="永久链接至标题">¶</a></h1>
-<p>This page contains guidelines on how to deploy TVM to various platforms
-as well as how to integrate it with your project.</p>
+<span id="id1"></span><h1>部署和集成<a class="headerlink" href="#deploy-and-integration" title="永久链接至标题">¶</a></h1>
+<p>此页面包含如何将 TVM 部署到各种平台以及如何将其与项目集成的指南。</p>
 <img alt="https://tvm.apache.org/images/release/tvm_flexible.png" src="https://tvm.apache.org/images/release/tvm_flexible.png" />
 <div class="section" id="build-the-tvm-runtime-library">
-<h2>Build the TVM runtime library<a class="headerlink" href="#build-the-tvm-runtime-library" title="永久链接至标题">¶</a></h2>
-<p id="build-tvm-runtime-on-target-device">Unlike traditional deep learning frameworks. TVM stack is divided into two major components:</p>
+<h2>构建 TVM 运行 runtime 库<a class="headerlink" href="#build-the-tvm-runtime-library" title="永久链接至标题">¶</a></h2>
+<p id="build-tvm-runtime-on-target-device">与传统的深度学习框架不同，TVM 堆栈分为两个主要组件：</p>
 <ul class="simple">
-<li><p>TVM compiler, which does all the compilation and optimizations of the model</p></li>
-<li><p>TVM runtime, which runs on the target devices.</p></li>
+<li><p>TVM 编译器，它负责模型的所有编译和优化</p></li>
+<li><p>TVM runtime，在目标设备上运行。</p></li>
 </ul>
-<p>In order to integrate the compiled module, we <strong>do not</strong> need to build entire
-TVM on the target device. You only need to build the TVM compiler stack on your
-desktop and use that to cross-compile modules that are deployed on the target device.</p>
-<p>We only need to use a light-weight runtime API that can be integrated into various platforms.</p>
-<p>For example, you can run the following commands to build the runtime API
-on a Linux based embedded system such as Raspberry Pi:</p>
+<p>为了集成编译的模块，我们**不需要**在目标设备上构建整个 TVM。您只需要在桌面上构建 TVM 编译器堆栈，并用它来交叉编译部署在目标设备上的模块。</p>
+<p>我们只需要使用可以集成到各种平台的轻量级 runtime API。</p>
+<p>例如，您可以运行以下命令，以便在基于 Linux 的嵌入式系统（如树莓派）上构建runtime API：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recursive https://github.com/apache/tvm tvm
 <span class="nb">cd</span> tvm
 mkdir build
@@ -356,20 +352,13 @@ cmake ..
 make runtime
 </pre></div>
 </div>
-<p>Note that we type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">runtime</span></code> to only build the runtime library.</p>
-<p>It is also possible to cross compile the runtime. Cross compiling
-the runtime library should not be confused with cross compiling models
-for embedded devices.</p>
-<p>If you want to include additional runtime such as OpenCL,
-you can modify <code class="docutils literal notranslate"><span class="pre">config.cmake</span></code> to enable these options.
-After you get the TVM runtime library, you can link the compiled library</p>
+<p>请注意，我们通过 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">runtime</span></code> 实现仅构建runtime库。</p>
+<p>也可以交叉编译runtime。交叉编译runtime库不应与嵌入式设备的交叉编译模型混淆。</p>
+<p>如果您想包括额外的runtime（如 OpenCL），您可以修改 <code class="docutils literal notranslate"><span class="pre">config.cmake</span></code> 来启用这些选项。获得 TVM runtime 库后，您可以链接编译好的库</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/tlc-pack/web-data/main/images/dev/tvm_deploy_crosscompile.svg"><img alt="https://raw.githubusercontent.com/tlc-pack/web-data/main/images/dev/tvm_deploy_crosscompile.svg" src="https://raw.githubusercontent.com/tlc-pack/web-data/main/images/dev/tvm_deploy_crosscompile.svg" width="85%" /></a>
 </div>
-<p>A model (optimized or not by TVM) can be cross compiled by TVM for
-different architectures such as <code class="docutils literal notranslate"><span class="pre">aarch64</span></code> on a <code class="docutils literal notranslate"><span class="pre">x64_64</span></code> host. Once the model
-is cross compiled it is neccessary to have a runtime compatible with the target
-architecture to be able to run the cross compiled model.</p>
+<p>模型（无论是否基于 TVM 优化）可以针对不同的架构基于 TVM 进行交叉编译，例如在 <code class="docutils literal notranslate"><span class="pre">x64_64</span></code> 主机上编译 <code class="docutils literal notranslate"><span class="pre">aarch64</span></code> 。一旦模型被交叉编译，就必须有一个与目标架构兼容的runtime，以便能够运行交叉编译的模型。</p>
 </div>
 <div class="section" id="cross-compile-the-tvm-runtime-for-other-architectures">
 <h2>Cross compile the TVM runtime for other architectures<a class="headerlink" href="#cross-compile-the-tvm-runtime-for-other-architectures" title="永久链接至标题">¶</a></h2>

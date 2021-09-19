@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Simple Matrix Multiply &mdash; tvm 0.8.dev1709+gfb306e499 文档</title>
+  <title>Simple Matrix Multiply &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Get Started with VTA" href="vta_get_started.html" />
+    <link rel="next" title="从 VTA 开始" href="vta_get_started.html" />
     <link rel="prev" title="VTA Tutorials" href="index.html" /> 
 </head>
 
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1709+gfb306e499
+                  0.8.dev1719+g83c3846d0
                 </div>
             
           
@@ -195,17 +195,17 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
@@ -217,17 +217,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">VTA: Deep Learning Accelerator Stack</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../install.html">VTA Installation Guide</a></li>
@@ -243,7 +243,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="vta_get_started.html">Get Started with VTA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vta_get_started.html">从 VTA 开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="index.html#auto-tuning">Auto tuning</a></li>
@@ -255,7 +255,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -341,8 +341,8 @@
 </div>
 <div class="sphx-glr-example-title section" id="simple-matrix-multiply">
 <span id="basic-mat-mult"></span><span id="sphx-glr-vta-tutorials-matrix-multiply-py"></span><h1>Simple Matrix Multiply<a class="headerlink" href="#simple-matrix-multiply" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
-<p>In this tutorial, we will build on top of the <a class="reference internal" href="vta_get_started.html#vta-get-started"><span class="std std-ref">Get Started with VTA</span></a> tutorial
+<p><strong>作者</strong>: <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
+<p>In this tutorial, we will build on top of the <a class="reference internal" href="vta_get_started.html#vta-get-started"><span class="std std-ref">从 VTA 开始</span></a> tutorial
 and introduce additional concepts required to implement matrix multiplication
 on VTA with the TVM workflow.</p>
 <div class="section" id="rpc-setup">
@@ -557,11 +557,11 @@ primitives.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
-  buffers = {A: Buffer(A_2: Pointer(int8), int8, [1, 16, 1, 16], []),
-             C: Buffer(C_2: Pointer(int8), int8, [1, 16, 1, 16], []),
+  buffers = {C: Buffer(C_2: Pointer(int8), int8, [1, 16, 1, 16], []),
+             A: Buffer(A_2: Pointer(int8), int8, [1, 16, 1, 16], []),
              B: Buffer(B_2: Pointer(int8), int8, [16, 16, 16, 16], [])}
   buffer_map = {A_1: A, B_1: B, C_1: C} {
   allocate(A_buf: Pointer(global int8), int8, [256]), storage_scope = global;
@@ -679,11 +679,11 @@ moving the copy operations into the matrix multiplication loop.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
-  buffers = {C: Buffer(C_2: Pointer(int8), int8, [1, 16, 1, 16], []),
-             A: Buffer(A_2: Pointer(int8), int8, [1, 16, 1, 16], []),
+  buffers = {A: Buffer(A_2: Pointer(int8), int8, [1, 16, 1, 16], []),
+             C: Buffer(C_2: Pointer(int8), int8, [1, 16, 1, 16], []),
              B: Buffer(B_2: Pointer(int8), int8, [16, 16, 16, 16], [])}
   buffer_map = {A_1: A, B_1: B, C_1: C} {
   allocate(C_buf: Pointer(local.acc_buffer int32), int32, [256]), storage_scope = local.acc_buffer;
@@ -745,7 +745,7 @@ by the VTA runtime JIT compiler.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">vta</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(int8), int8, [1, 16, 1, 16], []),
@@ -866,7 +866,7 @@ matrix multiplication indeed is correct</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successful matrix multiply test!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Execution statistics:
         inp_load_nbytes :              256
         wgt_load_nbytes :            65536
@@ -913,7 +913,7 @@ The general workflow includes:</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vta_get_started.html" class="btn btn-neutral float-right" title="Get Started with VTA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vta_get_started.html" class="btn btn-neutral float-right" title="从 VTA 开始" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="VTA Tutorials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

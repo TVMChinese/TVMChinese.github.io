@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-scheduling Sparse Matrix Multiplication on CPU with Custom Sketch Rule &mdash; tvm 0.8.dev1709+gfb306e499 文档</title>
+  <title>Auto-scheduling Sparse Matrix Multiplication on CPU with Custom Sketch Rule &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1709+gfb306e499
+                  0.8.dev1719+g83c3846d0
                 </div>
             
           
@@ -195,17 +195,17 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
@@ -233,23 +233,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -443,7 +443,7 @@ If your machine supports avx instructions, you can</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">compute_dag</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computational DAG:
 placeholder = PLACEHOLDER [33]
 placeholder = PLACEHOLDER [4916, 16, 1]
@@ -568,7 +568,7 @@ file and apply it.</p>
 <span class="n">sch</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">apply_best</span><span class="p">(</span><span class="n">log_file</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.6/dist-packages/numpy/core/_methods.py:43: RuntimeWarning: invalid value encountered in reduce
   return umr_minimum(a, axis, None, out, keepdims, initial, where)
 /usr/local/lib/python3.6/dist-packages/numpy/core/_methods.py:39: RuntimeWarning: invalid value encountered in reduce
@@ -582,17 +582,17 @@ layout transformation, parallelization, vectorization, unrolling, and operator f
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">sch</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Lowered TIR:
 primfn(placeholder_5: handle, placeholder_6: handle, placeholder_7: handle, placeholder_8: handle, placeholder_9: handle, compute_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
-  buffers = {placeholder_4: Buffer(placeholder_10: Pointer(float32), float32, [4916, 16, 1], []),
-             placeholder_3: Buffer(placeholder_11: Pointer(float32), float32, [128, 512], []),
+  buffers = {placeholder_4: Buffer(placeholder_10: Pointer(int32), int32, [33], []),
              compute: Buffer(compute_2: Pointer(float32), float32, [128, 512], []),
-             placeholder_2: Buffer(placeholder_12: Pointer(int32), int32, [33], []),
-             placeholder: Buffer(placeholder_13: Pointer(float32), float32, [128, 256], []),
+             placeholder_2: Buffer(placeholder_11: Pointer(float32), float32, [128, 512], []),
+             placeholder: Buffer(placeholder_12: Pointer(float32), float32, [128, 256], []),
+             placeholder_3: Buffer(placeholder_13: Pointer(float32), float32, [4916, 16, 1], []),
              placeholder_1: Buffer(placeholder_14: Pointer(int32), int32, [4916], [])}
-  buffer_map = {placeholder_5: placeholder, placeholder_7: placeholder_1, placeholder_8: placeholder_2, compute_1: compute, placeholder_9: placeholder_3, placeholder_6: placeholder_4} {
+  buffer_map = {placeholder_5: placeholder, placeholder_7: placeholder_1, placeholder_9: placeholder_2, compute_1: compute, placeholder_6: placeholder_3, placeholder_8: placeholder_4} {
   for (i0.outer.i1.outer.fused: int32, 0, 64) &quot;parallel&quot; {
     allocate(compute_3: Pointer(global float32), float32, [1024]), storage_scope = global {
       for (i.outer.inner: int32, 0, 2) {
@@ -602,10 +602,10 @@ primfn(placeholder_5: handle, placeholder_6: handle, placeholder_7: handle, plac
               compute_3[((((i.outer.inner*512) + (i.inner.init*32)) + (nb_j.inner*16)) + j.init)] = 0f32
             }
           }
-          for (elem_idx: int32, 0, ((int32*)placeholder_12[(((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner) + 1)] - (int32*)placeholder_12[((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner)])) {
+          for (elem_idx: int32, 0, ((int32*)placeholder_10[(((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner) + 1)] - (int32*)placeholder_10[((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner)])) {
             for (i.inner: int32, 0, 16) {
               for (j: int32, 0, 16) {
-                compute_3[((((i.outer.inner*512) + (i.inner*32)) + (nb_j.inner*16)) + j)] = ((float32*)compute_3[((((i.outer.inner*512) + (i.inner*32)) + (nb_j.inner*16)) + j)] + ((float32*)placeholder_10[((((int32*)placeholder_12[((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner)]*16) + (elem_idx*16)) + j)]*max((float32*)placeholder_13[((((floordiv(i0.outer.i1.outer.fused, 16)*8192) + (i.outer.inner*4096)) + (i.inner*256)) + (int32*)placeholder_14[((int32*)placeholder_12[((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner)] + elem_idx)])], 0f32)))
+                compute_3[((((i.outer.inner*512) + (i.inner*32)) + (nb_j.inner*16)) + j)] = ((float32*)compute_3[((((i.outer.inner*512) + (i.inner*32)) + (nb_j.inner*16)) + j)] + ((float32*)placeholder_13[((((int32*)placeholder_10[((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner)]*16) + (elem_idx*16)) + j)]*max((float32*)placeholder_12[((((floordiv(i0.outer.i1.outer.fused, 16)*8192) + (i.outer.inner*4096)) + (i.inner*256)) + (int32*)placeholder_14[((int32*)placeholder_10[((floormod(i0.outer.i1.outer.fused, 16)*2) + nb_j.inner)] + elem_idx)])], 0f32)))
               }
             }
           }
@@ -652,8 +652,8 @@ primfn(placeholder_5: handle, placeholder_6: handle, placeholder_7: handle, plac
 <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Execution time of this operator: 1.073 ms
+<p class="sphx-glr-script-out">输出:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Execution time of this operator: 1.075 ms
 </pre></div>
 </div>
 <div class="admonition note">

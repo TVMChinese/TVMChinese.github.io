@@ -259,7 +259,7 @@ The compilation steps are:
 
  .. code-block:: none
 
-    resnet18_v1 inference graph built in 19.35s!
+    resnet18_v1 inference graph built in 19.43s!
 
 
 

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2D Convolution Optimization &mdash; tvm 0.8.dev1709+gfb306e499 文档</title>
+  <title>2D Convolution Optimization &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1709+gfb306e499
+                  0.8.dev1719+g83c3846d0
                 </div>
             
           
@@ -195,17 +195,17 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to.html">Developer How-To Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../errors.html">What do to when encountering TVM Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
@@ -217,24 +217,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">VTA: Deep Learning Accelerator Stack</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../install.html">VTA Installation Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../dev/index.html">VTA Design and Developer Guide</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">VTA Tutorials</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../matrix_multiply.html">Simple Matrix Multiply</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vta_get_started.html">Get Started with VTA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vta_get_started.html">从 VTA 开始</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">2D Convolution Optimization</a></li>
@@ -250,7 +250,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -336,7 +336,7 @@
 </div>
 <div class="sphx-glr-example-title section" id="d-convolution-optimization">
 <span id="sphx-glr-vta-tutorials-optimize-convolution-opt-py"></span><h1>2D Convolution Optimization<a class="headerlink" href="#d-convolution-optimization" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
+<p><strong>作者</strong>: <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
 <p>This tutorial provides an overview on how to use TVM to map a 2D convolution
 workload efficiently on the VTA design.
 We recommend covering the <a class="reference internal" href="matrix_multiply_opt.html#vta-mat-mult-opt"><span class="std std-ref">Matrix Multiply Blocking</span></a> tutorial first.</p>
@@ -531,7 +531,7 @@ Those include:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">res</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(data_1: handle, kernel_1: handle, res_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {res: Buffer(res_2: Pointer(int8), int8, [1, 16, 14, 14, 1, 16], []),
@@ -695,7 +695,7 @@ below.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">res</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(data_1: handle, kernel_1: handle, res_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {res: Buffer(res_2: Pointer(int8), int8, [1, 16, 14, 14, 1, 16], []),
@@ -851,7 +851,7 @@ and mapping the shift, and clipping computation to the vector ALU.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">vta</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">data</span><span class="p">,</span> <span class="n">kernel</span><span class="p">,</span> <span class="n">res</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(data_1: handle, kernel_1: handle, res_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {res: Buffer(res_2: Pointer(int8), int8, [1, 16, 14, 14, 1, 16], []),
@@ -1040,7 +1040,7 @@ ensure correctness.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successful 2D convolution test!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Execution statistics:
         inp_load_nbytes :           114688
         wgt_load_nbytes :          1179648

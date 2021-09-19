@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite) &mdash; tvm 0.8.dev1709+gfb306e499 文档</title>
+  <title>Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite) &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1709+gfb306e499
+                  0.8.dev1719+g83c3846d0
                 </div>
             
           
@@ -195,24 +195,24 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_onnx.html">Compile ONNX Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
@@ -227,7 +227,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#necessary-imports">Necessary imports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#download-pretrained-quantized-tflite-model">Download pretrained Quantized TFLite model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#utils-for-downloading-and-extracting-zip-files">Utils for downloading and extracting zip files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-a-test-image">Load a test image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-a-test-image">加载一张测试图片</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-a-real-image-for-e2e-testing">Get a real image for e2e testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-tflite-model">Load a tflite model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tflite-inference">TFLite inference</a></li>
@@ -250,23 +250,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -412,7 +412,7 @@ pip install <span class="nv">tflite</span><span class="o">==</span><span class="
 </div>
 </div>
 <div class="section" id="load-a-test-image">
-<h2>Load a test image<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
+<h2>加载一张测试图片<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
 </div>
 <div class="section" id="get-a-real-image-for-e2e-testing">
 <h2>Get a real image for e2e testing<a class="headerlink" href="#get-a-real-image-for-e2e-testing" title="永久链接至标题">¶</a></h2>
@@ -537,7 +537,7 @@ TFLite and Relay. This cause final output numbers to mismatch. So, testing accur
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TFLite Top-5 labels:&quot;</span><span class="p">,</span> <span class="n">tflite_pred</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>TVM Top-5 labels: [387 102 386 349 341]
 TFLite Top-5 labels: [387 102 386 341 880]
 </pre></div>
@@ -551,10 +551,10 @@ TFLite Top-5 labels: [387 102 386 341 880]
 <span class="nb">print</span><span class="p">(</span><span class="n">rt_mod</span><span class="o">.</span><span class="n">benchmark</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="n">n_repeat</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Execution time summary:
  mean (ms)   median (ms)    max (ms)     min (ms)     std (ms)
-  50.4481      50.3812      59.0967      49.1322       0.9753
+  50.6307      50.6521      51.8125      49.3151       0.5672
 </pre></div>
 </div>
 <div class="admonition note">
@@ -581,7 +581,7 @@ device and follow <a class="reference external" href="https://tvm.apache.org/doc
 </ul>
 </div></blockquote>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  56.051 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  56.189 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-frontend-deploy-prequantized-tflite-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/5c443f88ea44ce77c5ccade429af6e74/deploy_prequantized_tflite.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_prequantized_tflite.py</span></code></a></p>

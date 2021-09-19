@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compile Tensorflow Models &mdash; tvm 0.8.dev1709+gfb306e499 文档</title>
+  <title>Compile Tensorflow Models &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1709+gfb306e499
+                  0.8.dev1719+g83c3846d0
                 </div>
             
           
@@ -195,23 +195,23 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Compile Tensorflow Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#tutorials">Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tutorials">教程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#download-required-files">Download required files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#import-model">Import model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#decode-image">Decode image</a></li>
@@ -223,7 +223,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_onnx.html">Compile ONNX Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
@@ -249,23 +249,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -395,12 +395,12 @@
 <span class="n">image_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repo_base</span><span class="p">,</span> <span class="n">img_name</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>tensorflow will use experimental.set_memory_growth(True)
 </pre></div>
 </div>
 <div class="section" id="tutorials">
-<h2>Tutorials<a class="headerlink" href="#tutorials" title="永久链接至标题">¶</a></h2>
+<h2>教程<a class="headerlink" href="#tutorials" title="永久链接至标题">¶</a></h2>
 <p>Please refer docs/frontend/tensorflow.md for more details for various models
 from tensorflow.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;classify_image_graph_def-with_shapes.pb&quot;</span>
@@ -483,7 +483,7 @@ params: params converted from tensorflow params (tensor protobuf).</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tensorflow protobuf imported to relay frontend.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>../../python/tvm/relay/frontend/tensorflow.py:535: UserWarning: Ignore the passed shape. Shape in graphdef will be used for operator DecodeJpeg/contents.
   &quot;will be used for operator %s.&quot; % node.name
 ../../python/tvm/relay/frontend/tensorflow_ops.py:1006: UserWarning: DecodeJpeg: It&#39;s a pass through, please handle preprocessing before input
@@ -505,7 +505,7 @@ lib: target library which can be deployed on target with TVM runtime.</p>
     <span class="n">lib</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>conv2d NHWC layout is not optimized for x86 with autotvm.
 conv2d NHWC layout is not optimized for x86 with autotvm.
 conv2d NHWC layout is not optimized for x86 with autotvm.
@@ -679,7 +679,7 @@ conv2d NHWC layout is not optimized for x86 with autotvm.
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> (score = </span><span class="si">%.5f</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">human_string</span><span class="p">,</span> <span class="n">score</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>African elephant, Loxodonta africana (score = 0.58335)
 tusker (score = 0.33901)
 Indian elephant, Elephas maximus (score = 0.02391)
@@ -744,7 +744,7 @@ vault (score = 0.00021)
 <span class="n">run_inference_on_image</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>===== TENSORFLOW RESULTS =======
 African elephant, Loxodonta africana (score = 0.58394)
 tusker (score = 0.33909)

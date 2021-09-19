@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compiling and Optimizing a Model with the Python Interface (AutoTVM) &mdash; tvm 0.8.dev1709+gfb306e499 文档</title>
+  <title>Compiling and Optimizing a Model with the Python Interface (AutoTVM) &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1709+gfb306e499
+                  0.8.dev1719+g83c3846d0
                 </div>
             
           
@@ -195,22 +195,22 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Getting Started With TVM</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">Installing TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">Compiling and Optimizing a Model with TVMC</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#downloading-and-loading-the-onnx-model">Downloading and Loading the ONNX Model</a></li>
@@ -241,23 +241,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -479,7 +479,7 @@ set.</p>
 <span class="n">module</span> <span class="o">=</span> <span class="n">graph_executor</span><span class="o">.</span><span class="n">GraphModule</span><span class="p">(</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">](</span><span class="n">dev</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>One or more operators have not been tuned. Please tune your model for better performance. Use DEBUG logging level to see more details.
 </pre></div>
 </div>
@@ -526,8 +526,8 @@ standard deviation.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">unoptimized</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;mean&#39;: 180.68807358038612, &#39;median&#39;: 180.67751734997728, &#39;std&#39;: 0.17154840547005706}
+<p class="sphx-glr-script-out">输出:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;mean&#39;: 180.428375180054, &#39;median&#39;: 180.38601740117883, &#39;std&#39;: 0.40106437222691554}
 </pre></div>
 </div>
 </div>
@@ -555,7 +555,7 @@ for the model.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;class=&#39;</span><span class="si">%s</span><span class="s2">&#39; with probability=</span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">rank</span><span class="p">],</span> <span class="n">scores</span><span class="p">[</span><span class="n">rank</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>class=&#39;n02123045 tabby, tabby cat&#39; with probability=0.610551
 class=&#39;n02123159 tiger cat&#39; with probability=0.367180
 class=&#39;n02124075 Egyptian cat&#39; with probability=0.019365
@@ -681,78 +681,80 @@ depending on the specifics of the model and the target platform.</p>
     <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Task  1/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task  1/25]  Current/Best:    7.28/  11.82 GFLOPS | Progress: (10/10) | 19.40 s
+[Task  1/25]  Current/Best:    8.97/  10.90 GFLOPS | Progress: (10/10) | 20.40 s
 [Task  2/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task  2/25]  Current/Best:    1.04/   2.28 GFLOPS | Progress: (10/10) | 19.09 s
-[Task  3/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
+[Task  2/25]  Current/Best:    3.10/   3.10 GFLOPS | Progress: (10/10) | 15.54 s Done.
+
+[Task  3/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
+[Task  3/25]  Current/Best:   27.46/  38.89 GFLOPS | Progress: (10/10) | 18.76 s
+[Task  4/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
  Done.
 
-[Task  3/25]  Current/Best:   14.05/  37.99 GFLOPS | Progress: (10/10) | 20.06 s
-[Task  4/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task  4/25]  Current/Best:   16.05/  50.74 GFLOPS | Progress: (10/10) | 14.47 s Done.
+[Task  4/25]  Current/Best:   51.90/  51.90 GFLOPS | Progress: (10/10) | 16.65 s Done.
 
 [Task  5/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task  5/25]  Current/Best:   23.43/  37.11 GFLOPS | Progress: (10/10) | 8.55 s Done.
+[Task  5/25]  Current/Best:   12.45/  33.54 GFLOPS | Progress: (10/10) | 13.05 s Done.
 
 [Task  6/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task  6/25]  Current/Best:   17.20/  50.71 GFLOPS | Progress: (10/10) | 8.10 s Done.
+[Task  6/25]  Current/Best:   12.24/  45.57 GFLOPS | Progress: (10/10) | 12.21 s Done.
 
 [Task  7/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task  7/25]  Current/Best:   45.56/  45.56 GFLOPS | Progress: (10/10) | 14.98 s
-[Task  8/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
+[Task  7/25]  Current/Best:   17.42/  47.04 GFLOPS | Progress: (10/10) | 14.80 s Done.
 
-[Task  8/25]  Current/Best:   27.24/  38.99 GFLOPS | Progress: (10/10) | 14.57 s
-[Task  9/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task  9/25]  Current/Best:   42.11/  60.07 GFLOPS | Progress: (10/10) | 7.97 s Done.
+[Task  8/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
+[Task  8/25]  Current/Best:   38.92/  38.92 GFLOPS | Progress: (10/10) | 13.15 s
+[Task  9/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
+
+[Task  9/25]  Current/Best:   42.61/  48.89 GFLOPS | Progress: (10/10) | 9.14 s Done.
 
 [Task 10/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 10/25]  Current/Best:   26.55/  34.55 GFLOPS | Progress: (10/10) | 6.89 s Done.
+[Task 10/25]  Current/Best:   26.10/  28.61 GFLOPS | Progress: (10/10) | 12.58 s Done.
 
 [Task 11/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 11/25]  Current/Best:   44.07/  52.10 GFLOPS | Progress: (10/10) | 9.95 s Done.
+[Task 11/25]  Current/Best:   25.75/  45.89 GFLOPS | Progress: (10/10) | 9.45 s Done.
 
 [Task 12/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 12/25]  Current/Best:   36.36/  46.56 GFLOPS | Progress: (10/10) | 6.47 s Done.
+[Task 12/25]  Current/Best:   18.69/  44.53 GFLOPS | Progress: (10/10) | 8.66 s Done.
 
 [Task 13/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 13/25]  Current/Best:   18.78/  28.35 GFLOPS | Progress: (10/10) | 14.66 s
+[Task 13/25]  Current/Best:   26.97/  49.98 GFLOPS | Progress: (10/10) | 14.63 s
 [Task 14/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
 
-[Task 14/25]  Current/Best:   50.24/  50.75 GFLOPS | Progress: (10/10) | 7.67 s Done.
+[Task 14/25]  Current/Best:   39.19/  62.21 GFLOPS | Progress: (10/10) | 6.32 s Done.
 
 [Task 15/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 15/25]  Current/Best:   32.32/  38.11 GFLOPS | Progress: (10/10) | 7.57 s Done.
+[Task 15/25]  Current/Best:   31.04/  35.55 GFLOPS | Progress: (10/10) | 6.74 s Done.
 
 [Task 16/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 16/25]  Current/Best:   44.10/  51.49 GFLOPS | Progress: (10/10) | 7.57 s Done.
+[Task 16/25]  Current/Best:   27.02/  40.53 GFLOPS | Progress: (10/10) | 7.74 s Done.
 
 [Task 17/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 17/25]  Current/Best:   31.66/  52.54 GFLOPS | Progress: (10/10) | 8.09 s Done.
+[Task 17/25]  Current/Best:   19.74/  40.68 GFLOPS | Progress: (10/10) | 7.11 s Done.
 
 [Task 18/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 18/25]  Current/Best:   22.88/  34.76 GFLOPS | Progress: (10/10) | 9.30 s Done.
+[Task 18/25]  Current/Best:   16.16/  29.70 GFLOPS | Progress: (10/10) | 6.99 s Done.
 
 [Task 19/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 19/25]  Current/Best:   18.29/  54.57 GFLOPS | Progress: (10/10) | 7.30 s Done.
+[Task 19/25]  Current/Best:   34.07/  53.27 GFLOPS | Progress: (10/10) | 6.67 s Done.
 
 [Task 20/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 20/25]  Current/Best:   32.22/  34.88 GFLOPS | Progress: (10/10) | 6.68 s Done.
+[Task 20/25]  Current/Best:   27.39/  37.69 GFLOPS | Progress: (10/10) | 6.44 s Done.
 
 [Task 21/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 21/25]  Current/Best:   21.49/  47.67 GFLOPS | Progress: (10/10) | 6.27 s Done.
+[Task 21/25]  Current/Best:   12.02/  23.32 GFLOPS | Progress: (10/10) | 5.99 s Done.
 
 [Task 22/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 22/25]  Current/Best:   26.64/  49.41 GFLOPS | Progress: (10/10) | 6.63 s Done.
+[Task 22/25]  Current/Best:   61.29/  61.29 GFLOPS | Progress: (10/10) | 6.28 s Done.
 
 [Task 23/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 23/25]  Current/Best:   31.68/  49.86 GFLOPS | Progress: (10/10) | 14.83 s
-[Task 24/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
+[Task 23/25]  Current/Best:   36.39/  36.96 GFLOPS | Progress: (10/10) | 15.24 s
+[Task 24/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
+[Task 24/25]  Current/Best:   31.91/  48.10 GFLOPS | Progress: (10/10) | 13.70 s Done.
 
-[Task 24/25]  Current/Best:   42.99/  44.89 GFLOPS | Progress: (10/10) | 14.48 s
 [Task 25/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
-[Task 25/25]  Current/Best:   46.41/  48.35 GFLOPS | Progress: (10/10) | 14.79 s
+[Task 25/25]  Current/Best:   23.50/  47.46 GFLOPS | Progress: (10/10) | 14.04 s
 </pre></div>
 </div>
 <p>The output from this tuning process will look something like this:</p>
@@ -823,7 +825,7 @@ model using optimized operators to speed up our computations.</p>
 <span class="c1">#   # class=&#39;n04040759 radiator&#39; with probability=0.000261</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>class=&#39;n02123045 tabby, tabby cat&#39; with probability=0.610551
 class=&#39;n02123159 tiger cat&#39; with probability=0.367180
 class=&#39;n02124075 Egyptian cat&#39; with probability=0.019365
@@ -854,9 +856,9 @@ improvement in comparing the optimized model to the unoptimized model.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;unoptimized: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">unoptimized</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>optimized: {&#39;mean&#39;: 149.92433485967922, &#39;median&#39;: 149.8942629994417, &#39;std&#39;: 0.4770067711511887}
-unoptimized: {&#39;mean&#39;: 180.68807358038612, &#39;median&#39;: 180.67751734997728, &#39;std&#39;: 0.17154840547005706}
+<p class="sphx-glr-script-out">输出:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>optimized: {&#39;mean&#39;: 150.8217668402358, &#39;median&#39;: 150.80025775096146, &#39;std&#39;: 0.2918015978863552}
+unoptimized: {&#39;mean&#39;: 180.428375180054, &#39;median&#39;: 180.38601740117883, &#39;std&#39;: 0.40106437222691554}
 </pre></div>
 </div>
 </div>
@@ -870,7 +872,7 @@ models.</p>
 <p>Here we presented a simple example using ResNet 50 V2 locally. However, TVM
 supports many more features including cross-compilation, remote execution and
 profiling/benchmarking.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 6 minutes  46.460 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 6 minutes  52.738 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-get-started-autotvm-relay-x86-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/eabaa51a209056955e5626fa23b5978e/autotvm_relay_x86.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">autotvm_relay_x86.py</span></code></a></p>

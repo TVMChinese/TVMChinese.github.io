@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:38.997** total execution time for **tutorials_autotvm** files:
+**00:43.345** total execution time for **tutorials_autotvm** files:
 
-- **00:38.085**: :ref:`sphx_glr_tutorials_autotvm_tune_conv2d_cuda.py` (``tune_conv2d_cuda.py``)
-- **00:00.238**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_mobile_gpu.py` (``tune_relay_mobile_gpu.py``)
-- **00:00.229**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_x86.py` (``tune_relay_x86.py``)
-- **00:00.225**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_arm.py` (``tune_relay_arm.py``)
-- **00:00.220**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_cuda.py` (``tune_relay_cuda.py``)
+- **00:42.459**: :ref:`sphx_glr_tutorials_autotvm_tune_conv2d_cuda.py` (``tune_conv2d_cuda.py``)
+- **00:00.223**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_arm.py` (``tune_relay_arm.py``)
+- **00:00.223**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_cuda.py` (``tune_relay_cuda.py``)
+- **00:00.221**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_x86.py` (``tune_relay_x86.py``)
+- **00:00.219**: :ref:`sphx_glr_tutorials_autotvm_tune_relay_mobile_gpu.py` (``tune_relay_mobile_gpu.py``)

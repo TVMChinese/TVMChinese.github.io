@@ -280,7 +280,7 @@ standard deviation.
 
  .. code-block:: none
 
-    {'mean': 180.68807358038612, 'median': 180.67751734997728, 'std': 0.17154840547005706}
+    {'mean': 180.428375180054, 'median': 180.38601740117883, 'std': 0.40106437222691554}
 
 
 
@@ -474,28 +474,30 @@ In the simplest form, tuning requires you to provide three things:
 
  .. code-block:: none
 
-    [Task  1/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  1/25]  Current/Best:    7.28/  11.82 GFLOPS | Progress: (10/10) | 19.40 s    [Task  2/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  2/25]  Current/Best:    1.04/   2.28 GFLOPS | Progress: (10/10) | 19.09 s    [Task  3/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
+    [Task  1/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  1/25]  Current/Best:    8.97/  10.90 GFLOPS | Progress: (10/10) | 20.40 s    [Task  2/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  2/25]  Current/Best:    3.10/   3.10 GFLOPS | Progress: (10/10) | 15.54 s Done.
+    [Task  3/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  3/25]  Current/Best:   27.46/  38.89 GFLOPS | Progress: (10/10) | 18.76 s    [Task  4/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
      Done.
-    [Task  3/25]  Current/Best:   14.05/  37.99 GFLOPS | Progress: (10/10) | 20.06 s    [Task  4/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  4/25]  Current/Best:   16.05/  50.74 GFLOPS | Progress: (10/10) | 14.47 s Done.
-    [Task  5/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  5/25]  Current/Best:   23.43/  37.11 GFLOPS | Progress: (10/10) | 8.55 s Done.
-    [Task  6/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  6/25]  Current/Best:   17.20/  50.71 GFLOPS | Progress: (10/10) | 8.10 s Done.
-    [Task  7/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  7/25]  Current/Best:   45.56/  45.56 GFLOPS | Progress: (10/10) | 14.98 s    [Task  8/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
-    [Task  8/25]  Current/Best:   27.24/  38.99 GFLOPS | Progress: (10/10) | 14.57 s    [Task  9/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  9/25]  Current/Best:   42.11/  60.07 GFLOPS | Progress: (10/10) | 7.97 s Done.
-    [Task 10/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 10/25]  Current/Best:   26.55/  34.55 GFLOPS | Progress: (10/10) | 6.89 s Done.
-    [Task 11/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 11/25]  Current/Best:   44.07/  52.10 GFLOPS | Progress: (10/10) | 9.95 s Done.
-    [Task 12/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 12/25]  Current/Best:   36.36/  46.56 GFLOPS | Progress: (10/10) | 6.47 s Done.
-    [Task 13/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 13/25]  Current/Best:   18.78/  28.35 GFLOPS | Progress: (10/10) | 14.66 s    [Task 14/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
-    [Task 14/25]  Current/Best:   50.24/  50.75 GFLOPS | Progress: (10/10) | 7.67 s Done.
-    [Task 15/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 15/25]  Current/Best:   32.32/  38.11 GFLOPS | Progress: (10/10) | 7.57 s Done.
-    [Task 16/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 16/25]  Current/Best:   44.10/  51.49 GFLOPS | Progress: (10/10) | 7.57 s Done.
-    [Task 17/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 17/25]  Current/Best:   31.66/  52.54 GFLOPS | Progress: (10/10) | 8.09 s Done.
-    [Task 18/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 18/25]  Current/Best:   22.88/  34.76 GFLOPS | Progress: (10/10) | 9.30 s Done.
-    [Task 19/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 19/25]  Current/Best:   18.29/  54.57 GFLOPS | Progress: (10/10) | 7.30 s Done.
-    [Task 20/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 20/25]  Current/Best:   32.22/  34.88 GFLOPS | Progress: (10/10) | 6.68 s Done.
-    [Task 21/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 21/25]  Current/Best:   21.49/  47.67 GFLOPS | Progress: (10/10) | 6.27 s Done.
-    [Task 22/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 22/25]  Current/Best:   26.64/  49.41 GFLOPS | Progress: (10/10) | 6.63 s Done.
-    [Task 23/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 23/25]  Current/Best:   31.68/  49.86 GFLOPS | Progress: (10/10) | 14.83 s    [Task 24/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
-    [Task 24/25]  Current/Best:   42.99/  44.89 GFLOPS | Progress: (10/10) | 14.48 s    [Task 25/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 25/25]  Current/Best:   46.41/  48.35 GFLOPS | Progress: (10/10) | 14.79 s
+    [Task  4/25]  Current/Best:   51.90/  51.90 GFLOPS | Progress: (10/10) | 16.65 s Done.
+    [Task  5/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  5/25]  Current/Best:   12.45/  33.54 GFLOPS | Progress: (10/10) | 13.05 s Done.
+    [Task  6/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  6/25]  Current/Best:   12.24/  45.57 GFLOPS | Progress: (10/10) | 12.21 s Done.
+    [Task  7/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  7/25]  Current/Best:   17.42/  47.04 GFLOPS | Progress: (10/10) | 14.80 s Done.
+    [Task  8/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task  8/25]  Current/Best:   38.92/  38.92 GFLOPS | Progress: (10/10) | 13.15 s    [Task  9/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
+    [Task  9/25]  Current/Best:   42.61/  48.89 GFLOPS | Progress: (10/10) | 9.14 s Done.
+    [Task 10/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 10/25]  Current/Best:   26.10/  28.61 GFLOPS | Progress: (10/10) | 12.58 s Done.
+    [Task 11/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 11/25]  Current/Best:   25.75/  45.89 GFLOPS | Progress: (10/10) | 9.45 s Done.
+    [Task 12/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 12/25]  Current/Best:   18.69/  44.53 GFLOPS | Progress: (10/10) | 8.66 s Done.
+    [Task 13/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 13/25]  Current/Best:   26.97/  49.98 GFLOPS | Progress: (10/10) | 14.63 s    [Task 14/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s Done.
+    [Task 14/25]  Current/Best:   39.19/  62.21 GFLOPS | Progress: (10/10) | 6.32 s Done.
+    [Task 15/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 15/25]  Current/Best:   31.04/  35.55 GFLOPS | Progress: (10/10) | 6.74 s Done.
+    [Task 16/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 16/25]  Current/Best:   27.02/  40.53 GFLOPS | Progress: (10/10) | 7.74 s Done.
+    [Task 17/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 17/25]  Current/Best:   19.74/  40.68 GFLOPS | Progress: (10/10) | 7.11 s Done.
+    [Task 18/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 18/25]  Current/Best:   16.16/  29.70 GFLOPS | Progress: (10/10) | 6.99 s Done.
+    [Task 19/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 19/25]  Current/Best:   34.07/  53.27 GFLOPS | Progress: (10/10) | 6.67 s Done.
+    [Task 20/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 20/25]  Current/Best:   27.39/  37.69 GFLOPS | Progress: (10/10) | 6.44 s Done.
+    [Task 21/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 21/25]  Current/Best:   12.02/  23.32 GFLOPS | Progress: (10/10) | 5.99 s Done.
+    [Task 22/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 22/25]  Current/Best:   61.29/  61.29 GFLOPS | Progress: (10/10) | 6.28 s Done.
+    [Task 23/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 23/25]  Current/Best:   36.39/  36.96 GFLOPS | Progress: (10/10) | 15.24 s    [Task 24/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 24/25]  Current/Best:   31.91/  48.10 GFLOPS | Progress: (10/10) | 13.70 s Done.
+    [Task 25/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s    [Task 25/25]  Current/Best:   23.50/  47.46 GFLOPS | Progress: (10/10) | 14.04 s
 
 
 The output from this tuning process will look something like this:
@@ -637,8 +639,8 @@ improvement in comparing the optimized model to the unoptimized model.
 
  .. code-block:: none
 
-    optimized: {'mean': 149.92433485967922, 'median': 149.8942629994417, 'std': 0.4770067711511887}
-    unoptimized: {'mean': 180.68807358038612, 'median': 180.67751734997728, 'std': 0.17154840547005706}
+    optimized: {'mean': 150.8217668402358, 'median': 150.80025775096146, 'std': 0.2918015978863552}
+    unoptimized: {'mean': 180.428375180054, 'median': 180.38601740117883, 'std': 0.40106437222691554}
 
 
 
@@ -658,7 +660,7 @@ profiling/benchmarking.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 6 minutes  46.460 seconds)
+   **Total running time of the script:** ( 6 minutes  52.738 seconds)
 
 
 .. _sphx_glr_download_tutorials_get_started_autotvm_relay_x86.py:
