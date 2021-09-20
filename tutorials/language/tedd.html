@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Use Tensor Expression Debug Display (TEDD) for Visualization &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
+  <title>Use Tensor Expression Debug Display (TEDD) for Visualization &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="How to optimize GEMM on CPU" href="../optimize/opt_gemm.html" />
+    <link rel="next" title="如何在CPU上优化GEMM（通用矩阵乘）" href="../optimize/opt_gemm.html" />
     <link rel="prev" title="Compute and Reduce with Tuple Inputs" href="tuple_inputs.html" /> 
 </head>
 
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1719+g83c3846d0
+                  0.8.dev1722+g6d1f4df80
                 </div>
             
           
@@ -195,15 +195,15 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
@@ -220,7 +220,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Use Tensor Expression Debug Display (TEDD) for Visualization</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#define-and-schedule-convolution-with-bias-and-relu">Define and Schedule Convolution with Bias and ReLU</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#render-graphs-with-tedd">Render Graphs with TEDD</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">总结</a></li>
 </ul>
 </li>
 </ul>
@@ -442,7 +442,7 @@ IterVars don’t drive any transformation node and have non-negative indices,
 such as ax0.ax1.fused.ax2.fused.ax3.fused.outer with index of 0.</p>
 </div>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial demonstrates the usage of TEDD.  We use an example built
 with TOPI to show the schedules under the hood.  You can also use
 it before and after any schedule primitive to inspect its effect.</p>
@@ -468,7 +468,7 @@ it before and after any schedule primitive to inspect its effect.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../optimize/opt_gemm.html" class="btn btn-neutral float-right" title="How to optimize GEMM on CPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../optimize/opt_gemm.html" class="btn btn-neutral float-right" title="如何在CPU上优化GEMM（通用矩阵乘）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="tuple_inputs.html" class="btn btn-neutral float-left" title="Compute and Reduce with Tuple Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

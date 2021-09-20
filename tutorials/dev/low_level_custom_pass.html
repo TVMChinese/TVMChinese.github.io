@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Writing a Customized Pass &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
+  <title>Writing a Customized Pass &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1719+g83c3846d0
+                  0.8.dev1722+g6d1f4df80
                 </div>
             
           
@@ -195,15 +195,15 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
@@ -343,7 +343,7 @@ a customized pass in TVM.</p>
 <p>Before reading this tutorial, we assume readers have already known these topics well:</p>
 <ul class="simple">
 <li><p>Writing an algorithm in TVM and schedule it. Otherwise, see example tutorials like
-<a class="reference internal" href="../optimize/opt_gemm.html#opt-gemm"><span class="std std-ref">How to optimize GEMM on CPU</span></a>.</p></li>
+<a class="reference internal" href="../optimize/opt_gemm.html#opt-gemm"><span class="std std-ref">如何在CPU上优化GEMM（通用矩阵乘）</span></a>.</p></li>
 <li><p>The basic structure of HalideIR. Otherwise, see <code class="docutils literal notranslate"><span class="pre">HalideIR/src/ir/IR.h</span></code> to learn what
 attributes of IR nodes are defined.</p></li>
 <li><p>Visitor design pattern. Otherwise, check the

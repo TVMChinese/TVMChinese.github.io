@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compile YOLO-V2 and YOLO-V3 in DarkNet Models &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
+  <title>Compile YOLO-V2 and YOLO-V3 in DarkNet Models &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Compile Caffe2 Models" href="from_caffe2.html" />
-    <link rel="prev" title="Compile CoreML Models" href="from_coreml.html" /> 
+    <link rel="next" title="编译 Caffe2 模型" href="from_caffe2.html" />
+    <link rel="prev" title="编译 CoreML 模型" href="from_coreml.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1719+g83c3846d0
+                  0.8.dev1722+g6d1f4df80
                 </div>
             
           
@@ -195,36 +195,36 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">编译 MXNet 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_keras.html">编译 Keras 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#choose-the-model">Choose the model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#download-required-files">Download required files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#import-the-graph-to-relay">Import the graph to Relay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choose-the-model">选择模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download-required-files">下载需要用到的文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-the-graph-to-relay">将计算图导入到 Relay 中</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#load-a-test-image">加载一张测试图片</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#execute-on-tvm-runtime">Execute on TVM Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execute-on-tvm-runtime">在 TVM Runtime 中运行</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">Compile Caffe2 Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_gcn.html">Building a Graph Convolutional Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">Deploy the Pretrained Model on Raspberry Pi</a></li>
@@ -341,7 +341,7 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-frontend-from-darknet-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-frontend-from-darknet-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="compile-yolo-v2-and-yolo-v3-in-darknet-models">
 <span id="sphx-glr-tutorials-frontend-from-darknet-py"></span><h1>Compile YOLO-V2 and YOLO-V3 in DarkNet Models<a class="headerlink" href="#compile-yolo-v2-and-yolo-v3-in-darknet-models" title="永久链接至标题">¶</a></h1>
@@ -372,16 +372,16 @@ pip install opencv-python
 </pre></div>
 </div>
 <div class="section" id="choose-the-model">
-<h2>Choose the model<a class="headerlink" href="#choose-the-model" title="永久链接至标题">¶</a></h2>
-<p>Models are: ‘yolov2’, ‘yolov3’ or ‘yolov3-tiny’</p>
+<h2>选择模型<a class="headerlink" href="#choose-the-model" title="永久链接至标题">¶</a></h2>
+<p>可供选择的模型有：“yolov2”，“yolov3”，“yolov3-tiny”</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model name</span>
 <span class="n">MODEL_NAME</span> <span class="o">=</span> <span class="s2">&quot;yolov3&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="download-required-files">
-<h2>Download required files<a class="headerlink" href="#download-required-files" title="永久链接至标题">¶</a></h2>
-<p>Download cfg and weights file if first time.</p>
+<h2>下载需要用到的文件<a class="headerlink" href="#download-required-files" title="永久链接至标题">¶</a></h2>
+<p>如果是第一次运行则需要下载 cfg 和权重文件。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CFG_NAME</span> <span class="o">=</span> <span class="n">MODEL_NAME</span> <span class="o">+</span> <span class="s2">&quot;.cfg&quot;</span>
 <span class="n">WEIGHTS_NAME</span> <span class="o">=</span> <span class="n">MODEL_NAME</span> <span class="o">+</span> <span class="s2">&quot;.weights&quot;</span>
 <span class="n">REPO_URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/dmlc/web-data/blob/main/darknet/&quot;</span>
@@ -421,8 +421,8 @@ pip install opencv-python
 </div>
 </div>
 <div class="section" id="import-the-graph-to-relay">
-<h2>Import the graph to Relay<a class="headerlink" href="#import-the-graph-to-relay" title="永久链接至标题">¶</a></h2>
-<p>compile the model</p>
+<h2>将计算图导入到 Relay 中<a class="headerlink" href="#import-the-graph-to-relay" title="永久链接至标题">¶</a></h2>
+<p>编译模型</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">Target</span><span class="p">(</span><span class="s2">&quot;llvm&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;llvm&quot;</span><span class="p">)</span>
 <span class="n">dev</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">cpu</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">net</span><span class="o">.</span><span class="n">c</span><span class="p">,</span> <span class="n">net</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">net</span><span class="o">.</span><span class="n">w</span><span class="p">],</span> <span class="n">dtype</span><span class="p">)</span>
@@ -455,8 +455,8 @@ pip install opencv-python
 </div>
 </div>
 <div class="section" id="execute-on-tvm-runtime">
-<h2>Execute on TVM Runtime<a class="headerlink" href="#execute-on-tvm-runtime" title="永久链接至标题">¶</a></h2>
-<p>The process is no different from other examples.</p>
+<h2>在 TVM Runtime 中运行<a class="headerlink" href="#execute-on-tvm-runtime" title="永久链接至标题">¶</a></h2>
+<p>这个过程与其他示例没有什么不同。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tvm.contrib</span> <span class="k">import</span> <span class="n">graph_executor</span>
 
 <span class="n">m</span> <span class="o">=</span> <span class="n">graph_executor</span><span class="o">.</span><span class="n">GraphModule</span><span class="p">(</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">](</span><span class="n">dev</span><span class="p">))</span>
@@ -573,10 +573,10 @@ class:[&#39;bicycle 0.9984&#39;] left:111 right:113 top:577 bottom:447
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_caffe2.html" class="btn btn-neutral float-right" title="Compile Caffe2 Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="from_caffe2.html" class="btn btn-neutral float-right" title="编译 Caffe2 模型" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="from_coreml.html" class="btn btn-neutral float-left" title="Compile CoreML Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="from_coreml.html" class="btn btn-neutral float-left" title="编译 CoreML 模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

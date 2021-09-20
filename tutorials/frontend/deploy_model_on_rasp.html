@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deploy the Pretrained Model on Raspberry Pi &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
+  <title>Deploy the Pretrained Model on Raspberry Pi &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1719+g83c3846d0
+                  0.8.dev1722+g6d1f4df80
                 </div>
             
           
@@ -195,29 +195,29 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">编译 MXNet 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_keras.html">编译 Keras 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">Compile Caffe2 Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_gcn.html">Building a Graph Convolutional Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Deploy the Pretrained Model on Raspberry Pi</a><ul>
@@ -408,7 +408,7 @@ successfully on your device.</p>
 <p>Back to the host machine, which should have a full TVM installed (with LLVM).</p>
 <p>We will use pre-trained model from
 <a class="reference external" href="https://mxnet.apache.org/api/python/gluon/model_zoo.html">MXNet Gluon model zoo</a>.
-You can found more details about this part at tutorial <a class="reference internal" href="from_mxnet.html#tutorial-from-mxnet"><span class="std std-ref">Compile MXNet Models</span></a>.</p>
+You can found more details about this part at tutorial <a class="reference internal" href="from_mxnet.html#tutorial-from-mxnet"><span class="std std-ref">编译 MXNet 模型</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mxnet.gluon.model_zoo.vision</span> <span class="k">import</span> <span class="n">get_model</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>

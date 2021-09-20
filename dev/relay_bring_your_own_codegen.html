@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bring Your Own Codegen To TVM &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
+  <title>Bring Your Own Codegen To TVM &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1719+g83c3846d0
+                  0.8.dev1722+g6d1f4df80
                 </div>
             
           
@@ -195,12 +195,12 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="how_to.html">Developer How-To Guide</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="how_to.html">开发者指南</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="relay_add_op.html">Adding an Operator to Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay_add_pass.html">Adding a Compiler Pass to Relay</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Bring Your Own Codegen To TVM</a><ul>
@@ -215,16 +215,16 @@
 <li class="toctree-l4"><a class="reference internal" href="#implement-a-customized-runtime">Implement a Customized Runtime</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">总结</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="codebase_walkthrough.html">TVM Codebase Walkthrough by Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytest_target_parametrization.html">Python Target Parametrization</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
@@ -311,7 +311,7 @@
     
       <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-          <li><a href="how_to.html">Developer How-To Guide</a> <span class="br-arrow">></span></li>
+          <li><a href="how_to.html">开发者指南</a> <span class="br-arrow">></span></li>
         
       <li>Bring Your Own Codegen To TVM</li>
     
@@ -1121,7 +1121,7 @@
 </div>
 </div>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>In summary, here is a checklist for you to refer:</p>
 <ul class="simple">
 <li><p>A codegen class derived from <code class="docutils literal notranslate"><span class="pre">ExprVisitor</span></code> and <code class="docutils literal notranslate"><span class="pre">CodegenCBase</span></code> (only for C codegen) with following functions.</p>

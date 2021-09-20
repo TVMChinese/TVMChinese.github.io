@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compile PyTorch Object Detection Models &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
+  <title>Compile PyTorch Object Detection Models &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
   
 
   
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1719+g83c3846d0
+                  0.8.dev1722+g6d1f4df80
                 </div>
             
           
@@ -195,36 +195,36 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">编译 MXNet 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_keras.html">编译 Keras 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">Compile Caffe2 Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build_gcn.html">Building a Graph Convolutional Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">Deploy the Pretrained Model on Raspberry Pi</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Compile PyTorch Object Detection Models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#load-pre-trained-maskrcnn-from-torchvision-and-do-tracing">Load pre-trained maskrcnn from torchvision and do tracing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#download-a-test-image-and-pre-process">Download a test image and pre-process</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#import-the-graph-to-relay">Import the graph to Relay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-the-graph-to-relay">将计算图导入到 Relay 中</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#compile-with-relay-vm">Compile with Relay VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#inference-with-relay-vm">Inference with Relay VM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-boxes-with-score-larger-than-0-9">Get boxes with score larger than 0.9</a></li>
@@ -348,19 +348,15 @@
 <span id="sphx-glr-tutorials-frontend-deploy-object-detection-pytorch-py"></span><h1>Compile PyTorch Object Detection Models<a class="headerlink" href="#compile-pytorch-object-detection-models" title="永久链接至标题">¶</a></h1>
 <p>This article is an introductory tutorial to deploy PyTorch object
 detection models with Relay VM.</p>
-<p>For us to begin with, PyTorch should be installed.
-TorchVision is also required since we will be using it as our model zoo.</p>
-<p>A quick solution is to install via pip</p>
+<p>为了运行以下代码，读者应该安装 PyTorch。TorchVision 也是必需的，因为我们将使用它作为我们的模型动物园（model zoo）。</p>
+<p>我们可以使用 pip 来快速安装依赖</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.7.0
 pip install <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.8.1
 </pre></div>
 </div>
-<p>or please refer to official site
-<a class="reference external" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
-<p>PyTorch versions should be backwards compatible but should be used
-with the proper TorchVision version.</p>
-<p>Currently, TVM supports PyTorch 1.7 and 1.4. Other versions may
-be unstable.</p>
+<p>您也可以参考 PyTorch 的官网 <a class="reference external" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
+<p>PyTorch 版本理论上是向后兼容的，但也应与适当的 TorchVision 版本一起使用。</p>
+<p>目前 TVM 支持 PyTorch 1.7 和 1.4 版本。其它版本可能是不稳定的。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">relay</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">relay</span>
@@ -449,7 +445,7 @@ be unstable.</p>
 </div>
 </div>
 <div class="section" id="import-the-graph-to-relay">
-<h2>Import the graph to Relay<a class="headerlink" href="#import-the-graph-to-relay" title="永久链接至标题">¶</a></h2>
+<h2>将计算图导入到 Relay 中<a class="headerlink" href="#import-the-graph-to-relay" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">input_name</span> <span class="o">=</span> <span class="s2">&quot;input0&quot;</span>
 <span class="n">shape_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">)]</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_pytorch</span><span class="p">(</span><span class="n">script_module</span><span class="p">,</span> <span class="n">shape_list</span><span class="p">)</span>

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started With TVM &mdash; tvm 0.8.dev1719+g83c3846d0 文档</title>
+  <title>Getting Started With TVM &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Introduction" href="get_started/introduction.html" />
-    <link rel="prev" title="Frequently Asked Questions" href="../faq.html" /> 
+    <link rel="prev" title="常见提问" href="../faq.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -170,7 +170,7 @@
             
             
                 <div class="version">
-                  0.8.dev1719+g83c3846d0
+                  0.8.dev1722+g6d1f4df80
                 </div>
             
           
@@ -195,15 +195,15 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">怎么做</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
@@ -221,15 +221,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#compile-deep-learning-models">Compile Deep Learning Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_pytorch.html">Compile PyTorch Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_tensorflow.html">Compile Tensorflow Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_mxnet.html">Compile MXNet Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_pytorch.html">编译 PyTorch 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_tensorflow.html">编译 Tensorflow 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_mxnet.html">编译 MXNet 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/from_onnx.html">编译 ONNX 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_keras.html">Compile Keras Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_tflite.html">Compile TFLite Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_coreml.html">Compile CoreML Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_keras.html">编译 Keras 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_tflite.html">编译 TFLite 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_coreml.html">编译 CoreML 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_caffe2.html">Compile Caffe2 Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_caffe2.html">编译 Caffe2 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/build_gcn.html">Building a Graph Convolutional Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/deploy_model_on_rasp.html">Deploy the Pretrained Model on Raspberry Pi</a></li>
@@ -254,8 +254,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#optimize-tensor-operators">Optimize Tensor Operators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="optimize/opt_gemm.html">How to optimize GEMM on CPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optimize/opt_conv_cuda.html">How to optimize convolution on GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimize/opt_gemm.html">如何在CPU上优化GEMM（通用矩阵乘）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimize/opt_conv_cuda.html">如何在GPU上优化卷积</a></li>
 <li class="toctree-l2"><a class="reference internal" href="optimize/opt_conv_tensorcore.html">How to optimize convolution using TensorCores</a></li>
 </ul>
 </li>
@@ -447,19 +447,19 @@
 <span id="tutorial-frontend"></span><span id="sphx-glr-tutorials-frontend"></span><h1>Compile Deep Learning Models<a class="headerlink" href="#compile-deep-learning-models" title="永久链接至标题">¶</a></h1>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy PyTorch models with Relay."><div class="figure align-default" id="id10">
 <img alt="../_images/sphx_glr_from_pytorch_thumb.png" src="../_images/sphx_glr_from_pytorch_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_pytorch.html#sphx-glr-tutorials-frontend-from-pytorch-py"><span class="std std-ref">Compile PyTorch Models</span></a></span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_pytorch.html#sphx-glr-tutorials-frontend-from-pytorch-py"><span class="std std-ref">编译 PyTorch 模型</span></a></span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="For us to begin with, tensorflow python module is required to be installed."><div class="figure align-default" id="id11">
 <img alt="../_images/sphx_glr_from_tensorflow_thumb.png" src="../_images/sphx_glr_from_tensorflow_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_tensorflow.html#sphx-glr-tutorials-frontend-from-tensorflow-py"><span class="std std-ref">Compile Tensorflow Models</span></a></span><a class="headerlink" href="#id11" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_tensorflow.html#sphx-glr-tutorials-frontend-from-tensorflow-py"><span class="std std-ref">编译 Tensorflow 模型</span></a></span><a class="headerlink" href="#id11" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy mxnet models with Relay."><div class="figure align-default" id="id12">
 <img alt="../_images/sphx_glr_from_mxnet_thumb.png" src="../_images/sphx_glr_from_mxnet_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_mxnet.html#sphx-glr-tutorials-frontend-from-mxnet-py"><span class="std std-ref">Compile MXNet Models</span></a></span><a class="headerlink" href="#id12" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_mxnet.html#sphx-glr-tutorials-frontend-from-mxnet-py"><span class="std std-ref">编译 MXNet 模型</span></a></span><a class="headerlink" href="#id12" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -471,19 +471,19 @@
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy keras models with Relay."><div class="figure align-default" id="id14">
 <img alt="../_images/sphx_glr_from_keras_thumb.png" src="../_images/sphx_glr_from_keras_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_keras.html#sphx-glr-tutorials-frontend-from-keras-py"><span class="std std-ref">Compile Keras Models</span></a></span><a class="headerlink" href="#id14" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_keras.html#sphx-glr-tutorials-frontend-from-keras-py"><span class="std std-ref">编译 Keras 模型</span></a></span><a class="headerlink" href="#id14" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy TFLite models with Relay."><div class="figure align-default" id="id15">
 <img alt="../_images/sphx_glr_from_tflite_thumb.png" src="../_images/sphx_glr_from_tflite_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_tflite.html#sphx-glr-tutorials-frontend-from-tflite-py"><span class="std std-ref">Compile TFLite Models</span></a></span><a class="headerlink" href="#id15" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_tflite.html#sphx-glr-tutorials-frontend-from-tflite-py"><span class="std std-ref">编译 TFLite 模型</span></a></span><a class="headerlink" href="#id15" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy CoreML models with Relay."><div class="figure align-default" id="id16">
 <img alt="../_images/sphx_glr_from_coreml_thumb.png" src="../_images/sphx_glr_from_coreml_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_coreml.html#sphx-glr-tutorials-frontend-from-coreml-py"><span class="std std-ref">Compile CoreML Models</span></a></span><a class="headerlink" href="#id16" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_coreml.html#sphx-glr-tutorials-frontend-from-coreml-py"><span class="std std-ref">编译 CoreML 模型</span></a></span><a class="headerlink" href="#id16" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -495,7 +495,7 @@
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy Caffe2 models with Relay."><div class="figure align-default" id="id18">
 <img alt="../_images/sphx_glr_from_caffe2_thumb.png" src="../_images/sphx_glr_from_caffe2_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_caffe2.html#sphx-glr-tutorials-frontend-from-caffe2-py"><span class="std std-ref">Compile Caffe2 Models</span></a></span><a class="headerlink" href="#id18" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_caffe2.html#sphx-glr-tutorials-frontend-from-caffe2-py"><span class="std std-ref">编译 Caffe2 模型</span></a></span><a class="headerlink" href="#id18" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -615,13 +615,13 @@
 <span id="sphx-glr-tutorials-optimize"></span><h1>Optimize Tensor Operators<a class="headerlink" href="#optimize-tensor-operators" title="永久链接至标题">¶</a></h1>
 <div class="sphx-glr-thumbcontainer" tooltip="(TL;DR) TVM provides abstract interfaces which allows users to depict an algorithm and the algo..."><div class="figure align-default" id="id37">
 <img alt="../_images/sphx_glr_opt_gemm_thumb.png" src="../_images/sphx_glr_opt_gemm_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="optimize/opt_gemm.html#sphx-glr-tutorials-optimize-opt-gemm-py"><span class="std std-ref">How to optimize GEMM on CPU</span></a></span><a class="headerlink" href="#id37" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="optimize/opt_gemm.html#sphx-glr-tutorials-optimize-opt-gemm-py"><span class="std std-ref">如何在CPU上优化GEMM（通用矩阵乘）</span></a></span><a class="headerlink" href="#id37" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="In this tutorial, we will demonstrate how to write a high performance convolution implementatio..."><div class="figure align-default" id="id38">
 <img alt="../_images/sphx_glr_opt_conv_cuda_thumb.png" src="../_images/sphx_glr_opt_conv_cuda_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="optimize/opt_conv_cuda.html#sphx-glr-tutorials-optimize-opt-conv-cuda-py"><span class="std std-ref">How to optimize convolution on GPU</span></a></span><a class="headerlink" href="#id38" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="optimize/opt_conv_cuda.html#sphx-glr-tutorials-optimize-opt-conv-cuda-py"><span class="std std-ref">如何在GPU上优化卷积</span></a></span><a class="headerlink" href="#id38" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -776,7 +776,7 @@
         <a href="get_started/introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../faq.html" class="btn btn-neutral float-left" title="常见提问" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 
