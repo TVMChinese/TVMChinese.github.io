@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>使用 TVM 时遇到 Errors 怎么做 &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>使用 TVM 时遇到 Errors 怎么做 &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -315,7 +318,7 @@
             
   <div class="section" id="what-do-to-when-encountering-tvm-errors">
 <h1>使用 TVM 时遇到 Errors 怎么做<a class="headerlink" href="#what-do-to-when-encountering-tvm-errors" title="永久链接至标题">¶</a></h1>
-<p><strong>翻译</strong>: <a class="reference external" href="https://github.com/oneflyingfish">yutian</a></p>
+<p>运行 TVM 时，可能会遇到如下错误消息：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------</span>
 <span class="n">An</span> <span class="n">error</span> <span class="n">occurred</span> <span class="n">during</span> <span class="n">the</span> <span class="n">execution</span> <span class="n">of</span> <span class="n">TVM</span><span class="o">.</span>
 <span class="n">For</span> <span class="n">more</span> <span class="n">information</span><span class="p">,</span> <span class="n">please</span> <span class="n">see</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">tvm</span><span class="o">.</span><span class="n">apache</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="n">errors</span><span class="o">.</span><span class="n">html</span>
@@ -331,15 +334,15 @@
 <div class="section" id="what-should-i-do-when-i-encounter-such-an-error">
 <h2>遇到这样的错误，我该怎么办？<a class="headerlink" href="#what-should-i-do-when-i-encounter-such-an-error" title="永久链接至标题">¶</a></h2>
 <p>首先，<em>不必惊慌</em>，因为这并不能解决任何问题。</p>
-<p>最好的行为是搜索 <a class="reference external" href="https://discuss.tvm.apache.org/">Apache TVM 论坛</a> 来了解您遇到的错误是否其他人也遇到过，以及可能存在的解决方案。如果此错误是由于最近某个 TVM 版本中已修复的 bug 导致的，那么您可能需要更新到更新的版本。</p>
+<p>最好的办法是搜索 <a class="reference external" href="https://discuss.tvm.apache.org/">Apache TVM 论坛</a> 来了解您遇到的错误是否其他人也遇到过，以及可能存在的解决方案。如果此错误是由于最近某个 TVM 版本中已修复的 bug 导致的，那么您可能需要更新到更新的版本。</p>
 <p>如果您在论坛中没有找到有关问题的讨论，欢迎您在论坛上开始一个新的话题，并在其中详细介绍遇到的问题。<em>请</em> 在您的帖子中包括以下关键信息：</p>
 <ul class="simple">
-<li><p>您正在使用的 TVM 版本（例如，代码树中对应的 git commit 哈希值）</p></li>
-<li><p>您正在使用的硬件环境以及操作系统版本</p></li>
-<li><p>TVM编译的目标硬件设备和操作系统是什么</p></li>
-<li><p>有关模型、输入或其他有关工作负载的详细信息，这些信息可用于复现您的问题</p></li>
+<li><p>您正在使用的 TVM 版本（例如，代码树中对应的 git commit 哈希值）。</p></li>
+<li><p>您正在使用的硬件环境以及操作系统版本。</p></li>
+<li><p>TVM编译的目标硬件设备和操作系统是什么。</p></li>
+<li><p>有关模型、输入或其他有关工作负载的详细信息，这些信息可用于复现您的问题。</p></li>
 </ul>
-<p>如果没有这些细节，TVM 开发人员很难为您提供很大的帮助</p>
+<p>如果没有这些细节，TVM 开发人员很难为您提供很大的帮助。</p>
 </div>
 </div>
 
@@ -353,10 +356,10 @@
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="faq.html" class="btn btn-neutral float-right" title="常见提问" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="常见提问" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="microtvm/index.html" class="btn btn-neutral float-left" title="mocroTVM： 裸机使用 TVM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="microtvm/index.html" class="btn btn-neutral float-left" title="mocroTVM： 裸机使用 TVM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

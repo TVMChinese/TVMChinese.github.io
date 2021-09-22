@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scan and Recurrent Kernel &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>Scan and Recurrent Kernel &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="External Tensor Functions" href="extern_op.html" />
-    <link rel="prev" title="Intrinsics and Math Functions" href="intrin_math.html" /> 
+    <link rel="prev" title="内部函数和数学函数" href="intrin_math.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -212,7 +215,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reduction.html">Reduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intrin_math.html">Intrinsics and Math Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intrin_math.html">内部函数和数学函数</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Scan and Recurrent Kernel</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#schedule-the-scan-cell">Schedule the Scan Cell</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-and-verify">Build and Verify</a></li>
@@ -334,7 +337,7 @@
 </div>
 <div class="sphx-glr-example-title section" id="scan-and-recurrent-kernel">
 <span id="sphx-glr-tutorials-language-scan-py"></span><h1>Scan and Recurrent Kernel<a class="headerlink" href="#scan-and-recurrent-kernel" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
+<p><strong>作者</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
 <p>This is an introduction material on how to do recurrent computing in TVM.
 Recurrent computing is a typical pattern in neural networks.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
@@ -557,10 +560,10 @@ The following example demonstrates how we can build recurrence with two states.<
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="extern_op.html" class="btn btn-neutral float-right" title="External Tensor Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="extern_op.html" class="btn btn-neutral float-right" title="External Tensor Functions" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="intrin_math.html" class="btn btn-neutral float-left" title="Intrinsics and Math Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intrin_math.html" class="btn btn-neutral float-left" title="内部函数和数学函数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

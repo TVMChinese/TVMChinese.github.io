@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-tuning a ALU fused op on VTA &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>Auto-tuning a ALU fused op on VTA &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -239,7 +242,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html#auto-tuning">Auto tuning</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Auto-tuning a ALU fused op on VTA</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#compile-network">Compile network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-network">编译网络</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-tuning-options">Set Tuning Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tune_relay_vta.html">Auto-tuning a convolutional network on VTA</a></li>
 </ul>
@@ -334,7 +337,7 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-vta-tutorials-autotvm-tune-alu-vta-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>这里 &lt;sphx_glr_download_vta_tutorials_autotvm_tune_alu_vta.py&gt;`下载完整样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="auto-tuning-a-alu-fused-op-on-vta">
 <span id="sphx-glr-vta-tutorials-autotvm-tune-alu-vta-py"></span><h1>Auto-tuning a ALU fused op on VTA<a class="headerlink" href="#auto-tuning-a-alu-fused-op-on-vta" title="永久链接至标题">¶</a></h1>
@@ -360,7 +363,7 @@
 </div>
 </div>
 <div class="section" id="compile-network">
-<h1>Compile network<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h1>
+<h1>编译网络<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h1>
 <p>Perform vta-specific compilation with Relay from a Gluon model</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compile_network</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">start_pack</span><span class="p">,</span> <span class="n">stop_pack</span><span class="p">):</span>
 
@@ -643,10 +646,10 @@ Here we use an Pynq-Z1 board as an example.</p>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-vta-tutorials-autotvm-tune-alu-vta-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../../_downloads/09d0a1754546d603ffcd30e8e8a44cac/tune_alu_vta.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">tune_alu_vta.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../../_downloads/09d0a1754546d603ffcd30e8e8a44cac/tune_alu_vta.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">tune_alu_vta.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../../_downloads/b0c0a2fae1de180332b18254ddc2c5b9/tune_alu_vta.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tune_alu_vta.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../../_downloads/b0c0a2fae1de180332b18254ddc2c5b9/tune_alu_vta.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tune_alu_vta.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -662,10 +665,10 @@ Here we use an Pynq-Z1 board as an example.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tune_relay_vta.html" class="btn btn-neutral float-right" title="Auto-tuning a convolutional network on VTA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tune_relay_vta.html" class="btn btn-neutral float-right" title="Auto-tuning a convolutional network on VTA" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../optimize/matrix_multiply_opt.html" class="btn btn-neutral float-left" title="Matrix Multiply Blocking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../optimize/matrix_multiply_opt.html" class="btn btn-neutral float-left" title="Matrix Multiply Blocking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

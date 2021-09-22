@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-tuning a convolutional network on VTA &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>Auto-tuning a convolutional network on VTA &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -239,7 +242,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html#auto-tuning">Auto tuning</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html">Auto-tuning a ALU fused op on VTA</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#compile-network">Compile network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#compile-network">编译网络</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#set-tuning-options">Set Tuning Options</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Auto-tuning a convolutional network on VTA</a></li>
 </ul>
@@ -383,7 +386,7 @@ sudo make cython3
 </div>
 </div>
 <div class="section" id="compile-network">
-<h2>Compile network<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h2>
+<h2>编译网络<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h2>
 <p>Perform vta-specific compilation with Relay from a Gluon model</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compile_network</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">start_pack</span><span class="p">,</span> <span class="n">stop_pack</span><span class="p">):</span>
 
@@ -826,10 +829,10 @@ error messages.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../../profiling/index.html" class="btn btn-neutral float-right" title="Profiling Deep Learning Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../../profiling/index.html" class="btn btn-neutral float-right" title="Profiling Deep Learning Models" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tune_alu_vta.html" class="btn btn-neutral float-left" title="Auto-tuning a ALU fused op on VTA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tune_alu_vta.html" class="btn btn-neutral float-left" title="Auto-tuning a ALU fused op on VTA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

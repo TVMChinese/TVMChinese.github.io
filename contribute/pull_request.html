@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Submit a Pull Request &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>Submit a Pull Request &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -202,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="community.html">TVM Community Guideline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code_review.html">Perform Code Reviews</a></li>
 <li class="toctree-l2"><a class="reference internal" href="committer_guide.html">Committer Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="document.html">Write Document and Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">编写文档与教程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code_guide.html">Code Guide and Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Error Handling Guide</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Submit a Pull Request</a><ul>
@@ -362,7 +365,7 @@ docker/bash.sh ci_lint ./tests/lint/git-clang-format.sh upstream/main
 </div>
 </li>
 <li><p>Add test-cases to cover the new features or bugfix the patch introduces.</p></li>
-<li><p>Document the code you wrote, see more at <a class="reference internal" href="document.html#doc-guide"><span class="std std-ref">Write Document and Tutorials</span></a></p></li>
+<li><p>Document the code you wrote, see more at <a class="reference internal" href="document.html#doc-guide"><span class="std std-ref">编写文档与教程</span></a></p></li>
 <li><p>Send the pull request and fix the problems reported by automatic checks.</p></li>
 <li><p>Request code reviews from other contributors and improves your patch according to feedbacks.</p>
 <ul class="simple">
@@ -400,7 +403,7 @@ Here is the protocol to update CI image:</p>
 <p>Even though we have hooks to run unit tests automatically for each pull request, it’s always recommended to run unit tests
 locally beforehand to reduce reviewers’ burden and speedup review process.</p>
 <p>Running the C++ tests requires installation of gtest, following the instructions in
-<a class="reference internal" href="../install/from_source.html#install-from-source-cpp-tests"><span class="std std-ref">Enable C++ Tests</span></a></p>
+<a class="reference internal" href="../install/from_source.html#install-from-source-cpp-tests"><span class="std std-ref">使用 C++ 测试</span></a></p>
 <div class="section" id="c">
 <h3>C++<a class="headerlink" href="#c" title="永久链接至标题">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># assume you are in tvm source root</span>
@@ -412,7 +415,7 @@ locally beforehand to reduce reviewers’ burden and speedup review process.</p>
 </div>
 <div class="section" id="python">
 <h3>Python<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h3>
-<p>Necessary dependencies:</p>
+<p>必要的依赖：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --user pytest Cython synr
 </pre></div>
 </div>
@@ -451,10 +454,10 @@ rm -rf python/tvm/*.pyc python/tvm/*/*.pyc python/tvm/*/*/*.pyc
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="git_howto.html" class="btn btn-neutral float-right" title="Git Usage Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git_howto.html" class="btn btn-neutral float-right" title="Git Usage Tips" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="error_handling.html" class="btn btn-neutral float-left" title="Error Handling Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="error_handling.html" class="btn btn-neutral float-left" title="Error Handling Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

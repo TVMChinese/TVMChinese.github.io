@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>部署和集成 &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>部署和集成 &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -209,7 +212,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#optimize-and-tune-models-for-target-devices">针对目标设备优化和调整模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#deploy-optimized-model-on-target-devices">在目标设备上部署优化的模型</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="cpp_deploy.html">Deploy TVM Module using C++ API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="android.html">Deploy to Android</a></li>
+<li class="toctree-l3"><a class="reference internal" href="android.html">部署到安卓</a></li>
 <li class="toctree-l3"><a class="reference internal" href="integrate.html">Integrate TVM into Your Project</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hls.html">HLS Backend Example</a></li>
 <li class="toctree-l3"><a class="reference internal" href="arm_compute_lib.html">Relay Arm<sup>®</sup> Compute Library Integration</a></li>
@@ -331,7 +334,7 @@
             
   <div class="section" id="deploy-and-integration">
 <span id="id1"></span><h1>部署和集成<a class="headerlink" href="#deploy-and-integration" title="永久链接至标题">¶</a></h1>
-<p><strong>翻译</strong>: <a class="reference external" href="https://github.com/oneflyingfish">yutian</a></p>
+<p>此页面包含如何将 TVM 部署到各种平台以及如何将其与项目集成的指南。</p>
 <img alt="https://tvm.apache.org/images/release/tvm_flexible.png" src="https://tvm.apache.org/images/release/tvm_flexible.png" />
 <div class="section" id="build-the-tvm-runtime-library">
 <h2>构建 TVM 运行 runtime 库<a class="headerlink" href="#build-the-tvm-runtime-library" title="永久链接至标题">¶</a></h2>
@@ -342,7 +345,7 @@
 </ul>
 <p>为了集成编译的模块，我们**不需要**在目标设备上构建整个 TVM。您只需要在桌面上构建 TVM 编译器堆栈，并用它来交叉编译部署在目标设备上的模块。</p>
 <p>我们只需要使用可以集成到各种平台的轻量级 runtime API。</p>
-<p>例如，您可以运行以下命令，以便在基于 Linux 的嵌入式系统（如树莓派）上构建runtime API：</p>
+<p>例如，您可以运行以下命令，以便在基于 Linux 的嵌入式系统，比如树莓派，上构建runtime API：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recursive https://github.com/apache/tvm tvm
 <span class="nb">cd</span> tvm
 mkdir build
@@ -354,7 +357,7 @@ make runtime
 </div>
 <p>请注意，我们通过 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">runtime</span></code> 实现仅构建runtime库。</p>
 <p>也可以交叉编译runtime。交叉编译runtime库不应与嵌入式设备的交叉编译模型混淆。</p>
-<p>如果您想包括额外的runtime（如 OpenCL），您可以修改 <code class="docutils literal notranslate"><span class="pre">config.cmake</span></code> 来启用这些选项。获得 TVM runtime 库后，您可以链接编译好的库</p>
+<p>如果您想包括额外的runtime，如 OpenCL，您可以修改 <code class="docutils literal notranslate"><span class="pre">config.cmake</span></code> 来启用这些选项。获得 TVM runtime 库后，您可以链接编译好的库</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/tlc-pack/web-data/main/images/dev/tvm_deploy_crosscompile.svg"><img alt="https://raw.githubusercontent.com/tlc-pack/web-data/main/images/dev/tvm_deploy_crosscompile.svg" src="https://raw.githubusercontent.com/tlc-pack/web-data/main/images/dev/tvm_deploy_crosscompile.svg" width="85%" /></a>
 </div>
@@ -431,7 +434,7 @@ libtvm_runtime.so: ELF <span class="m">64</span>-bit LSB shared object, UCB RISC
 <li class="toctree-l2"><a class="reference internal" href="cpp_deploy.html#dynamic-library-vs-system-module">Dynamic Library vs. System Module</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="android.html">Deploy to Android</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="android.html">部署到安卓</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="android.html#build-model-for-android-target">Build model for Android Target</a></li>
 <li class="toctree-l2"><a class="reference internal" href="android.html#tvm-runtime-for-android-target">TVM Runtime for Android Target</a></li>
 </ul>
@@ -500,10 +503,10 @@ libtvm_runtime.so: ELF <span class="m">64</span>-bit LSB shared object, UCB RISC
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cpp_deploy.html" class="btn btn-neutral float-right" title="Deploy TVM Module using C++ API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cpp_deploy.html" class="btn btn-neutral float-right" title="Deploy TVM Module using C++ API" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../contribute/release_process.html" class="btn btn-neutral float-left" title="Apache TVM Release Process" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../contribute/release_process.html" class="btn btn-neutral float-left" title="Apache TVM Release Process" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

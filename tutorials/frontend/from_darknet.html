@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compile YOLO-V2 and YOLO-V3 in DarkNet Models &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型 &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -216,7 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="from_keras.html">编译 Keras 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#choose-the-model">选择模型</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#download-required-files">下载需要用到的文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#import-the-graph-to-relay">将计算图导入到 Relay 中</a></li>
@@ -320,7 +323,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>Compile YOLO-V2 and YOLO-V3 in DarkNet Models</li>
+      <li>编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -344,13 +347,9 @@
 <p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-frontend-from-darknet-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="compile-yolo-v2-and-yolo-v3-in-darknet-models">
-<span id="sphx-glr-tutorials-frontend-from-darknet-py"></span><h1>Compile YOLO-V2 and YOLO-V3 in DarkNet Models<a class="headerlink" href="#compile-yolo-v2-and-yolo-v3-in-darknet-models" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://siju-samuel.github.io/">Siju Samuel</a></p>
-<p>This article is an introductory tutorial to deploy darknet models with TVM.
-All the required models and libraries will be downloaded from the internet by the script.
-This script runs the YOLO-V2 and YOLO-V3 Model with the bounding boxes
-Darknet parsing have dependancy with CFFI and CV2 library
-Please install CFFI and CV2 before executing this script</p>
+<span id="sphx-glr-tutorials-frontend-from-darknet-py"></span><h1>编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型<a class="headerlink" href="#compile-yolo-v2-and-yolo-v3-in-darknet-models" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://siju-samuel.github.io/">Siju Samuel</a></p>
+<p>本文是使用 TVM 部署 darknet 模型的介绍性教程。所有使用到的模型和库都可以用下面的脚本从互联网进行下载。此脚本运行的 YOLO-V2 与 YOLO-V3 模型依赖 CFFI 和 CV2，因此请在执行脚本前安装 CFFI 和 CV2。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install cffi
 pip install opencv-python
 </pre></div>
@@ -553,10 +552,10 @@ class:[&#39;bicycle 0.9984&#39;] left:111 right:113 top:577 bottom:447
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-frontend-from-darknet-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/a7ce44923ffcc359fd2e532ac1f62c9e/from_darknet.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">from_darknet.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/a7ce44923ffcc359fd2e532ac1f62c9e/from_darknet.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">from_darknet.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/835a4def1e256b7a1f711621fc031418/from_darknet.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_darknet.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/835a4def1e256b7a1f711621fc031418/from_darknet.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_darknet.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -573,10 +572,10 @@ class:[&#39;bicycle 0.9984&#39;] left:111 right:113 top:577 bottom:447
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_caffe2.html" class="btn btn-neutral float-right" title="编译 Caffe2 模型" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="from_caffe2.html" class="btn btn-neutral float-right" title="编译 Caffe2 模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="from_coreml.html" class="btn btn-neutral float-left" title="编译 CoreML 模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="from_coreml.html" class="btn btn-neutral float-left" title="编译 CoreML 模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

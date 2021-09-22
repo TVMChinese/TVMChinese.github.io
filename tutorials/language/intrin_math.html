@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Intrinsics and Math Functions &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>内部函数和数学函数 &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -212,7 +215,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reduction.html">Reduction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Intrinsics and Math Functions</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">内部函数和数学函数</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#direct-declare-extern-math-call">Direct Declare Extern Math Call</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unified-intrinsic-call">Unified Intrinsic Call</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#intrinsic-lowering-rule">Intrinsic Lowering Rule</a></li>
@@ -309,7 +312,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>Intrinsics and Math Functions</li>
+      <li>内部函数和数学函数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -330,11 +333,11 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-language-intrin-math-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-language-intrin-math-py"><span class="std std-ref">here</span></a> 下载完整样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="intrinsics-and-math-functions">
-<span id="sphx-glr-tutorials-language-intrin-math-py"></span><h1>Intrinsics and Math Functions<a class="headerlink" href="#intrinsics-and-math-functions" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
+<span id="sphx-glr-tutorials-language-intrin-math-py"></span><h1>内部函数和数学函数<a class="headerlink" href="#intrinsics-and-math-functions" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
 <p>While TVM supports basic arithmetic operations. In many cases
 usually we will need more complicated builtin functions.
 For example <code class="code docutils literal notranslate"><span class="pre">exp</span></code> to take the exponential of the function.</p>
@@ -594,10 +597,10 @@ extern &quot;C&quot; __global__ void __launch_bounds__(64) mylog_kernel0(float* 
 </ul>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-language-intrin-math-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/fb810a10b128e7d81f5eec1c5908e0f5/intrin_math.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">intrin_math.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/fb810a10b128e7d81f5eec1c5908e0f5/intrin_math.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">intrin_math.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/5df1a8bfe653027789c10728e74a65c0/intrin_math.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">intrin_math.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/5df1a8bfe653027789c10728e74a65c0/intrin_math.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">intrin_math.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -614,10 +617,10 @@ extern &quot;C&quot; __global__ void __launch_bounds__(64) mylog_kernel0(float* 
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="scan.html" class="btn btn-neutral float-right" title="Scan and Recurrent Kernel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="scan.html" class="btn btn-neutral float-right" title="Scan and Recurrent Kernel" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="reduction.html" class="btn btn-neutral float-left" title="Reduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="reduction.html" class="btn btn-neutral float-left" title="Reduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

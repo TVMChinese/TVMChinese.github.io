@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>如何在CPU上优化GEMM（通用矩阵乘） &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>如何在CPU上优化GEMM（通用矩阵乘） &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -332,8 +335,7 @@
 </div>
 <div class="sphx-glr-example-title section" id="how-to-optimize-gemm-on-cpu">
 <span id="opt-gemm"></span><span id="sphx-glr-tutorials-optimize-opt-gemm-py"></span><h1>如何在CPU上优化GEMM（通用矩阵乘）<a class="headerlink" href="#how-to-optimize-gemm-on-cpu" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://github.com/were">Jian Weng</a>, <a class="reference external" href="https://github.com/yuruofeifei">Ruofei Yu</a>
-<strong>翻译</strong>: <a class="reference external" href="https://github.com/BBuf">Xiaoyu Zhang</a></p>
+<p><strong>作者</strong>: <a class="reference external" href="https://github.com/were">Jian Weng</a>, <a class="reference external" href="https://github.com/yuruofeifei">Ruofei Yu</a></p>
 <p>TVM提供了一个抽象接口允许用户分别描述算法和算法的组织方式（即所谓的schedule）。通常写一个高性能的schedule会破坏代码的可读性和模块化。另外，尝试各种看起来有前景的schedule也是很耗时的。基于TVM，我们可以有效的尝试这些schedule来提升性能。</p>
 <p>在本教程中，我们将演示如何使用 TVM 优化形矩阵乘法，并通过简单地添加 18 行额外代码实现比 baseline 快 200 倍。</p>
 <dl class="simple">
@@ -895,10 +897,10 @@ Baseline: 2.971778
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="opt_conv_cuda.html" class="btn btn-neutral float-right" title="如何在GPU上优化卷积" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="opt_conv_cuda.html" class="btn btn-neutral float-right" title="如何在GPU上优化卷积" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../language/tedd.html" class="btn btn-neutral float-left" title="Use Tensor Expression Debug Display (TEDD) for Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../language/tedd.html" class="btn btn-neutral float-left" title="Use Tensor Expression Debug Display (TEDD) for Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

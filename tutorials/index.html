@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting Started With TVM &mdash; tvm 0.8.dev1722+g6d1f4df80 文档</title>
+  <title>Getting Started With TVM &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
   
 
   
@@ -86,6 +86,9 @@
                 </li>
                 <li class="nav-item">
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN-template.html>Translate-Contribution</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -170,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1722+g6d1f4df80
+                  0.8.dev1723+gb92be3429
                 </div>
             
           
@@ -228,7 +231,7 @@
 <li class="toctree-l2"><a class="reference internal" href="frontend/from_keras.html">编译 Keras 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/from_tflite.html">编译 TFLite 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/from_coreml.html">编译 CoreML 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontend/from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontend/from_darknet.html">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/from_caffe2.html">编译 Caffe2 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/build_gcn.html">Building a Graph Convolutional Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="frontend/deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
@@ -245,7 +248,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#tensor-expression-and-schedules">Tensor Expression and Schedules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="language/schedule_primitives.html">Schedule Primitives in TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language/reduction.html">Reduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="language/intrin_math.html">Intrinsics and Math Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language/intrin_math.html">内部函数和数学函数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language/scan.html">Scan and Recurrent Kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language/extern_op.html">External Tensor Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language/tensorize.html">Use Tensorize to Leverage Hardware Intrinsics</a></li>
@@ -489,7 +492,7 @@
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to deploy darknet models with TVM. All the required mo..."><div class="figure align-default" id="id17">
 <img alt="../_images/sphx_glr_from_darknet_thumb.png" src="../_images/sphx_glr_from_darknet_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_darknet.html#sphx-glr-tutorials-frontend-from-darknet-py"><span class="std std-ref">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</span></a></span><a class="headerlink" href="#id17" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="frontend/from_darknet.html#sphx-glr-tutorials-frontend-from-darknet-py"><span class="std std-ref">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</span></a></span><a class="headerlink" href="#id17" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -576,7 +579,7 @@
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="While TVM supports basic arithmetic operations. In many cases usually we will need more complic..."><div class="figure align-default" id="id31">
 <img alt="../_images/sphx_glr_intrin_math_thumb.png" src="../_images/sphx_glr_intrin_math_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="language/intrin_math.html#sphx-glr-tutorials-language-intrin-math-py"><span class="std std-ref">Intrinsics and Math Functions</span></a></span><a class="headerlink" href="#id31" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="language/intrin_math.html#sphx-glr-tutorials-language-intrin-math-py"><span class="std std-ref">内部函数和数学函数</span></a></span><a class="headerlink" href="#id31" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -773,10 +776,10 @@
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="get_started/introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="get_started/introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../faq.html" class="btn btn-neutral float-left" title="常见提问" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../faq.html" class="btn btn-neutral float-left" title="常见提问" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 
