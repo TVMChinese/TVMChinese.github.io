@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>从源码安装 &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
+  <title>从源码安装 &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1723+gb92be3429
+                  0.8.dev1726+g998e0b3a6
                 </div>
             
           
@@ -221,7 +221,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#enable-c-tests">使用 C++ 测试</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="docker.html">Docker 镜像</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker.html">Docker 镜像</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
@@ -367,7 +367,7 @@ git submodule update
 <li><p>在 Windows 上，目标库是 <cite>libtvm.dll</cite> 和 <cite>libtvm_runtime.dll</cite></p></li>
 </ul>
 </div></blockquote>
-<p>It is also possible to <a class="reference internal" href="../deploy/index.html#deploy-and-integration"><span class="std std-ref">build the runtime</span></a> library only.</p>
+<p>也可以只 <a class="reference internal" href="../deploy/index.html#deploy-and-integration"><span class="std std-ref">构建 runtime</span></a> 库。</p>
 <p>编译 TVM 库的最低要求是：</p>
 <blockquote>
 <div><ul class="simple">
@@ -376,23 +376,21 @@ git submodule update
 <li><p>我们强烈建议使用 LLVM 编译以启用所有功能。</p></li>
 <li><p>如果要使用 CUDA，则需要 CUDA 工具包版本 &gt;= 8.0。如果您是从旧版本升级，请确保清除旧版本并在安装后重新启动。</p></li>
 <li><p>在 macOS 上，您可能需要安装 <cite>Homebrew &lt;https://brew.sh&gt;</cite> 来轻松安装和管理依赖项。</p></li>
-<li><p>Python is also required. Avoid using Python 3.9.X+ which is not <a class="reference external" href="https://github.com/apache/tvm/issues/8577">supported</a>. 3.7.X+ and 3.8.X+ should be well supported however.</p></li>
+<li><p>还需要 Python。 避免使用不受 <a class="reference external" href="https://github.com/apache/tvm/issues/8577">支持</a> 的 Python 3.9.X+，3.7.X+ 和 3.8.X+ 应该得到很好的支持。</p></li>
 </ul>
 </div></blockquote>
-<p>要在 Ubuntu/Debian 等 linux 操作系统上安装, 请满足这些最小先决条件，请执行（在终端中）:</p>
+<p>要在 Ubuntu/Debian 等 linux 操作系统上安装, 请满足这些最小先决条件，请执行（在终端中）:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
 sudo apt-get install -y python3 python3-dev python3-setuptools gcc libtinfo-dev zlib1g-dev build-essential cmake libedit-dev libxml2-dev
 </pre></div>
 </div>
-<p>Use Homebrew to install the required dependencies for macOS running either the Intel or M1 processors. You must follow the post-installation steps specified by
-Homebrew to ensure the dependencies are correctly installed and configured:</p>
+<p>使用 Homebrew 为运行 Intel 或 M1 处理器的 macOS 安装所需的依赖项。 您必须遵循 Homebrew 指定的安装后步骤以确保正确安装和配置依赖项：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install gcc git cmake
 brew install llvm
 brew install python@3.8
 </pre></div>
 </div>
-<p>We use cmake to build the library.
-The configuration of TVM can be modified by editing <cite>config.cmake</cite> and/or by passing cmake flags to the command line:</p>
+<p>我们用 cmake 来建造 library。TVM 的配置可以通过编辑 <cite>config.cmake</cite> 或将 cmake 标志传递到命令行进行修改：</p>
 <ul>
 <li><p>First, check the cmake in your system. If you do not have cmake,
 you can obtain the latest version from <a class="reference external" href="https://cmake.org/download/">official website</a></p></li>
@@ -589,9 +587,7 @@ The changes will be immediately reflected once you pull the code and rebuild the
 </pre></div>
 </div>
 </div></blockquote>
-<p>Note on M1 macs, you may have trouble installing xgboost / scipy. scipy and xgboost requires some additional dependencies to be installed,
-including openblas and its dependencies. Use the following commands to install scipy and xgboost with the required dependencies and
-configuration. A workaround for this is to do the following commands:</p>
+<p>请注意，在 M1 macs 上，您可能在安装 xgboost / scipy 时遇到问题。 scipy 和 xgboost 需要安装一些额外的依赖项，包括 openblas 及其依赖项。 使用以下命令安装具有所需依赖项和配置的 scipy 和 xgboost。 解决方法是执行以下命令：</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew install openblas gfortran
 

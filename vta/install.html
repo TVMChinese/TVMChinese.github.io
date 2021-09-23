@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>VTA Installation Guide &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
+  <title>VTA安装指南 &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1723+gb92be3429
+                  0.8.dev1726+g998e0b3a6
                 </div>
             
           
@@ -233,10 +233,10 @@
 <p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">VTA: Deep Learning Accelerator Stack</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">VTA Installation Guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#vta-simulator-installation">VTA Simulator Installation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#testing-your-vta-simulation-setup">Testing your VTA Simulation Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#advanced-configuration-optional">Advanced Configuration (optional)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">VTA安装指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vta-simulator-installation">VTA模拟器的安装</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#testing-your-vta-simulation-setup">测试您的VTA仿真配置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced-configuration-optional">高级配置（可选）</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#xilinx-pynq-fpga-setup">Xilinx Pynq FPGA Setup</a><ul>
@@ -329,7 +329,7 @@
         
           <li><a href="index.html">VTA: Deep Learning Accelerator Stack</a> <span class="br-arrow">></span></li>
         
-      <li>VTA Installation Guide</li>
+      <li>VTA安装指南</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -349,25 +349,24 @@
            <div itemprop="articleBody">
             
   <div class="section" id="vta-installation-guide">
-<h1>VTA Installation Guide<a class="headerlink" href="#vta-installation-guide" title="永久链接至标题">¶</a></h1>
-<p>We present three installation guides, each extending on the previous one:</p>
+<h1>VTA安装指南<a class="headerlink" href="#vta-installation-guide" title="永久链接至标题">¶</a></h1>
+<p>我们提供了三种安装指南，后者依次由前者扩展而来：</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="#vta-simulator-installation">VTA Simulator Installation</a></p></li>
-<li><p><a class="reference internal" href="#xilinx-pynq-fpga-setup">Xilinx Pynq FPGA Setup</a></p></li>
-<li><p><a class="reference internal" href="#intel-de10-fpga-setup">Intel DE10 FPGA Setup</a></p></li>
-<li><p><a class="reference internal" href="#bitstream-generation-with-xilinx-toolchains">Bitstream Generation with Xilinx Toolchains</a></p></li>
-<li><p><a class="reference internal" href="#bitstream-generation-with-intel-toolchains">Bitstream Generation with Intel Toolchains</a></p></li>
+<li><p><a class="reference internal" href="#vta-simulator-installation">VTA模拟器的安装</a></p></li>
+<li><p><a class="reference internal" href="#xilinx-pynq-fpga-setup">基于Xilinx Pynq的FPGA开发配置</a></p></li>
+<li><p><a class="reference internal" href="#intel-de10-fpga-setup">基于Intel DE10的FPGA开发配置</a></p></li>
+<li><p><a class="reference internal" href="#bitstream-generation-with-xilinx-toolchains">使用Xilinx工具链生成位流</a></p></li>
+<li><p><a class="reference internal" href="#bitstream-generation-with-intel-toolchains">使用Intel工具链生成位流</a></p></li>
 </ol>
 <div class="section" id="vta-simulator-installation">
-<h2>VTA Simulator Installation<a class="headerlink" href="#vta-simulator-installation" title="永久链接至标题">¶</a></h2>
-<p>You need <a class="reference external" href="https://tvm.apache.org/docs/install/index.html">TVM installed</a> on your machine.
-For a quick and easy start, checkout the <a class="reference external" href="https://tvm.apache.org/docs/install/docker.html">Docker Guide</a>.</p>
-<p>You’ll need to set the following paths to use VTA:</p>
+<h2>VTA模拟器的安装<a class="headerlink" href="#vta-simulator-installation" title="永久链接至标题">¶</a></h2>
+<p>在此之前，您需要在设备中`安装TVM &lt;<a class="reference external" href="https://tvm.apache.org/docs/install/index.html">https://tvm.apache.org/docs/install/index.html</a>&gt;`_。您可以参考 <a href="#id1"><span class="problematic" id="id2">`</span></a>Docker指南 &lt;<a class="reference external" href="https://tvm.apache.org/docs/install/docker.html">https://tvm.apache.org/docs/install/docker.html</a>&gt;`_以进行快速安装。</p>
+<p>若要使用VTA，您需要进行以下操作：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TVM_PATH</span><span class="o">=</span>&lt;path to TVM root&gt;
 <span class="nb">export</span> <span class="nv">VTA_HW_PATH</span><span class="o">=</span><span class="nv">$TVM_PATH</span>/3rdparty/vta-hw
 </pre></div>
 </div>
-<p>The VTA functional simulation library needs to be enabled when building TVM.</p>
+<p>在构建TVM时，需要确认VTA功能仿真库处在可用状态。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;tvm-root&gt;
 mkdir build
 cp cmake/config.cmake build/.
@@ -375,30 +374,25 @@ cp cmake/config.cmake build/.
 <span class="nb">cd</span> build <span class="o">&amp;&amp;</span> cmake .. <span class="o">&amp;&amp;</span> make -j4
 </pre></div>
 </div>
-<p>Add the VTA python library to your python path to run the VTA examples.</p>
+<p>为了运行VTA的示例程序，您需要将VTA的python库添加到您的python路径中。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span>/path/to/vta/python:<span class="si">${</span><span class="nv">PYTHONPATH</span><span class="si">}</span>
 </pre></div>
 </div>
 <div class="section" id="testing-your-vta-simulation-setup">
-<h3>Testing your VTA Simulation Setup<a class="headerlink" href="#testing-your-vta-simulation-setup" title="永久链接至标题">¶</a></h3>
-<p>To ensure that you’ve properly installed the VTA python package, run the following 2D convolution testbench.</p>
+<h3>测试您的VTA仿真配置<a class="headerlink" href="#testing-your-vta-simulation-setup" title="永久链接至标题">¶</a></h3>
+<p>为了确保您正确地安装了VTA的python包，请运行以下的2D卷积测试平台。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python &lt;tvm root&gt;/vta/tests/python/integration/test_benchmark_topi_conv2d.py
 </pre></div>
 </div>
-<p>You are invited to try out our <a class="reference external" href="https://tvm.apache.org/docs/vta/tutorials/index.html">VTA programming tutorials</a>.</p>
+<p>我们也欢迎您借助`VTA 编程教程 &lt;<a class="reference external" href="https://tvm.apache.org/docs/vta/tutorials/index.html">https://tvm.apache.org/docs/vta/tutorials/index.html</a>&gt;`_进行尝试。</p>
 <blockquote>
-<div><p><strong>Note</strong>: You’ll notice that for every convolution layer, the throughput gets reported in GOPS. These numbers are actually the computational throughput that the simulator achieves, by evaluating the convolutions in software.</p>
+<div><p><strong>注</strong>：您会注意到，每个卷积层的吞吐量都会以GOPS为单位进行报告。这些数字是通过对软件中的卷积进行估计后，所得出的模拟器实际可以达到的计算吞吐量。</p>
 </div></blockquote>
 </div>
 <div class="section" id="advanced-configuration-optional">
-<h3>Advanced Configuration (optional)<a class="headerlink" href="#advanced-configuration-optional" title="永久链接至标题">¶</a></h3>
-<p>VTA is a generic configurable deep learning accelerator.
-The configuration is specified by <code class="docutils literal notranslate"><span class="pre">vta_config.json</span></code> under <code class="docutils literal notranslate"><span class="pre">3rdparty/vta-hw/config</span></code>.
-This file provides an architectural specification of the VTA accelerator to parameterize the TVM compiler stack and the VTA hardware stack.</p>
-<p>The VTA configuration file also specifies the TVM compiler target.
-When <code class="docutils literal notranslate"><span class="pre">TARGET</span></code> is set to <code class="docutils literal notranslate"><span class="pre">sim</span></code>, all TVM workloads execute on the VTA simulator.
-You can modify the content of the configuration file to rebuild VTA to a different parameterization.
-To do so,</p>
+<h3>高级配置（可选）<a class="headerlink" href="#advanced-configuration-optional" title="永久链接至标题">¶</a></h3>
+<p>VTA是一种通用可配置的深度学习加速器。在``3rdparty/vta-hw/config``目录下的``vta_config.json``记录了VTA的相关配置。该文档通过提供VTA加速器的结构规范，以对TVM编译堆栈与VTA硬件堆栈进行参数化处理。</p>
+<p>VTA的配置文件也指定了TVM的编译目标。当设置``TARGET``为``sim``时，将执行VTA仿真器上的所有TVM工作负载。您也可以修改配置文件的内容，以使用不同的参数重新构建VTA。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;tvm root&gt;
 vim 3rdparty/vta-hw/config/vta_config.json
 <span class="c1"># edit vta_config.json</span>

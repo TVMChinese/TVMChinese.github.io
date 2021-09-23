@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quick Start Tutorial for Compiling Deep Learning Models &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
+  <title>编译深度学习模型的快速开始教程 &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1723+gb92be3429
+                  0.8.dev1726+g998e0b3a6
                 </div>
             
           
@@ -220,12 +220,12 @@
 <li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto_scheduler_matmul_x86.html">Optimizing Operators with Auto-scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cross_compilation_and_rpc.html">Cross Compilation and RPC</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Quick Start Tutorial for Compiling Deep Learning Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#overview-for-supported-hardware-backend-of-tvm">Overview for Supported Hardware Backend of TVM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#define-neural-network-in-relay">Define Neural Network in Relay</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compilation">Compilation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-the-generate-library">Run the generate library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#save-and-load-compiled-module">Save and Load Compiled Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编译深度学习模型的快速开始教程</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview-for-supported-hardware-backend-of-tvm">TVM支持的硬件后端概览</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-neural-network-in-relay">在Relay中定义神经网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compilation">编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-generate-library">运行产生的库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#save-and-load-compiled-module">保存和加载编译好的模块</a></li>
 </ul>
 </li>
 </ul>
@@ -314,7 +314,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>Quick Start Tutorial for Compiling Deep Learning Models</li>
+      <li>编译深度学习模型的快速开始教程</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -338,17 +338,14 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-get-started-relay-quick-start-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="quick-start-tutorial-for-compiling-deep-learning-models">
-<span id="tutorial-relay-quick-start"></span><span id="sphx-glr-tutorials-get-started-relay-quick-start-py"></span><h1>Quick Start Tutorial for Compiling Deep Learning Models<a class="headerlink" href="#quick-start-tutorial-for-compiling-deep-learning-models" title="永久链接至标题">¶</a></h1>
+<span id="tutorial-relay-quick-start"></span><span id="sphx-glr-tutorials-get-started-relay-quick-start-py"></span><h1>编译深度学习模型的快速开始教程<a class="headerlink" href="#quick-start-tutorial-for-compiling-deep-learning-models" title="永久链接至标题">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://github.com/kevinthesun">Yao Wang</a>, <a class="reference external" href="https://github.com/SiNZeRo">Truman Tian</a></p>
-<p>This example shows how to build a neural network with Relay python frontend and
-generates a runtime library for Nvidia GPU with TVM.
-Notice that you need to build TVM with cuda and llvm enabled.</p>
+<p>这个例子展示了如何使用Relay的Python前端来构建一个神经网络并且通过TVM产生一个NVIDIA GPU的运行时库。需要注意的是你需要在启用cuda和llvm的情况下编译TVM。</p>
 <div class="section" id="overview-for-supported-hardware-backend-of-tvm">
-<h2>Overview for Supported Hardware Backend of TVM<a class="headerlink" href="#overview-for-supported-hardware-backend-of-tvm" title="永久链接至标题">¶</a></h2>
-<p>The image below shows hardware backend currently supported by TVM:</p>
+<h2>TVM支持的硬件后端概览<a class="headerlink" href="#overview-for-supported-hardware-backend-of-tvm" title="永久链接至标题">¶</a></h2>
+<p>下面的图片展示了TVM现在支持我的硬件后端：</p>
 <img alt="https://github.com/dmlc/web-data/raw/main/tvm/tutorial/tvm_support_list.png" class="align-center" src="https://github.com/dmlc/web-data/raw/main/tvm/tutorial/tvm_support_list.png" />
-<p>In this tutorial, we’ll choose cuda and llvm as target backends.
-To begin with, let’s import Relay and TVM.</p>
+<p>在这个教程中，我们会选择cuda和llvm作为目标后端。首先，让我们导入 Relay 和 TVM。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">relay</span>
@@ -361,17 +358,9 @@ To begin with, let’s import Relay and TVM.</p>
 </div>
 </div>
 <div class="section" id="define-neural-network-in-relay">
-<h2>Define Neural Network in Relay<a class="headerlink" href="#define-neural-network-in-relay" title="永久链接至标题">¶</a></h2>
-<p>First, let’s define a neural network with relay python frontend.
-For simplicity, we’ll use pre-defined resnet-18 network in Relay.
-Parameters are initialized with Xavier initializer.
-Relay also supports other model formats such as MXNet, CoreML, ONNX and
-Tensorflow.</p>
-<p>In this tutorial, we assume we will do inference on our device and
-the batch size is set to be 1. Input images are RGB color images of
-size 224 * 224. We can call the
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">tvm.relay.expr.TupleWrapper.astext()</span></code> to show the network
-structure.</p>
+<h2>在Relay中定义神经网络<a class="headerlink" href="#define-neural-network-in-relay" title="永久链接至标题">¶</a></h2>
+<p>首先，我们先基于Relay的Python前端定义一个神经网络。简单期间，我们将在Relay中使用预训练的ResNet-18网络。参数使用Xavier初始化方法进行初始化。Relay也支持其它的模型格式比如MxNet，CoreML，ONNX和TensorFlow。</p>
+<p>在这个教程中，我们假设我们将要在设备上做推理并且BatchSize被指定为1。输入图片是224*224大小的RGB图片。我们可以调用:py:meth:<cite>tvm.relay.expr.TupleWrapper.astext()</cite> 方法来展示模型结构。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">num_class</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">image_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
@@ -485,24 +474,10 @@ def @main(%data: Tensor[(1, 3, 224, 224), float32], %bn_data_gamma: Tensor[(3), 
 </div>
 </div>
 <div class="section" id="compilation">
-<h2>Compilation<a class="headerlink" href="#compilation" title="永久链接至标题">¶</a></h2>
-<p>Next step is to compile the model using the Relay/TVM pipeline.
-Users can specify the optimization level of the compilation.
-Currently this value can be 0 to 3. The optimization passes include
-operator fusion, pre-computation, layout transformation and so on.</p>
-<p><code class="xref py py-func docutils literal notranslate"><span class="pre">relay.build()</span></code> returns three components: the execution graph in
-json format, the TVM module library of compiled functions specifically
-for this graph on the target hardware, and the parameter blobs of
-the model. During the compilation, Relay does the graph-level
-optimization while TVM does the tensor-level optimization, resulting
-in an optimized runtime module for model serving.</p>
-<p>We’ll first compile for Nvidia GPU. Behind the scene, <code class="xref py py-func docutils literal notranslate"><span class="pre">relay.build()</span></code>
-first does a number of graph-level optimizations, e.g. pruning, fusing, etc.,
-then registers the operators (i.e. the nodes of the optimized graphs) to
-TVM implementations to generate a <cite>tvm.module</cite>.
-To generate the module library, TVM will first transfer the high level IR
-into the lower intrinsic IR of the specified target backend, which is CUDA
-in this example. Then the machine code will be generated as the module library.</p>
+<h2>编译<a class="headerlink" href="#compilation" title="永久链接至标题">¶</a></h2>
+<p>下一步是使用Relay/TVM的pipeline来编译模型。用户可以指定编译的优化级别。目前这个值可以是0到3中的一个。优化passes中包括算符融合，预计算，数据排布变换等等。</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">relay.build()</span></code> 的返回值由三部分组成：json格式的执行图，在目标硬件上专为执行图编译的模块库，以及模型的参数。在编译过程中，在Relay做图级别的优化同时TVM做张量级别的优化，从而为模型服务产生一个优化后的运行时模块。</p>
+<p>我们首先为Nvidia GPU编译。<code class="xref py py-func docutils literal notranslate"><span class="pre">relay.build()</span></code> 首先执行了一些图级别的优化如裁剪，融合等等，然后将算子（即优化后的图的节点）注册到TVM实现中生成一个 <cite>tvm.module</cite>。为了生成module library，TVM首先将高级别的IR转化到指定目标后端的低级别的指令集IR，在这个例子中为CUDA。然后将生成的机器码作为module library。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">opt_level</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">target</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
 <span class="k">with</span> <span class="n">tvm</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">PassContext</span><span class="p">(</span><span class="n">opt_level</span><span class="o">=</span><span class="n">opt_level</span><span class="p">):</span>
@@ -511,8 +486,8 @@ in this example. Then the machine code will be generated as the module library.<
 </div>
 </div>
 <div class="section" id="run-the-generate-library">
-<h2>Run the generate library<a class="headerlink" href="#run-the-generate-library" title="永久链接至标题">¶</a></h2>
-<p>Now we can create graph executor and run the module on Nvidia GPU.</p>
+<h2>运行产生的库<a class="headerlink" href="#run-the-generate-library" title="永久链接至标题">¶</a></h2>
+<p>现在我们可以创建图形执行器并在 Nvidia GPU 上运行这个module。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create random input</span>
 <span class="n">dev</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">data_shape</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
@@ -536,9 +511,8 @@ in this example. Then the machine code will be generated as the module library.<
 </div>
 </div>
 <div class="section" id="save-and-load-compiled-module">
-<h2>Save and Load Compiled Module<a class="headerlink" href="#save-and-load-compiled-module" title="永久链接至标题">¶</a></h2>
-<p>We can also save the graph, lib and parameters into files and load them
-back in deploy environment.</p>
+<h2>保存和加载编译好的模块<a class="headerlink" href="#save-and-load-compiled-module" title="永久链接至标题">¶</a></h2>
+<p>我们还可以将计算图、库和参数保存到文件中，然后在部署环境中加载它们。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># save the graph, lib and params into separate files</span>
 <span class="kn">from</span> <span class="nn">tvm.contrib</span> <span class="k">import</span> <span class="n">utils</span>
 

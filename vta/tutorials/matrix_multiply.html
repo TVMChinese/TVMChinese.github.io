@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Simple Matrix Multiply &mdash; tvm 0.8.dev1723+gb92be3429 文档</title>
+  <title>Simple Matrix Multiply &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1723+gb92be3429
+                  0.8.dev1726+g998e0b3a6
                 </div>
             
           
@@ -233,7 +233,7 @@
 <p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">VTA: Deep Learning Accelerator Stack</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../install.html">VTA Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">VTA安装指南</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dev/index.html">VTA Design and Developer Guide</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">VTA Tutorials</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Simple Matrix Multiply</a><ul>
@@ -408,7 +408,7 @@ The last operation is a cast and copy back to DRAM, into results tensor
 <code class="code docutils literal notranslate"><span class="pre">C</span></code>.</p>
 <img alt="https://raw.githubusercontent.com/uwsampl/web-data/main/vta/tutorial/gemm_dataflow.png" class="align-center" src="https://raw.githubusercontent.com/uwsampl/web-data/main/vta/tutorial/gemm_dataflow.png" />
 <div class="section" id="data-layout">
-<h3>Data Layout<a class="headerlink" href="#data-layout" title="永久链接至标题">¶</a></h3>
+<h3>数据布局格式<a class="headerlink" href="#data-layout" title="永久链接至标题">¶</a></h3>
 <p>We describe the placeholder tensors <code class="code docutils literal notranslate"><span class="pre">A</span></code>, and <code class="code docutils literal notranslate"><span class="pre">B</span></code> in a tiled data
 format to match the data layout requirements imposed by the VTA tensor core.</p>
 <div class="admonition note">
