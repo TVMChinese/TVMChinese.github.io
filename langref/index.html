@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Language Reference &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
+  <title>语言参考 &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Expressions in Relay" href="relay_expr.html" />
-    <link rel="prev" title="microTVM with TFLite Models" href="../tutorials/micro/micro_tflite.html" /> 
+    <link rel="prev" title="使用microTVM部署TFLite模型" href="../tutorials/micro/micro_tflite.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1726+g998e0b3a6
+                  0.8.dev1727+ga882350ea
                 </div>
             
           
@@ -204,14 +204,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -222,8 +222,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Language Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction-to-relay">Introduction to Relay</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">语言参考</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction-to-relay">Relay简介</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="relay_expr.html">Expressions in Relay</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay的类型系统</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_adt.html">Algebraic Data Types in Relay</a></li>
@@ -231,7 +231,7 @@
 <li class="toctree-l3"><a class="reference internal" href="relay_pattern.html">Pattern Matching in Relay</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#hybrid-script">Hybrid Script</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hybrid-script">混合式脚本</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="hybrid_script.html">Hybrid Frontend Language Reference</a></li>
 </ul>
 </li>
@@ -307,7 +307,7 @@
     
       <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-      <li>Language Reference</li>
+      <li>语言参考</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -327,24 +327,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="language-reference">
-<h1>Language Reference<a class="headerlink" href="#language-reference" title="永久链接至标题">¶</a></h1>
-<p>This document provides references to
-embedded languages and IRs in the TVM stack.</p>
+<h1>语言参考<a class="headerlink" href="#language-reference" title="永久链接至标题">¶</a></h1>
+<p>该文档提供了TVM栈中关于嵌入式语言与中间表示的参考。</p>
 <div class="section" id="introduction-to-relay">
-<h2>Introduction to Relay<a class="headerlink" href="#introduction-to-relay" title="永久链接至标题">¶</a></h2>
-<p>Relay is a functional, differentiable programming language
-designed to be an expressive intermediate representation for machine
-learning systems. Relay supports algebraic data types, closures,
-control flow, and recursion, allowing it to directly represent more
-complex models than computation graph-based IRs can.
-Relay also includes a form of dependent typing using <em>type relations</em>
-in order to handle shape analysis for operators with complex
-requirements on argument shapes.</p>
-<p>Relay is extensible by design and makes it easy for machine learning
-researchers and practitioners to develop new large-scale program
-transformations and optimizations.</p>
-<p>The below pages describe the grammar, type system,
-algebraic data types, and operators in Relay, respectively.</p>
+<h2>Relay简介<a class="headerlink" href="#introduction-to-relay" title="永久链接至标题">¶</a></h2>
+<p>Relay是一种函数式的、可微分编程语言。它被设计用于机器学习系统里一种有效的中间表达方式。Relay支持代数数据类型、闭包、控制流与递归。这些特点允许Relay能比基于计算图的IR直接表示更加复杂的模型。对于一些在参数形状上有复杂要求的算子，为了能对其进行形状分析，Relay用基于依赖类型中的一种，即*type relations*来处理这一问题。</p>
+<p>Relay可以根据设计进行扩展，使其对机器学习的研究者及从业者十分友好。他们可以使用Relay简便地进行大规模程序的转换与优化。</p>
+<p>以下的页面分别描述了Relay的语法、类型系统、代数数据类型与运算符。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="relay_expr.html">Expressions in Relay</a><ul>
@@ -400,10 +389,8 @@ algebraic data types, and operators in Relay, respectively.</p>
 </div>
 </div>
 <div class="section" id="hybrid-script">
-<h2>Hybrid Script<a class="headerlink" href="#hybrid-script" title="永久链接至标题">¶</a></h2>
-<p>The below page describes the TVM hybrid script front-end,
-which uses software emulation to support some constructs not
-officially supported in TVM.</p>
+<h2>混合式脚本<a class="headerlink" href="#hybrid-script" title="永久链接至标题">¶</a></h2>
+<p>以下的页面描述了TVM前端的混合式脚本。其使用模拟程序以支持一些TVM并不正式支持的结构。</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="hybrid_script.html">Hybrid Frontend Language Reference</a><ul>
@@ -429,7 +416,7 @@ officially supported in TVM.</p>
         <a href="relay_expr.html" class="btn btn-neutral float-right" title="Expressions in Relay" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../tutorials/micro/micro_tflite.html" class="btn btn-neutral float-left" title="microTVM with TFLite Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="../tutorials/micro/micro_tflite.html" class="btn btn-neutral float-left" title="使用microTVM部署TFLite模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

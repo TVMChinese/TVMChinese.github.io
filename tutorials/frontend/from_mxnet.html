@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>编译 MXNet 模型 &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
+  <title>编译 MXNet 模型 &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1726+g998e0b3a6
+                  0.8.dev1727+ga882350ea
                 </div>
             
           
@@ -204,14 +204,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">编译 MXNet 模型</a><ul>
@@ -227,16 +227,16 @@
 <li class="toctree-l2"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_darknet.html">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_gcn.html">Building a Graph Convolutional Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">Deploy the Pretrained Model on Raspberry Pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_object_detection_pytorch.html">Compile PyTorch Object Detection Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized.html">Deploy a Framework-prequantized Model with TVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized_tflite.html">Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_quantized.html">Deploy a Quantized Model on Cuda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_sparse.html">Deploy a Hugging Face Pruned Model on CPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_ssd_gluoncv.html">Deploy Single Shot Multibox Detector(SSD) model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_external_lib.html">Using External Libraries in Relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_gcn.html">构建一个图形卷积网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">在Android上部署预训练模型（Pretrained Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">在Raspberry Pi上部署预训练模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_object_detection_pytorch.html">编译PyTorch对象检测模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized.html">使用TVM部署一个框架预量化模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized_tflite.html">使用TVM部署预先量化的框架模型-第3部分（TFLite）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_quantized.html">在Cuda上部署一个量化模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_sparse.html">在CPU上部署Hugging Face Pruned模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_ssd_gluoncv.html">部署Single Shot Multibox Detector(SSD)模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_external_lib.html">在Relay中使用外部库</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
@@ -249,7 +249,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>

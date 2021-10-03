@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>InferBound Pass &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
+  <title>InferBound Pass &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1726+g998e0b3a6
+                  0.8.dev1727+ga882350ea
                 </div>
             
           
@@ -204,14 +204,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -222,7 +222,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
 </ul>
@@ -240,7 +240,7 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-arith">tvm/arith</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#tvm-te">tvm/te</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">InferBound Pass</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#itervar-hyper-graph">IterVar Hyper-graph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#itervar-hyper-graph">IterVar 超图</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#passdowndomain">PassDownDomain</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inferrootbound">InferRootBound</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#inferbound-with-compute-at">InferBound with compute_at</a></li>
@@ -345,11 +345,11 @@
   <div class="section" id="inferbound-pass">
 <span id="dev-inferbound-pass"></span><h1>InferBound Pass<a class="headerlink" href="#inferbound-pass" title="永久链接至标题">¶</a></h1>
 <p>InferBound在normalize之后、ScheduleOps之前发生 <a class="reference external" href="https://github.com/apache/tvm/blob/main/python/tvm/driver/build_module.py">build_module.py</a>。 它的主要作用是创建边界（bound）的映射表，记录程序中每一个循环变量（IterVar）的范围。这些边界在ScheduleOps中，用于设置For循环节点的extent域， 参考 <a class="reference external" href="https://github.com/apache/tvm/blob/main/src/te/operation/op_util.cc">MakeLoopNest</a>, 以及用于设置缓存（buffer）的大小 (<a class="reference external" href="https://github.com/apache/tvm/blob/main/src/te/operation/compute_op.cc">BuildRealize</a>), 等等。</p>
-<p>The output of InferBound is a map from IterVar to Range:</p>
+<p>InferBound的输出是一个从循环变量（IterVar）到其范围（Range）的映射表：</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">IterVar</span><span class="p">,</span> <span class="n">Range</span><span class="o">&gt;</span> <span class="n">InferBound</span><span class="p">(</span><span class="k">const</span> <span class="n">Schedule</span><span class="o">&amp;</span> <span class="n">sch</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Therefore, let’s review the Range and IterVar classes:</p>
+<p>因此，让我们回顾一下 Range 和 IterVar 类：</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">HalideIR</span> <span class="p">{</span>
 <span class="k">namespace</span> <span class="n">IR</span> <span class="p">{</span>
      <span class="k">class</span> <span class="nc">RangeNode</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Node</span> <span class="p">{</span>
@@ -370,12 +370,12 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Note that IterVarNode also contains a Range <code class="docutils literal notranslate"><span class="pre">dom</span></code>. This <code class="docutils literal notranslate"><span class="pre">dom</span></code> may or may not have a meaningful value, depending on when the IterVar was created. For example, when <code class="docutils literal notranslate"><span class="pre">tvm.compute</span></code> is called, an <a class="reference external" href="https://github.com/apache/tvm/blob/main/src/te/operation/compute_op.cc">IterVar is created</a> for each axis and reduce axis, with dom’s equal to the shape supplied in the call to <code class="docutils literal notranslate"><span class="pre">tvm.compute</span></code>.</p>
-<p>On the other hand, when <code class="docutils literal notranslate"><span class="pre">tvm.split</span></code> is called, <a class="reference external" href="https://github.com/apache/tvm/blob/main/src/te/schedule/schedule_lang.cc">IterVars are created</a> for the inner and outer axes, but these IterVars are not given a meaningful <code class="docutils literal notranslate"><span class="pre">dom</span></code> value.</p>
-<p>In any case, the <code class="docutils literal notranslate"><span class="pre">dom</span></code> member of an IterVar is never modified during InferBound. However, keep in mind that the <code class="docutils literal notranslate"><span class="pre">dom</span></code> member of an IterVar is sometimes used as default value for the Ranges InferBound computes.</p>
-<p>We next review some TVM codebase concepts that are required to understand the InferBound pass.</p>
-<p>Recall that InferBound takes one argument, a Schedule. This schedule object, and its members, contains all information about the program being compiled.</p>
-<p>A TVM schedule is composed of Stages. Each stage has exactly one Operation, e.g., a ComputeOp or a TensorComputeOp. Each operation has a list of root_iter_vars, which in the case of ComputeOp, are composed of the axis IterVars and the reduce axis IterVars. Each operation can also contain many other IterVars, but all of them are related by the operations’s list of IterVarRelations. Each IterVarRelation represents either a split, fuse or rebase in the schedule. For example, in the case of split, the IterVarRelation specifies the parent IterVar that was split, and the two children IterVars: inner and outer.</p>
+<p>请注意，IterVarNode 还包含一个Range <code class="docutils literal notranslate"><span class="pre">dom</span></code> 成员变量。此 <code class="docutils literal notranslate"><span class="pre">dom</span></code>  可能有或可能没有有意义的值，具体取决于 IterVar 的创建时间。例如，当调用 <code class="docutils literal notranslate"><span class="pre">tvm.compute</span></code> 时，会为每个空间轴和规约轴`创建一个IterVar&lt;<a class="reference external" href="https://github.com/apache/tvm/blob/main/src/te/operation/compute_op.cc">https://github.com/apache/tvm/blob/main/src/te/operation/compute_op.cc</a>&gt;` ，这时dom也就等于调用 <code class="docutils literal notranslate"><span class="pre">tvm.compute</span></code> 时所提供的形状（shape）。</p>
+<p>另一方面，当 <code class="docutils literal notranslate"><span class="pre">tvm.split</span></code> 被调用时，会`为内部轴和外部轴创建 IterVar&lt;<a class="reference external" href="https://github.com/apache/tvm/blob/main/src/te/schedule/schedule_lang.cc">https://github.com/apache/tvm/blob/main/src/te/schedule/schedule_lang.cc</a>&gt;` ，但并没有给这些 IterVar 赋予有意义的 <code class="docutils literal notranslate"><span class="pre">dom</span></code> 值。</p>
+<p>在任何情况下，IterVar 的 <code class="docutils literal notranslate"><span class="pre">dom</span></code> 成员变量在 InferBound 期间都不会被修改。但是，请记住，IterVar 的 <code class="docutils literal notranslate"><span class="pre">dom</span></code> 成员变量有时用作范围（Ranges）计算的默认值。</p>
+<p>为了理解 InferBound pass，接下来我们将回顾一些 TVM 代码库的概念。</p>
+<p>回想一下， InferBound 需要一个 Schedule 引用类型的参数。这个 schedule 对象及其成员包含了有关正在编译的程序的所有信息。</p>
+<p>TVM schedule 由阶段（Stage）组成。每个阶段只有一个操作（Operation），例如 ComputeOp 或 TensorComputeOp 。而每个操作都有一个 root_iter_vars 列表，在 ComputeOp 的情况下，该列表由轴循环变量（axis IterVars）和规约轴循环变量（reduce IterVars）组成。每个操作还可以包含许多其他循环变量（IterVar），但这些循环变量都会由操作的 IterVarRelations 列表相关联。每个 IterVarRelation 表示 schedule 中的拆分（split）、融合（fuse）或变基（rebase）。例如，在拆分的情况下，IterVarRelation 指定了被拆分的父循环变量（parent IterVar）和两个子循环变量（children IterVar）：内部循环变量和外部循环变量。</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">namespace</span> <span class="n">tvm</span> <span class="p">{</span>
      <span class="k">class</span> <span class="nc">ScheduleNode</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Node</span> <span class="p">{</span>
      <span class="k">public</span><span class="o">:</span>
@@ -413,7 +413,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Tensors haven’t been mentioned yet, but in the context of TVM, a Tensor represents output of an operation.</p>
+<p>至此还未提及张量（Tensor），但在 TVM 中，张量表示一个操作（Operation）输出。</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TensorNode</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Node</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
      <span class="c1">// The source operation, can be None</span>
@@ -424,11 +424,11 @@
 <span class="p">};</span>
 </pre></div>
 </div>
-<p>In the Operation class declaration above, we can see that each operation also has a list of InputTensors. Thus the stages of the schedule form a DAG, where each stage is a node in the graph. There is an edge in the graph from Stage A to Stage B, if the operation of Stage B has an input tensor whose source operation is the op of Stage A. Put simply, there is an edge from A to B, if B consumes a tensor produced by A. See the diagram below. This graph is created at the beginning of InferBound, by a call to <a class="reference external" href="https://github.com/apache/tvm/blob/main/src/te/schedule/bound.cc">CreateReadGraph</a>.</p>
+<p>在上面的 Operation 类声明中，我们可以看到每个操作都有一个 InputTensor 列表。因此，schedule 的所有阶段形成了一张有向无环图（DAG），其中每个阶段就是图中的节点。如果阶段 B 的操作有一个输入张量，其源操作是阶段 A 中的操作，则从阶段 A 到阶段 B 存在一条边。 简单地说，如果 B 消耗 A 产生的张量，则从 A 到 B 有一条边。请参阅下面的图。在InferBound的开头通过调用 <cite>CreateReadGraph &lt;https://github.com/apache/tvm/blob/main/src/te/schedule/bound.cc&gt;</cite> 创建了这张图。</p>
 <img alt="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/stage_graph.png" class="align-center" src="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/stage_graph.png" />
-<p>InferBound makes one pass through the graph, visiting each stage exactly once. InferBound starts from the output stages (i.e., the solid blue nodes in the graph above), and moves upwards (in the opposite direction of the edges). This is achieved by performing a reverse topological sort on the nodes of the graph. Therefore, when InferBound visits a stage, each of its consumer stages has already been visited.</p>
+<p>InferBound 遍历一次图，每个阶段正好访问一次。InferBound 从输出阶段开始（即上图中的蓝色实心节点），然后向上移动（延着边的相反方向）。这是通过对图的节点执行反向拓扑排序来实现的。因此，当 InferBound 访问一个阶段时，其每个消费者阶段就已经被访问了。</p>
 <img alt="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/inferbound_traversal.png" class="align-center" src="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/inferbound_traversal.png" />
-<p>The InferBound pass is shown in the following pseudo-code:</p>
+<p>InferBound pass 的伪代码如下所示：</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Map</span><span class="o">&lt;</span><span class="n">IterVar</span><span class="p">,</span> <span class="n">Range</span><span class="o">&gt;</span> <span class="n">InferBound</span><span class="p">(</span><span class="k">const</span> <span class="n">Schedule</span><span class="o">&amp;</span> <span class="n">sch</span><span class="p">)</span> <span class="p">{</span>
      <span class="n">Array</span><span class="o">&lt;</span><span class="n">Operation</span><span class="o">&gt;</span> <span class="n">outputs</span> <span class="o">=</span> <span class="n">sch</span><span class="o">-&gt;</span><span class="n">get_outputs</span><span class="p">();</span>
      <span class="n">G</span> <span class="o">=</span> <span class="n">CreateGraph</span><span class="p">(</span><span class="n">outputs</span><span class="p">);</span>
@@ -442,20 +442,20 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The InferBound pass has two interesting properties that are not immediately obvious:</p>
+<p>InferBound pass 有两个有趣的属性，不是明显：</p>
 <ol class="arabic simple">
-<li><p>After InferBound visits a stage, the ranges of all IterVars in the stage will be set in <code class="docutils literal notranslate"><span class="pre">rmap</span></code>.</p></li>
-<li><p>The Range of each IterVar is only set once in <code class="docutils literal notranslate"><span class="pre">rmap</span></code>, and then never changed.</p></li>
+<li><p>在 InferBound 访问一个 stage 后，该 stage 中所有 IterVars 的范围将被设置在 <code class="docutils literal notranslate"><span class="pre">rmap</span></code> 中。</p></li>
+<li><p>每个 IterVar 的范围只在 <code class="docutils literal notranslate"><span class="pre">rmap</span></code> 中设置一次，然后永远不会改变。</p></li>
 </ol>
-<p>So it remains to explain what InferBound does when it visits a stage. As can be seen in the pseudo-code above, InferBound calls two functions on each stage: InferRootBound, and PassDownDomain. The purpose of InferRootBound is to set the Range (in <code class="docutils literal notranslate"><span class="pre">rmap</span></code>) of each root_iter_var of the stage. (Note: InferRootBound does not set the Range of any other IterVar, only those belonging to root_iter_vars). The purpose of PassDownDomain is to propagate this information to the rest of the stage’s IterVars.  When PassDownDomain returns, all IterVars of the stage have known Ranges in <code class="docutils literal notranslate"><span class="pre">rmap</span></code>.</p>
-<p>The remainder of the document dives into the details of InferRootBound and PassDownDomain. Since PassDownDomain is simpler to describe, we will cover it first.</p>
+<p>因此，有必要解释下 InferBound 在访问一个阶段时的作用。如上文的伪代码所示，InferBound 在每个阶段调用两个函数：InferRootBound 和 PassDownDomain。InferRootBound 的目的是设置该阶段的每个 root_iter_var 的 Range（在 <code class="docutils literal notranslate"><span class="pre">rmap</span></code> 中）。（注：InferRootBound 不会设置其他任何 IterVar 的 Range，而只会设置属于 root_iter_vars 的 IterVar Range）。PassDownDomain 的目的是将该信息传播到阶段的其余 IterVar。当 PassDownDomain 返回时， 阶段中的所有 IterVar 在 <code class="docutils literal notranslate"><span class="pre">rmap</span></code> 都有对应的 Range。</p>
+<p>该文档的其余部分深入探讨了 InferRootBound 和 PassDownDomain 的细节。由于 PassDownDomain 更易于描述，我们将先介绍它。</p>
 <div class="section" id="itervar-hyper-graph">
-<span id="itervarhypergraph"></span><h2>IterVar Hyper-graph<a class="headerlink" href="#itervar-hyper-graph" title="永久链接至标题">¶</a></h2>
-<p>The InferBound pass traverses the stage graph, as described above. However, within each stage is another graph, whose nodes are IterVars. InferRootBound and PassDownDomain perform message-passing on these IterVar graphs.</p>
-<p>Recall that all IterVars of the stage are related by IterVarRelations. The IterVarRelations of a stage form a directed acyclic hyper-graph, where each node of the graph corresponds to an IterVar, and each hyper-edge corresponds to an IterVarRelation. We can also represent this hyper-graph as a DAG, which is simpler to visualize as shown below.</p>
+<span id="itervarhypergraph"></span><h2>IterVar 超图<a class="headerlink" href="#itervar-hyper-graph" title="永久链接至标题">¶</a></h2>
+<p>如上所述，InferBound pass 遍历了由阶段组成的图。但是，在每个阶段中都有另外一张图，其节点都是 IterVar。InferRootBound 和 PassDownDomain 在这些 IterVar 图上执行消息的传递。</p>
+<p>回想一下，该阶段的所有 IterVar 都与 IterVarRelation 相关。阶段的 IterVarRelation 形成了有向无环超图，其中图的每个节点对应一个 IterVar，超图的每条边对应于一个 IterVarRelation。我们还可以将此超图表示为 DAG，这样更易于可视化，如下图所示。</p>
 <img alt="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/relations.png" class="align-center" src="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/relations.png" />
-<p>The above diagram shows the IterVar hyper-graph for one stage. The stage has one root_iter_var, <code class="docutils literal notranslate"><span class="pre">i</span></code>. It has been split, and the resulting inner axis <code class="docutils literal notranslate"><span class="pre">i.inner</span></code>, has been split again. The leaf_iter_vars of the stage are shown in green: <code class="docutils literal notranslate"><span class="pre">i.outer</span></code>, <code class="docutils literal notranslate"><span class="pre">i.inner.outer</span></code>, and <code class="docutils literal notranslate"><span class="pre">i.inner.inner</span></code>.</p>
-<p>Message passing functions are named “PassUp” or “PassDown”, depending on whether messages are passed from children to their parent in the DAG (“PassUp”), or from the parent to its children (“PassDown”). For example, the large arrow on the left-hand side of the diagram above, shows that PassDownDomain sends messages from the root IterVar <code class="docutils literal notranslate"><span class="pre">i</span></code> to its children <code class="docutils literal notranslate"><span class="pre">i.outer</span></code> and <code class="docutils literal notranslate"><span class="pre">i.inner</span></code>.</p>
+<p>上图显示了一个阶段的 IterVar 超图。该阶段有一个 root_iter_var，<code class="docutils literal notranslate"><span class="pre">i</span></code>。它已经被拆分，并且由此产生的内轴 <code class="docutils literal notranslate"><span class="pre">i.inner</span></code> 再次被拆分。该阶段的 leaf_iter_var 用绿色表示：<code class="docutils literal notranslate"><span class="pre">i.outer</span></code>，<code class="docutils literal notranslate"><span class="pre">i.inner.outer</span></code> 和 <code class="docutils literal notranslate"><span class="pre">i.inner.inner</span></code>。</p>
+<p>消息传递函数的名称为 “PassUp” 或 “PassDown”，具体取决于消息是从子节点传递到 DAG 中的父节点（”PassUp”），还是从父节点传递给其子节点（”PassDown”）。例如，上图左侧的大箭头表明 PassDownDomain 会从根 IterVar <code class="docutils literal notranslate"><span class="pre">i</span></code> 向其子节点 <code class="docutils literal notranslate"><span class="pre">i.outer</span></code> 和 <code class="docutils literal notranslate"><span class="pre">i.inner</span></code> 发送消息。</p>
 </div>
 <div class="section" id="passdowndomain">
 <span id="id1"></span><h2>PassDownDomain<a class="headerlink" href="#passdowndomain" title="永久链接至标题">¶</a></h2>
@@ -845,7 +845,7 @@
 </div>
 <p>This example demonstrates that contrary to what we expect, the split does not simply undo the fuse. So what causes the difference? Why is the entire tensor B re-computed 4 times, when only a single row is actually needed at a time?</p>
 <p>Determining the amount of B that must be computed is the responsibility of InferBound. However, the Ranges returned by InferBound for B’s root_iter_vars are too large in this case: <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">4]</span></code> for both <code class="docutils literal notranslate"><span class="pre">bi</span></code> and <code class="docutils literal notranslate"><span class="pre">bj</span></code>.  This occurs because of a limitation in PassUpDomain on Fuse relations, which we explain next.</p>
-<p>When InferRootBound is working on stage B, it visits B’s consumer stage C to find out how much of B is requested by C. C has root_iter_vars ci and cj, which have been fused and then split. This results in the following <a class="reference internal" href="#itervarhypergraph"><span class="std std-ref">IterVar Hyper-graph</span></a> for stage C.</p>
+<p>When InferRootBound is working on stage B, it visits B’s consumer stage C to find out how much of B is requested by C. C has root_iter_vars ci and cj, which have been fused and then split. This results in the following <a class="reference internal" href="#itervarhypergraph"><span class="std std-ref">IterVar 超图</span></a> for stage C.</p>
 <img alt="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/passupdomain_problem.png" class="align-center" src="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/docs/inferbound/passupdomain_problem.png" />
 <p>We trace the execution of InferRootBound on stage B. Recall that <a class="reference internal" href="#phase1ca"><span class="std std-ref">Phase 1: Initialize IntSets for consumer’s leaf_iter_vars</span></a> of InferRootBound involves setting the IntSets for all leaf_iter_vars of B’s consumer stage C. In this case, C’s leaf_iter_vars are <code class="docutils literal notranslate"><span class="pre">ci.cj.fused.outer</span></code> and <code class="docutils literal notranslate"><span class="pre">ci.cj.fused.inner</span></code>.  Since B is attached at <code class="docutils literal notranslate"><span class="pre">ci.cj.fused.outer</span></code>, <code class="docutils literal notranslate"><span class="pre">ci.cj.fused.inner</span></code> must be relaxed but <code class="docutils literal notranslate"><span class="pre">ci.cj.fused.outer</span></code> is a single point. The IntSets of C’s leaf_iter_vars, after <a class="reference internal" href="#phase1ca"><span class="std std-ref">Phase 1: Initialize IntSets for consumer’s leaf_iter_vars</span></a>, are shown in the following table.</p>
 <table class="docutils align-default">

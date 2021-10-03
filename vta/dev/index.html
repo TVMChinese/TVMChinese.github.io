@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>VTA Design and Developer Guide &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
+  <title>VTA设计与开发指南 &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="VTA Configuration" href="config.html" />
+    <link rel="next" title="VTA配置" href="config.html" />
     <link rel="prev" title="VTA安装指南" href="../install.html" /> 
 </head>
 
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1726+g998e0b3a6
+                  0.8.dev1727+ga882350ea
                 </div>
             
           
@@ -204,14 +204,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -222,7 +222,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
@@ -234,12 +234,12 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">VTA: Deep Learning Accelerator Stack</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../install.html">VTA安装指南</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">VTA Design and Developer Guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="config.html">VTA Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">VTA设计与开发指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html">VTA配置</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hardware.html">VTA Hardware Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorials/index.html">VTA Tutorials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/index.html">VTA教程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#literature">Literature</a></li>
 </ul>
 </li>
@@ -305,7 +305,7 @@
         
           <li><a href="../index.html">VTA: Deep Learning Accelerator Stack</a> <span class="br-arrow">></span></li>
         
-      <li>VTA Design and Developer Guide</li>
+      <li>VTA设计与开发指南</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -325,12 +325,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="vta-design-and-developer-guide">
-<h1>VTA Design and Developer Guide<a class="headerlink" href="#vta-design-and-developer-guide" title="永久链接至标题">¶</a></h1>
-<p>This developer guide details the complete VTA-TVM hardware-software stack.</p>
+<h1>VTA设计与开发指南<a class="headerlink" href="#vta-design-and-developer-guide" title="永久链接至标题">¶</a></h1>
+<p>该开发指南详细说明了完整的VTA-TVM的硬件-软件栈。</p>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/uwsampl/web-data/main/vta/blogpost/vta_stack.png"><img alt="https://raw.githubusercontent.com/uwsampl/web-data/main/vta/blogpost/vta_stack.png" class="align-center" src="https://raw.githubusercontent.com/uwsampl/web-data/main/vta/blogpost/vta_stack.png" style="width: 60%;" /></a>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="config.html">VTA Configuration</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="config.html">VTA配置</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="config.html#parameters-overview">Parameters Overview</a></li>
 </ul>
 </li>
@@ -355,7 +355,7 @@
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="config.html" class="btn btn-neutral float-right" title="VTA Configuration" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="config.html" class="btn btn-neutral float-right" title="VTA配置" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../install.html" class="btn btn-neutral float-left" title="VTA安装指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>

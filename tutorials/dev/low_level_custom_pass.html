@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Writing a Customized Pass &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
+  <title>编写自定义通行证 &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1726+g998e0b3a6
+                  0.8.dev1727+ga882350ea
                 </div>
             
           
@@ -204,20 +204,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#autoscheduler-template-free-auto-scheduling">AutoScheduler : Template-free Auto Scheduling</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#developer-tutorials">Developer Tutorials</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Writing a Customized Pass</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编写自定义通行证</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#writing-a-pass">Writing a Pass</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ir-visitor">IR Visitor</a></li>
@@ -238,7 +238,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
@@ -311,7 +311,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>Writing a Customized Pass</li>
+      <li>编写自定义通行证</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -332,10 +332,10 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-dev-low-level-custom-pass-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-dev-low-level-custom-pass-py"><span class="std std-ref">这里</span></a> 来下载完整示例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="writing-a-customized-pass">
-<span id="sphx-glr-tutorials-dev-low-level-custom-pass-py"></span><h1>Writing a Customized Pass<a class="headerlink" href="#writing-a-customized-pass" title="永久链接至标题">¶</a></h1>
+<span id="sphx-glr-tutorials-dev-low-level-custom-pass-py"></span><h1>编写自定义通行证<a class="headerlink" href="#writing-a-customized-pass" title="永久链接至标题">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://were.github.io">Jian Weng</a></p>
 <p>TVM is a framework that abstracts away the heterogenity of machine learning accelerators.
 Sometimes users may want customize some analysis and IR transformations

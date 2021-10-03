@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.topi &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
+  <title>tvm.topi &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
   
 
   
@@ -174,7 +174,7 @@
             
             
                 <div class="version">
-                  0.8.dev1726+g998e0b3a6
+                  0.8.dev1727+ga882350ea
                 </div>
             
           
@@ -205,14 +205,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -223,7 +223,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ndarray.html">tvm.runtime.ndarray</a></li>
@@ -356,11 +356,9 @@
             
   <div class="section" id="tvm-topi">
 <h1>tvm.topi<a class="headerlink" href="#tvm-topi" title="永久链接至标题">¶</a></h1>
-<p>TVM Operator Inventory.</p>
-<p>TOPI is the operator collection library for TVM, to provide sugars
-for constructing compute declaration as well as optimized schedules.</p>
-<p>Some of the schedule function may have been specially optimized for a
-specific workload.</p>
+<p>TVM 运算符清单</p>
+<p>TOPI是TVM的运算符集合库，为构建计算声明和调度优化提供了支持。</p>
+<p>针对一些特定的工作负载，一些调度函数可能已经被特定优化了。</p>
 <p><strong>Classes:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -369,7 +367,7 @@ specific workload.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">AssertStmt</span></code>(condition, message, body[, span])</p></td>
-<td><p>AssertStmt node.</p></td>
+<td><p>AssertStmt 节点。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Callable</span></code>(*args, **kwds)</p></td>
 <td><p>Callable type; Callable[[int], str] is a function of (int) -&gt; str.</p></td>
@@ -820,7 +818,7 @@ specific workload.</p>
 <dl class="py class">
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">AssertStmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>AssertStmt node.</p>
+<dd><p>AssertStmt 节点。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Working with Operators Using Tensor Expression &mdash; tvm 0.8.dev1726+g998e0b3a6 文档</title>
+  <title>使用张量表达式来处理运算符 &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1726+g998e0b3a6
+                  0.8.dev1727+ga882350ea
                 </div>
             
           
@@ -204,24 +204,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">mocroTVM： 裸机使用 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Getting Started With TVM</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">Compiling and Optimizing a Model with TVMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">使用TVMC编译和优化一个模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_relay_x86.html">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Working with Operators Using Tensor Expression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu">Example 1: Writing and Scheduling Vector Addition in TE for CPU</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#describing-the-vector-computation">Describing the Vector Computation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-default-schedule-for-the-computation">Create a Default Schedule for the Computation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#compile-and-evaluate-the-default-schedule">Compile and Evaluate the Default Schedule</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#updating-the-schedule-to-use-paralleism">Updating the Schedule to Use Paralleism</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">使用张量表达式来处理运算符</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu">例 1：为CPU用TE的形式写并调度一个向量加法。</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#describing-the-vector-computation">描述向量计算</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-default-schedule-for-the-computation">为计算创建一个默认的调度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-and-evaluate-the-default-schedule">编译并评估默认调度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-the-schedule-to-use-paralleism">更新调度来使用并行</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#updating-the-schedule-to-use-vectorization">Updating the Schedule to Use Vectorization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#comparing-the-diferent-schedules">Comparing the Diferent Schedules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#targeting-vector-addition-for-gpus-optional">Targeting Vector Addition for GPUs (Optional)</a></li>
@@ -253,7 +253,7 @@
 <li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -264,7 +264,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
@@ -337,7 +337,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>Working with Operators Using Tensor Expression</li>
+      <li>使用张量表达式来处理运算符</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -358,31 +358,16 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-get-started-tensor-expr-get-started-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击2 <a class="reference internal" href="#sphx-glr-download-tutorials-get-started-tensor-expr-get-started-py"><span class="std std-ref">这里</span></a> 来下载全部的示例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="working-with-operators-using-tensor-expression">
-<span id="tutorial-tensor-expr-get-started"></span><span id="sphx-glr-tutorials-get-started-tensor-expr-get-started-py"></span><h1>Working with Operators Using Tensor Expression<a class="headerlink" href="#working-with-operators-using-tensor-expression" title="永久链接至标题">¶</a></h1>
+<span id="tutorial-tensor-expr-get-started"></span><span id="sphx-glr-tutorials-get-started-tensor-expr-get-started-py"></span><h1>使用张量表达式来处理运算符<a class="headerlink" href="#working-with-operators-using-tensor-expression" title="永久链接至标题">¶</a></h1>
 <p><strong>作者</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
-<p>In this tutorial we will turn our attention to how TVM works with Tensor
-Expression (TE) to define tensor computations and apply loop optimizations. TE
-describes tensor computations in a pure functional language (that is each
-expression has no side effects). When viewed in context of the TVM as a whole,
-Relay describes a computation as a set of operators, and each of these
-operators can be represented as a TE expression where each TE expression takes
-input tensors and produces an output tensor.</p>
-<p>This is an introductory tutorial to the Tensor Expression language in TVM. TVM
-uses a domain specific tensor expression for efficient kernel construction. We
-will demonstrate the basic workflow with two examples of using the tensor expression
-language. The first example introduces TE and scheduling with vector
-addition. The second expands on these concepts with a step-by-step optimization
-of a matrix multiplication with TE. This matrix multiplication example will
-serve as the comparative basis for future tutorials covering more advanced
-features of TVM.</p>
+<p>本次教程，我们会关注于TVM怎样使用张量表达式（TE）来定义张量计算和优化循环。 TE 用一种纯函数语言来描述张量计算（这意味着每一个表达式都没有副作用）。当在TVM整体环境下来看，Relay 用一系列操作符来描述一个计算过程。这一系列操作符中的每一个操作符可以都被表示为一个TE表达式，并且这每一个TE表达式都采用张量输入，然后生成一个张量输出。</p>
+<p>这是TVM中的张量表达式语言的介绍性教程。TVM用一种领域特定张量表达式来进行高效的内核构建。我们会用两个使用张量表达式语言的例子来演示基本的工作流程。第一个例子我们会用向量加法来介绍TE和调度。第二个例子用TE进行了一个矩阵乘法的逐步优化，来拓展了这两个概念。这个矩阵乘法的示例会被当做未来关于TVM更多高级功能的教程的比较基础。</p>
 <div class="section" id="example-1-writing-and-scheduling-vector-addition-in-te-for-cpu">
-<h2>Example 1: Writing and Scheduling Vector Addition in TE for CPU<a class="headerlink" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu" title="永久链接至标题">¶</a></h2>
-<p>Let’s look at an example in Python in which we will implement a TE for
-vector addition, followed by a schedule targeted towards a CPU.
-We begin by initializing a TVM environment.</p>
+<h2>例 1：为CPU用TE的形式写并调度一个向量加法。<a class="headerlink" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu" title="永久链接至标题">¶</a></h2>
+<p>让我们来看一个python示例，我们会实现用一个TE来表达向量加法，然后针对CPU做一个调度。我们首先初始化TVM的环境。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">import</span> <span class="nn">tvm.testing</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
@@ -399,19 +384,8 @@ We begin by initializing a TVM environment.</p>
 </pre></div>
 </div>
 <div class="section" id="describing-the-vector-computation">
-<h3>Describing the Vector Computation<a class="headerlink" href="#describing-the-vector-computation" title="永久链接至标题">¶</a></h3>
-<p>We describe a vector addition computation. TVM adopts tensor semantics, with
-each intermediate result represented as a multi-dimensional array. The user
-needs to describe the computation rule that generates the tensors. We first
-define a symbolic variable <code class="docutils literal notranslate"><span class="pre">n</span></code> to represent the shape. We then define two
-placeholder Tensors, <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, with given shape <code class="docutils literal notranslate"><span class="pre">(n,)</span></code>. We then
-describe the result tensor <code class="docutils literal notranslate"><span class="pre">C</span></code>, with a <code class="docutils literal notranslate"><span class="pre">compute</span></code> operation. The
-<code class="docutils literal notranslate"><span class="pre">compute</span></code> defines a computation, with the output conforming to the
-specified tensor shape and the computation to be performed at each position
-in the tensor defined by the lambda function. Note that while <code class="docutils literal notranslate"><span class="pre">n</span></code> is a
-variable, it defines a consistent shape between the <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code>
-tensors. Remember, no actual computation happens during this phase, as we
-are only declaring how the computation should be done.</p>
+<h3>描述向量计算<a class="headerlink" href="#describing-the-vector-computation" title="永久链接至标题">¶</a></h3>
+<p>我们描述一个向量加法计算。TVM采用张量语义，将每一个中间结果都表示成一个多维数组。用户需要描述生成张量的计算规则。我们首先定义一个符号变量 <code class="docutils literal notranslate"><span class="pre">n</span></code> 来表示shape。然后我们用给定的shape``(n,)``来定义两个占位张量 <code class="docutils literal notranslate"><span class="pre">A</span></code> 和 <code class="docutils literal notranslate"><span class="pre">B</span></code>。然后我们用一个 <code class="docutils literal notranslate"><span class="pre">compute</span></code> 操作来描述结果张量``C``。 <code class="docutils literal notranslate"><span class="pre">compute</span></code> 定义了一个计算，输出符合指定的张量shape，并且这个计算在每个由lambad函数定义的张量中的位置执行。请注意，虽然 <code class="docutils literal notranslate"><span class="pre">n</span></code> 是一个变量，但它定义了 <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> 和``C`` 张量之间一致的shape。请记住，在此阶段不会有任何实际的计算发生，因为我们只是声明了这个计算该怎么被执行。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
@@ -428,19 +402,9 @@ addition on the <code class="docutils literal notranslate"><span class="pre">i``
 </div>
 </div>
 <div class="section" id="create-a-default-schedule-for-the-computation">
-<h3>Create a Default Schedule for the Computation<a class="headerlink" href="#create-a-default-schedule-for-the-computation" title="永久链接至标题">¶</a></h3>
-<p>While the above lines describe the computation rule, we can compute <code class="docutils literal notranslate"><span class="pre">C</span></code> in
-many different ways to fit different devices. For a tensor with multiple
-axes, you can choose which axis to iterate over first, or computations can be
-split across different threads. TVM requires that the user to provide a
-schedule, which is a description of how the computation should be performed.
-Scheduling operations within TE can change loop orders, split computations
-across different threads, group blocks of data together, amongst other
-operations. An important concept behind schedules is that they only describe
-how the computation is performed, so different schedules for the same TE will
-produce the same result.</p>
-<p>TVM allows you to create a naive schedule that will compute <code class="docutils literal notranslate"><span class="pre">C</span></code> in by
-iterating in row major order.</p>
+<h3>为计算创建一个默认的调度<a class="headerlink" href="#create-a-default-schedule-for-the-computation" title="永久链接至标题">¶</a></h3>
+<p>虽然上文定义了计算的规则，我们可以用不同的方式来计算``C``以适应不同的设备。对于一个多轴张量来说，你可以选择先迭代哪个轴，或者可以跨不同的线程来拆分计算。TVM需要用户提供一个调度，即对计算该怎样执行的描述。TE中的调度操作可以在其他操作中改变循环的顺序，跨不同线程拆分计算，分组数据块。调度背后的一个重要概念是它们仅仅描述计算是如何被执行的，所以对一个相同的TE来说，不同的调度也会生成相同的结果。</p>
+<p>TVM允许你创建一个简单的调度，按行优先迭代顺序来计算 <code class="docutils literal notranslate"><span class="pre">C</span></code>。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 <span class="p">}</span>
@@ -451,26 +415,13 @@ iterating in row major order.</p>
 </div>
 </div>
 <div class="section" id="compile-and-evaluate-the-default-schedule">
-<h3>Compile and Evaluate the Default Schedule<a class="headerlink" href="#compile-and-evaluate-the-default-schedule" title="永久链接至标题">¶</a></h3>
-<p>With the TE expression and a schedule, we can produce runnable code for our
-target language and architecture, in this case LLVM and a CPU. We provide
-TVM with the schedule, a list of the TE expressions that are in the schedule,
-the target and host, and the name of the function we are producing. The result
-of the output is a type-erased function that can be called directly from Python.</p>
-<p>In the following line, we use tvm.build to create a function. The build
-function takes the schedule, the desired signature of the function (including
-the inputs and outputs) as well as target language we want to compile to.</p>
+<h3>编译并评估默认调度<a class="headerlink" href="#compile-and-evaluate-the-default-schedule" title="永久链接至标题">¶</a></h3>
+<p>有了TE表达式和调度，我们就能为目标语言和架构（在本例中为LLVM和CPU）生成可运行的代码。我们向TVM提供调度，使用该调度的TE表达式列表，目标和主机，以及我们生成的函数名称。输出的结果是可以直接从Python调用的一个类型被擦除的函数。</p>
+<p>接下来这行，我们用tvm.build来创建一个函数。build函数接收调度，所需的函数签名（包括输入和输出）还有我们想要编译成的目标语言。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fadd</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;myadd&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Let’s run the function, and compare the output to the same computation in
-numpy. The compiled TVM function is exposes a concise C API that can be invoked
-from any language. We begin by creating a device, which is a device (CPU in this
-example) that TVM can compile the schedule to. In this case the device is an
-LLVM CPU target. We can then initialize the tensors in our device and
-perform the custom addition operation. To verify that the computation is
-correct, we can compare the result of the output of the c tensor to the same
-computation performed by numpy.</p>
+<p>让我们来运行这个函数，然后将输出与numpy中相同计算的结果进行比较。这个编译后的TVM函数公开了一个简洁的C API，可以用任何语言来调用。我们首先创建一个TVM可以将调度编译上去的设备，在本例中是LLVM CPU。然后我们可以在设备中初始化张量，再执行我们自定的计算。为了验证计算是否正确，我们可以将C张量的输出结果跟numpy执行的相同计算的结果进行比较。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">tgt</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1024</span>
@@ -481,8 +432,7 @@ computation performed by numpy.</p>
 <span class="n">tvm</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>To get a comparison of how fast this version is compared to numpy, create a
-helper function to run a profile of the TVM generated code.</p>
+<p>为了比较这种（计算）形式和numpy的速度，创建一个辅助函数来运行TVM生成代码的配置文件。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">timeit</span>
 
 <span class="n">np_repeat</span> <span class="o">=</span> <span class="mi">100</span>
@@ -523,7 +473,7 @@ naive: 0.000005
 </div>
 </div>
 <div class="section" id="updating-the-schedule-to-use-paralleism">
-<h3>Updating the Schedule to Use Paralleism<a class="headerlink" href="#updating-the-schedule-to-use-paralleism" title="永久链接至标题">¶</a></h3>
+<h3>更新调度来使用并行<a class="headerlink" href="#updating-the-schedule-to-use-paralleism" title="永久链接至标题">¶</a></h3>
 <p>Now that we’ve illustrated the fundamentals of TE, let’s go deeper into what
 schedules do, and how they can be used to optimize tensor expressions for
 different architectures. A schedule is a series of steps that are applied to
