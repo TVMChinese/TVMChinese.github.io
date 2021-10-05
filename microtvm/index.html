@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>microTVM：裸机使用TVM &mdash; tvm 0.8.dev1727+ga882350ea 文档</title>
+  <title>microTVM：裸机使用TVM &mdash; tvm 0.8.dev1728+g18870dfb0 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1727+ga882350ea
+                  0.8.dev1728+g18870dfb0
                 </div>
             
           
@@ -320,14 +320,14 @@
             
   <div class="section" id="microtvm-tvm-on-bare-metal">
 <span id="microtvm-index"></span><h1>microTVM：裸机使用TVM<a class="headerlink" href="#microtvm-tvm-on-bare-metal" title="永久链接至标题">¶</a></h1>
-<p>microTVM 用于在裸机（即物联网）设备上运行 TVM 模型。它仅仅依赖于 C 标准库且不需要操作系统，目前正在大力发展中。</p>
+<p>microTVM 用于在裸机（即物联网）设备上运行 TVM 模型。它仅仅依赖于 C 标准库且不需要操作系统，目前正在大力开发中。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/tvmai/web-data/main/images/dev/microtvm_workflow.svg"><img alt="https://raw.githubusercontent.com/tvmai/web-data/main/images/dev/microtvm_workflow.svg" src="https://raw.githubusercontent.com/tvmai/web-data/main/images/dev/microtvm_workflow.svg" width="85%" /></a>
 </div>
 <p>microTVM 是:</p>
 <ul class="simple">
-<li><p>一个针对 TVM 编译器的扩展，使其能够应用于微控制器</p></li>
-<li><p>一种在设备上运行 TVM RPC 服务完成自动调整的方法</p></li>
+<li><p>一个TVM 编译器的扩展，使TVM能够应用于微控制器</p></li>
+<li><p>一种在设备上运行 TVM RPC 服务以完成自动调优的方法</p></li>
 <li><p>一套最小化 C 语言runtime，使得裸机设备可以独立完成模型推理</p></li>
 </ul>
 <div class="section" id="supported-hardware">
@@ -341,11 +341,11 @@
 </div>
 <div class="section" id="getting-started-with-microtvm">
 <h2>开始使用 microTVM<a class="headerlink" href="#getting-started-with-microtvm" title="永久链接至标题">¶</a></h2>
-<p>在开始使用 microTVM 工作之前，我们建议您拥有一个受支持的开发板。然后，按照这些教程开始使用 microTVM：</p>
+<p>在开始使用 microTVM 之前，我们建议您购买一块受支持的开发板。然后，按照以下教程开始使用 microTVM：</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../tutorials/micro/micro_reference_vm.html#tutorial-micro-reference-vm"><span class="std std-ref">参照VM来开始microTVM</span></a>.。microTVM 教程依赖于 Zephyr 和一套硬件的编译器工具链。参照 VM 是安装这些依赖的快捷方式</p></li>
-<li><p>尝试 <a class="reference internal" href="../tutorials/micro/micro_tflite.html"><span class="doc">带有TFLite的microTVM教程</span></a></p></li>
-<li><p>尝试运行更复杂的 <a class="reference external" href="https://github.com/areusch/microtvm-blogpost-eval">CIFAR10-CNN 模型</a></p></li>
+<li><p><a class="reference internal" href="../tutorials/micro/micro_reference_vm.html#tutorial-micro-reference-vm"><span class="std std-ref">从microTVM虚拟机开始</span></a>.。microTVM 教程依赖于 Zephyr 和一套针对您的开发板的编译器工具链。microTVM虚拟机是安装这些依赖的快捷方式。</p></li>
+<li><p>教程：doc:<cite>使用microTVM运行TFLite模型&lt;/tutorials/micro/micro_tflite&gt;</cite>。</p></li>
+<li><p>教程：使用microTVM运行更复杂的 <a class="reference external" href="https://github.com/areusch/microtvm-blogpost-eval">CIFAR10-CNN 模型</a>。</p></li>
 </ol>
 </div>
 <div class="section" id="how-microtvm-works">
