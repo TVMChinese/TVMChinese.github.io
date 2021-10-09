@@ -333,7 +333,7 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击：ref:<cite>这里&lt;sphx_glr_download_tutorials_micro_micro_reference_vm.py&gt;</cite> 下载完整的样例代码</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-micro-micro-reference-vm-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="microtvm-reference-virtual-machines">
 <span id="tutorial-micro-reference-vm"></span><span id="sphx-glr-tutorials-micro-micro-reference-vm-py"></span><h1>microTVM 虚拟机<a class="headerlink" href="#microtvm-reference-virtual-machines" title="永久链接至标题">¶</a></h1>
@@ -342,11 +342,11 @@
 <p>microTVM可以有效地使用TVM在低端微控制器上构建和运行模型。microTVM旨在与各种各样的SoC和运行时环境（如裸机、RTOS等）相互兼容。然而，开发人员需要一些必要的软件依赖环境才能够共享和再现bug和运行结果。microTVM虚拟机旨在提供这些环境。</p>
 <div class="section" id="how-it-works">
 <h2>工作原理<a class="headerlink" href="#how-it-works" title="永久链接至标题">¶</a></h2>
-<p>TVM代码仓库中并没有提供虚拟机，在``apps/microtvm/reference-vm``目录下的文件描述了如何使用 <a class="reference external" href="https://vagrantup.com">Vagrant</a> 虚拟机构建工具来创建一个microTVM虚拟机。</p>
+<p>TVM代码仓库中并没有提供虚拟机，在 <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm</span></code> 目录下的文件描述了如何使用 <a class="reference external" href="https://vagrantup.com">Vagrant</a> 虚拟机构建工具来创建一个microTVM虚拟机。</p>
 <p>MicroTVM虚拟机分为两个部分：</p>
 <ol class="arabic simple">
-<li><p>一个Vagrant基础镜像，它包含了所有必要的软件依赖环境，构建该镜像的脚本保存在``apps/microtvm/reference-vm/&lt;platfrom&gt;/base-box``。当平台的“稳定”依赖环境发生变化时，TVM提交者将会运行这个脚本来生成新的基础镜像，该镜像会被上传到 <a class="reference external" href="https://app.vagrantup.com/tlcpack">Vagrant Cloud</a>。</p></li>
-<li><p>一个虚拟机工作环境，用户通常使用基础镜像作为起点来构建它。构建脚本保存在``apps/microtvm/reference-vm/&lt;paltform&gt;``（除了”base-box”）。</p></li>
+<li><p>一个Vagrant基础镜像，它包含了所有必要的软件依赖环境，构建该镜像的脚本保存在 <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm/&lt;platfrom&gt;/base-box</span></code> 。当平台的“稳定”依赖环境发生变化时，TVM提交者将会运行这个脚本来生成新的基础镜像，该镜像会被上传到 <a class="reference external" href="https://app.vagrantup.com/tlcpack">Vagrant Cloud</a> 。</p></li>
+<li><p>一个虚拟机工作环境，用户通常使用基础镜像作为起点来构建它。构建脚本保存在 <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm/&lt;paltform&gt;</span></code> （除了 <code class="docutils literal notranslate"><span class="pre">base-box</span></code> ）。</p></li>
 </ol>
 </div>
 <div class="section" id="setting-up-the-vm">
@@ -356,10 +356,10 @@
 <p>这些必要软件包括：</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://vagrantup.com">Vagrant</a></p></li>
-<li><p>一个虚拟机管理程序（<strong>VirtualBox</strong>、 <strong>Parallels**或 **VMWare Fusion/Workstation</strong>）。TVM推荐使用 <a class="reference external" href="https://www.virtualbox.org">VirtualBox</a> ，因为它是免费的虚拟机管理程序，但请注意， <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads#VirtualBox6.1.16OracleVMVirtualBoxExtensionPack">VirtualBox Extension Pack</a> 是使用USB转发功能所必要的扩展包。如果选择使用VirtualBox，您还可以考虑安装 <a class="reference external" href="https://github.com/dotless-de/vagrant-vbguest">vbguest</a> 插件。</p></li>
+<li><p>一个虚拟机管理程序（ <strong>VirtualBox</strong> 、 <strong>Parallels</strong> 或 <strong>VMWare Fusion/Workstation</strong> ）。TVM推荐使用 <a class="reference external" href="https://www.virtualbox.org">VirtualBox</a> ，因为它是免费的虚拟机管理程序，但请注意， <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads#VirtualBox6.1.16OracleVMVirtualBoxExtensionPack">VirtualBox Extension Pack</a> 是使用USB转发功能所必要的扩展包。如果选择使用VirtualBox，您还可以考虑安装 <a class="reference external" href="https://github.com/dotless-de/vagrant-vbguest">vbguest</a> 插件。</p></li>
 </ol>
 <ol class="arabic simple" start="3">
-<li><p>如果您还需要其他的插件， <a class="reference external" href="https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins#providers">Vagrant provider plugin</a> 将提供更多程序插件（或在 <a href="#id1"><span class="problematic" id="id2">`此处&lt;https://www.vagrantup.com/vmware&gt;`__</span></a> 查找有关VMWare的插件）。</p></li>
+<li><p>如果您还需要其他的插件， <a class="reference external" href="https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins#providers">Vagrant provider plugin</a> 将提供更多程序插件（或在 <a class="reference external" href="https://www.vagrantup.com/vmware">此处</a> 查找有关VMWare的插件）。</p></li>
 </ol>
 </div>
 <div class="section" id="first-boot">
@@ -374,7 +374,7 @@
 <p>这段命令行需要一些时间来运行，同时，它将在您的机器上占用4到5GB的存储空间。这些代命令行的作用如下：</p>
 <ol class="arabic simple">
 <li><p>下载 <a class="reference external" href="https://app.vagrantup.com/tlcpack/boxes/microtvm">MicroTVM基础镜像</a> ，然后使用它生成一个特定于这个TVM目录的新虚拟机。</p></li>
-<li><p>将TVM目录挂载到虚拟机（如果使用 <code class="docutils literal notranslate"><span class="pre">git-subtree</span></code>， <a href="#id1"><span class="problematic" id="id2">``</span></a>.git``根目录将会被挂载）。</p></li>
+<li><p>将TVM目录挂载到虚拟机（如果使用 <code class="docutils literal notranslate"><span class="pre">git-subtree</span></code> ， <code class="docutils literal notranslate"><span class="pre">.git</span></code> 根目录将会被挂载）。</p></li>
 <li><p>构建TVM并安装与之相对应的Python虚拟环境。</p></li>
 </ol>
 </div>
@@ -392,16 +392,16 @@
 </div>
 <div class="section" id="rebuilding-tvm-inside-the-reference-vm">
 <h3>在microTVM虚拟机中重新构建TVM<a class="headerlink" href="#rebuilding-tvm-inside-the-reference-vm" title="永久链接至标题">¶</a></h3>
-<p>在第一次启动之后，每当您修改了C++运行时代码或者切换到不同版本的时候，您都需要重新构建TVM以保持构建文件是最新的，这些构建文件在 <code class="docutils literal notranslate"><span class="pre">$TVM_HOME/build-microtvm-zephyr``目录下。您可以通过重新配置虚拟机（在之前运行</span> <span class="pre">``vagrant</span> <span class="pre">up``命令的目录下运行</span> <span class="pre">``vagrant</span> <span class="pre">provision</span></code>），又或者自己手动重新构建TVM。</p>
-<p>请注意：在microTVM虚拟机中的TVM构建文件 <a href="#id1"><span class="problematic" id="id2">``</span></a>.so``与您主机上的构建文件是不同的。这也是为什么要将构建文件放置在 <a href="#id3"><span class="problematic" id="id4">``</span></a>build-microtvm-zephyr``这个特殊目录下。</p>
+<p>在第一次启动之后，每当您修改了C++运行时代码或者切换到不同版本的时候，您都需要重新构建TVM以保持构建文件是最新的，这些构建文件在 <code class="docutils literal notranslate"><span class="pre">$TVM_HOME/build-microtvm-zephyr</span></code> 目录下。您可以通过重新配置虚拟机（在之前运行 <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code> 命令的目录下运行 <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">provision</span></code> ），又或者自己手动重新构建TVM。</p>
+<p>请注意：在microTVM虚拟机中的TVM构建文件 <code class="docutils literal notranslate"><span class="pre">.so</span></code> 与您主机上的构建文件是不同的。这也是为什么要将构建文件放置在 <code class="docutils literal notranslate"><span class="pre">build-microtvm-zephyr</span></code> 这个特殊目录下。</p>
 </div>
 <div class="section" id="logging-in-to-the-vm">
 <h3>登录虚拟机<a class="headerlink" href="#logging-in-to-the-vm" title="永久链接至标题">¶</a></h3>
-<p>虚拟机应该向主机提供唯一的主机名 <code class="docutils literal notranslate"><span class="pre">microtvm</span></code>。您可以通过SSH登录到虚拟机：</p>
+<p>虚拟机应该向主机提供唯一的主机名 <code class="docutils literal notranslate"><span class="pre">microtvm</span></code> 。您可以通过SSH登录到虚拟机：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vagrant ssh
 </pre></div>
 </div>
-<p>然后 <a href="#id1"><span class="problematic" id="id2">``</span></a>cd``到主机上访问TVM的相同路径。例如，在 Mac 上：</p>
+<p>然后 <code class="docutils literal notranslate"><span class="pre">cd</span></code> 到主机上访问TVM的相同路径。例如，在 Mac 上：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /Users/yourusername/path/to/tvm
 </pre></div>
 </div>
@@ -409,7 +409,7 @@
 </div>
 <div class="section" id="running-tests">
 <h2>测试<a class="headerlink" href="#running-tests" title="永久链接至标题">¶</a></h2>
-<p>当microTVM虚拟机完成配置工作，您可以使用 <a href="#id1"><span class="problematic" id="id2">``</span></a>poetry``运行测试用例：</p>
+<p>当microTVM虚拟机完成配置工作，您可以使用 <code class="docutils literal notranslate"><span class="pre">poetry</span></code> 运行测试用例：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> apps/microtvm/reference-vm/zephyr
 $ poetry run python3 ../../../../tests/micro/qemu/test_zephyr.py --zephyr-board<span class="o">=</span>stm32f746g_disco
 </pre></div>
@@ -422,10 +422,10 @@ $ poetry run pytest ../../../../tests/micro/qemu/test_zephyr.py --zephyr-board<s
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-micro-micro-reference-vm-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/77322ea21ff00abad461e549895ef1d8/micro_reference_vm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">micro_reference_vm.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/77322ea21ff00abad461e549895ef1d8/micro_reference_vm.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">micro_reference_vm.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/08e39628455fe618afd9eb5b958a433e/micro_reference_vm.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">micro_reference_vm.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/08e39628455fe618afd9eb5b958a433e/micro_reference_vm.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">micro_reference_vm.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

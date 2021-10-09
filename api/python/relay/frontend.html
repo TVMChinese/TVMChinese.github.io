@@ -418,7 +418,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>symbol</strong> (<em>mxnet.Symbol</em><em> or </em><em>mxnet.gluon.HybridBlock</em>) – MXNet模型标志。</p></li>
 <li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – 计算图输入节点的数据形状</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
 <li><p><strong>arg_params</strong> (<em>dict of str to mx.NDArray</em>) – mxnet中的模型参数</p></li>
 <li><p><strong>aux_params</strong> (<em>dict of str to mx.NDArray</em>) – mxnet中的辅助参数</p></li>
 </ul>
@@ -448,7 +448,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> (<em>keras.engine.training.Model</em><em> or </em><em>tensorflow.keras.models.Model</em>) – 将要被转换的keras模型。</p></li>
 <li><p><strong>shape</strong> (<em>dict of str to int list/tuple</em>) – 模型输入节点的数据形状，可选</p></li>
-<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – “NCHW” 或 “NHWC”之一，表示数据在输出模型中应如何排列。默认布局是’NCHW’，因为一般来说，它在TVM中表现得更好。</p></li>
+<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – “NCHW” 或 “NHWC”之一，表示数据在输出模型中应如何排列。默认布局是’NCHW’，因为一般来说，它在TVM中表现得更好。</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -472,10 +472,10 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> (<em>protobuf object</em>) – ONNX v1.1.0之后的ONNX ModelProto</p></li>
 <li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – 计算图输入节点的数据形状</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
-<li><p><strong>opset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.9)"><em>int</em></a><em>, </em><em>optional</em>) – 自定义优化等级，并覆盖掉程序自动检测的优化等级结果。这对一些测试是有帮助的。</p></li>
-<li><p><strong>freeze_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.9)"><em>bool</em></a>) – 如果这个参数为True，转换脚本将接受所有被用户提供的onnx输入值（权重、形状等），并将它们定义为常量而不是变量、嵌入到relay中。如果某些输入能在编译时被relay认为是常量，那么就可以用这个方法，这将使得模型在转换时得到更深层次的优化</p></li>
-<li><p><strong>convert_config</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="../tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>]</em>) – <dl class="simple">
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
+<li><p><strong>opset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – 自定义优化等级，并覆盖掉程序自动检测的优化等级结果。这对一些测试是有帮助的。</p></li>
+<li><p><strong>freeze_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.10)"><em>bool</em></a>) – 如果这个参数为True，转换脚本将接受所有被用户提供的onnx输入值（权重、形状等），并将它们定义为常量而不是变量、嵌入到relay中。如果某些输入能在编译时被relay认为是常量，那么就可以用这个方法，这将使得模型在转换时得到更深层次的优化</p></li>
+<li><p><strong>convert_config</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="../tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>]</em>) – <dl class="simple">
 <dt>默认的配置：</dt><dd><dl class="simple">
 <dt>use_nt_batch_matmul<span class="classifier">bool = True</span></dt><dd><p>True to convert qualified onnx <cite>matmul</cite> to <cite>nn.batch_matmul</cite> strict to NT format
 (transpose_a=False, transpose_b=True).</p>
@@ -549,7 +549,7 @@
 <li><p><strong>init_net</strong> (<em>protobuf object</em>) – 包含权重的Caffe2 NetDef</p></li>
 <li><p><strong>predict_net</strong> (<em>protobuf object</em>) – 包含计算图的Caffe2 NetDef</p></li>
 <li><p><strong>shape</strong> (<em>dict of str to tuple</em>) – 计算图输入节点的数据形状</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -573,7 +573,7 @@
 <li><p><strong>layout</strong> (<em>target layout to be used</em><em> (</em><em>Optional</em><em>)</em>) – 现在该参数仅支持NCHW，以便在GPU上启用NHWC模式。</p></li>
 <li><p><strong>shape</strong> (<em>Dictionary of input dimensions</em><em> (</em><em>Optional</em><em>)</em>) – 由计算图的输入节点形状组成的字典。</p></li>
 <li><p><strong>outputs</strong> (<em>List of output tensor names</em><em> (</em><em>Optional</em><em>)</em>) – 如果该参数没有被指定，那么输入计算图的最后一个节点将被假定为图的输出。</p></li>
-<li><p><strong>convert_config</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="../tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>]</em>) – <dl class="simple">
+<li><p><strong>convert_config</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="../tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>]</em>) – <dl class="simple">
 <dt>默认的配置：</dt><dd><dl class="simple">
 <dt>use_dense<span class="classifier">bool = True</span></dt><dd><p>Ture to convert <cite>tf.matmul</cite> to <cite>nn.dense</cite>, else to <cite>nn.matmul</cite>.
 The <cite>nn.dense</cite> op requires the data tensor to be non-transposed and weight tensor
@@ -607,7 +607,7 @@ to be transposed, may insert extra <cite>transpose</cite> to the original graph.
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>net</strong> (<em>Darknet net parameter</em>) – Darknet的网络结构。</p></li>
 <li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – 计算图输入节点的数据形状</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>

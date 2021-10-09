@@ -459,7 +459,7 @@
 </div>
 <div class="section" id="passdowndomain">
 <span id="id1"></span><h2>PassDownDomain<a class="headerlink" href="#passdowndomain" title="永久链接至标题">¶</a></h2>
-<p>The purpose of PassDownDomain is to take the Ranges produced by InferRootBound for the root_iter_vars, and set the Ranges of all other IterVars in the stage.</p>
+<p>PassDownDomain 的目的是获取 InferRootBound 为 root_iter_var 产生的 Range ，并为阶段中所有其他  IterVar 设置 Range。</p>
 <p>PassDownDomain iterates through the stage’s IterVarRelations. There are three possible types of IterVarRelation: split, fuse, and rebase. The most interesting case (since it offers opportunity for improvement), is IterVarRelations representing splits.</p>
 <p>The Ranges of the inner and outer IterVars of the split are set based on the parent IterVar’s known Range, as follows:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">rmap</span><span class="p">[</span><span class="n">split</span><span class="o">-&gt;</span><span class="n">inner</span><span class="p">]</span> <span class="o">=</span> <span class="n">Range</span><span class="o">::</span><span class="n">FromMinExtent</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">split</span><span class="o">-&gt;</span><span class="n">factor</span><span class="p">)</span>

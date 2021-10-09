@@ -522,7 +522,7 @@ We can also use other specific function in this module to create specific target
 <dd><p>Returns the current target.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>allow_none</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.9)"><em>bool</em></a>) – Whether allow the current target to be none</p>
+<dd class="field-odd"><p><strong>allow_none</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.10)"><em>bool</em></a>) – Whether allow the current target to be none</p>
 </dd>
 <dt class="field-even">引发</dt>
 <dd class="field-even"><p><strong>ValueError if current target is not set.</strong> – </p>
@@ -563,8 +563,8 @@ host pair only, and should not be used in the new target system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>target</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="relay/dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>, </em><a class="reference internal" href="#tvm.target.Target" title="tvm.target.Target"><em>Target</em></a><em>]</em>) – The target or heterogeneous target</p></li>
-<li><p><strong>host</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="relay/dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><a class="reference internal" href="tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>, </em><a class="reference internal" href="#tvm.target.Target" title="tvm.target.Target"><em>Target</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(在 Python v3.9)"><em>None</em></a><em>]</em>) – The target host</p></li>
+<li><p><strong>target</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="relay/dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>, </em><a class="reference internal" href="#tvm.target.Target" title="tvm.target.Target"><em>Target</em></a><em>]</em>) – The target or heterogeneous target</p></li>
+<li><p><strong>host</strong> (<em>Union</em><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="relay/dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>, </em><a class="reference internal" href="#tvm.target.Target" title="tvm.target.Target"><em>Target</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(在 Python v3.10)"><em>None</em></a><em>]</em>) – The target host</p></li>
 <li><p><strong>target_is_dict_key</strong> (<em>Bool</em>) – When the type of target is dict, whether Target is the key (Otherwise the value)</p></li>
 </ul>
 </dd>
@@ -586,8 +586,8 @@ host pair only, and should not be used in the new target system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – The model of cuda device (e.g. 1080ti)</p></li>
-<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
+<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The model of cuda device (e.g. 1080ti)</p></li>
+<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
 </ul>
 </dd>
 </dl>
@@ -600,8 +600,8 @@ host pair only, and should not be used in the new target system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – The model of this device</p></li>
-<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
+<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The model of this device</p></li>
+<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
 </ul>
 </dd>
 </dl>
@@ -614,8 +614,8 @@ host pair only, and should not be used in the new target system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – The model of this device</p></li>
-<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
+<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The model of this device</p></li>
+<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
 </ul>
 </dd>
 </dl>
@@ -628,8 +628,8 @@ host pair only, and should not be used in the new target system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – The model of this device</p></li>
-<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
+<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The model of this device</p></li>
+<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
 </ul>
 </dd>
 </dl>
@@ -643,8 +643,8 @@ This function will also download pre-tuned op parameters when there is none.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – SoC name or phone name of the arm board.</p></li>
-<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
+<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – SoC name or phone name of the arm board.</p></li>
+<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
 </ul>
 </dd>
 </dl>
@@ -656,7 +656,7 @@ This function will also download pre-tuned op parameters when there is none.</p>
 <dd><p>Return a Raspberry 3b target.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p>
+<dd class="field-odd"><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p>
 </dd>
 </dl>
 </dd></dl>
@@ -667,7 +667,7 @@ This function will also download pre-tuned op parameters when there is none.</p>
 <dd><p>Return an ARM Mali GPU target (Bifrost architecture).</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
-<dd class="field-odd"><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p>
+<dd class="field-odd"><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p>
 </dd>
 </dl>
 </dd></dl>
@@ -680,8 +680,8 @@ Default: sifive-u54 rv64gc</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – CPU name.</p></li>
-<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
+<li><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – CPU name.</p></li>
+<li><p><strong>options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – Additional options</p></li>
 </ul>
 </dd>
 </dl>
@@ -694,17 +694,17 @@ Default: sifive-u54 rv64gc</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cpu_ver</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> (</em><em>default: &quot;v66&quot;</em><em>)</em>) – CPU version used for code generation. Not all allowed cpu str
+<li><p><strong>cpu_ver</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> (</em><em>default: &quot;v66&quot;</em><em>)</em>) – CPU version used for code generation. Not all allowed cpu str
 will be valid, LLVM will throw an error.</p></li>
 <li><p><strong>parameters</strong> (<em>Recognized keyword</em>) – </p></li>
 <li><p><strong>-----------------------------</strong> – </p></li>
-<li><p><strong>hvx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.9)"><em>int</em></a><em> (</em><em>default: 128</em><em>)</em>) – Size of HVX vector in bytes. Value of 0 disables HVX codegen.</p></li>
-<li><p><strong>sim_options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em><em> (</em><em>default: None</em><em>)</em>) – User defined sim arguments. CPU version defaults to cpu_ver.
+<li><p><strong>hvx</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a><em> (</em><em>default: 128</em><em>)</em>) – Size of HVX vector in bytes. Value of 0 disables HVX codegen.</p></li>
+<li><p><strong>sim_options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em><em> (</em><em>default: None</em><em>)</em>) – User defined sim arguments. CPU version defaults to cpu_ver.
 Otherwise, separate versions are used for codegen and sim. Not
 all allowed cpu strings will be valid, simulator will throw an
 error if invalid. Does not affect codegen.</p></li>
-<li><p><strong>llvm_options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em><em> (</em><em>default: None</em><em>)</em>) – User defined compiler arguments.</p></li>
-<li><p><strong>link_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.9)"><em>bool</em></a><em> (</em><em>default: False</em><em>)</em>) – Whether to link graph parameters into the LLVM module.</p></li>
+<li><p><strong>llvm_options</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em><em> (</em><em>default: None</em><em>)</em>) – User defined compiler arguments.</p></li>
+<li><p><strong>link_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.10)"><em>bool</em></a><em> (</em><em>default: False</em><em>)</em>) – Whether to link graph parameters into the LLVM module.</p></li>
 </ul>
 </dd>
 </dl>
@@ -712,7 +712,7 @@ error if invalid. Does not affect codegen.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.target.list_tags">
-<span class="sig-prename descclassname"><span class="pre">tvm.target.</span></span><span class="sig-name descname"><span class="pre">list_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#tvm.target.Target" title="tvm.target.target.Target"><span class="pre">tvm.target.target.Target</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#tvm.target.list_tags" title="永久链接至目标">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">tvm.target.</span></span><span class="sig-name descname"><span class="pre">list_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="#tvm.target.Target" title="tvm.target.target.Target"><span class="pre">tvm.target.target.Target</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#tvm.target.list_tags" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns a dict of tags, which maps each tag name to its corresponding target.</p>
 <dl class="field-list simple">
 <dt class="field-odd">返回</dt>
@@ -720,7 +720,7 @@ error if invalid. Does not affect codegen.</p></li>
 None if TVM is built in runtime-only mode.</p>
 </dd>
 <dt class="field-even">返回类型</dt>
-<dd class="field-even"><p>Optional[<a class="reference internal" href="relay/dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict">Dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)">str</a>, <a class="reference internal" href="#tvm.target.Target" title="tvm.target.Target">Target</a>]]</p>
+<dd class="field-even"><p>Optional[<a class="reference internal" href="relay/dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict">Dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)">str</a>, <a class="reference internal" href="#tvm.target.Target" title="tvm.target.Target">Target</a>]]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -760,7 +760,7 @@ the current target.</p>
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>function</em>) – The default function</p></li>
-<li><p><strong>allow_override</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.9)"><em>bool</em></a>) – Whether to allow the current default to be overridden</p></li>
+<li><p><strong>allow_override</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.10)"><em>bool</em></a>) – Whether to allow the current default to be overridden</p></li>
 </ul>
 </dd>
 </dl>
@@ -774,8 +774,8 @@ the current target.</p>
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>func</strong> (<em>function</em>) – The function to be registered.</p></li>
-<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em> or </em><em>list of str</em>) – The key to be registered.</p></li>
-<li><p><strong>allow_override</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.9)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether to allow existing keys to be overridden.</p></li>
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>list of str</em>) – The key to be registered.</p></li>
+<li><p><strong>allow_override</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.10)"><em>bool</em></a><em>, </em><em>optional</em>) – Whether to allow existing keys to be overridden.</p></li>
 </ul>
 </dd>
 </dl>

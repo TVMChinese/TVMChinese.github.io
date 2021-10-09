@@ -482,16 +482,16 @@ choose other options by choosing from <cite>PLATFORM</cite> list.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Current/Best:    0.00/   0.00 MFLOPS | Progress: (0/10) | 0.00 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (1/10) | 10.88 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (2/10) | 19.20 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (3/10) | 28.79 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (4/10) | 37.22 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (5/10) | 46.54 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (6/10) | 54.70 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (7/10) | 64.19 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (8/10) | 72.35 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (9/10) | 81.94 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (10/10) | 90.35 sWARNING:root:Could not find any valid schedule for task Task(func_name=conv2d_NCHWc.x86, args=((&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;), kwargs={}, workload=(&#39;conv2d_NCHWc.x86&#39;, (&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;)). A file containing the errors has been written to /tmp/tvm_tuning_errors_miq053_d.log.
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (1/10) | 11.26 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (2/10) | 19.70 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (3/10) | 29.23 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (4/10) | 37.60 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (5/10) | 47.42 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (6/10) | 55.71 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (7/10) | 65.30 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (8/10) | 73.72 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (9/10) | 83.50 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (10/10) | 91.83 sWARNING:root:Could not find any valid schedule for task Task(func_name=conv2d_NCHWc.x86, args=((&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;), kwargs={}, workload=(&#39;conv2d_NCHWc.x86&#39;, (&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;)). A file containing the errors has been written to /tmp/tvm_tuning_errors_7pt333o8.log.
 </pre></div>
 </div>
 </div>
@@ -556,7 +556,7 @@ the tuned operator.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
   File <span class="nb">&quot;/tvm/python/tvm/micro/project_api/server.py&quot;</span>, line <span class="m">582</span>, in <span class="n">_dispatch_request</span>
     <span class="n">return_value</span> <span class="o">=</span> <span class="n">dispatch_method</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
-  File <span class="nb">&quot;/tmp/tmpmcbxy3qy/project/microtvm_api_server.py&quot;</span>, line <span class="m">118</span>, in <span class="n">build</span>
+  File <span class="nb">&quot;/tmp/tmpmak9uy2l/project/microtvm_api_server.py&quot;</span>, line <span class="m">118</span>, in <span class="n">build</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">PROJECT_DIR</span><span class="p">)</span>
   File <span class="nb">&quot;/usr/lib/python3.6/subprocess.py&quot;</span>, line <span class="m">311</span>, in <span class="n">check_call</span>
     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">retcode</span><span class="p">,</span> <span class="n">cmd</span><span class="p">)</span>
@@ -605,7 +605,7 @@ the tuned operator.</p>
     <span class="k">del</span> <span class="n">debug_module</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  32.825 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  34.456 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-micro-micro-autotune-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/f39b7e7219dd852263ba763e0b35598c/micro_autotune.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">micro_autotune.py</span></code></a></p>

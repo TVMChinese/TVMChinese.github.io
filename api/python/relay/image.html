@@ -420,10 +420,10 @@ the coordinates of a box.</p></li>
 <li><p><strong>box_indices</strong> (<em>relay.Expr</em>) – A 1-D tensor of shape [num_boxes], box_ind[i] specifies the data that
 the i-th box refers to.</p></li>
 <li><p><strong>crop_size</strong> (<em>Tuple of PrimExpr</em>) – The target size to which each box will be resized.</p></li>
-<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
-<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method, it can be either “nearest_neighbor” or “bilinear”.</p></li>
-<li><p><strong>extrapolation_value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.9)"><em>float</em></a><em>, </em><em>optional</em>) – Value used for extrapolation, when applicable.</p></li>
-<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
+<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method, it can be either “nearest_neighbor” or “bilinear”.</p></li>
+<li><p><strong>extrapolation_value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a><em>, </em><em>optional</em>) – Value used for extrapolation, when applicable.</p></li>
+<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -499,8 +499,8 @@ The out-boundary points will be padded with zeros. The shape of the output will 
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>tvm.Tensor</em>) – 4-D with shape [batch, in_channel, in_height, in_width]</p></li>
 <li><p><strong>grid</strong> (<em>tvm.Tensor</em>) – 4-D with shape [batch, 2, out_height, out_width]</p></li>
-<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – The interpolation method. Only ‘bilinear’ is supported.</p></li>
-<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a>) – The layout of input data and the output.</p></li>
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The interpolation method. Only ‘bilinear’ is supported.</p></li>
+<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The layout of input data and the output.</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -527,17 +527,17 @@ and method can be one of (“linear”, “nearest_neighbor”, “cubic”)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>relay.Expr</em>) – The input data to the operator.</p></li>
 <li><p><strong>size</strong> (<em>Tuple of Int</em><em> or </em><em>Expr</em>) – The out size to which the image will be resized.</p></li>
-<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
-<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method to used [nearest_neighbor, linear, cubic].</p></li>
+<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method to used [nearest_neighbor, linear, cubic].</p></li>
 <li><p><strong>coordinate_transformation_mode</strong> (<em>string</em><em>, </em><em>optional</em>) – Describes how to transform the coordinate in the resized tensor
 to the coordinate in the original tensor.
 Refer to the ONNX Resize operator specification for details.
 [half_pixel, align_corners, asymmetric]</p></li>
 <li><p><strong>rounding_method</strong> (<em>string</em><em>, </em><em>optional</em>) – indicates how to find the “nearest” pixel in nearest_neighbor method
 [round, floor, ceil]</p></li>
-<li><p><strong>cubic_alpha</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.9)"><em>float</em></a>) – Spline Coefficient for cubic interpolation</p></li>
-<li><p><strong>cubic_exclude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.9)"><em>int</em></a>) – Flag to exclude exterior of the image during cubic interpolation</p></li>
-<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
+<li><p><strong>cubic_alpha</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – Spline Coefficient for cubic interpolation</p></li>
+<li><p><strong>cubic_exclude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – Flag to exclude exterior of the image during cubic interpolation</p></li>
+<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -564,17 +564,17 @@ and method can be one of (“linear”, “nearest_neighbor”, “cubic”)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>relay.Expr</em>) – The input data to the operator.</p></li>
 <li><p><strong>size</strong> (<em>Tuple of Int</em><em> or </em><em>Expr</em>) – The out size to which the image will be resized.</p></li>
-<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
-<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method to used [nearest_neighbor, linear, cubic].</p></li>
+<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method to used [nearest_neighbor, linear, cubic].</p></li>
 <li><p><strong>coordinate_transformation_mode</strong> (<em>string</em><em>, </em><em>optional</em>) – Describes how to transform the coordinate in the resized tensor
 to the coordinate in the original tensor.
 Refer to the ONNX Resize operator specification for details.
 [half_pixel, align_corners, asymmetric]</p></li>
 <li><p><strong>rounding_method</strong> (<em>string</em><em>, </em><em>optional</em>) – indicates how to find the “nearest” pixel in nearest_neighbor method
 [round, floor, ceil]</p></li>
-<li><p><strong>cubic_alpha</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.9)"><em>float</em></a>) – Spline Coefficient for bicubic interpolation</p></li>
-<li><p><strong>cubic_exclude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.9)"><em>int</em></a>) – Flag to exclude exterior of the image during bicubic interpolation</p></li>
-<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
+<li><p><strong>cubic_alpha</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – Spline Coefficient for bicubic interpolation</p></li>
+<li><p><strong>cubic_exclude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – Flag to exclude exterior of the image during bicubic interpolation</p></li>
+<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -601,17 +601,17 @@ and method can be one of (“linear”, “nearest_neighbor”, “cubic”)</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>relay.Expr</em>) – The input data to the operator.</p></li>
 <li><p><strong>size</strong> (<em>Tuple of Int</em><em> or </em><em>Expr</em>) – The out size to which the image will be resized.</p></li>
-<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
-<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method to used [nearest_neighbor, linear, cubic].</p></li>
+<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Layout of the input.</p></li>
+<li><p><strong>method</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Scale method to used [nearest_neighbor, linear, cubic].</p></li>
 <li><p><strong>coordinate_transformation_mode</strong> (<em>string</em><em>, </em><em>optional</em>) – Describes how to transform the coordinate in the resized tensor
 to the coordinate in the original tensor.
 Refer to the ONNX Resize operator specification for details.
 [half_pixel, align_corners, asymmetric]</p></li>
 <li><p><strong>rounding_method</strong> (<em>string</em><em>, </em><em>optional</em>) – indicates how to find the “nearest” pixel in nearest_neighbor method
 [round, floor, ceil]</p></li>
-<li><p><strong>cubic_alpha</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.9)"><em>float</em></a>) – Spline Coefficient for cubic interpolation</p></li>
-<li><p><strong>cubic_exclude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.9)"><em>int</em></a>) – Flag to exclude exterior of the image during cubic interpolation</p></li>
-<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
+<li><p><strong>cubic_alpha</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – Spline Coefficient for cubic interpolation</p></li>
+<li><p><strong>cubic_exclude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – Flag to exclude exterior of the image during cubic interpolation</p></li>
+<li><p><strong>out_dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – Type to return. If left None returns the same type as input.</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
