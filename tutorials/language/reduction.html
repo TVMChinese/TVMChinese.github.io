@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Reduction &mdash; tvm 0.8.dev1728+g18870dfb0 文档</title>
+  <title>Reduction &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="内部函数和数学函数" href="intrin_math.html" />
-    <link rel="prev" title="TVM中的调度原语" href="schedule_primitives.html" /> 
+    <link rel="next" title="Intrinsics and Math Functions" href="intrin_math.html" />
+    <link rel="prev" title="Schedule Primitives in TVM" href="schedule_primitives.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1728+g18870dfb0
+                  0.8.dev1729+g7061bd00f
                 </div>
             
           
@@ -198,33 +198,33 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="schedule_primitives.html">TVM中的调度原语</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Reduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#describe-sum-of-rows">描述行和</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#describe-sum-of-rows">Describe Sum of Rows</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#schedule-the-reduction">Schedule the Reduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#reduction-factoring-and-parallelization">Reduction Factoring and Parallelization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross-thread-reduction">Cross Thread Reduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#describe-convolution-via-2d-reduction">Describe Convolution via 2D Reduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#define-general-commutative-reduction-operation">Define General Commutative Reduction Operation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#summary">总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="intrin_math.html">内部函数和数学函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intrin_math.html">Intrinsics and Math Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scan.html">Scan and Recurrent Kernel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extern_op.html">External Tensor Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tensorize.html">Use Tensorize to Leverage Hardware Intrinsics</a></li>
@@ -239,23 +239,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -335,12 +335,14 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击:ref:<cite>这里 &lt;sphx_glr_download_tutorials_language_reduction.py&gt;</cite> 下载完整示例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-language-reduction-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="reduction">
 <span id="sphx-glr-tutorials-language-reduction-py"></span><h1>Reduction<a class="headerlink" href="#reduction" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
-<p>这是一篇关于如何减少TVM的介绍材料。像sum/max/min这样的关联约化算子是线性代数运算的典型构造块。</p>
+<p><strong>Author</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
+<p>This is an introduction material on how to do reduction in TVM.
+Associative reduction operators like sum/max/min are typical
+construction blocks of linear algebra operations.</p>
 <p>In this tutorial, we will demonstrate how to do reduction in TVM.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
 
@@ -351,10 +353,15 @@
 </pre></div>
 </div>
 <div class="section" id="describe-sum-of-rows">
-<h2>描述行和<a class="headerlink" href="#describe-sum-of-rows" title="永久链接至标题">¶</a></h2>
-<p>假设以我们想要计算行的和作为我们的示例。在numpy语义中，这可以写成:code:<cite>B = numpy.sum(A, axis=1)</cite></p>
-<p>以下几行描述行和操作。为了创建缩减公式，我们使用:any:<cite>te.reduce_axis</cite>. :any:<a href="#id1"><span class="problematic" id="id2">`</span></a>te.reduce_axis`在缩量范围内:any:<a href="#id3"><span class="problematic" id="id4">`</span></a>te.sum`接受要缩减的表达式以及缩减轴，并计算声明范围内所有的k值之和。</p>
-<p>等效的C代码如下所示：</p>
+<h2>Describe Sum of Rows<a class="headerlink" href="#describe-sum-of-rows" title="永久链接至标题">¶</a></h2>
+<p>Assume we want to compute sum of rows as our example.
+In numpy semantics this can be written as <code class="code docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">numpy.sum(A,</span> <span class="pre">axis=1)</span></code></p>
+<p>The following lines describe the row sum operation.
+To create a reduction formula, we declare a reduction axis using
+<a class="reference internal" href="../../api/python/te.html#tvm.te.reduce_axis" title="tvm.te.reduce_axis"><code class="xref any py py-func docutils literal notranslate"><span class="pre">te.reduce_axis</span></code></a>. <a class="reference internal" href="../../api/python/te.html#tvm.te.reduce_axis" title="tvm.te.reduce_axis"><code class="xref any py py-func docutils literal notranslate"><span class="pre">te.reduce_axis</span></code></a> takes in the range of reductions.
+<a class="reference internal" href="../../api/python/te.html#tvm.te.sum" title="tvm.te.sum"><code class="xref any py py-func docutils literal notranslate"><span class="pre">te.sum</span></code></a> takes in the expression to be reduced as well as the reduction
+axis and compute the sum of value over all k in the declared range.</p>
+<p>The equivalent C code is as follows:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
@@ -379,7 +386,7 @@ Before doing anything, let us print out the IR code of default schedule.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {B: Buffer(B_2: Pointer(float32), float32, [n: int32], [stride: int32], type=&quot;auto&quot;),
@@ -403,7 +410,7 @@ axis by different factors. The result is a nested reduction.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {B: Buffer(B_2: Pointer(float32), float32, [n: int32], [stride: int32], type=&quot;auto&quot;),
@@ -434,7 +441,7 @@ axis by different factors. The result is a nested reduction.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {B: Buffer(B_2: Pointer(float32), float32, [n: int32], [stride: int32], type=&quot;auto&quot;),
@@ -474,7 +481,7 @@ result B.rf. The factored dimension becomes the first dimension of B.rf.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {B: Buffer(B_2: Pointer(float32), float32, [n: int32], [stride: int32], type=&quot;auto&quot;),
@@ -506,7 +513,7 @@ the first axis of reduced result of B.f</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">B</span><span class="p">]</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[reduce(combiner=comm_reducer(result=[(x + y)], lhs=[x], rhs=[y], identity_element=[0f]), source=[B.rf[k.inner.v, ax0]], init=[], axis=[iter_var(k.inner.v, range(min=0, ext=16))], where=(bool)1, value_index=0)]
 </pre></div>
 </div>
@@ -532,7 +539,7 @@ columns by threadIdx.x and finally do a cross thread reduction over threadIdx.x<
 <span class="nb">print</span><span class="p">(</span><span class="n">fcuda</span><span class="o">.</span><span class="n">imported_modules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_source</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>#ifdef _WIN32
   using uint = unsigned int;
   using uchar = unsigned char;
@@ -610,7 +617,7 @@ Here is an example for 2D convolution with filter size = [3, 3] and strides = [1
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">Input</span><span class="p">,</span> <span class="n">Filter</span><span class="p">,</span> <span class="n">Output</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(Input_1: handle, Filter_1: handle, Output_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {Output: Buffer(Output_2: Pointer(float32), float32, [(n: int32 - 2), (n - 2)], []),
@@ -652,7 +659,7 @@ See <a class="reference internal" href="tuple_inputs.html#reduction-with-tuple-i
 </div>
 </div>
 <div class="section" id="summary">
-<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial provides a walk through of reduction schedule.</p>
 <ul class="simple">
 <li><p>Describe reduction with reduce_axis.</p></li>
@@ -661,10 +668,10 @@ See <a class="reference internal" href="tuple_inputs.html#reduction-with-tuple-i
 </ul>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-language-reduction-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/5bd1bb9c6505ea40407fa19f01579414/reduction.py"><code class="xref download docutils literal notranslate"><span class="pre">下载Python源代码:</span> <span class="pre">reduction.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/5bd1bb9c6505ea40407fa19f01579414/reduction.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">reduction.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/ea430ddc44893f3ac69585718b79c09c/reduction.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载Jupyter</span> <span class="pre">notebook:</span> <span class="pre">reduction.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/ea430ddc44893f3ac69585718b79c09c/reduction.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">reduction.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -681,10 +688,10 @@ See <a class="reference internal" href="tuple_inputs.html#reduction-with-tuple-i
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="intrin_math.html" class="btn btn-neutral float-right" title="内部函数和数学函数" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="intrin_math.html" class="btn btn-neutral float-right" title="Intrinsics and Math Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="schedule_primitives.html" class="btn btn-neutral float-left" title="TVM中的调度原语" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="schedule_primitives.html" class="btn btn-neutral float-left" title="Schedule Primitives in TVM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

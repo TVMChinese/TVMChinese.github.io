@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Relay 介绍 &mdash; tvm 0.8.dev1728+g18870dfb0 文档</title>
+  <title>Introduction to Relay IR &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Relay Operator Strategy" href="relay_op_strategy.html" />
-    <link rel="prev" title="混合前端开发指南" href="hybrid_script.html" /> 
+    <link rel="prev" title="Hybrid Frontend Developer Guide" href="hybrid_script.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1728+g18870dfb0
+                  0.8.dev1729+g7061bd00f
                 </div>
             
           
@@ -198,20 +198,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -220,13 +220,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Design and Architecture</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#example-compilation-flow">Example Compilation Flow</a></li>
@@ -241,8 +241,8 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-te">tvm/te</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-topi">tvm/topi</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#tvm-relay">tvm/relay</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Relay 介绍</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#build-a-computational-graph-with-relay">使用Relay建立一个计算图</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction to Relay IR</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-a-computational-graph-with-relay">Build a Computational Graph with Relay</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-support-multiple-functions-graphs">Module: Support Multiple Functions (Graphs)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#let-binding-and-scopes">Let Binding and Scopes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#why-we-might-need-let-binding">Why We Might Need Let Binding</a></li>
@@ -255,18 +255,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-autotvm">tvm/autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#frontends">Frontends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#security">安全</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#security">Security</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#microtvm">microTVM</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
             
@@ -325,7 +325,7 @@
         
           <li><a href="index.html">Design and Architecture</a> <span class="br-arrow">></span></li>
         
-      <li>Relay 介绍</li>
+      <li>Introduction to Relay IR</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -345,26 +345,45 @@
            <div itemprop="articleBody">
             
   <div class="section" id="introduction-to-relay-ir">
-<span id="relay-dev-intro"></span><h1>Relay 介绍<a class="headerlink" href="#introduction-to-relay-ir" title="永久链接至标题">¶</a></h1>
-<p>本文将介绍 NNVM 的下一代中间表示: Relay。 我们期待两种背景的读者——具有编程语言背景的读者和熟悉计算图表示的深度学习框架开发人员。</p>
-<p>我们在这里简要总结Relay的设计目标，并将在后面部分讨论这些要点。</p>
+<span id="relay-dev-intro"></span><h1>Introduction to Relay IR<a class="headerlink" href="#introduction-to-relay-ir" title="永久链接至标题">¶</a></h1>
+<p>This article introduces Relay IR – the second generation of NNVM.
+We expect readers from two kinds of background – those who have a programming language background and deep learning
+framework developers who are familiar with the computational graph representation.</p>
+<p>We briefly summarize the design goal here, and will touch upon these points in the later part of the article.</p>
 <ul class="simple">
-<li><p>支持传统的数据流风格的编程和变换。</p></li>
-<li><p>支持函数式编程风格，包括函数式编程里的scoping 和 let-binding，并且我们将Relay设计成了一门可微分的语言。</p></li>
-<li><p>支持数据流风格和函数式风格的混合编程。</p></li>
+<li><p>Support traditional data flow-style programming and transformations.</p></li>
+<li><p>Support functional-style scoping, let-binding and making it a fully featured differentiable language.</p></li>
+<li><p>Being able to allow the user to mix the two programming styles.</p></li>
 </ul>
 <div class="section" id="build-a-computational-graph-with-relay">
-<h2>使用Relay建立一个计算图<a class="headerlink" href="#build-a-computational-graph-with-relay" title="永久链接至标题">¶</a></h2>
-<p>传统的深度学习框架使用计算图作为它们的中间表示。 计算图（或数据流图）是代表计算过程的有向无环图（DAG）。 尽管由于缺少控制流，数据流图在计算能力方面受到限制，但它们的简单性使其易于实现自动微分并针对异构执行环境进行编译（例如，在专用硬件上执行计算图的一部分，即子图）。</p>
+<h2>Build a Computational Graph with Relay<a class="headerlink" href="#build-a-computational-graph-with-relay" title="永久链接至标题">¶</a></h2>
+<p>Traditional deep learning frameworks use computational graphs as their intermediate representation.
+A computational graph (or dataflow graph), is a directed acyclic graph (DAG) that represents the computation.
+Though dataflow graphs are limited in terms of the computations they are capable of expressing due to
+lacking control flow, their simplicity makes it easier to implement automatic differentiation and
+compile for heterogeneous execution environments (e.g., executing parts of the graph on specialized hardware).</p>
 <img alt="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/relay/dataflow.png" class="align-center" src="https://raw.githubusercontent.com/tvmai/tvmai.github.io/main/images/relay/dataflow.png" />
-<p>我们可以使用 Relay 构建计算（数据流）图。具体来说，上面的代码展示了如何构造一个简单只有两个节点的计算图。你会发现示例的语法与第一代 NNVM 等现有基于计算图的中间表示没有太大区别，唯一的区别只是术语的不同：</p>
+<p>You can use Relay to build a computational (dataflow) graph. Specifically, the above code shows how to
+construct a simple two-node graph. You can find that the syntax of the example is not that different from existing
+computational graph IR like NNVMv1, with the only difference in terms of terminology:</p>
 <ul class="simple">
-<li><p>现有框架通常使用图和子图</p></li>
-<li><p>Relay 使用函数，例如 <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">(%x)</span></code> 来表示图</p></li>
+<li><p>Existing frameworks usually use graph and subgraph</p></li>
+<li><p>Relay uses function e.g. –  <code class="docutils literal notranslate"><span class="pre">fn</span> <span class="pre">(%x)</span></code>, to indicate the graph</p></li>
 </ul>
-<p>每个数据流节点都是 Relay 中的一个 CallNode。 Relay Python DSL 允许用户快速地构建数据流图。在上面的代码中需要注意的是我们显式地构造了一个 Add 节点，其中两个输入点都指向 <code class="docutils literal notranslate"><span class="pre">%1</span></code>。当深度学习框架对上面这段程序进行推理时，它将会按照拓扑顺序进行计算，并且 <code class="docutils literal notranslate"><span class="pre">%1</span></code> 只会被计算一次。尽管这对于深度学习框架构建者来说是很自然的，但它可能会让 PL（程序语言）的研究者感到惊讶。如果我们实现一个简单的visitor来打印结果并将结果视为嵌套的 Call 表达式，它就变成了 <code class="docutils literal notranslate"><span class="pre">log(%x)</span> <span class="pre">+</span> <span class="pre">log(%x)</span></code> 。</p>
-<p>这种歧义是由于当 DAG 中存在共享节点时对程序语义的不同理解造成的。在正常的函数式 IR 中，嵌套表达式被视为表达式树，而没有考虑 <code class="docutils literal notranslate"><span class="pre">%1</span></code> 在 <code class="docutils literal notranslate"><span class="pre">%2</span></code> 中其实被重用两次。</p>
-<p>Relay IR 注意到了这个区别。深度学习框架用户经常使用这种方式构建计算图的时候经常会发生 DAG 节点的重用。因此，当我们以文本格式打印 Relay 程序时，我们每行打印一个 CallNode ，并且给每个 CallNode 分配一个临时 id <code class="docutils literal notranslate"><span class="pre">(%1,</span> <span class="pre">%2)</span></code>，以便可以在程序的后续部分中引用每个被重用的节点。</p>
+<p>Each dataflow node is a CallNode in Relay. The Relay Python DSL allows you to construct a dataflow graph quickly.
+One thing we want to highlight in the above code – is that we explicitly constructed an Add node with
+both input point to <code class="docutils literal notranslate"><span class="pre">%1</span></code>.  When a deep learning framework evaluates the above program, it will compute
+the nodes in topological order, and <code class="docutils literal notranslate"><span class="pre">%1</span></code> will only be computed once.
+While this fact is very natural to deep learning framework builders, it is something that might
+surprise a PL researcher in the first place.  If we implement a simple visitor to print out the result and
+treat the result as nested Call expression, it becomes <code class="docutils literal notranslate"><span class="pre">log(%x)</span> <span class="pre">+</span> <span class="pre">log(%x)</span></code>.</p>
+<p>Such ambiguity is caused by different interpretations of program semantics when there is a shared node in the DAG.
+In a normal functional programming IR, nested expressions are treated as expression trees, without considering the
+fact that the <code class="docutils literal notranslate"><span class="pre">%1</span></code> is actually reused twice in <code class="docutils literal notranslate"><span class="pre">%2</span></code>.</p>
+<p>The Relay IR is mindful of this difference. Usually, deep learning framework users build the computational
+graph in this fashion, where a DAG node reuse often occurs. As a result, when we print out the Relay program in
+the text format, we print one CallNode per line and assign a temporary id <code class="docutils literal notranslate"><span class="pre">(%1,</span> <span class="pre">%2)</span></code> to each CallNode so each common
+node can be referenced in later parts of the program.</p>
 </div>
 <div class="section" id="module-support-multiple-functions-graphs">
 <h2>Module: Support Multiple Functions (Graphs)<a class="headerlink" href="#module-support-multiple-functions-graphs" title="永久链接至标题">¶</a></h2>
@@ -495,10 +514,10 @@ that are not covered by this material; you are more than welcome to look at othe
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relay_op_strategy.html" class="btn btn-neutral float-right" title="Relay Operator Strategy" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relay_op_strategy.html" class="btn btn-neutral float-right" title="Relay Operator Strategy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="hybrid_script.html" class="btn btn-neutral float-left" title="混合前端开发指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="hybrid_script.html" class="btn btn-neutral float-left" title="Hybrid Frontend Developer Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

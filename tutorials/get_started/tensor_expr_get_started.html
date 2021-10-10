@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>使用张量表达式来处理运算符 &mdash; tvm 0.8.dev1728+g18870dfb0 文档</title>
+  <title>Working with Operators Using Tensor Expression &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1728+g18870dfb0
+                  0.8.dev1729+g7061bd00f
                 </div>
             
           
@@ -198,47 +198,47 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Getting Started With TVM</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">介绍</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">使用TVMC编译和优化一个模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">Compiling and Optimizing a Model with TVMC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_relay_x86.html">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">使用张量表达式来处理运算符</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu">例 1：为CPU用TE的形式写并调度一个向量加法。</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#describing-the-vector-computation">描述向量计算</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#create-a-default-schedule-for-the-computation">为计算创建一个默认的调度</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#compile-and-evaluate-the-default-schedule">编译并评估默认调度</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#updating-the-schedule-to-use-paralleism">更新调度来使用并行</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#updating-the-schedule-to-use-vectorization">更新调度以使用向量化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comparing-the-diferent-schedules">比较不同的调度</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#targeting-vector-addition-for-gpus-optional">TVM可以适配多种架构。在下一个示例中，我们将针对GPU编译向量加法。</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Working with Operators Using Tensor Expression</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu">Example 1: Writing and Scheduling Vector Addition in TE for CPU</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#describing-the-vector-computation">Describing the Vector Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-default-schedule-for-the-computation">Create a Default Schedule for the Computation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-and-evaluate-the-default-schedule">Compile and Evaluate the Default Schedule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-the-schedule-to-use-paralleism">Updating the Schedule to Use Paralleism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#updating-the-schedule-to-use-vectorization">Updating the Schedule to Use Vectorization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#comparing-the-diferent-schedules">Comparing the Diferent Schedules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#targeting-vector-addition-for-gpus-optional">Targeting Vector Addition for GPUs (Optional)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#saving-and-loading-compiled-modules">保存和加载编译好的模块</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#load-compiled-module">加载编译好的模块</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pack-everything-into-one-library">将所有内容打包到一个库中</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-and-loading-compiled-modules">Saving and Loading Compiled Modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load-compiled-module">Load Compiled Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pack-everything-into-one-library">Pack Everything into One Library</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#generate-opencl-code">产生OpenCL代码</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#example-2-manually-optimizing-matrix-multiplication-with-te">示例 2：使用 TE 手动优化矩阵乘法</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#preparation-and-performance-baseline">准备和基线（Baseline）</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optimization-1-blocking">优化1：分块</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optimization-2-vectorization">优化2：向量化</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optimization-3-loop-permutation">优化3：循环重排</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optimization-4-array-packing">优化4：数组压缩</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-opencl-code">Generate OpenCL Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-2-manually-optimizing-matrix-multiplication-with-te">Example 2: Manually Optimizing Matrix Multiplication with TE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparation-and-performance-baseline">Preparation and Performance Baseline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimization-1-blocking">Optimization 1: Blocking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimization-2-vectorization">Optimization 2: Vectorization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimization-3-loop-permutation">Optimization 3: Loop Permutation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimization-4-array-packing">Optimization 4: Array Packing</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#optimization-5-optimizing-block-writing-through-caching">Optimization 5: Optimizing Block Writing Through Caching</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#optimization-6-parallelization">Optimization 6: Parallelization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#summary-of-matrix-multiplication-example">Summary of Matrix Multiplication Example</a></li>
@@ -250,10 +250,10 @@
 <li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto_scheduler_matmul_x86.html">Optimizing Operators with Auto-scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cross_compilation_and_rpc.html">Cross Compilation and RPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">Quick Start Tutorial for Compiling Deep Learning Models</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -262,23 +262,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -337,7 +337,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>使用张量表达式来处理运算符</li>
+      <li>Working with Operators Using Tensor Expression</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -358,16 +358,31 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击2 <a class="reference internal" href="#sphx-glr-download-tutorials-get-started-tensor-expr-get-started-py"><span class="std std-ref">这里</span></a> 来下载全部的示例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-get-started-tensor-expr-get-started-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="working-with-operators-using-tensor-expression">
-<span id="tutorial-tensor-expr-get-started"></span><span id="sphx-glr-tutorials-get-started-tensor-expr-get-started-py"></span><h1>使用张量表达式来处理运算符<a class="headerlink" href="#working-with-operators-using-tensor-expression" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
-<p>本次教程，我们会关注于TVM怎样使用张量表达式（TE）来定义张量计算和优化循环。 TE 用一种纯函数语言来描述张量计算（这意味着每一个表达式都没有副作用）。当在TVM整体环境下来看，Relay 用一系列操作符来描述一个计算过程。这一系列操作符中的每一个操作符可以都被表示为一个TE表达式，并且这每一个TE表达式都采用张量输入，然后生成一个张量输出。</p>
-<p>这是TVM中的张量表达式语言的介绍性教程。TVM用一种领域特定张量表达式来进行高效的内核构建。我们会用两个使用张量表达式语言的例子来演示基本的工作流程。第一个例子我们会用向量加法来介绍TE和调度。第二个例子用TE进行了一个矩阵乘法的逐步优化，来拓展了这两个概念。这个矩阵乘法的示例会被当做未来关于TVM更多高级功能的教程的比较基础。</p>
+<span id="tutorial-tensor-expr-get-started"></span><span id="sphx-glr-tutorials-get-started-tensor-expr-get-started-py"></span><h1>Working with Operators Using Tensor Expression<a class="headerlink" href="#working-with-operators-using-tensor-expression" title="永久链接至标题">¶</a></h1>
+<p><strong>Author</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
+<p>In this tutorial we will turn our attention to how TVM works with Tensor
+Expression (TE) to define tensor computations and apply loop optimizations. TE
+describes tensor computations in a pure functional language (that is each
+expression has no side effects). When viewed in context of the TVM as a whole,
+Relay describes a computation as a set of operators, and each of these
+operators can be represented as a TE expression where each TE expression takes
+input tensors and produces an output tensor.</p>
+<p>This is an introductory tutorial to the Tensor Expression language in TVM. TVM
+uses a domain specific tensor expression for efficient kernel construction. We
+will demonstrate the basic workflow with two examples of using the tensor expression
+language. The first example introduces TE and scheduling with vector
+addition. The second expands on these concepts with a step-by-step optimization
+of a matrix multiplication with TE. This matrix multiplication example will
+serve as the comparative basis for future tutorials covering more advanced
+features of TVM.</p>
 <div class="section" id="example-1-writing-and-scheduling-vector-addition-in-te-for-cpu">
-<h2>例 1：为CPU用TE的形式写并调度一个向量加法。<a class="headerlink" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu" title="永久链接至标题">¶</a></h2>
-<p>让我们来看一个python示例，我们会实现用一个TE来表达向量加法，然后针对CPU做一个调度。我们首先初始化TVM的环境。</p>
+<h2>Example 1: Writing and Scheduling Vector Addition in TE for CPU<a class="headerlink" href="#example-1-writing-and-scheduling-vector-addition-in-te-for-cpu" title="永久链接至标题">¶</a></h2>
+<p>Let’s look at an example in Python in which we will implement a TE for
+vector addition, followed by a schedule targeted towards a CPU.
+We begin by initializing a TVM environment.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">import</span> <span class="nn">tvm.testing</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
@@ -384,8 +399,19 @@
 </pre></div>
 </div>
 <div class="section" id="describing-the-vector-computation">
-<h3>描述向量计算<a class="headerlink" href="#describing-the-vector-computation" title="永久链接至标题">¶</a></h3>
-<p>我们描述一个向量加法计算。TVM采用张量语义，将每一个中间结果都表示成一个多维数组。用户需要描述生成张量的计算规则。我们首先定义一个符号变量 <code class="docutils literal notranslate"><span class="pre">n</span></code> 来表示shape。然后我们来定义两个占位张量 <code class="docutils literal notranslate"><span class="pre">A</span></code> 和 <code class="docutils literal notranslate"><span class="pre">B</span></code>，他们具有相同的shape <code class="docutils literal notranslate"><span class="pre">(n,)</span></code>。然后我们用一个 <code class="docutils literal notranslate"><span class="pre">compute</span></code> 操作来描述结果张量``C``。 <code class="docutils literal notranslate"><span class="pre">compute</span></code> 定义了一个计算，输出张量符合指定的形状， 并在由lambda函数定义的张量中的每个位置执行计算。请注意，虽然 <code class="docutils literal notranslate"><span class="pre">n</span></code> 是一个变量，但它定义了 <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> 和``C`` 张量之间统一的形状。请记住，在此阶段不会有任何实际的计算发生，因为我们只是声明了这个计算该怎么被执行。</p>
+<h3>Describing the Vector Computation<a class="headerlink" href="#describing-the-vector-computation" title="永久链接至标题">¶</a></h3>
+<p>We describe a vector addition computation. TVM adopts tensor semantics, with
+each intermediate result represented as a multi-dimensional array. The user
+needs to describe the computation rule that generates the tensors. We first
+define a symbolic variable <code class="docutils literal notranslate"><span class="pre">n</span></code> to represent the shape. We then define two
+placeholder Tensors, <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, with given shape <code class="docutils literal notranslate"><span class="pre">(n,)</span></code>. We then
+describe the result tensor <code class="docutils literal notranslate"><span class="pre">C</span></code>, with a <code class="docutils literal notranslate"><span class="pre">compute</span></code> operation. The
+<code class="docutils literal notranslate"><span class="pre">compute</span></code> defines a computation, with the output conforming to the
+specified tensor shape and the computation to be performed at each position
+in the tensor defined by the lambda function. Note that while <code class="docutils literal notranslate"><span class="pre">n</span></code> is a
+variable, it defines a consistent shape between the <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code>
+tensors. Remember, no actual computation happens during this phase, as we
+are only declaring how the computation should be done.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
@@ -394,7 +420,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>Lambda函数</p>
+<p>Lambda Functions</p>
 <p>The second argument to the <code class="docutils literal notranslate"><span class="pre">te.compute</span></code> method is the function that
 performs the computation. In this example, we’re using an anonymous function,
 also known as a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function, to define the computation, in this case
@@ -402,9 +428,19 @@ addition on the <code class="docutils literal notranslate"><span class="pre">i``
 </div>
 </div>
 <div class="section" id="create-a-default-schedule-for-the-computation">
-<h3>为计算创建一个默认的调度<a class="headerlink" href="#create-a-default-schedule-for-the-computation" title="永久链接至标题">¶</a></h3>
-<p>虽然上文定义了计算的规则，我们可以用不同的方式来计算``C``以适应不同的设备。对于一个多轴张量来说，你可以选择先迭代哪个轴，或者可以跨不同的线程来拆分计算。TVM需要用户提供一个调度，即对计算该怎样执行的描述。TE中的调度操作可以改变循环的顺序，跨不同线程拆分计算，数据分块计算等等。调度背后的一个重要概念是它们仅仅描述计算是如何被执行的，所以对一个相同的TE来说，不同的调度也会生成相同的结果。</p>
-<p>TVM允许你创建一个简单的调度，按行优先迭代顺序来计算 <code class="docutils literal notranslate"><span class="pre">C</span></code>。</p>
+<h3>Create a Default Schedule for the Computation<a class="headerlink" href="#create-a-default-schedule-for-the-computation" title="永久链接至标题">¶</a></h3>
+<p>While the above lines describe the computation rule, we can compute <code class="docutils literal notranslate"><span class="pre">C</span></code> in
+many different ways to fit different devices. For a tensor with multiple
+axes, you can choose which axis to iterate over first, or computations can be
+split across different threads. TVM requires that the user to provide a
+schedule, which is a description of how the computation should be performed.
+Scheduling operations within TE can change loop orders, split computations
+across different threads, group blocks of data together, amongst other
+operations. An important concept behind schedules is that they only describe
+how the computation is performed, so different schedules for the same TE will
+produce the same result.</p>
+<p>TVM allows you to create a naive schedule that will compute <code class="docutils literal notranslate"><span class="pre">C</span></code> in by
+iterating in row major order.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 <span class="p">}</span>
@@ -415,13 +451,26 @@ addition on the <code class="docutils literal notranslate"><span class="pre">i``
 </div>
 </div>
 <div class="section" id="compile-and-evaluate-the-default-schedule">
-<h3>编译并评估默认调度<a class="headerlink" href="#compile-and-evaluate-the-default-schedule" title="永久链接至标题">¶</a></h3>
-<p>有了TE表达式和调度，我们就能为目标语言和架构（在本例中为LLVM和CPU）生成可运行的代码。我们向TVM提供调度，使用该调度的TE表达式列表，目标和主机，以及我们生成的函数名称。输出的结果是可以直接从Python调用的一个类型被擦除的函数。</p>
-<p>接下来这行，我们用tvm.build来创建一个函数。build函数接收调度，所需的函数签名（包括输入和输出）还有我们想要编译成的目标语言。</p>
+<h3>Compile and Evaluate the Default Schedule<a class="headerlink" href="#compile-and-evaluate-the-default-schedule" title="永久链接至标题">¶</a></h3>
+<p>With the TE expression and a schedule, we can produce runnable code for our
+target language and architecture, in this case LLVM and a CPU. We provide
+TVM with the schedule, a list of the TE expressions that are in the schedule,
+the target and host, and the name of the function we are producing. The result
+of the output is a type-erased function that can be called directly from Python.</p>
+<p>In the following line, we use tvm.build to create a function. The build
+function takes the schedule, the desired signature of the function (including
+the inputs and outputs) as well as target language we want to compile to.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fadd</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;myadd&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>让我们来运行这个函数，然后将输出与numpy中相同的计算结果进行比较。这个编译后的TVM函数被暴露为一个简洁的C API，可以用任何语言来调用。我们首先创建一个TVM可以将调度编译上去的设备，在本例中是LLVM CPU。然后我们可以在设备中初始化张量，再执行我们自定义的计算。为了验证计算是否正确，我们可以将C张量的输出结果跟numpy执行的相同计算的结果进行比较。</p>
+<p>Let’s run the function, and compare the output to the same computation in
+numpy. The compiled TVM function is exposes a concise C API that can be invoked
+from any language. We begin by creating a device, which is a device (CPU in this
+example) that TVM can compile the schedule to. In this case the device is an
+LLVM CPU target. We can then initialize the tensors in our device and
+perform the custom addition operation. To verify that the computation is
+correct, we can compare the result of the output of the c tensor to the same
+computation performed by numpy.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="n">tgt</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">1024</span>
@@ -432,7 +481,8 @@ addition on the <code class="docutils literal notranslate"><span class="pre">i``
 <span class="n">tvm</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="o">+</span> <span class="n">b</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>为了比较这种形式的计算和numpy计算的速度，创建一个辅助函数来运行TVM生成的代码生成一个profile文件。</p>
+<p>To get a comparison of how fast this version is compared to numpy, create a
+helper function to run a profile of the TVM generated code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">timeit</span>
 
 <span class="n">np_repeat</span> <span class="o">=</span> <span class="mi">100</span>
@@ -466,23 +516,35 @@ addition on the <code class="docutils literal notranslate"><span class="pre">i``
 <span class="n">evaluate_addition</span><span class="p">(</span><span class="n">fadd</span><span class="p">,</span> <span class="n">tgt</span><span class="p">,</span> <span class="s2">&quot;naive&quot;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Numpy running time: 0.000006
 naive: 0.000005
 </pre></div>
 </div>
 </div>
 <div class="section" id="updating-the-schedule-to-use-paralleism">
-<h3>更新调度来使用并行<a class="headerlink" href="#updating-the-schedule-to-use-paralleism" title="永久链接至标题">¶</a></h3>
-<p>现在我们已经说明了TE的基础知识，让我们更深度地了解调度的作用，以及如何使用它们来优化不同加架构的张量表达式。调度是应用于将一个表达式通过多种不同的方式进行变换的一系列步骤。当调度应用于TE中的表达式时，输入和输出保持不变，但当编译时表达式的实现可能会发生变化。在默认的调度中，这种张量加运算是串行的，但很容易跨所有处理器线程并行话。我们可以将并行调度操作应用于我们的计算。</p>
+<h3>Updating the Schedule to Use Paralleism<a class="headerlink" href="#updating-the-schedule-to-use-paralleism" title="永久链接至标题">¶</a></h3>
+<p>Now that we’ve illustrated the fundamentals of TE, let’s go deeper into what
+schedules do, and how they can be used to optimize tensor expressions for
+different architectures. A schedule is a series of steps that are applied to
+an expression to transform it in a number of different ways. When a schedule
+is applied to an expression in TE, the inputs and outputs remain the same,
+but when compiled the implementation of the expression can change. This
+tensor addition, in the default schedule, is run serially but is easy to
+parallelize across all of the processor threads. We can apply the parallel
+schedule operation to our computation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">parallel</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">axis</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
-<p><a href="#id1"><span class="problematic" id="id2">``</span></a>tvm.lower``命令将生成TE的中间表示（IR），以及对应的调度。通过lower我们应用不同的调度操作的表达式，我们可以看到调度对计算顺序的影响。我们使用``simple_mode=True``标志来返回一个可读的C风格语句。</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tvm.lower</span></code> command will generate the Intermediate Representation (IR)
+of the TE, with the corresponding schedule. By lowering the expression as we
+apply different schedule operations, we can see the effect of scheduling on
+the ordering of the computation. We use the flag <code class="docutils literal notranslate"><span class="pre">simple_mode=True</span></code> to
+return a readable C-style statement.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [n: int32], [stride: int32], type=&quot;auto&quot;),
@@ -495,7 +557,8 @@ naive: 0.000005
 }
 </pre></div>
 </div>
-<p>TVM现在可以在独立的线程中运行这些块。让我们编译和运行这个新的应用了并行操作的调度：</p>
+<p>It’s now possible for TVM to run these blocks on independent threads. Let’s
+compile and run this new schedule with the parallel operation applied:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fadd_parallel</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;myadd_parallel&quot;</span><span class="p">)</span>
 <span class="n">fadd_parallel</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 
@@ -504,14 +567,21 @@ naive: 0.000005
 <span class="n">evaluate_addition</span><span class="p">(</span><span class="n">fadd_parallel</span><span class="p">,</span> <span class="n">tgt</span><span class="p">,</span> <span class="s2">&quot;parallel&quot;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>parallel: 0.000008
 </pre></div>
 </div>
 </div>
 <div class="section" id="updating-the-schedule-to-use-vectorization">
-<h3>更新调度以使用向量化<a class="headerlink" href="#updating-the-schedule-to-use-vectorization" title="永久链接至标题">¶</a></h3>
-<p>现代CPU还能够对浮点值执行SIMD操作，我们可以通过将另外一个调度应用到我们的表达式计算中以利用这一点。实现这个需要多个步骤：首先，我们必须使用split调度原语将调度拆分为内循环和外循环。内循环可以使用矢量化调度源语来使用SIMD指令进行矢量化，外循环可以使用并行调度源语并行化。选择拆分因子为你CPU上的线程数。</p>
+<h3>Updating the Schedule to Use Vectorization<a class="headerlink" href="#updating-the-schedule-to-use-vectorization" title="永久链接至标题">¶</a></h3>
+<p>Modern CPUs also have the ability to perform SIMD operations on floating
+point values, and we can apply another schedule to our computation expression
+to take advantage of this. Accomplishing this requires multiple steps: first
+we have to split the schedule into inner and outer loops using the split
+scheduling primitive. The inner loops can use vectorization to use SIMD
+instructions using the vectorize scheduling primitive, then the outer loops
+can be parallelized using the parallel scheduling primitive. Choose the split
+factor to be the number of threads on your CPU.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recreate the schedule, since we modified it with the parallel operation in</span>
 <span class="c1"># the previous example</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="s2">&quot;n&quot;</span><span class="p">)</span>
@@ -537,7 +607,7 @@ naive: 0.000005
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vector: 0.000016
 primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
@@ -557,8 +627,8 @@ primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
 </div>
 </div>
 <div class="section" id="comparing-the-diferent-schedules">
-<h3>比较不同的调度<a class="headerlink" href="#comparing-the-diferent-schedules" title="永久链接至标题">¶</a></h3>
-<p>我们现在可以比较不同的调度</p>
+<h3>Comparing the Diferent Schedules<a class="headerlink" href="#comparing-the-diferent-schedules" title="永久链接至标题">¶</a></h3>
+<p>We can now compare the different schedules</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baseline</span> <span class="o">=</span> <span class="n">log</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="se">\t</span><span class="si">%s</span><span class="se">\t</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Operator&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="s2">&quot;Timing&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="s2">&quot;Performance&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">20</span><span class="p">)))</span>
 <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">log</span><span class="p">:</span>
@@ -568,7 +638,7 @@ primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
     <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Operator                  Timing             Performance
    numpy    6.310400203801692e-06                    1.0
    naive    4.749500000000001e-06     0.7526464006417012
@@ -578,16 +648,27 @@ parallel    7.559499999999999e-06     1.1979430394043453
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>代码定制化</p>
-<p>你可能已经注意到，<code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> 和``C`` 的声明都采用相同的形状参数 <code class="docutils literal notranslate"><span class="pre">n</span></code>。TVM将利用这一点将单个形状参数传递给内核，正如你在打印的设备代码中可以找到的那样。这是定制化的一种形式。</p>
-<p>在主机端，TVM会自动生成检查代码，检查参数中的约束。因此，如果将具有不同形状的数组传递给fadd，则会出错。</p>
-<p>我们可以做更多的定制化。例如，我们可以在计算声明中写 <code class="code docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">tvm.runtime.convert(1024)</span></code> 而不是 <code class="code docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">te.var(&quot;n&quot;)</span></code> 。生成的函数将只接收长度为1024的向量。</p>
+<p>Code Specialization</p>
+<p>As you may have noticed, the declarations of <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> all
+take the same shape argument, <code class="docutils literal notranslate"><span class="pre">n</span></code>. TVM will take advantage of this to
+pass only a single shape argument to the kernel, as you will find in the
+printed device code. This is one form of specialization.</p>
+<p>On the host side, TVM will automatically generate check code that checks
+the constraints in the parameters. So if you pass arrays with different
+shapes into fadd, an error will be raised.</p>
+<p>We can do more specializations. For example, we can write <code class="code docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span>
+<span class="pre">tvm.runtime.convert(1024)</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">te.var(&quot;n&quot;)</span></code>, in the
+computation declaration. The generated function will only take vectors with
+length 1024.</p>
 </div>
-<p>我们已经定义，调度和编译了一个向量加法运算符，然后我们就可以在TVM运行时执行它。我们课可以将运算符保存为一个库，然后我们可以使用TVM运行时在稍后进行加载。</p>
+<p>We’ve defined, scheduled, and compiled a vector addition operator, which we
+were then able to execute on the TVM runtime. We can save the operator as a
+library, which we can then load later using the TVM runtime.</p>
 </div>
 <div class="section" id="targeting-vector-addition-for-gpus-optional">
-<h3>TVM可以适配多种架构。在下一个示例中，我们将针对GPU编译向量加法。<a class="headerlink" href="#targeting-vector-addition-for-gpus-optional" title="永久链接至标题">¶</a></h3>
-<p>TVM可以适配多种架构。在下一个例子中，我们将基于GPU编译矢量加法。</p>
+<h3>Targeting Vector Addition for GPUs (Optional)<a class="headerlink" href="#targeting-vector-addition-for-gpus-optional" title="永久链接至标题">¶</a></h3>
+<p>TVM is capable of targeting multiple architectures. In the next example, we
+will target compilation of the vector addition to GPUs.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you want to run this code, change ``run_cuda = True``</span>
 <span class="c1"># Note that by default this example is not run in the docs CI.</span>
 
@@ -682,13 +763,14 @@ parallel    7.559499999999999e-06     1.1979430394043453
 </div>
 </div>
 <div class="section" id="saving-and-loading-compiled-modules">
-<h2>保存和加载编译好的模块<a class="headerlink" href="#saving-and-loading-compiled-modules" title="永久链接至标题">¶</a></h2>
-<p>除了运行时编译之外，我们还可以将编译后的模块保存到一个文件中，稍后再加载它们。</p>
-<p>以下代码首先执行以下步骤：</p>
+<h2>Saving and Loading Compiled Modules<a class="headerlink" href="#saving-and-loading-compiled-modules" title="永久链接至标题">¶</a></h2>
+<p>Besides runtime compilation, we can save the compiled modules into a file and
+load them back later.</p>
+<p>The following code first performs the following steps:</p>
 <ul class="simple">
-<li><p>它将编译后的host模块保存到一个目标文件中。</p></li>
-<li><p>然后它将device模块保存到一个 ptx 文件中。</p></li>
-<li><p>cc.create_shared 调用编译器（gcc）来创建共享库</p></li>
+<li><p>It saves the compiled host module into an object file.</p></li>
+<li><p>Then it saves the device module into a ptx file.</p></li>
+<li><p>cc.create_shared calls a compiler (gcc) to create a shared library</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tvm.contrib</span> <span class="k">import</span> <span class="n">cc</span>
 <span class="kn">from</span> <span class="nn">tvm.contrib</span> <span class="k">import</span> <span class="n">utils</span>
@@ -705,18 +787,23 @@ parallel    7.559499999999999e-06     1.1979430394043453
 <span class="nb">print</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;myadd.o&#39;, &#39;myadd.so&#39;]
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>模块存储格式</p>
-<p>CPU（主机）模块直接保存为共享库（.so）。 设备代码可以有多种自定义格式。 在我们的示例中，设备代码存储在 ptx 中，也是一个元数据 json 文件。 它们可以通过导入单独加载和链接。</p>
+<p>Module Storage Format</p>
+<p>The CPU (host) module is directly saved as a shared library (.so). There
+can be multiple customized formats of the device code. In our example, the
+device code is stored in ptx, as well as a meta data json file. They can be
+loaded and linked separately via import.</p>
 </div>
 <div class="section" id="load-compiled-module">
-<h3>加载编译好的模块<a class="headerlink" href="#load-compiled-module" title="永久链接至标题">¶</a></h3>
-<p>我们可以从文件系统加载编译好的模块并运行代码。 以下代码分别加载主机和设备模块并将它们链接在一起。 我们可以验证新加载的函数是否有效。</p>
+<h3>Load Compiled Module<a class="headerlink" href="#load-compiled-module" title="永久链接至标题">¶</a></h3>
+<p>We can load the compiled module from the file system and run the code. The
+following code loads the host and device module separately and links them
+together. We can verify that the newly loaded function works.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fadd1</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="s2">&quot;myadd.so&quot;</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">tgt</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;cuda&quot;</span><span class="p">:</span>
     <span class="n">fadd1_dev</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="s2">&quot;myadd.ptx&quot;</span><span class="p">))</span>
@@ -736,8 +823,11 @@ parallel    7.559499999999999e-06     1.1979430394043453
 </div>
 </div>
 <div class="section" id="pack-everything-into-one-library">
-<h3>将所有内容打包到一个库中<a class="headerlink" href="#pack-everything-into-one-library" title="永久链接至标题">¶</a></h3>
-<p>在上面的例子中，我们分别存储设备和主机代码。 TVM 还支持将所有内容导出为一个共享库。 在底层，我们将设备模块打包成二进制 blob，并将它们与主机代码链接在一起。 目前我们支持 Metal、OpenCL 和 CUDA 模块的打包。</p>
+<h3>Pack Everything into One Library<a class="headerlink" href="#pack-everything-into-one-library" title="永久链接至标题">¶</a></h3>
+<p>In the above example, we store the device and host code separately. TVM also
+supports export everything as one shared library. Under the hood, we pack
+the device modules into binary blobs and link them together with the host
+code. Currently we support packing of Metal, OpenCL and CUDA modules.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fadd</span><span class="o">.</span><span class="n">export_library</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="s2">&quot;myadd_pack.so&quot;</span><span class="p">))</span>
 <span class="n">fadd2</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">runtime</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span><span class="n">temp</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="s2">&quot;myadd_pack.so&quot;</span><span class="p">))</span>
 <span class="n">fadd2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
@@ -746,16 +836,22 @@ parallel    7.559499999999999e-06     1.1979430394043453
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>运行时API和线程安全</p>
-<p>TVM的编译模块不依赖于TVM编译器。相反，它只依赖于最小的运行时库。TVM运行时库包装了设备驱动程序，并为编译的函数提供了线程安全和设备无关的调用。</p>
-<p>这意味着你可以从任何线程，任何GPU上调用已编译的TVM函数，前提是你已经为该GPU编译了代码。</p>
+<p>Runtime API and Thread-Safety</p>
+<p>The compiled modules of TVM do not depend on the TVM compiler. Instead,
+they only depend on a minimum runtime library. The TVM runtime library
+wraps the device drivers and provides thread-safe and device agnostic calls
+into the compiled functions.</p>
+<p>This means that you can call the compiled TVM functions from any thread, on
+any GPUs, provided that you have compiled the code for that GPU.</p>
 </div>
 </div>
 </div>
 <div class="section" id="generate-opencl-code">
-<h2>产生OpenCL代码<a class="headerlink" href="#generate-opencl-code" title="永久链接至标题">¶</a></h2>
-<p>TVM 向多个后端提供代码生成功能。 我们还可以生成在 CPU 后端运行的 OpenCL 代码或 LLVM 代码。</p>
-<p>以下代码块生成 OpenCL 代码，在 OpenCL 设备上创建数组，并验证代码的正确性。</p>
+<h2>Generate OpenCL Code<a class="headerlink" href="#generate-opencl-code" title="永久链接至标题">¶</a></h2>
+<p>TVM provides code generation features into multiple backends. We can also
+generate OpenCL code or LLVM code that runs on CPU backends.</p>
+<p>The following code blocks generate OpenCL code, creates array on an OpenCL
+device, and verifies the correctness of the code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">tgt</span><span class="o">.</span><span class="n">kind</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;opencl&quot;</span><span class="p">):</span>
     <span class="n">fadd_cl</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">tgt</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;myadd&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------opencl code------&quot;</span><span class="p">)</span>
@@ -771,33 +867,54 @@ parallel    7.559499999999999e-06     1.1979430394043453
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>TE调度源语</p>
-<p>TVM包括许多不同的调度源语：</p>
+<p>TE Scheduling Primitives</p>
+<p>TVM includes a number of different scheduling primitives:</p>
 <ul class="simple">
-<li><p>split：将指定的轴按定义的因子拆分为两个轴。</p></li>
-<li><p>tile：tile将按照定义的因子将计算拆分到两个轴上。</p></li>
-<li><p>fuse：融合一个计算的两个连续轴。</p></li>
-<li><p>reorder：可以将计算的轴重排为定义的顺序。</p></li>
-<li><p>bind：可以将计算绑定到特定线程，这在 GPU 编程中很有用。</p></li>
-<li><p>compute_at：默认情况下，TVM 将在函数的最外层或根计算张量。 compute_at 指定应该在另一个算子的第一个计算轴上计算一个张量。</p></li>
-<li><p>compute_inline：当标记为内联时，计算将被扩展然后插入到被张量需要的地址中。</p></li>
-<li><p>compute_root：将计算移动到函数的最外层或根。 这意味着在进入下一个阶段之前，计算的阶段将被完全计算。</p></li>
+<li><p>split: splits a specified axis into two axises by the defined factor.</p></li>
+<li><p>tile: tiles will split a computation across two axes by the defined factors.</p></li>
+<li><p>fuse: fuses two consecutive axises of one computation.</p></li>
+<li><p>reorder: can reorder the axises of a computation into a defined order.</p></li>
+<li><p>bind: can bind a computation to a specific thread, useful in GPU programming.</p></li>
+<li><p>compute_at: by default, TVM will compute tensors at the outermost level
+of the function, or the root, by default. compute_at specifies that one
+tensor should be computed at the first axis of computation for another
+operator.</p></li>
+<li><p>compute_inline: when marked inline, a computation will be expanded then
+inserted into the address where the tensor is required.</p></li>
+<li><p>compute_root: moves a computation to the outermost layer, or root, of the
+function. This means that stage of the computation will be fully computed
+before it moves on to the next stage.</p></li>
 </ul>
-<p>这些原语的完整描述可以在 [调度源语](<a class="reference external" href="https://tvm.apache.org/docs/tutorials/language/schedule_primitives.html">https://tvm.apache.org/docs/tutorials/language/schedule_primitives.html</a>) 文档页面中找到。</p>
+<p>A complete description of these primitives can be found in the
+[Schedule Primitives](<a class="reference external" href="https://tvm.apache.org/docs/tutorials/language/schedule_primitives.html">https://tvm.apache.org/docs/tutorials/language/schedule_primitives.html</a>) docs page.</p>
 </div>
 </div>
 <div class="section" id="example-2-manually-optimizing-matrix-multiplication-with-te">
-<h2>示例 2：使用 TE 手动优化矩阵乘法<a class="headerlink" href="#example-2-manually-optimizing-matrix-multiplication-with-te" title="永久链接至标题">¶</a></h2>
-<p>现在我们将考虑第二个更高级的示例，演示如何仅使用 18 行 Python 代码 TVM 将常见矩阵乘法运算速度提高 18 倍。</p>
-<p><strong>矩阵乘法是计算密集型操作。要实现良好的CPU性能有两个重要的优化：</strong></p>
+<h2>Example 2: Manually Optimizing Matrix Multiplication with TE<a class="headerlink" href="#example-2-manually-optimizing-matrix-multiplication-with-te" title="永久链接至标题">¶</a></h2>
+<p>Now we will consider a second, more advanced example, demonstrating how with
+just 18 lines of python code TVM speeds up a common matrix multiplication operation by 18x.</p>
+<p><strong>Matrix multiplication is a compute intensive operation. There are
+two important optimizations for good CPU performance:</strong></p>
 <ol class="arabic simple">
-<li><p>提高内存访问的缓存命中率。复杂的数值计算和热点内存访问都可以通过高缓存命中率来加速。 这需要我们将原始内存访问模式转换为适合缓存策略的模式。</p></li>
-<li><p>SIMD（单指令多数据），或者我们称之为向量处理单元。 每次都会处理一小批数据，而不是单个数据。 这需要我们统一变换循环体中的数据访问模式，以便 LLVM 后端可以将其lower到SIMD。</p></li>
+<li><p>Increase the cache hit rate of memory access. Both complex
+numerical computation and hot-spot memory access can be
+accelerated by a high cache hit rate. This requires us to
+transform the origin memory access pattern to a pattern that fits
+the cache policy.</p></li>
+<li><p>SIMD (Single instruction multi-data), also known as the vector
+processing unit. On each cycle instead of processing a single
+value, SIMD can process a small batch of data.  This requires us
+to transform the data access pattern in the loop body in uniform
+pattern so that the LLVM backend can lower it to SIMD.</p></li>
 </ol>
-<p>实际上，本教程中使用的所有方法都是这个 <a class="reference external" href="https://github.com/flame/how-to-optimize-gemm">repo</a> 中提到的技巧的一个子集。 其中一些已经被TVM自动抽象所采用，但由于 TVM 的限制，其中一些不能简单地应用。</p>
+<p>The techniques used in this tutorial are a subset of tricks mentioned in this
+<a class="reference external" href="https://github.com/flame/how-to-optimize-gemm">repository</a>. Some of them
+have been applied by TVM abstraction automatically, but some of them cannot
+be automatically applied due to TVM constraints.</p>
 <div class="section" id="preparation-and-performance-baseline">
-<h3>准备和基线（Baseline）<a class="headerlink" href="#preparation-and-performance-baseline" title="永久链接至标题">¶</a></h3>
-<p>我们首先收集有关矩阵乘法的 <cite>numpy</cite> 实现的性能数据。</p>
+<h3>Preparation and Performance Baseline<a class="headerlink" href="#preparation-and-performance-baseline" title="永久链接至标题">¶</a></h3>
+<p>We begin by collecting performance data on the <cite>numpy</cite> implementation of
+matrix multiplication.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">import</span> <span class="nn">tvm.testing</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
@@ -847,11 +964,14 @@ parallel    7.559499999999999e-06     1.1979430394043453
 <span class="n">answer</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Numpy running time: 0.013634
 </pre></div>
 </div>
-<p>现在我们使用 TVM TE 编写一个基本的矩阵乘法，并验证它可以产生和 numpy 实现相同的结果。 我们还编写了一个函数来帮助我们测量调度优化的性能。</p>
+<p>Now we write a basic matrix multiplication using TVM TE and verify that it
+produces the same results as the numpy implementation. We also write a
+function that will help us measure the performance of the schedule
+optimizations.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># TVM Matrix Multiplication using TE</span>
 <span class="n">k</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">reduce_axis</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="n">M</span><span class="p">,</span> <span class="n">K</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
@@ -886,15 +1006,18 @@ parallel    7.559499999999999e-06     1.1979430394043453
 <span class="n">evaluate_operation</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mmult&quot;</span><span class="p">,</span> <span class="n">optimization</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>none: 2.953907
 </pre></div>
 </div>
-<p>让我们使用 TVM lowe函数看一下算子的中间表示（IR）和默认的调度。 请注意，该实现本质上是一个原始的矩阵乘法实现，在 A 和 B 矩阵的索引上使用三个嵌套的循环。</p>
+<p>Let’s take a look at the intermediate representation of the operator and
+default schedule using the TVM lower function. Note how the implementation is
+essentially a naive implementation of a matrix multiplication, using three
+nested loops over the indices of the A and B matrices.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 1024], []),
@@ -914,10 +1037,26 @@ parallel    7.559499999999999e-06     1.1979430394043453
 </div>
 </div>
 <div class="section" id="optimization-1-blocking">
-<h3>优化1：分块<a class="headerlink" href="#optimization-1-blocking" title="永久链接至标题">¶</a></h3>
-<p>提高缓存命中率的一个重要技巧是分块——数据块将逐块进行计算。 块内部的内存访问是一个具有高内存局部性的小邻域。 在本教程中，我选择了 32 作为分块因子。 所以该块将填充 32 * 32 * sizeof(float) 即 4KB 到缓存中，缓存的总大小为 32KB（L1 数据缓存）</p>
-<p>我们首先为`C`` 运算符创建一个默认的调度，然后基于指定的块因子对其应用 <code class="docutils literal notranslate"><span class="pre">tile</span></code> 调度源语，该源语从外层到最内层循环的结果顺序，如向量 <code class="docutils literal notranslate"><span class="pre">[x_outer,</span> <span class="pre">y_outer,</span> <span class="pre">x_inner,</span> <span class="pre">y_inner]</span></code> 所示。然后我们获得运算符输出的约分轴，并对其使用因子为4的拆分操作。这个因子不会直接影响我们现在正在进行的分块优化，但稍后我们应用矢量化会用到。</p>
-<p>既然操作已经分好块了，我们可以对计算进行重排，将约分操作放到计算的最外层循环中，以保证块里面的数据都能保留在缓存中。这就完成了调度，然后我们就可以构建程序并测试与朴素调度相比的性能了。</p>
+<h3>Optimization 1: Blocking<a class="headerlink" href="#optimization-1-blocking" title="永久链接至标题">¶</a></h3>
+<p>A important trick to enhance the cache hit rate is blocking, where you
+structure memory access such that the inside a block is a small neighborhood
+that has high memory locality. In this tutorial, we pick a block factor of
+32. This will result in a block that will fill a 32 * 32 * sizeof(float) area
+of memory. This corresponds to a cache size of 4KB, in relation to a
+reference cache size of 32 KB for L1 cache.</p>
+<p>We begin by creating a default schedule for the <code class="docutils literal notranslate"><span class="pre">C</span></code> operation, then apply a
+<code class="docutils literal notranslate"><span class="pre">tile</span></code> scheduling primitive to it with the specified block factor, with the
+scheduling primitive returning the resulting loop order from outermost to
+innermost, as a vector <code class="docutils literal notranslate"><span class="pre">[x_outer,</span> <span class="pre">y_outer,</span> <span class="pre">x_inner,</span> <span class="pre">y_inner]</span></code>. We then get
+the reduction axis for output of the operation, and perform a split operation
+on it using a factor of 4. This factor doesn’t directly impact the blocking
+optimization we’re working on right now, but will be useful later when we
+apply vectorization.</p>
+<p>Now that the operation has been blocked, we can reorder the computation to
+put the reduction operation into the outermost loop of the computation,
+helping to guarantee that the blocked data remains in cache. This completes
+the schedule, and we can build and test the performance compared to the naive
+schedule.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bn</span> <span class="o">=</span> <span class="mi">32</span>
 
 <span class="c1"># Blocking by loop tiling</span>
@@ -931,15 +1070,17 @@ parallel    7.559499999999999e-06     1.1979430394043453
 <span class="n">evaluate_operation</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mmult&quot;</span><span class="p">,</span> <span class="n">optimization</span><span class="o">=</span><span class="s2">&quot;blocking&quot;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>blocking: 0.206234
 </pre></div>
 </div>
-<p>通过重排计算以利用缓存，你应该会看到计算性能的显著提高。 现在，打印中间表示并将其与原始表示进行比较：</p>
+<p>By reordering the computation to take advantage of caching, you should see a
+significant improvement in the performance of the computation. Now, print the
+internal representation and compare it to the original:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 1024], []),
@@ -969,9 +1110,14 @@ parallel    7.559499999999999e-06     1.1979430394043453
 </div>
 </div>
 <div class="section" id="optimization-2-vectorization">
-<h3>优化2：向量化<a class="headerlink" href="#optimization-2-vectorization" title="永久链接至标题">¶</a></h3>
-<p>另一个重要的技巧是矢量化。 当内存访问模式一致时，编译器可以检测到这种模式并将连续内存传递给向量处理器。 在 TVM 中，我们可以使用 <cite>vectorize</cite> 接口来提示编译器这种模式，利用硬件的特性。</p>
-<p>在本教程中，我们选择矢量化内循环行数据，因为它已经从我们之前的优化中对缓存是友好的。</p>
+<h3>Optimization 2: Vectorization<a class="headerlink" href="#optimization-2-vectorization" title="永久链接至标题">¶</a></h3>
+<p>Another important optimization trick is vectorization. When the memory access
+pattern is uniform, the compiler can detect this pattern and pass the
+continuous memory to the SIMD vector processor. In TVM, we can use the
+<code class="docutils literal notranslate"><span class="pre">vectorize</span></code> interface to hint the compiler this pattern, taking advantage
+of this hardware feature.</p>
+<p>In this tutorial, we chose to vectorize the inner loop row data since it is
+already cache friendly from our previous optimizations.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the vectorization optimization</span>
 <span class="n">s</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">yi</span><span class="p">)</span>
 
@@ -981,7 +1127,7 @@ parallel    7.559499999999999e-06     1.1979430394043453
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vectorization: 0.231926
 primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
@@ -1008,8 +1154,14 @@ primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
 </div>
 </div>
 <div class="section" id="optimization-3-loop-permutation">
-<h3>优化3：循环重排<a class="headerlink" href="#optimization-3-loop-permutation" title="永久链接至标题">¶</a></h3>
-<p>如果我们查看上面的 IR，我们可以看到 B 和 C 的内循环行数据都进行了向量化。接下来我们将查看 A 的访问模式。在当前调度中，A 是逐列访问的，这对缓存不友好。 如果我们改变  <cite>ki</cite> 和内轴  <cite>xi</cite> 的嵌套循环顺序，A 矩阵的访问模式会对缓存更加友好。</p>
+<h3>Optimization 3: Loop Permutation<a class="headerlink" href="#optimization-3-loop-permutation" title="永久链接至标题">¶</a></h3>
+<p>If we look at the above IR, we can see the inner loop row data is vectorized
+and B is transformed into PackedB (this is evident by the <cite>(float32x32*)B2</cite>
+portion of the inner loop). The traversal of PackedB is sequential now. So we
+will look at the access pattern of A. In current schedule, A is accessed
+column by column which is not cache friendly. If we change the nested loop
+order of <cite>ki</cite> and inner axes <cite>xi</cite>, the access pattern for A matrix will be
+more cache friendly.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">create_schedule</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">op</span><span class="p">)</span>
 <span class="n">xo</span><span class="p">,</span> <span class="n">yo</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">yi</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">axis</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">C</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">axis</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bn</span><span class="p">,</span> <span class="n">bn</span><span class="p">)</span>
 <span class="p">(</span><span class="n">k</span><span class="p">,)</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">C</span><span class="p">]</span><span class="o">.</span><span class="n">op</span><span class="o">.</span><span class="n">reduce_axis</span>
@@ -1027,7 +1179,7 @@ primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>loop permutation: 0.087483
 primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
@@ -1054,10 +1206,17 @@ primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
 </div>
 </div>
 <div class="section" id="optimization-4-array-packing">
-<h3>优化4：数组压缩<a class="headerlink" href="#optimization-4-array-packing" title="永久链接至标题">¶</a></h3>
-<p>另一个重要的技巧是数组压缩。这个技巧是对多维数组的存储顺序进行重排，以便在将其展平并存储在一维内存中后按顺序访问。</p>
+<h3>Optimization 4: Array Packing<a class="headerlink" href="#optimization-4-array-packing" title="永久链接至标题">¶</a></h3>
+<p>Another important trick is array packing. This trick is to reorder the
+storage dimension of the array to convert the continuous access pattern on
+certain dimension to a sequential pattern after flattening.</p>
 <img alt="https://github.com/dmlc/web-data/raw/main/tvm/tutorial/array-packing.png" class="align-center" src="https://github.com/dmlc/web-data/raw/main/tvm/tutorial/array-packing.png" />
-<p>如上图所示，计算分块之后，我们可以观察到展平后B的数组访问模式不是连续的。我们期望通过一些变换后可以获得一个连续的访问模式。通过将一个 <code class="docutils literal notranslate"><span class="pre">[16][16]</span></code> 数组重排为 <code class="docutils literal notranslate"><span class="pre">[16/4][16][4]</span></code> 数组，当我们从压缩的数组中获得对应的值时，B的访问模式是连续的。</p>
+<p>Just as it is shown in the figure above, after blocking the computations, we
+can observe the array access pattern of B (after flattening), which is
+regular but discontinuous. We expect that after some transformation we can
+get a continuous access pattern. By reordering a <code class="docutils literal notranslate"><span class="pre">[16][16]</span></code> array to a
+<code class="docutils literal notranslate"><span class="pre">[16/4][16][4]</span></code> array the access pattern of B will be sequential when
+grabing the corresponding value from the packed array.</p>
 <p>To accomplish this, we are going to have to start with a new default
 schedule, taking into account the new packing of B. It’s worth taking a
 moment to comment on this: TE is a powerful and expressive language for
@@ -1093,7 +1252,7 @@ optimized schedule.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array packing: 0.112220
 primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
@@ -1164,7 +1323,7 @@ to `C</cite> when all the block results are ready.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>block caching: 0.116020
 primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
@@ -1225,7 +1384,7 @@ of thread-level parallelization.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>parallelization: 0.049128
 primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
@@ -1280,7 +1439,7 @@ working, we can compare the results.</p>
     <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>        Operator                  Timing             Performance
             none            2.9539066692                     1.0
         blocking            0.2062342626     0.06981746063624074
@@ -1342,10 +1501,10 @@ the computation for specific platforms.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="autotvm_matmul_x86.html" class="btn btn-neutral float-right" title="Optimizing Operators with Schedule Templates and AutoTVM" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="autotvm_matmul_x86.html" class="btn btn-neutral float-right" title="Optimizing Operators with Schedule Templates and AutoTVM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="autotvm_relay_x86.html" class="btn btn-neutral float-left" title="Compiling and Optimizing a Model with the Python Interface (AutoTVM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="autotvm_relay_x86.html" class="btn btn-neutral float-left" title="Compiling and Optimizing a Model with the Python Interface (AutoTVM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>microTVM 虚拟机 &mdash; tvm 0.8.dev1728+g18870dfb0 文档</title>
+  <title>microTVM Reference Virtual Machines &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="使用microTVM部署TFLite模型" href="micro_tflite.html" />
+    <link rel="next" title="microTVM with TFLite Models" href="micro_tflite.html" />
     <link rel="prev" title="Autotuning with micro TVM" href="micro_autotune.html" /> 
 </head>
 
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1728+g18870dfb0
+                  0.8.dev1729+g7061bd00f
                 </div>
             
           
@@ -198,20 +198,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -220,40 +220,40 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#microtvm">microTVM</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="micro_autotune.html">Autotuning with micro TVM</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">microTVM 虚拟机</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#how-it-works">工作原理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setting-up-the-vm">设置虚拟机</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#installing-prerequisites">安装必要软件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#first-boot">首次启动</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#connect-hardware-to-the-vm">将硬件连接到虚拟机</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rebuilding-tvm-inside-the-reference-vm">在microTVM虚拟机中重新构建TVM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#logging-in-to-the-vm">登录虚拟机</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">microTVM Reference Virtual Machines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-the-vm">Setting up the VM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-prerequisites">Installing prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#first-boot">First boot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#connect-hardware-to-the-vm">Connect Hardware to the VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rebuilding-tvm-inside-the-reference-vm">Rebuilding TVM inside the Reference VM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logging-in-to-the-vm">Logging in to the VM</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#running-tests">测试</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-tests">Running tests</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="micro_tflite.html">使用microTVM部署TFLite模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_tflite.html">microTVM with TFLite Models</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -312,7 +312,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>microTVM 虚拟机</li>
+      <li>microTVM Reference Virtual Machines</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -333,55 +333,77 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-micro-micro-reference-vm-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-micro-micro-reference-vm-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="microtvm-reference-virtual-machines">
-<span id="tutorial-micro-reference-vm"></span><span id="sphx-glr-tutorials-micro-micro-reference-vm-py"></span><h1>microTVM 虚拟机<a class="headerlink" href="#microtvm-reference-virtual-machines" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="mailto:areusch&#37;&#52;&#48;octoml&#46;ai">Andrew Reusch</a></p>
-<p>此教学手册教您如何启动microTVM虚拟机。通过此手册，您可以在不安装microTVM依赖库的情况下使用物理设备进行开发。同时，当您需要使用microTVM重现一些代码行为时，例如编写bug报告，此手册能够提供有效的帮助。</p>
-<p>microTVM可以有效地使用TVM在低端微控制器上构建和运行模型。microTVM旨在与各种各样的SoC和运行时环境（如裸机、RTOS等）相互兼容。然而，开发人员需要一些必要的软件依赖环境才能够共享和再现bug和运行结果。microTVM虚拟机旨在提供这些环境。</p>
+<span id="tutorial-micro-reference-vm"></span><span id="sphx-glr-tutorials-micro-micro-reference-vm-py"></span><h1>microTVM Reference Virtual Machines<a class="headerlink" href="#microtvm-reference-virtual-machines" title="永久链接至标题">¶</a></h1>
+<p><strong>Author</strong>: <a class="reference external" href="mailto:areusch&#37;&#52;&#48;octoml&#46;ai">Andrew Reusch</a></p>
+<p>This tutorial explains how to launch microTVM Reference Virtual Machines. You can use these to
+develop on real physical hardware without needing to individually install the microTVM
+dependencies. These are also particularly useful when trying to reproduce behavior with
+microTVM, such as when filing bug reports.</p>
+<p>microTVM is the effort to allow TVM to build and execute models on bare-metal microcontrollers.
+microTVM aims to be compatible with a wide variety of SoCs and runtime environments (i.e. bare metal,
+RTOS, etc). However, some stable software environment is needed to allow developers to share and
+reproduce bugs and results. The microTVM Reference Virtual Machines are intended to provide that
+environment.</p>
 <div class="section" id="how-it-works">
-<h2>工作原理<a class="headerlink" href="#how-it-works" title="永久链接至标题">¶</a></h2>
-<p>TVM代码仓库中并没有提供虚拟机，在 <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm</span></code> 目录下的文件描述了如何使用 <a class="reference external" href="https://vagrantup.com">Vagrant</a> 虚拟机构建工具来创建一个microTVM虚拟机。</p>
-<p>MicroTVM虚拟机分为两个部分：</p>
+<h2>How it works<a class="headerlink" href="#how-it-works" title="永久链接至标题">¶</a></h2>
+<p>No Virtual Machines are stored in the TVM repository–instead, the files stored in
+<code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm</span></code> describe how to build VMs to the <a class="reference external" href="https://vagrantup.com">Vagrant</a> VM builder tool.</p>
+<p>The Reference VMs are split into two parts:</p>
 <ol class="arabic simple">
-<li><p>一个Vagrant基础镜像，它包含了所有必要的软件依赖环境，构建该镜像的脚本保存在 <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm/&lt;platfrom&gt;/base-box</span></code> 。当平台的“稳定”依赖环境发生变化时，TVM提交者将会运行这个脚本来生成新的基础镜像，该镜像会被上传到 <a class="reference external" href="https://app.vagrantup.com/tlcpack">Vagrant Cloud</a> 。</p></li>
-<li><p>一个虚拟机工作环境，用户通常使用基础镜像作为起点来构建它。构建脚本保存在 <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm/&lt;paltform&gt;</span></code> （除了 <code class="docutils literal notranslate"><span class="pre">base-box</span></code> ）。</p></li>
+<li><p>A Vagrant Base Box, which contains all of the stable dependencies for that platform. Build
+scripts are stored in <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm/&lt;platform&gt;/base-box</span></code>. TVM committers run
+these when a platform’s “stable” dependencies change, and the generated base boxes are stored in
+<a class="reference external" href="https://app.vagrantup.com/tlcpack">Vagrant Cloud</a>.</p></li>
+<li><p>A per-workspace VM, which users normally build using the Base Box as a starting point. Build
+scripts are stored in <code class="docutils literal notranslate"><span class="pre">apps/microtvm/reference-vm/&lt;platform&gt;</span></code> (everything except <code class="docutils literal notranslate"><span class="pre">base-box</span></code>).</p></li>
 </ol>
 </div>
 <div class="section" id="setting-up-the-vm">
-<h2>设置虚拟机<a class="headerlink" href="#setting-up-the-vm" title="永久链接至标题">¶</a></h2>
+<h2>Setting up the VM<a class="headerlink" href="#setting-up-the-vm" title="永久链接至标题">¶</a></h2>
 <div class="section" id="installing-prerequisites">
-<h3>安装必要软件<a class="headerlink" href="#installing-prerequisites" title="永久链接至标题">¶</a></h3>
-<p>这些必要软件包括：</p>
+<h3>Installing prerequisites<a class="headerlink" href="#installing-prerequisites" title="永久链接至标题">¶</a></h3>
+<p>A minimal set of prerequisites are needed:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://vagrantup.com">Vagrant</a></p></li>
-<li><p>一个虚拟机管理程序（ <strong>VirtualBox</strong> 、 <strong>Parallels</strong> 或 <strong>VMWare Fusion/Workstation</strong> ）。TVM推荐使用 <a class="reference external" href="https://www.virtualbox.org">VirtualBox</a> ，因为它是免费的虚拟机管理程序，但请注意， <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads#VirtualBox6.1.16OracleVMVirtualBoxExtensionPack">VirtualBox Extension Pack</a> 是使用USB转发功能所必要的扩展包。如果选择使用VirtualBox，您还可以考虑安装 <a class="reference external" href="https://github.com/dotless-de/vagrant-vbguest">vbguest</a> 插件。</p></li>
+<li><p>A supported Virtual Machine hypervisor (<strong>VirtualBox</strong>, <strong>Parallels</strong>, or <strong>VMWare Fusion/Workstation</strong>).
+<a class="reference external" href="https://www.virtualbox.org">VirtualBox</a> is a suggested free hypervisor, but please note
+that the <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads#VirtualBox6.1.16OracleVMVirtualBoxExtensionPack">VirtualBox Extension Pack</a> is required for proper USB forwarding. If using VirtualBox,
+also consider installing the <a class="reference external" href="https://github.com/dotless-de/vagrant-vbguest">vbguest</a> plugin.</p></li>
 </ol>
 <ol class="arabic simple" start="3">
-<li><p>如果您还需要其他的插件， <a class="reference external" href="https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins#providers">Vagrant provider plugin</a> 将提供更多程序插件（或在 <a class="reference external" href="https://www.vagrantup.com/vmware">此处</a> 查找有关VMWare的插件）。</p></li>
+<li><p>If required for your hypervisor, the
+<a class="reference external" href="https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins#providers">Vagrant provider plugin</a> (or see <a class="reference external" href="https://www.vagrantup.com/vmware">here</a> for VMWare).</p></li>
 </ol>
 </div>
 <div class="section" id="first-boot">
-<h3>首次启动<a class="headerlink" href="#first-boot" title="永久链接至标题">¶</a></h3>
-<p>当您第一次使用microTVM虚拟机时，您需要在本地创建一个镜像，然后给它提供必要准备。</p>
+<h3>First boot<a class="headerlink" href="#first-boot" title="永久链接至标题">¶</a></h3>
+<p>The first time you use a reference VM, you need to create the box locally and then provision it.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replace zephyr with the name of a different platform, if you are not using Zephyr.</span>
 ~/.../tvm $ <span class="nb">cd</span> apps/microtvm/reference-vm/zephyr
 <span class="c1"># Replace &lt;provider_name&gt; with the name of the hypervisor you wish to use (i.e. virtualbox, parallels, vmware_desktop).</span>
 ~/.../tvm/apps/microtvm/reference-vm/zephyr $ vagrant up --provider<span class="o">=</span>&lt;provider_name&gt;
 </pre></div>
 </div>
-<p>这段命令行需要一些时间来运行，同时，它将在您的机器上占用4到5GB的存储空间。这些代命令行的作用如下：</p>
+<p>This command will take a couple of minutes to run and will require 4 to 5GB of storage on your
+machine. It does the following:</p>
 <ol class="arabic simple">
-<li><p>下载 <a class="reference external" href="https://app.vagrantup.com/tlcpack/boxes/microtvm">MicroTVM基础镜像</a> ，然后使用它生成一个特定于这个TVM目录的新虚拟机。</p></li>
-<li><p>将TVM目录挂载到虚拟机（如果使用 <code class="docutils literal notranslate"><span class="pre">git-subtree</span></code> ， <code class="docutils literal notranslate"><span class="pre">.git</span></code> 根目录将会被挂载）。</p></li>
-<li><p>构建TVM并安装与之相对应的Python虚拟环境。</p></li>
+<li><p>Downloads the <a class="reference external" href="https://app.vagrantup.com/tlcpack/boxes/microtvm">microTVM base box</a> and clones it to form a new VM specific to this TVM directory.</p></li>
+<li><p>Mounts your TVM directory (and, if using <code class="docutils literal notranslate"><span class="pre">git-subtree</span></code>, the original <code class="docutils literal notranslate"><span class="pre">.git</span></code> repo) into the
+VM.</p></li>
+<li><p>Builds TVM and installs a Python virtualenv with the dependencies corresponding with your TVM
+build.</p></li>
 </ol>
 </div>
 <div class="section" id="connect-hardware-to-the-vm">
-<h3>将硬件连接到虚拟机<a class="headerlink" href="#connect-hardware-to-the-vm" title="永久链接至标题">¶</a></h3>
-<p>接下来，您需要配置 USB 转发设置，以便通过USB接口将物理开发板连接到虚拟机（而不是直接连接到主机上的操作系统）。</p>
-<p>建议您设置设备筛选器，而不是设置单次转发，因为在编程过程中设备通常会重新启动，而此时您需要再次启用转发。当这种情况发生时，开发用户可能不易察觉需要再次启动转发。开启设备筛选器的方法如下：</p>
+<h3>Connect Hardware to the VM<a class="headerlink" href="#connect-hardware-to-the-vm" title="永久链接至标题">¶</a></h3>
+<p>Next, you need to configure USB passthrough to attach your physical development board to the virtual
+machine (rather than directly to your laptop’s host OS).</p>
+<p>It’s suggested you setup a device filter, rather than doing a one-time forward, because often the
+device may reboot during the programming process and you may, at that time, need to enable
+forwarding again. It may not be obvious to the end user when this occurs. Instructions to do that:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://www.virtualbox.org/manual/ch03.html#usb-support">VirtualBox</a></p></li>
@@ -391,30 +413,36 @@
 </div></blockquote>
 </div>
 <div class="section" id="rebuilding-tvm-inside-the-reference-vm">
-<h3>在microTVM虚拟机中重新构建TVM<a class="headerlink" href="#rebuilding-tvm-inside-the-reference-vm" title="永久链接至标题">¶</a></h3>
-<p>在第一次启动之后，每当您修改了C++运行时代码或者切换到不同版本的时候，您都需要重新构建TVM以保持构建文件是最新的，这些构建文件在 <code class="docutils literal notranslate"><span class="pre">$TVM_HOME/build-microtvm-zephyr</span></code> 目录下。您可以通过重新配置虚拟机（在之前运行 <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code> 命令的目录下运行 <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">provision</span></code> ），又或者自己手动重新构建TVM。</p>
-<p>请注意：在microTVM虚拟机中的TVM构建文件 <code class="docutils literal notranslate"><span class="pre">.so</span></code> 与您主机上的构建文件是不同的。这也是为什么要将构建文件放置在 <code class="docutils literal notranslate"><span class="pre">build-microtvm-zephyr</span></code> 这个特殊目录下。</p>
+<h3>Rebuilding TVM inside the Reference VM<a class="headerlink" href="#rebuilding-tvm-inside-the-reference-vm" title="永久链接至标题">¶</a></h3>
+<p>After the first boot, you’ll need to ensure you keep the build, in <code class="docutils literal notranslate"><span class="pre">$TVM_HOME/build-microtvm-zephyr</span></code>,
+up-to-date when you modify the C++ runtime or checkout a different revision. You can either
+re-provision the machine (<code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">provision</span></code> in the same directory you ran <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span></code> before)
+or manually rebuild TVM yourself.</p>
+<p>Remember: the TVM <code class="docutils literal notranslate"><span class="pre">.so</span></code> built inside the VM is different from the one you may use on your host
+machine. This is why it’s built inside the special directory <code class="docutils literal notranslate"><span class="pre">build-microtvm-zephyr</span></code>.</p>
 </div>
 <div class="section" id="logging-in-to-the-vm">
-<h3>登录虚拟机<a class="headerlink" href="#logging-in-to-the-vm" title="永久链接至标题">¶</a></h3>
-<p>虚拟机应该向主机提供唯一的主机名 <code class="docutils literal notranslate"><span class="pre">microtvm</span></code> 。您可以通过SSH登录到虚拟机：</p>
+<h3>Logging in to the VM<a class="headerlink" href="#logging-in-to-the-vm" title="永久链接至标题">¶</a></h3>
+<p>The VM should be available to your host only with the hostname <code class="docutils literal notranslate"><span class="pre">microtvm</span></code>. You can SSH to the VM
+as follows:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ vagrant ssh
 </pre></div>
 </div>
-<p>然后 <code class="docutils literal notranslate"><span class="pre">cd</span></code> 到主机上访问TVM的相同路径。例如，在 Mac 上：</p>
+<p>Then <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the same path used on your host machine for TVM. For example, on Mac:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /Users/yourusername/path/to/tvm
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="running-tests">
-<h2>测试<a class="headerlink" href="#running-tests" title="永久链接至标题">¶</a></h2>
-<p>当microTVM虚拟机完成配置工作，您可以使用 <code class="docutils literal notranslate"><span class="pre">poetry</span></code> 运行测试用例：</p>
+<h2>Running tests<a class="headerlink" href="#running-tests" title="永久链接至标题">¶</a></h2>
+<p>Once the VM has been provisioned, tests can executed using <code class="docutils literal notranslate"><span class="pre">poetry</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> apps/microtvm/reference-vm/zephyr
 $ poetry run python3 ../../../../tests/micro/qemu/test_zephyr.py --zephyr-board<span class="o">=</span>stm32f746g_disco
 </pre></div>
 </div>
-<p>如果您没有硬件设备，但仍希望运行测试用例，您可以在microTVM虚拟机上运行本地QEMU模拟器，详细命令如下：</p>
+<p>If you do not have physical hardware attached, but wish to run the tests using the
+local QEMU emulator running within the VM, run the following commands instead:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /Users/yourusername/path/to/tvm
 $ <span class="nb">cd</span> apps/microtvm/reference-vm/zephyr/
 $ poetry run pytest ../../../../tests/micro/qemu/test_zephyr.py --zephyr-board<span class="o">=</span>qemu_x86
@@ -422,10 +450,10 @@ $ poetry run pytest ../../../../tests/micro/qemu/test_zephyr.py --zephyr-board<s
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-micro-micro-reference-vm-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/77322ea21ff00abad461e549895ef1d8/micro_reference_vm.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">micro_reference_vm.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/77322ea21ff00abad461e549895ef1d8/micro_reference_vm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">micro_reference_vm.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/08e39628455fe618afd9eb5b958a433e/micro_reference_vm.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">micro_reference_vm.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/08e39628455fe618afd9eb5b958a433e/micro_reference_vm.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">micro_reference_vm.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -442,10 +470,10 @@ $ poetry run pytest ../../../../tests/micro/qemu/test_zephyr.py --zephyr-board<s
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="micro_tflite.html" class="btn btn-neutral float-right" title="使用microTVM部署TFLite模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="micro_tflite.html" class="btn btn-neutral float-right" title="microTVM with TFLite Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="micro_autotune.html" class="btn btn-neutral float-left" title="Autotuning with micro TVM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="micro_autotune.html" class="btn btn-neutral float-left" title="Autotuning with micro TVM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

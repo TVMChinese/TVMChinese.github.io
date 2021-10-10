@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python Target Parametrization &mdash; tvm 0.8.dev1728+g18870dfb0 文档</title>
+  <title>Python Target Parametrization &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="microTVM：裸机使用TVM" href="../microtvm/index.html" />
+    <link rel="next" title="microTVM: TVM on bare-metal" href="../microtvm/index.html" />
     <link rel="prev" title="TVM Codebase Walkthrough by Example" href="codebase_walkthrough.html" /> 
 </head>
 
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1728+g18870dfb0
+                  0.8.dev1729+g7061bd00f
                 </div>
             
           
@@ -198,18 +198,18 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="how_to.html">开发者指南</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="relay_add_op.html">向 Realy 中添加一个算子</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="how_to.html">Developer How-To Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="relay_add_op.html">Adding an Operator to Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay_add_pass.html">Adding a Compiler Pass to Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay_bring_your_own_codegen.html">Bring Your Own Codegen To TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="codebase_walkthrough.html">TVM Codebase Walkthrough by Example</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Python Target Parametrization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#summary">总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unit-test-file-contents">Unit-Test File Contents</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-locally">Running locally</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-in-local-docker-container">Running in local docker container</a></li>
@@ -218,14 +218,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -234,23 +234,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
             
@@ -307,7 +307,7 @@
     
       <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-          <li><a href="how_to.html">开发者指南</a> <span class="br-arrow">></span></li>
+          <li><a href="how_to.html">Developer How-To Guide</a> <span class="br-arrow">></span></li>
         
       <li>Python Target Parametrization</li>
     
@@ -331,7 +331,7 @@
   <div class="section" id="python-target-parametrization">
 <h1>Python Target Parametrization<a class="headerlink" href="#python-target-parametrization" title="永久链接至标题">¶</a></h1>
 <div class="section" id="summary">
-<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>For any supported runtime, TVM should should produce numerically
 correct results.  Therefore, when writing unit tests that validate
 the numeric output, these unit tests should be run on all supported
@@ -578,10 +578,10 @@ restricts the tests to only run tests that include the
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../microtvm/index.html" class="btn btn-neutral float-right" title="microTVM：裸机使用TVM" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../microtvm/index.html" class="btn btn-neutral float-right" title="microTVM: TVM on bare-metal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="codebase_walkthrough.html" class="btn btn-neutral float-left" title="TVM Codebase Walkthrough by Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="codebase_walkthrough.html" class="btn btn-neutral float-left" title="TVM Codebase Walkthrough by Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 
