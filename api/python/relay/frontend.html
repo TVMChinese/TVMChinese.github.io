@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.relay.frontend &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
+  <title>tvm.relay.frontend &mdash; tvm 0.8.dev1730+g5c6c968ff 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1729+g7061bd00f
+                  0.8.dev1730+g5c6c968ff
                 </div>
             
           
@@ -198,20 +198,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -220,9 +220,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ndarray.html">tvm.runtime.ndarray</a></li>
@@ -258,19 +258,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../vta/index.html">vta</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -350,10 +350,9 @@
             
   <div class="section" id="module-tvm.relay.frontend">
 <span id="tvm-relay-frontend"></span><h1>tvm.relay.frontend<a class="headerlink" href="#module-tvm.relay.frontend" title="永久链接至标题">¶</a></h1>
-<p>Frontends for constructing Relay programs.</p>
-<p>Contains the model importers currently defined
-for Relay.</p>
-<p><strong>Functions:</strong></p>
+<p>用于构建 Relay 程序的前端。</p>
+<p>包含当前为 Relay 定义的模型导入器。</p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -361,44 +360,44 @@ for Relay.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_mxnet" title="tvm.relay.frontend.from_mxnet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_mxnet</span></code></a>(symbol[, shape, dtype, …])</p></td>
-<td><p>Convert from MXNet”s model into compatible relay Function.</p></td>
+<td><p>将 MXNet 的模型转换为兼容的relay Function。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.quantize_conv_bias_mkldnn_from_var" title="tvm.relay.frontend.quantize_conv_bias_mkldnn_from_var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantize_conv_bias_mkldnn_from_var</span></code></a>(bias_var, …)</p></td>
-<td><p>Quantized conv2d bias</p></td>
+<td><p>量化的conv2d偏置</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_keras" title="tvm.relay.frontend.from_keras"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_keras</span></code></a>(model[, shape, layout])</p></td>
-<td><p>Convert keras model to relay Function.</p></td>
+<td><p>将Keras模型转换为对应的relay Function。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_onnx" title="tvm.relay.frontend.from_onnx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_onnx</span></code></a>(model[, shape, dtype, opset, …])</p></td>
-<td><p>Convert a ONNX model into an equivalent Relay Function.</p></td>
+<td><p>将一个ONNX模型转化为一个等价的Relay Function。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_tflite" title="tvm.relay.frontend.from_tflite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_tflite</span></code></a>(model[, shape_dict, dtype_dict])</p></td>
-<td><p>Convert from tflite model into compatible relay Function.</p></td>
+<td><p>将 tflite 的模型转换为对应的 relay Function。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_coreml" title="tvm.relay.frontend.from_coreml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_coreml</span></code></a>(model[, shape])</p></td>
-<td><p>Convert from coreml model into Relay Function.</p></td>
+<td><p>将coreml模型转换为对应的relay Function。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_caffe2" title="tvm.relay.frontend.from_caffe2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_caffe2</span></code></a>(init_net, predict_net[, shape, …])</p></td>
-<td><p>Load caffe2 graph which contains init_net and predict_net into Relay Function.</p></td>
+<td><p>将包含init_net和predict_net的caffe2模型转换为Relay Function。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_tensorflow" title="tvm.relay.frontend.from_tensorflow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_tensorflow</span></code></a>(graph[, layout, shape, …])</p></td>
-<td><p>Load tensorflow graph which is a python tensorflow graph object into relay.</p></td>
+<td><p>加载一个从python tensorflow计算图转换而来的relay。模型配套的参数将被自动处理。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_darknet" title="tvm.relay.frontend.from_darknet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_darknet</span></code></a>(net[, shape, dtype])</p></td>
-<td><p>Convert from Darknet’s model into compatible relay Function.</p></td>
+<td><p>将Darknet模型转换为对应的relay Function。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_pytorch" title="tvm.relay.frontend.from_pytorch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pytorch</span></code></a>(script_module, input_infos[, …])</p></td>
-<td><p>Load PyTorch model in the form of a scripted PyTorch model and convert into relay.</p></td>
+<td><p>使用torchsrcipt形式加载PyTorch模型，并将其转换为对应的relay。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_caffe" title="tvm.relay.frontend.from_caffe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_caffe</span></code></a>(init_net, predict_net, …)</p></td>
-<td><p>Convert from caffe model into compatible relay Function.</p></td>
+<td><p>将caffe模型转换为对应的relay Function。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.frontend.from_paddle" title="tvm.relay.frontend.from_paddle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_paddle</span></code></a>(program_or_layer[, shape_dict, …])</p></td>
-<td><p>Convert a PaddlePaddle model into an equivalent Relay Function.</p></td>
+<td><p>将PaddlePaddle模型转换为对应的Relay Function。</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Classes:</strong></p>
+<p><strong>类：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -406,22 +405,22 @@ for Relay.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.frontend.ChangeDatatype" title="tvm.relay.frontend.ChangeDatatype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChangeDatatype</span></code></a>(src, dst)</p></td>
-<td><p>Mutator for changing the datatype of Relay programs.</p></td>
+<td><p>需要改变Relay中数据类型时的应变手段。</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_mxnet">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_mxnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_mxnet" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert from MXNet”s model into compatible relay Function.</p>
+<dd><p>将 MXNet 的模型转换为兼容的relay Function。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>symbol</strong> (<em>mxnet.Symbol</em><em> or </em><em>mxnet.gluon.HybridBlock</em>) – MXNet symbol.</p></li>
-<li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – The input shape to the graph</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – The input types to the graph</p></li>
-<li><p><strong>arg_params</strong> (<em>dict of str to mx.NDArray</em>) – The argument parameters in mxnet</p></li>
-<li><p><strong>aux_params</strong> (<em>dict of str to mx.NDArray</em>) – The auxiliary parameters in mxnet</p></li>
+<li><p><strong>symbol</strong> (<em>mxnet.Symbol</em><em> or </em><em>mxnet.gluon.HybridBlock</em>) – MXNet模型标志。</p></li>
+<li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – 计算图输入节点的数据形状</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
+<li><p><strong>arg_params</strong> (<em>dict of str to mx.NDArray</em>) – mxnet中的模型参数</p></li>
+<li><p><strong>aux_params</strong> (<em>dict of str to mx.NDArray</em>) – mxnet中的辅助参数</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -437,21 +436,19 @@ for Relay.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.quantize_conv_bias_mkldnn_from_var">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">quantize_conv_bias_mkldnn_from_var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bias_var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias_scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.quantize_conv_bias_mkldnn_from_var" title="永久链接至目标">¶</a></dt>
-<dd><p>Quantized conv2d bias</p>
+<dd><p>量化的conv2d偏置</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_keras">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_keras</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_keras" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert keras model to relay Function.</p>
+<dd><p>将Keras模型转换为对应的relay Function。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<em>keras.engine.training.Model</em><em> or </em><em>tensorflow.keras.models.Model</em>) – The keras model to be converted.</p></li>
-<li><p><strong>shape</strong> (<em>dict of str to int list/tuple</em>) – Input shapes of the model, optional</p></li>
-<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – One of ‘NCHW’ or ‘NHWC’, indicates how data should be arranged in
-the output model. Default layout is ‘NCHW’ as it in general
-performs better across TVM.</p></li>
+<li><p><strong>model</strong> (<em>keras.engine.training.Model</em><em> or </em><em>tensorflow.keras.models.Model</em>) – 将要被转换的keras模型。</p></li>
+<li><p><strong>shape</strong> (<em>dict of str to int list/tuple</em>) – 模型输入节点的数据形状，可选</p></li>
+<li><p><strong>layout</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – “NCHW” 或 “NHWC”之一，表示数据在输出模型中应如何排列。默认布局是’NCHW’，因为一般来说，它在TVM中表现得更好。</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -467,34 +464,19 @@ performs better across TVM.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_onnx">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_onnx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freeze_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_onnx" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert a ONNX model into an equivalent Relay Function.</p>
-<p>ONNX graphs are represented as Python Protobuf objects.
-The companion parameters will be handled automatically.
-However, the input names from onnx graph is vague, mixing inputs and
-network weights/bias such as “1”, “2”…
-For convenience, we rename the <cite>real</cite> input names to “input_0”,
-“input_1”… And renaming parameters to “param_0”, “param_1”…</p>
-<p>By default, ONNX defines models in terms of dynamic shapes. The ONNX importer
-retains that dynamism upon import, and the compiler attempts to convert the
-model into a static shapes at compile time. If this fails, there may still
-be dynamic operations in the model. Not all TVM kernels currently support
-dynamic shapes, please file an issue on discuss.tvm.apache.org
-if you hit an error with dynamic kernels.</p>
+<dd><p>将一个ONNX模型转化为一个等价的Relay Function。</p>
+<p>被解析为 Python Protobuf 对象的ONNX 计算图。模型配套的参数将被自动处理。然而，来自ONNX计算图的输入名称是模糊的，混合了输入和网络权重/偏置，如 “1”、”2”… 为方便起见，我们将 “真实” 的输入名称重命名为 “input_0”, “input_1”… 并将参数重命名为 “param_0”、”param_1”…</p>
+<p>默认情况下，ONNX 以动态图的方式定义模型。ONNX 导入器在导入时保留了这种动态性，而编译器则试图在编译时将模型转换为静态形状。如果转换失败，则代表模型中可能仍有动态操作。目前并非所有的TVM内核都支持动态形状，如果你在使用动态内核时遇到错误，请在discussion.tvm.apache.org上提交问题。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> (<em>protobuf object</em>) – ONNX ModelProto after ONNX v1.1.0</p></li>
-<li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – The input shape to the graph</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – The input types to the graph</p></li>
-<li><p><strong>opset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – Override to autodetected opset.
-This can be helpful for some testing.</p></li>
-<li><p><strong>freeze_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.10)"><em>bool</em></a>) – If this parameter is true, the importer will take any provided
-onnx input values (weights, shapes, etc) and embed them into the relay model
-as Constants instead of variables. This allows more aggressive optimizations
-at compile time and helps in making models static if certain inputs represent
-attributes relay would traditionally consider compile-time constants.</p></li>
+<li><p><strong>model</strong> (<em>protobuf object</em>) – ONNX v1.1.0之后的ONNX ModelProto</p></li>
+<li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – 计算图输入节点的数据形状</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
+<li><p><strong>opset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – 自定义优化等级，并覆盖掉程序自动检测的优化等级结果。这对一些测试是有帮助的。</p></li>
+<li><p><strong>freeze_params</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(在 Python v3.10)"><em>bool</em></a>) – 如果这个参数为True，转换脚本将接受所有被用户提供的onnx输入值（权重、形状等），并将它们定义为常量而不是变量、嵌入到relay中。如果某些输入能在编译时被relay认为是常量，那么就可以用这个方法，这将使得模型在转换时得到更深层次的优化</p></li>
 <li><p><strong>convert_config</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="../tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>]</em>) – <dl class="simple">
-<dt>Default config:</dt><dd><dl class="simple">
+<dt>默认的配置：</dt><dd><dl class="simple">
 <dt>use_nt_batch_matmul<span class="classifier">bool = True</span></dt><dd><p>True to convert qualified onnx <cite>matmul</cite> to <cite>nn.batch_matmul</cite> strict to NT format
 (transpose_a=False, transpose_b=True).</p>
 </dd>
@@ -517,13 +499,13 @@ attributes relay would traditionally consider compile-time constants.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_tflite">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_tflite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_tflite" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert from tflite model into compatible relay Function.</p>
+<dd><p>将 tflite 的模型转换为对应的 relay Function。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> – tflite.Model or tflite.Model.Model (depending on tflite version)</p></li>
-<li><p><strong>shape_dict</strong> (<em>dict of str to int list/tuple</em>) – Input shapes of the model.</p></li>
-<li><p><strong>dtype_dict</strong> (<em>dict of str to str</em>) – Input types of the model.</p></li>
+<li><p><strong>model</strong> – tflite.Model or tflite.Model.Model （由所使用的tflite版本决定）</p></li>
+<li><p><strong>shape_dict</strong> (<em>dict of str to int list/tuple</em>) – 模型输入节点的数据形状。</p></li>
+<li><p><strong>dtype_dict</strong> (<em>dict of str to str</em>) – 模型输入节点的数据类型。</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -539,12 +521,12 @@ attributes relay would traditionally consider compile-time constants.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_coreml">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_coreml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_coreml" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert from coreml model into Relay Function.</p>
+<dd><p>将coreml模型转换为对应的relay Function。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> – coremltools.models.MLModel of a NeuralNetworkClassifier</p></li>
-<li><p><strong>shape</strong> (<em>dict of str to int list/tuple</em><em>, </em><em>optional</em>) – The input shapes</p></li>
+<li><p><strong>shape</strong> (<em>dict of str to int list/tuple</em><em>, </em><em>optional</em>) – 输入节点大小</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -560,14 +542,14 @@ attributes relay would traditionally consider compile-time constants.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_caffe2">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_caffe2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_net</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predict_net</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float32'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_caffe2" title="永久链接至目标">¶</a></dt>
-<dd><p>Load caffe2 graph which contains init_net and predict_net into Relay Function.</p>
+<dd><p>将包含init_net和predict_net的caffe2模型转换为Relay Function。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>init_net</strong> (<em>protobuf object</em>) – Caffe2 NetDef containing the weights</p></li>
-<li><p><strong>predict_net</strong> (<em>protobuf object</em>) – Caffe2 NetDef containing the graph</p></li>
-<li><p><strong>shape</strong> (<em>dict of str to tuple</em>) – The input shape to the graph</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – The input types to the graph</p></li>
+<li><p><strong>init_net</strong> (<em>protobuf object</em>) – 包含权重的Caffe2 NetDef</p></li>
+<li><p><strong>predict_net</strong> (<em>protobuf object</em>) – 包含计算图的Caffe2 NetDef</p></li>
+<li><p><strong>shape</strong> (<em>dict of str to tuple</em>) – 计算图输入节点的数据形状</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -583,17 +565,16 @@ attributes relay would traditionally consider compile-time constants.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_tensorflow">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_tensorflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NHWC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_tensorflow" title="永久链接至目标">¶</a></dt>
-<dd><p>Load tensorflow graph which is a python tensorflow graph object into relay.
-The companion parameters will be handled automatically.</p>
+<dd><p>加载一个从python tensorflow计算图转换而来的relay。模型配套的参数将被自动处理。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>graph</strong> (<em>GraphDef object</em>) – Tensorflow GraphDef</p></li>
-<li><p><strong>layout</strong> (<em>target layout to be used</em><em> (</em><em>Optional</em><em>)</em>) – NCHW only supported now to enable NHWC models on GPU.</p></li>
-<li><p><strong>shape</strong> (<em>Dictionary of input dimensions</em><em> (</em><em>Optional</em><em>)</em>) – Graph level input shape dictionary.</p></li>
-<li><p><strong>outputs</strong> (<em>List of output tensor names</em><em> (</em><em>Optional</em><em>)</em>) – if not specified then the last node is assumed as graph output.</p></li>
+<li><p><strong>layout</strong> (<em>target layout to be used</em><em> (</em><em>Optional</em><em>)</em>) – 现在该参数仅支持NCHW，以便在GPU上启用NHWC模式。</p></li>
+<li><p><strong>shape</strong> (<em>Dictionary of input dimensions</em><em> (</em><em>Optional</em><em>)</em>) – 由计算图的输入节点形状组成的字典。</p></li>
+<li><p><strong>outputs</strong> (<em>List of output tensor names</em><em> (</em><em>Optional</em><em>)</em>) – 如果该参数没有被指定，那么输入计算图的最后一个节点将被假定为图的输出。</p></li>
 <li><p><strong>convert_config</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="dataflow_pattern.html#tvm.relay.dataflow_pattern.Dict" title="tvm.relay.dataflow_pattern.Dict"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em>, </em><a class="reference internal" href="../tir.html#tvm.tir.Any" title="tvm.tir.Any"><em>Any</em></a><em>]</em><em>]</em>) – <dl class="simple">
-<dt>Default config:</dt><dd><dl class="simple">
+<dt>默认的配置：</dt><dd><dl class="simple">
 <dt>use_dense<span class="classifier">bool = True</span></dt><dd><p>Ture to convert <cite>tf.matmul</cite> to <cite>nn.dense</cite>, else to <cite>nn.matmul</cite>.
 The <cite>nn.dense</cite> op requires the data tensor to be non-transposed and weight tensor
 to be transposed, may insert extra <cite>transpose</cite> to the original graph.</p>
@@ -620,13 +601,13 @@ to be transposed, may insert extra <cite>transpose</cite> to the original graph.
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_darknet">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_darknet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">net</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float32'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_darknet" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert from Darknet’s model into compatible relay Function.</p>
+<dd><p>将Darknet模型转换为对应的relay Function。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>net</strong> (<em>Darknet net parameter</em>) – Darknet net structure.</p></li>
-<li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – The input shape to the graph</p></li>
-<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – The input types to the graph</p></li>
+<li><p><strong>net</strong> (<em>Darknet net parameter</em>) – Darknet的网络结构。</p></li>
+<li><p><strong>shape</strong> (<em>dict of str to tuple</em><em>, </em><em>optional</em>) – 计算图输入节点的数据形状</p></li>
+<li><p><strong>dtype</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a><em> or </em><em>dict of str to str</em>) – 计算图输入节点的数据类型</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -642,22 +623,13 @@ to be transposed, may insert extra <cite>transpose</cite> to the original graph.
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_pytorch">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_pytorch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script_module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_infos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">custom_convert_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float32'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_pytorch" title="永久链接至目标">¶</a></dt>
-<dd><p>Load PyTorch model in the form of a scripted PyTorch model and convert into relay.
-The companion parameters will be handled automatically.</p>
+<dd><p>使用torchscipt形式加载PyTrch模型，并将其转换为对应的relay。模型配套的参数将被自动处理。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>script_module</strong> (<em>TopLevelTracedModule object</em>) – TorchScripted PyTorch graph
-Note: We currently only support traces (ie: torch.jit.trace(model, input))</p></li>
-<li><p><strong>input_infos</strong> (<em>List of tuples</em>) – Can be (input name, input shape) or (input name, (input shape, input types))
-Graph level input shape and type list
-The same input names need to be used for deployment, so choose easy to
-remember names (such as: input0, input1)
-e.g.
-[(‘input0’, (1, 2)), (‘input1’, (3, 4))]
-or
-[(‘input0’, ((1, 2), ‘int’)), (‘input1’, ((3, 4), ‘float’))]</p></li>
-<li><p><strong>custom_convert_map</strong> (<em>Dictionary of str to Relay op</em>) – A custom op conversion map in the same format as _convert_map above</p></li>
+<li><p><strong>script_module</strong> (<em>TopLevelTracedModule object</em>) – 基于TorchScripted的Pytorch计算图。注意：我们目前仅支持少许功能（如：torch.jit.trace(model, input)）。</p></li>
+<li><p><strong>input_infos</strong> (<em>List of tuples</em>) – 它的样式可以是由[输入名称，(输入形状)]或[输入名称, (输入形状, 输入类型)]组成的列表或元组，代表计算图的输入形状和类型列表。在转换时需要使用相同的输入节点名称，因此请使用容易记忆的名称（如：input0，input1）。例如：[(‘input0’, (1, 2)), (‘input1’, (3, 4))] 或 [(‘input0’, ((1, 2), ‘int’), (‘input1’, ((3, 4), ‘float’)]。</p></li>
+<li><p><strong>custom_convert_map</strong> (<em>Dictionary of str to Relay op</em>) – 一个与上述_convert_map具有相同格式的自定义算子转换图。</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -673,14 +645,14 @@ or
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_caffe">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_caffe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_net</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predict_net</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_caffe" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert from caffe model into compatible relay Function.</p>
+<dd><p>将caffe模型转换为对应的relay Function。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>init_net</strong> (<em>caffe_pb2.NetParameter</em>) – caffemodel</p></li>
 <li><p><strong>predict_net</strong> (<em>caffe_pb2.NetParameter</em>) – caffe prototxt</p></li>
-<li><p><strong>shape_dict</strong> (<em>dict of str to int list/tuple</em>) – Input shapes of the model.</p></li>
-<li><p><strong>dtype_dict</strong> (<em>dict of str to str</em>) – Input types of the model.</p></li>
+<li><p><strong>shape_dict</strong> (<em>dict of str to int list/tuple</em>) – 模型输入节点的数据形状。</p></li>
+<li><p><strong>dtype_dict</strong> (<em>dict of str to str</em>) – 模型输入节点的数据类型。</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -696,19 +668,18 @@ or
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.frontend.from_paddle">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">from_paddle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program_or_layer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.from_paddle" title="永久链接至目标">¶</a></dt>
-<dd><p>Convert a PaddlePaddle model into an equivalent Relay Function.</p>
-<p>PaddlePaddle Program/TranslatedLayer represent the computation graph of PaddlePaddle model,
-and PaddlePaddle scope stores all the weights of PaddlePaddle model.</p>
+<dd><p>将PaddlePaddle模型转换为对应的Relay Function。</p>
+<p>在PaddlePaddle中，Program或者TranslatedLayer代表PaddlePaddle模型的计算图，PaddlePaddle scope用来存储PaddlePaddle模型的所有权重。</p>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="tvm.relay.frontend.ChangeDatatype">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tvm.relay.frontend.</span></span><span class="sig-name descname"><span class="pre">ChangeDatatype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.frontend.ChangeDatatype" title="永久链接至目标">¶</a></dt>
-<dd><p>Mutator for changing the datatype of Relay programs.</p>
+<dd><p>需要改变Relay中数据类型时的应变手段。</p>
 <p>This pass should be useful for users of the Bring Your Own Datatypes
 framework.
 TODO(&#64;gussmith23 &#64;hypercubestart) Add link to documentation when it exists</p>
-<p>Example:</p>
+<p>举例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tvm.relay.testing.inception_v3</span> <span class="kn">import</span> <span class="n">get_workload</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">get_workload</span><span class="p">()</span>
 
@@ -723,9 +694,8 @@ TODO(&#64;gussmith23 &#64;hypercubestart) Add link to documentation when it exis
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>src</strong> (<a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a>) – The source datatype name, e.g. “float” or “posites2” (but not “float32”
-or “custom[posites2]32”).</p></li>
-<li><p><strong>dst</strong> (<a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a>) – The destination datatype name, in the same format.</p></li>
+<li><p><strong>src</strong> (<a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a>) – 原始数据类型名称，例如 “float “或 “posites2”（但不是 “float32 ” 或  “custom[posites2]32”）。</p></li>
+<li><p><strong>dst</strong> (<a class="reference internal" href="../runtime.html#tvm.runtime.String" title="tvm.runtime.String"><em>String</em></a>) – 转换后数据类型名称，格式相同。</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -750,10 +720,10 @@ or “custom[posites2]32”).</p></li>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nn.html" class="btn btn-neutral float-right" title="tvm.relay.nn" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nn.html" class="btn btn-neutral float-right" title="tvm.relay.nn" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="tvm.relay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="tvm.relay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

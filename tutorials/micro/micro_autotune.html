@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Autotuning with micro TVM &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
+  <title>Autotuning with micro TVM &mdash; tvm 0.8.dev1730+g5c6c968ff 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="microTVM Reference Virtual Machines" href="micro_reference_vm.html" />
+    <link rel="next" title="microTVM 虚拟机" href="micro_reference_vm.html" />
     <link rel="prev" title="Introduction to TOPI" href="../topi/intro_topi.html" /> 
 </head>
 
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1729+g7061bd00f
+                  0.8.dev1730+g5c6c968ff
                 </div>
             
           
@@ -198,20 +198,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -228,28 +228,28 @@
 <li class="toctree-l3"><a class="reference internal" href="#timing-the-tuned-program">Timing the tuned program</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="micro_reference_vm.html">microTVM Reference Virtual Machines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="micro_tflite.html">microTVM with TFLite Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_reference_vm.html">microTVM 虚拟机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_tflite.html">使用microTVM部署TFLite模型</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -482,16 +482,16 @@ choose other options by choosing from <cite>PLATFORM</cite> list.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Current/Best:    0.00/   0.00 MFLOPS | Progress: (0/10) | 0.00 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (1/10) | 11.17 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (2/10) | 19.52 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (3/10) | 29.29 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (4/10) | 37.67 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (5/10) | 47.43 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (6/10) | 56.49 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (7/10) | 66.10 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (8/10) | 74.42 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (9/10) | 84.24 s
-Current/Best:    0.00/   0.00 MFLOPS | Progress: (10/10) | 92.54 sWARNING:root:Could not find any valid schedule for task Task(func_name=conv2d_NCHWc.x86, args=((&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;), kwargs={}, workload=(&#39;conv2d_NCHWc.x86&#39;, (&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;)). A file containing the errors has been written to /tmp/tvm_tuning_errors_a_o9v1y3.log.
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (1/10) | 11.56 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (2/10) | 20.62 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (3/10) | 29.73 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (4/10) | 38.09 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (5/10) | 47.84 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (6/10) | 56.34 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (7/10) | 66.21 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (8/10) | 74.58 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (9/10) | 84.35 s
+Current/Best:    0.00/   0.00 MFLOPS | Progress: (10/10) | 92.96 sWARNING:root:Could not find any valid schedule for task Task(func_name=conv2d_NCHWc.x86, args=((&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;), kwargs={}, workload=(&#39;conv2d_NCHWc.x86&#39;, (&#39;TENSOR&#39;, (1, 3, 10, 10), &#39;float32&#39;), (&#39;TENSOR&#39;, (6, 3, 5, 5), &#39;float32&#39;), (1, 1), (2, 2, 2, 2), (1, 1), &#39;NCHW&#39;, &#39;NCHW&#39;, &#39;float32&#39;)). A file containing the errors has been written to /tmp/tvm_tuning_errors_rg9bzwwx.log.
 </pre></div>
 </div>
 </div>
@@ -556,7 +556,7 @@ the tuned operator.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">_dispatch_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
   File <span class="nb">&quot;/tvm/python/tvm/micro/project_api/server.py&quot;</span>, line <span class="m">582</span>, in <span class="n">_dispatch_request</span>
     <span class="n">return_value</span> <span class="o">=</span> <span class="n">dispatch_method</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
-  File <span class="nb">&quot;/tmp/tmpe8syc_1u/project/microtvm_api_server.py&quot;</span>, line <span class="m">118</span>, in <span class="n">build</span>
+  File <span class="nb">&quot;/tmp/tmp4fktj45k/project/microtvm_api_server.py&quot;</span>, line <span class="m">118</span>, in <span class="n">build</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">PROJECT_DIR</span><span class="p">)</span>
   File <span class="nb">&quot;/usr/lib/python3.6/subprocess.py&quot;</span>, line <span class="m">311</span>, in <span class="n">check_call</span>
     <span class="k">raise</span> <span class="n">CalledProcessError</span><span class="p">(</span><span class="n">retcode</span><span class="p">,</span> <span class="n">cmd</span><span class="p">)</span>
@@ -605,7 +605,7 @@ the tuned operator.</p>
     <span class="k">del</span> <span class="n">debug_module</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  35.360 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  35.737 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-micro-micro-autotune-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/f39b7e7219dd852263ba763e0b35598c/micro_autotune.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">micro_autotune.py</span></code></a></p>
@@ -628,10 +628,10 @@ the tuned operator.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="micro_reference_vm.html" class="btn btn-neutral float-right" title="microTVM Reference Virtual Machines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="micro_reference_vm.html" class="btn btn-neutral float-right" title="microTVM 虚拟机" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../topi/intro_topi.html" class="btn btn-neutral float-left" title="Introduction to TOPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../topi/intro_topi.html" class="btn btn-neutral float-left" title="Introduction to TOPI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

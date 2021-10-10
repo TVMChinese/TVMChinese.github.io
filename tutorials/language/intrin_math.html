@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Intrinsics and Math Functions &mdash; tvm 0.8.dev1729+g7061bd00f 文档</title>
+  <title>内部函数和数学函数 &mdash; tvm 0.8.dev1730+g5c6c968ff 文档</title>
   
 
   
@@ -173,7 +173,7 @@
             
             
                 <div class="version">
-                  0.8.dev1729+g7061bd00f
+                  0.8.dev1730+g5c6c968ff
                 </div>
             
           
@@ -198,29 +198,29 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schedule_primitives.html">TVM中的调度原语</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reduction.html">Reduction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Intrinsics and Math Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#direct-declare-extern-math-call">Direct Declare Extern Math Call</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">内部函数和数学函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#direct-declare-extern-math-call">直接声明外部数学调用</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#unified-intrinsic-call">Unified Intrinsic Call</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#intrinsic-lowering-rule">Intrinsic Lowering Rule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#add-your-own-intrinsic">Add Your Own Intrinsic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">总结</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scan.html">Scan and Recurrent Kernel</a></li>
@@ -237,23 +237,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -312,7 +312,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>Intrinsics and Math Functions</li>
+      <li>内部函数和数学函数</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -333,18 +333,13 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-language-intrin-math-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-language-intrin-math-py"><span class="std std-ref">here</span></a> 下载完整样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="intrinsics-and-math-functions">
-<span id="sphx-glr-tutorials-language-intrin-math-py"></span><h1>Intrinsics and Math Functions<a class="headerlink" href="#intrinsics-and-math-functions" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
-<p>While TVM supports basic arithmetic operations. In many cases
-usually we will need more complicated builtin functions.
-For example <code class="code docutils literal notranslate"><span class="pre">exp</span></code> to take the exponential of the function.</p>
-<p>These functions are target system dependent and may have different
-names of different target platforms. In this tutorial, we will learn
-how we can invoke these target specific functions, and how we can unify
-the interface via tvm’s intrinsic API.</p>
+<span id="sphx-glr-tutorials-language-intrin-math-py"></span><h1>内部函数和数学函数<a class="headerlink" href="#intrinsics-and-math-functions" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
+<p>尽管TVM支持基本的算术运算。但是在许多情况下，我们需要更复杂的内置函数。例如:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>exp`来取函数的指数。</p>
+<p>这些函数依赖于目标系统，可能具有不同目标平台的不同名称。在本教程中，我们将学习如何调用这些特定于目标的函数，以及如何通过tvm的内部API统一接口。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -354,7 +349,7 @@ the interface via tvm’s intrinsic API.</p>
 </pre></div>
 </div>
 <div class="section" id="direct-declare-extern-math-call">
-<h2>Direct Declare Extern Math Call<a class="headerlink" href="#direct-declare-extern-math-call" title="永久链接至标题">¶</a></h2>
+<h2>直接声明外部数学调用<a class="headerlink" href="#direct-declare-extern-math-call" title="永久链接至标题">¶</a></h2>
 <p>The most straight-forward way to call target specific function is via
 extern function call construct in tvm.
 In the following example, we use <a class="reference internal" href="../../api/python/tir.html#tvm.tir.call_pure_extern" title="tvm.tir.call_pure_extern"><code class="xref any py py-func docutils literal notranslate"><span class="pre">tvm.tir.call_pure_extern</span></code></a> to call
@@ -371,7 +366,7 @@ In the following example, we use <a class="reference internal" href="../../api/p
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">imported_modules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_source</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>#ifdef _WIN32
   using uint = unsigned int;
   using uchar = unsigned char;
@@ -419,7 +414,7 @@ The following code use te.exp instead, which create an intrinsic call
 <span class="nb">print</span><span class="p">(</span><span class="n">fcuda</span><span class="o">.</span><span class="n">imported_modules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_source</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>#ifdef _WIN32
   using uint = unsigned int;
   using uchar = unsigned char;
@@ -450,7 +445,7 @@ The same te.exp can also be used for float64 data types.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">fopencl</span><span class="o">.</span><span class="n">imported_modules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_source</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>// Function: myexp_kernel0
 __kernel void myexp_kernel0(__global float* restrict B, __global float* restrict A, int n, int stride, int stride1) {
   if (((int)get_group_id(0)) &lt; (n &gt;&gt; 6)) {
@@ -499,7 +494,7 @@ fast math version <code class="code docutils literal notranslate"><span class="p
 <span class="nb">print</span><span class="p">(</span><span class="n">fcuda</span><span class="o">.</span><span class="n">imported_modules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_source</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>#ifdef _WIN32
   using uint = unsigned int;
   using uchar = unsigned char;
@@ -561,7 +556,7 @@ The following example add an intrinsic <code class="code docutils literal notran
 <span class="nb">print</span><span class="p">(</span><span class="n">fcuda</span><span class="o">.</span><span class="n">imported_modules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_source</span><span class="p">())</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>#ifdef _WIN32
   using uint = unsigned int;
   using uchar = unsigned char;
@@ -588,7 +583,7 @@ extern &quot;C&quot; __global__ void __launch_bounds__(64) mylog_kernel0(float* 
 </div>
 </div>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>TVM can call extern target dependent math function.</p></li>
 <li><p>Use intrinsic to defined a unified interface for the functions.</p></li>
@@ -597,10 +592,10 @@ extern &quot;C&quot; __global__ void __launch_bounds__(64) mylog_kernel0(float* 
 </ul>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-language-intrin-math-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/fb810a10b128e7d81f5eec1c5908e0f5/intrin_math.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">intrin_math.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/fb810a10b128e7d81f5eec1c5908e0f5/intrin_math.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">intrin_math.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/5df1a8bfe653027789c10728e74a65c0/intrin_math.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">intrin_math.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/5df1a8bfe653027789c10728e74a65c0/intrin_math.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">intrin_math.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -617,10 +612,10 @@ extern &quot;C&quot; __global__ void __launch_bounds__(64) mylog_kernel0(float* 
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="scan.html" class="btn btn-neutral float-right" title="Scan and Recurrent Kernel" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="scan.html" class="btn btn-neutral float-right" title="Scan and Recurrent Kernel" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="reduction.html" class="btn btn-neutral float-left" title="Reduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="reduction.html" class="btn btn-neutral float-left" title="Reduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 
