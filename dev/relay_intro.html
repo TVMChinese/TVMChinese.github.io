@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Relay 介绍 &mdash; tvm 0.8.dev1730+g5c6c968ff 文档</title>
+  <title>Relay 介绍 &mdash; tvm 0.8.dev1731+gef1bf1547 文档</title>
   
 
   
@@ -88,7 +88,7 @@
                    <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
                 </li>
                 <li class="nav-item">
-                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN.html>Translate-Contribution</a>
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN.html>About-Translators</a>
                 </li>
              </ul>
                <div class="responsivetlcdropdown">
@@ -113,6 +113,9 @@
                      </li>
                      <li>
                        <a href=https://www.apache.org/events/current-event>Events</a>
+                     </li>
+                     <li>
+                       <a href=https://www.zhihu.com/column/c_1429578595417563136>Zhihu</a>
                      </li>
                  </ul>
                </div>
@@ -146,6 +149,9 @@
                      <li>
                        <a href=https://www.apache.org/events/current-event>Events</a>
                      </li>
+                     <li>
+                       <a href=https://www.zhihu.com/column/c_1429578595417563136>Zhihu</a>
+                     </li>
                   </ul>
                 </div>
               </div>
@@ -173,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1730+g5c6c968ff
+                  0.8.dev1731+gef1bf1547
                 </div>
             
           
@@ -368,9 +374,7 @@
 </div>
 <div class="section" id="module-support-multiple-functions-graphs">
 <h2>Module: Support Multiple Functions (Graphs)<a class="headerlink" href="#module-support-multiple-functions-graphs" title="永久链接至标题">¶</a></h2>
-<p>So far we have introduced how can we build a dataflow graph as a function. One might naturally ask: Can we support multiple
-functions and enable them to call each other? Relay allows grouping multiple functions together in a module; the code below
-shows an example of a function calling another function.</p>
+<p>到此为止我们已经介绍了如何将一个数据流图构建为一个函数。我们可以很自然的想到：我们是否可以支持多个函数并使得它们可以相互调用？Relay 支持将多个函数打包在一个模块中；下面的代码展示了函数调用另一个函数的例子：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def @muladd(%x, %y, %z) {
   %1 = mul(%x, %y)
   %2 = add(%1, %z)
@@ -402,9 +406,7 @@ GlobalVar decouples the definition/declaration and enables recursion and delayed
 }
 </pre></div>
 </div>
-<p>In the above example, <code class="docutils literal notranslate"><span class="pre">&#64;myfunc</span></code> recursively calls itself. Using GlobalVar <code class="docutils literal notranslate"><span class="pre">&#64;myfunc</span></code> to represent the function avoids
-the cyclic dependency in the data structure.
-At this point, we have introduced the basic concepts in Relay. Notably, Relay has the following improvements over NNVMv1:</p>
+<p>在上面的例子中， <code class="docutils literal notranslate"><span class="pre">&#64;myfunc</span></code> 递归调用它自身。使用全局变量 <code class="docutils literal notranslate"><span class="pre">&#64;myfunc</span></code> 来避免在数据结构中的循环依赖。到这里，我们已经介绍了 Relay 的基本概念。值得注意的是， Relay 相较于 NNVM 有如下改进：</p>
 <ul class="simple">
 <li><p>Succinct text format that eases debugging of writing passes.</p></li>
 <li><p>First-class support for subgraphs-functions, in a joint module, this enables further chance of joint optimizations such as inlining and calling convention specification.</p></li>
