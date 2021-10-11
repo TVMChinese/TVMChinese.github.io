@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How to optimize convolution using TensorCores &mdash; tvm 0.8.dev1731+gef1bf1547 文档</title>
+  <title>How to optimize convolution using TensorCores &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Tuning High Performance Convolution on NVIDIA GPUs" href="../autotvm/tune_conv2d_cuda.html" />
-    <link rel="prev" title="如何在GPU上优化卷积" href="opt_conv_cuda.html" /> 
+    <link rel="prev" title="How to optimize convolution on GPU" href="opt_conv_cuda.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1731+gef1bf1547
+                  0.8.dev1732+g73c224c2e
                 </div>
             
           
@@ -204,33 +204,33 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="opt_gemm.html">如何在CPU上优化GEMM（通用矩阵乘）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="opt_conv_cuda.html">如何在GPU上优化卷积</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opt_gemm.html">How to optimize GEMM on CPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opt_conv_cuda.html">How to optimize convolution on GPU</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">How to optimize convolution using TensorCores</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#tensorcore-introduction">TensorCore Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#preparation-and-algorithm">准备和算法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preparation-and-algorithm">Preparation and Algorithm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#memory-scope">Memory Scope</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#define-tensor-intrinsic">Define Tensor Intrinsic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scheduling-the-computation">Scheduling the Computation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lowering-computation-to-intrinsics">Lowering Computation to Intrinsics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generate-cuda-kernel">Generate CUDA Kernel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#summary">总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -241,23 +241,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -344,7 +344,7 @@
 <p><strong>Author</strong>: <a class="reference external" href="https://github.com/Hzfengsy">Siyuan Feng</a></p>
 <p>In this tutorial, we will demonstrate how to write a high performance convolution
 schedule using TensorCores in TVM. In this example, we assume the input to
-convolution has a large batch. We strongly recommend covering the <a class="reference internal" href="opt_conv_cuda.html#opt-conv-gpu"><span class="std std-ref">如何在GPU上优化卷积</span></a> tutorial first.</p>
+convolution has a large batch. We strongly recommend covering the <a class="reference internal" href="opt_conv_cuda.html#opt-conv-gpu"><span class="std std-ref">How to optimize convolution on GPU</span></a> tutorial first.</p>
 <div class="section" id="tensorcore-introduction">
 <h2>TensorCore Introduction<a class="headerlink" href="#tensorcore-introduction" title="永久链接至标题">¶</a></h2>
 <p>Each Tensor Core provides a 4x4x4 matrix processing array that operates
@@ -360,7 +360,7 @@ that primitive into multiple memory load instructions. At run time, every thread
 16 elements from matrix A and 16 elements from B.</p>
 </div>
 <div class="section" id="preparation-and-algorithm">
-<h2>准备和算法<a class="headerlink" href="#preparation-and-algorithm" title="永久链接至标题">¶</a></h2>
+<h2>Preparation and Algorithm<a class="headerlink" href="#preparation-and-algorithm" title="永久链接至标题">¶</a></h2>
 <p>We use the fixed size for input tensors with 256 channels and 14 x 14 dimensions.
 The batch size is 256. Convolution filters contain 512 filters of size 3 x 3.
 We use stride size 1 and padding size 1 for the convolution. In the example, we use
@@ -606,7 +606,7 @@ are both used in matrix multiplication, so we can just write following three int
 <p>To use TensorCores in TVM, we must schedule the computation into specific structure
 to match the tensor intrinsic. The same as traditional GPU programs, we can also use
 shared memory to boost the speed. If you have any questions about blocking and shared
-memory, please refer <a class="reference internal" href="opt_conv_cuda.html#opt-conv-gpu"><span class="std std-ref">如何在GPU上优化卷积</span></a>.</p>
+memory, please refer <a class="reference internal" href="opt_conv_cuda.html#opt-conv-gpu"><span class="std std-ref">How to optimize convolution on GPU</span></a>.</p>
 <p>In this example, each block contains 2x4 warps, and each warp calls 4x2 TensorCore
 instructions. Thus, the output shape of each warp is 64x32 and each block outputs
 128x128 titles. Due to the limit of shared memory space, we only load 2 blocks (2x128x128 tiles)
@@ -683,7 +683,7 @@ The only thing we should do is to make sure all threads in a warp can call Tenso
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">Conv</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, W_1: handle, Conv_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {A: Buffer(A_2: Pointer(float16), float16, [16, 14, 14, 16, 16, 16], []),
@@ -781,7 +781,7 @@ by mapping the 2D convolution to tensor intrinsics</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">Conv</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, W_1: handle, Conv_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {Conv: Buffer(Conv_2: Pointer(float32), float32, [16, 14, 14, 32, 16, 16], []),
@@ -864,13 +864,13 @@ be able to run on our build server</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;conv2d with tensor core: </span><span class="si">%f</span><span class="s2"> ms&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">evaluator</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>conv2d with tensor core: 4.523881 ms
 </pre></div>
 </div>
 </div>
 <div class="section" id="summary">
-<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial demonstrates how TVM scheduling primitives can be used to
 call TensorCores on specific GPUs.</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-optimize-opt-conv-tensorcore-py">
@@ -895,10 +895,10 @@ call TensorCores on specific GPUs.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../autotvm/tune_conv2d_cuda.html" class="btn btn-neutral float-right" title="Tuning High Performance Convolution on NVIDIA GPUs" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../autotvm/tune_conv2d_cuda.html" class="btn btn-neutral float-right" title="Tuning High Performance Convolution on NVIDIA GPUs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="opt_conv_cuda.html" class="btn btn-neutral float-left" title="如何在GPU上优化卷积" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="opt_conv_cuda.html" class="btn btn-neutral float-left" title="How to optimize convolution on GPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

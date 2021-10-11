@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>安装 TVM &mdash; tvm 0.8.dev1731+gef1bf1547 文档</title>
+  <title>Installing TVM &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="使用TVMC编译和优化一个模型" href="tvmc_command_line_driver.html" />
-    <link rel="prev" title="介绍" href="introduction.html" /> 
+    <link rel="next" title="Compiling and Optimizing a Model with TVMC" href="tvmc_command_line_driver.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1731+gef1bf1547
+                  0.8.dev1732+g73c224c2e
                 </div>
             
           
@@ -204,36 +204,36 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Getting Started With TVM</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">介绍</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">安装 TVM</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installing-from-source">从源码安装</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#installing-from-binary-packages">从二进制包安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installing TVM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-from-source">Installing from Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-from-binary-packages">Installing From Binary Packages</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">使用TVMC编译和优化一个模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">Compiling and Optimizing a Model with TVMC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_relay_x86.html">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">使用张量表达式来处理运算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">Working with Operators Using Tensor Expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto_scheduler_matmul_x86.html">Optimizing Operators with Auto-scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cross_compilation_and_rpc.html">Cross Compilation and RPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">Quick Start Tutorial for Compiling Deep Learning Models</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -242,23 +242,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -317,7 +317,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>安装 TVM</li>
+      <li>Installing TVM</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -338,23 +338,36 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-get-started-install-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-get-started-install-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="installing-tvm">
-<span id="sphx-glr-tutorials-get-started-install-py"></span><h1>安装 TVM<a class="headerlink" href="#installing-tvm" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://github.com/">Jocelyn Shiue</a>, <a class="reference external" href="https://github.com/hogepodge">Chris Hoge</a></p>
-<p>根据你的需求和开发环境，有几种不同的安装 TVM 的方法。包括：</p>
+<span id="sphx-glr-tutorials-get-started-install-py"></span><h1>Installing TVM<a class="headerlink" href="#installing-tvm" title="永久链接至标题">¶</a></h1>
+<p><strong>Authors</strong>:
+<a class="reference external" href="https://github.com/">Jocelyn Shiue</a>,
+<a class="reference external" href="https://github.com/hogepodge">Chris Hoge</a></p>
+<p>Depending on your needs and your working environment, there are a few different
+methods for installing TVM. These include:</p>
 <ul class="simple">
-<li><p>从源码安装</p></li>
-<li><p>从第三方二进制包安装。</p></li>
+<li><p>Installing from source</p></li>
+<li><p>Installing from third-party binary package.</p></li>
 </ul>
 <div class="section" id="installing-from-source">
-<h2>从源码安装<a class="headerlink" href="#installing-from-source" title="永久链接至标题">¶</a></h2>
-<p>从源码安装是安装 TVM 的推荐方法。它将允许你启用特定功能，比如对 GPU 和微控制器（microTVM）的支持、运行时调试器，以及其他功能。如果您想为 TVM 项目贡献代码，那需要用源码安装。完整的说明请参考页面 <cite>Install TVM From Source &lt;https://tvm.apache.org/docs/install/from_source.html&gt;</cite>。</p>
+<h2>Installing from Source<a class="headerlink" href="#installing-from-source" title="永久链接至标题">¶</a></h2>
+<p>Installing from source is the recommended method for installing TVM. It will
+allow you to enable specific features such as GPU support, microcontroller
+support (microTVM), and a debugging runtime, and other features. You will also
+want to install from source if you want to actively contribute to the TVM
+project. The full instructions are on the <a class="reference external" href="https://tvm.apache.org/docs/install/from_source.html">Install TVM From Source</a> page.</p>
 </div>
 <div class="section" id="installing-from-binary-packages">
-<h2>从二进制包安装<a class="headerlink" href="#installing-from-binary-packages" title="永久链接至标题">¶</a></h2>
-<p>你可以方便地从第三方二进制包安装 TVM，以便快速尝试。TLCPack 是一个从 TVM 源码构建二进制包的志愿者社区。它提供了矩阵支持和不同平台上安装的说明，并且具有不同的功能 。请参考 <cite>TLCPack &lt;https://tlcpack.ai&gt;</cite> 以了解更多。请注意，第三方二进制软件包可能包含与它捆绑的硬件驱动程序的其他许可条款。</p>
+<h2>Installing From Binary Packages<a class="headerlink" href="#installing-from-binary-packages" title="永久链接至标题">¶</a></h2>
+<p>You may install convenient third-party binary package distributions to
+quickly try things out. TLCPack is a thirdparty volunteer community that
+builds binary packages from TVM source. It offers support matrix with
+instructions to install on different platforms, with different features.
+Checkout  <a class="reference external" href="https://tlcpack.ai">TLCPack</a> to learn more. Note that the
+thirdparty binary packages could contain additional licensing terms for
+the hardware drivers that are bundled with it.</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-get-started-install-py">
 <div class="sphx-glr-download docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/95f64205f29091c5f31071f9072f3236/install.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">install.py</span></code></a></p>
@@ -377,10 +390,10 @@
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tvmc_command_line_driver.html" class="btn btn-neutral float-right" title="使用TVMC编译和优化一个模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tvmc_command_line_driver.html" class="btn btn-neutral float-right" title="Compiling and Optimizing a Model with TVMC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral float-left" title="介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

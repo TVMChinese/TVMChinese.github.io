@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Relay的类型系统 &mdash; tvm 0.8.dev1731+gef1bf1547 文档</title>
+  <title>Relay’s Type System &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1731+gef1bf1547
+                  0.8.dev1732+g73c224c2e
                 </div>
             
           
@@ -204,20 +204,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -226,21 +226,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">语言参考</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#introduction-to-relay">Relay简介</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Language Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#introduction-to-relay">Introduction to Relay</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="relay_expr.html">Expressions in Relay</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Relay的类型系统</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#type">类型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tensor-type">张量类型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tuple-type">元组类型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#type-parameter">类型参数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#type-constraint">类型约束</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#function-type">函数类型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#type-relation">类型关系</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#incomplete-type">不完整类型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#algebraic-data-types">代数数据类型</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Relay’s Type System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#type">Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tensor-type">Tensor Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tuple-type">Tuple Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type-parameter">Type Parameter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type-constraint">Type Constraint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#function-type">Function Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type-relation">Type Relation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#incomplete-type">Incomplete Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#algebraic-data-types">Algebraic Data Types</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="relay_adt.html">Algebraic Data Types in Relay</a></li>
@@ -248,23 +248,23 @@
 <li class="toctree-l3"><a class="reference internal" href="relay_pattern.html">Pattern Matching in Relay</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#hybrid-script">混合式脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hybrid-script">Hybrid Script</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
             
@@ -321,9 +321,9 @@
     
       <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-          <li><a href="index.html">语言参考</a> <span class="br-arrow">></span></li>
+          <li><a href="index.html">Language Reference</a> <span class="br-arrow">></span></li>
         
-      <li>Relay的类型系统</li>
+      <li>Relay’s Type System</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -343,153 +343,297 @@
            <div itemprop="articleBody">
             
   <div class="section" id="relay-s-type-system">
-<h1>Relay的类型系统<a class="headerlink" href="#relay-s-type-system" title="永久链接至标题">¶</a></h1>
-<p>我们在详细介绍 Relay 的表达式语言的同时简要介绍了类型，但尚未描述其类型系统。 Relay 是一种静态类型和类型推断的语言，允许程序完全类型化的同时只需要少量显示的类型说明。</p>
-<p>静态类型在执行编译器优化时很有用，因为它们无需运行程序即可传达有关程序操作的数据的属性，例如运行时形状、数据布局和存储。 Relay 的 <a class="reference internal" href="#algebraic-data-types">Algebraic Data Types</a> 允许轻松灵活地组合类型，以构建可以归纳推理并用于编写递归函数的数据结构。</p>
-<p>Relay 的类型系统为形状提供了一种*依赖类型*的形式。也就是说，它的类型系统在 Relay 程序中跟踪张量的形状。将张量形状视为类型允许 Relay 在编译时执行更强大的推理；尤其值得一提，Relay 可以静态推理输出形状根据输入形状以复杂方式变化的操作。将形状推断作为类型推断问题允许 Relay 在编译时推断所有张量的形状，包括在使用分支和函数调用的程序中。</p>
-<p>以这种方式对形状进行静态推理允许 Relay 提前编译，并提供有关张量的更多信息，以便在编译管道中进一步优化。这种优化可以通过传递来实现，即Relay到Relay的 AST 转换，并且可以使用推断的类型（例如，形状信息）来做出有关程序转换的决策。例如，<code class="code docutils literal notranslate"><span class="pre">src/relay/transforms/fuse_ops.cc</span></code> 给出了一个 pass 的实现，它使用推断的张量形状来用融合的运算符实现替换Relay程序中的运算符调用。</p>
-<p>Relay 中关于张量类型的推理使用*类型关系* 进行编码，这意味着 Relay 中的大部分类型检查是约束解决（确保所有类型关系在调用点都得到满足）。类型关系提供了一种灵活且相对简单的方法，可以在 Relay 中使用依赖类型的强大功能，而不会大大增加其类型系统的复杂性。</p>
-<p>下面我们详细介绍 Relay 中类型的语言以及它们如何分配给 Relay 表达式。</p>
+<h1>Relay’s Type System<a class="headerlink" href="#relay-s-type-system" title="永久链接至标题">¶</a></h1>
+<p>We briefly introduced types while detailing Relay’s expression language,
+but have not yet described its type system. Relay is
+a statically typed and type-inferred language, allowing programs to
+be fully typed while requiring just a few explicit type annotations.</p>
+<p>Static types are useful when performing compiler optimizations because they
+communicate properties about the data a program manipulates, such as runtime
+shape, data layout, and storage, without needing to run the program.
+Relay’s <a class="reference internal" href="#algebraic-data-types">Algebraic Data Types</a> allow for easily and flexibly composing
+types in order to build data structures that can be
+reasoned about inductively and used to write recursive functions.</p>
+<p>Relay’s type system features a form of <em>dependent typing</em> for shapes. That is, its type system keeps track of the shapes of tensors in a Relay program. Treating tensor
+shapes as types allows Relay to perform more powerful reasoning at compile time;
+in particular, Relay can statically reason about operations whose output shapes
+vary based on the input shapes in complex ways. Casting shape inference as a type
+inference problem allows Relay to infer the shapes of all tensors at compile time,
+including in programs that use branching and function calls.</p>
+<p>Statically reasoning about shapes in this manner allows
+Relay to be ahead-of-time compiled and provides much more information about
+tensors for optimizations further in the compilation pipeline. Such optimizations
+can be implemented as passes, which are Relay-to-Relay AST transformations, and
+may use the inferred types (e.g., shape information) for making decisions about
+program transformations. For instance, <code class="code docutils literal notranslate"><span class="pre">src/relay/transforms/fuse_ops.cc</span></code> gives
+an implementation of a pass that uses inferred tensor shapes to replace invocations
+of operators in a Relay program with fused operator implementations.</p>
+<p>Reasoning about tensor types in Relay is encoded using <em>type relations</em>, which means
+that the bulk of type checking in Relay is constraint solving (ensuring that all
+type relations are satisfied at call sites). Type relations offer a flexible and
+relatively simple way of making the power of dependent typing available in Relay
+without greatly increasing the complexity of its type system.</p>
+<p>Below we detail the language of types in Relay and how they are assigned to Relay expressions.</p>
 <div class="section" id="type">
-<h2>类型<a class="headerlink" href="#type" title="永久链接至标题">¶</a></h2>
-<p>所有Relay类型的基本类型。所有 Relay 类型都是此基类型的子类。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code>。</p>
+<h2>Type<a class="headerlink" href="#type" title="永久链接至标题">¶</a></h2>
+<p>The base type for all Relay types. All Relay types are sub-classes of this base type.</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">Type</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="tensor-type">
-<h2>张量类型<a class="headerlink" href="#tensor-type" title="永久链接至标题">¶</a></h2>
-<p>Relay 中的具体张量类型。</p>
-<p>张量根据数据类型和形状进行类型化。目前，这些使用 TVM 的数据类型和形状，但在未来，Relay 可能包含一个单独的 AST 形状。特别是，数据类型包括:code:<cite>bool</cite>、<code class="code docutils literal notranslate"><span class="pre">float32</span></code>、<code class="code docutils literal notranslate"><span class="pre">int8</span></code> 和各种其他位宽和通道数。形状以维度元组形式给出（TVM <code class="code docutils literal notranslate"><span class="pre">IndexExpr</span></code>），例如:code:<cite>(5, 5)</cite>；标量也被赋予元组类型，并且具有 <code class="code docutils literal notranslate"><span class="pre">()</span></code> 的形状。</p>
-<p>但是请注意，TVM 形状也可以包含变量和算术表达式，因此 Relay 的约束求解阶段将尝试找到所有形状变量的赋值，以确保所有形状在运行程序之前都是具体的。</p>
-<p>例如，这是一个简单的具体张量类型，对应于 32 位浮点数的 10×10 张量：</p>
+<h2>Tensor Type<a class="headerlink" href="#tensor-type" title="永久链接至标题">¶</a></h2>
+<p>A concrete tensor type in Relay.</p>
+<p>Tensors are typed according to data type and shape. At present, these use TVM’s
+data types and shapes, but in the future, Relay may include a separate AST for
+shapes. In particular, data types include <code class="code docutils literal notranslate"><span class="pre">bool</span></code>, <code class="code docutils literal notranslate"><span class="pre">float32</span></code>, <code class="code docutils literal notranslate"><span class="pre">int8</span></code> and various
+other bit widths and numbers of lanes. Shapes are given as tuples of dimensions (TVM <code class="code docutils literal notranslate"><span class="pre">IndexExpr</span></code>),
+such as <code class="code docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">5)</span></code>; scalars are also given tuple types and have a shape of <code class="code docutils literal notranslate"><span class="pre">()</span></code>.</p>
+<p>Note, though, that TVM shapes can also include variables and arithmetic expressions
+including variables, so Relay’s constraint solving phase will attempt to find
+assignments to all shape variables to ensure all shapes will be concrete before
+running a program.</p>
+<p>For example, here is a simple concrete tensor type corresponding to a 10-by-10 tensor of 32-bit floats:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tensor</span><span class="p">[(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">float32</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">TensorType</span></code>。</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">TensorType</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="tuple-type">
-<h2>元组类型<a class="headerlink" href="#tuple-type" title="永久链接至标题">¶</a></h2>
-<p>Relay 中的一种元组。</p>
-<p>正如元组只是一个静态已知长度的值序列，元组的类型由对应于元组每个成员的类型序列组成。</p>
-<p>因为元组类型的大小是静态已知的，所以元组投影的类型只是元组类型的对应索引。</p>
-<p>例如，在下面的代码中，<code class="code docutils literal notranslate"><span class="pre">%t</span></code> 的类型是 <code class="code docutils literal notranslate"><span class="pre">(Tensor[(),</span> <span class="pre">bool],</span> <span class="pre">Tensor[(10,</span> <span class="pre">10),</span> <span class="pre">float32])</span></code> 和 <code class="code docutils literal notranslate"><span class="pre">%c</span></code> 是类型：代码：<cite>Tensor[(10, 10), float32]</cite>。</p>
+<h2>Tuple Type<a class="headerlink" href="#tuple-type" title="永久链接至标题">¶</a></h2>
+<p>A type of a tuple in Relay.</p>
+<p>Just as a tuple is simply a sequence of values of statically known length, the type
+of a tuple consists of a sequence of the types corresponding to each member of the tuple.</p>
+<p>Because a tuple type is of statically known size, the type of a tuple projection
+is simply the corresponding index into the tuple type.</p>
+<p>For example, in the below code, <code class="code docutils literal notranslate"><span class="pre">%t</span></code> is of type
+<code class="code docutils literal notranslate"><span class="pre">(Tensor[(),</span> <span class="pre">bool],</span> <span class="pre">Tensor[(10,</span> <span class="pre">10),</span> <span class="pre">float32])</span></code>
+and <code class="code docutils literal notranslate"><span class="pre">%c</span></code> is of type <code class="code docutils literal notranslate"><span class="pre">Tensor[(10,</span> <span class="pre">10),</span> <span class="pre">float32]</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">let</span> <span class="o">%</span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">Constant</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">float32</span><span class="p">));</span>
 <span class="n">let</span> <span class="o">%</span><span class="n">c</span> <span class="o">=</span> <span class="o">%</span><span class="n">t</span><span class="o">.</span><span class="mi">1</span><span class="p">;</span>
 <span class="o">%</span><span class="n">c</span>
 </pre></div>
 </div>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">TupleType</span></code>。</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">TupleType</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="type-parameter">
-<span id="id1"></span><h2>类型参数<a class="headerlink" href="#type-parameter" title="永久链接至标题">¶</a></h2>
-<p>类型参数表示用于函数多态的占位符类型。类型参数根据 <em>kind</em> 指定，对应于这些参数允许替换的类型：</p>
+<span id="id1"></span><h2>Type Parameter<a class="headerlink" href="#type-parameter" title="永久链接至标题">¶</a></h2>
+<p>Type parameters represent placeholder types used for polymorphism in functions.
+Type parameters are specified according to <em>kind</em>, corresponding to the types
+those parameters are allowed to replace:</p>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">Type</span></code>，对应最高级 Relay 类型，如张量类型、元组类型和函数类型</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">BaseType</span></code>，对应张量的基本类型（例如:code:<cite>float32</cite>、<code class="code docutils literal notranslate"><span class="pre">bool</span></code>）</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">Shape</span></code>，对应一个张量形状</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">ShapeVar</span></code>，对应张量形状内的变量</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Type</span></code>, corresponding to top-level Relay types like tensor types, tuple types, and function types</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">BaseType</span></code>, corresponding to the base type of a tensor (e.g., <code class="code docutils literal notranslate"><span class="pre">float32</span></code>, <code class="code docutils literal notranslate"><span class="pre">bool</span></code>)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">Shape</span></code>, corresponding to a tensor shape</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ShapeVar</span></code>, corresponding to variables within a tensor shape</p></li>
 </ul>
-<p>Relay 的类型系统强制类型参数只允许出现在它们种类允许的地方，所以如果类型变量:code:<cite>t</cite> 是:code:<cite>Type</cite>，<code class="code docutils literal notranslate"><span class="pre">Tensor[t,</span> <span class="pre">float32]</span></code> 不是有效的类型。</p>
-<p>与普通参数一样，必须在调用点为类型参数提供具体参数。</p>
-<p>例如，下面的 <code class="code docutils literal notranslate"><span class="pre">s</span></code> 是一种类型为 <code class="code docutils literal notranslate"><span class="pre">Shape</span></code> 的类型参数，它将在下面的调用点替换为 <code class="code docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">10)</span></code>：</p>
+<p>Relay’s type system enforces that type parameters are only allowed to appear where their kind permits them,
+so if type variable <code class="code docutils literal notranslate"><span class="pre">t</span></code> is of kind <code class="code docutils literal notranslate"><span class="pre">Type</span></code>, <code class="code docutils literal notranslate"><span class="pre">Tensor[t,</span> <span class="pre">float32]</span></code> is not a valid type.</p>
+<p>Like normal parameters, concrete arguments must be given for type parameters at call sites.</p>
+<p>For example, <code class="code docutils literal notranslate"><span class="pre">s</span></code> below is a type parameter of kind <code class="code docutils literal notranslate"><span class="pre">Shape</span></code> and it will
+be substituted with <code class="code docutils literal notranslate"><span class="pre">(10,</span> <span class="pre">10)</span></code> at the call site below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def @plus&lt;s : Shape&gt;(%t1 : Tensor[s, float32], %t2 : Tensor[s, float32]) {
      add(%t1, %t2)
 }
 plus&lt;(10, 10)&gt;(%a, %b)
 </pre></div>
 </div>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code>。</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeVar</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="type-constraint">
-<h2>类型约束<a class="headerlink" href="#type-constraint" title="永久链接至标题">¶</a></h2>
-<p>这是一个表示类型约束的抽象类，将在后续版本中详细说明。目前，类型关系是唯一提供的类型约束；它们将在下面被讨论。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeConstraint</span></code>。</p>
+<h2>Type Constraint<a class="headerlink" href="#type-constraint" title="永久链接至标题">¶</a></h2>
+<p>This is an abstract class representing a type constraint, to be elaborated
+upon in further releases. Currently, type relations are the only
+type constraints provided; they are discussed below.</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeConstraint</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="function-type">
-<h2>函数类型<a class="headerlink" href="#function-type" title="永久链接至标题">¶</a></h2>
-<p>Relay 中的一个函数类型，更多细节参见 <cite>tvm/relay/type.h</cite></p>
-<p>这是分配给 Relay 功能的类型。函数类型由类型参数列表、类型约束集、参数类型序列和返回类型组成。</p>
-<p>我们非正式地将函数类型写为：<code class="code docutils literal notranslate"><span class="pre">fn&lt;type_params&gt;(arg_types)</span> <span class="pre">-&gt;</span> <span class="pre">ret_type</span> <span class="pre">where</span> <span class="pre">type_constraints</span></code></p>
-<p>函数类型中的类型参数可能出现在参数类型或返回类型中。此外，每个类型约束都必须在函数的每个调用点保持。类型约束通常采用函数的参数类型和函数的返回类型作为参数，但也可能采用子集。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">FuncType</span></code>。</p>
+<h2>Function Type<a class="headerlink" href="#function-type" title="永久链接至标题">¶</a></h2>
+<p>A function type in Relay, see <cite>tvm/relay/type.h</cite> for more details.</p>
+<p>This is the type assigned to functions in Relay. A function type
+consists of a list of type parameters, a set of type constraints,
+a sequence of argument types, and a return type.</p>
+<p>We informally write function types as:
+<code class="code docutils literal notranslate"><span class="pre">fn&lt;type_params&gt;(arg_types)</span> <span class="pre">-&gt;</span> <span class="pre">ret_type</span> <span class="pre">where</span> <span class="pre">type_constraints</span></code></p>
+<p>A type parameter in the function type may appear in the argument
+types or the return types. Additionally, each of the type constraints
+must hold at every call site of the function. The type constraints
+typically take the function’s argument types and the function’s return
+type as arguments, but may take a subset instead.</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">FuncType</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="type-relation">
-<span id="id2"></span><h2>类型关系<a class="headerlink" href="#type-relation" title="永久链接至标题">¶</a></h2>
-<p>类型关系是 Relay 中最复杂的类型系统特性。它允许用户使用新规则扩展类型推断。我们使用类型关系为以复杂方式处理张量形状的运算符定义类型，例如广播运算符或 <code class="code docutils literal notranslate"><span class="pre">flatten</span></code>，允许 Relay 在这些情况下静态推理形状。</p>
-<p>类型关系：code：<cite>R</cite> 描述了 Relay 函数的输入和输出类型之间的关系。也就是说，<code class="code docutils literal notranslate"><span class="pre">R</span></code> 是一个类型上的函数，如果关系成立，则输出 <cite>true</cite>，如果关系不成立，则输出 <cite>false</cite>。赋予关系的类型可能不完整或包含形状变量，因此类型推断必须为不完整的类型和形状变量来分配适当的值，以便保持必要的关系，如果存在此类值。</p>
-<p>例如，我们可以定义一个身份关系为：</p>
+<span id="id2"></span><h2>Type Relation<a class="headerlink" href="#type-relation" title="永久链接至标题">¶</a></h2>
+<p>A type relation is the most complex type system feature in Relay.
+It allows users to extend type inference with new rules.
+We use type relations to define types for operators that work with
+tensor shapes in complex ways, such as broadcasting operators or
+<code class="code docutils literal notranslate"><span class="pre">flatten</span></code>, allowing Relay to statically reason about the shapes
+in these cases.</p>
+<p>A type relation <code class="code docutils literal notranslate"><span class="pre">R</span></code> describes a relationship between the input and output types of a Relay function.
+Namely, <code class="code docutils literal notranslate"><span class="pre">R</span></code> is a function on types that
+outputs <cite>true</cite> if the relationship holds and <cite>false</cite>
+if it fails to hold. Types given to a relation may be incomplete or
+include shape variables, so type inference must assign appropriate
+values to incomplete types and shape variables for necessary relations
+to hold, if such values exist.</p>
+<p>For example we can define an identity relation to be:</p>
 <div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nv">Identity</span><span class="p">(</span><span class="nv">I</span><span class="p">,</span> <span class="nv">I</span><span class="p">)</span> <span class="p">:-</span> <span class="s s-Atom">true</span>
 </pre></div>
 </div>
-<p>通过定义特定于该运算符的关系，在 Relay 中键入运算符通常很方便，该关系对参数类型和返回类型的所有必要约束进行编码。例如，我们可以定义 <code class="code docutils literal notranslate"><span class="pre">flatten</span></code> 的关系：</p>
+<p>It is usually convenient to type operators
+in Relay by defining a relation specific to that operator that
+encodes all the necessary constraints on the argument types
+and the return type. For example, we can define the relation for <code class="code docutils literal notranslate"><span class="pre">flatten</span></code>:</p>
 <div class="highlight-prolog notranslate"><div class="highlight"><pre><span></span><span class="nv">Flatten</span><span class="p">(</span><span class="nv">Tensor</span><span class="p">(</span><span class="s s-Atom">sh</span><span class="p">,</span> <span class="s s-Atom">bt</span><span class="p">),</span> <span class="nv">O</span><span class="p">)</span> <span class="p">:-</span>
   <span class="nv">O</span> <span class="o">=</span> <span class="nv">Tensor</span><span class="p">(</span><span class="s s-Atom">sh</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nf">prod</span><span class="p">(</span><span class="s s-Atom">sh</span><span class="p">[</span><span class="mi">1</span><span class="s s-Atom">:</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p>如果我们有一个像 <code class="code docutils literal notranslate"><span class="pre">Broadcast</span></code> 这样的关系，就可以输入像 <code class="code docutils literal notranslate"><span class="pre">add</span></code> 这样的运算符：</p>
+<p>If we have a relation like <code class="code docutils literal notranslate"><span class="pre">Broadcast</span></code> it becomes possible
+to type operators like <code class="code docutils literal notranslate"><span class="pre">add</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="p">:</span> <span class="n">fn</span><span class="o">&lt;</span><span class="n">t1</span> <span class="p">:</span> <span class="n">Type</span><span class="p">,</span> <span class="n">t2</span> <span class="p">:</span> <span class="n">Type</span><span class="p">,</span> <span class="n">t3</span> <span class="p">:</span> <span class="n">Type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">t3</span>
             <span class="n">where</span> <span class="n">Broadcast</span>
 </pre></div>
 </div>
-<p>上面包含 <code class="code docutils literal notranslate"><span class="pre">Broadcast</span></code> 表示参数类型和返回类型必须是张量，其中 <code class="code docutils literal notranslate"><span class="pre">t3</span></code> 的形状是 <code class="code docutils literal notranslate"><span class="pre">t1</span></code> 和 :code:` 的形状的广播t2`。类型系统将接受任何参数类型并返回类型，只要它们满足:code:<cite>Broadcast</cite>。</p>
-<p>请注意，上面的示例关系是用类似 Prolog 的语法编写的，但目前这些关系必须由用户在 C++ 或 Python 中实现。更具体地说，Relay 的类型系统使用 <em>ad hoc</em> 求解器来处理类型关系，其中类型关系实际上是作为 C++ 或 Python 函数实现的，这些函数检查关系是否成立并强制更新任何形状变量或不完整类型。在当前的实现中，如果关系不成立，实现关系的函数应该返回:code:<cite>False</cite>，如果关系成立或者没有足够的信息来确定它是否成立，则返回:code:<cite>True</cite>。</p>
-<p>所有关系的函数都会根据需要运行（如果输入被更新），直到满足以下条件之一：</p>
+<p>The inclusion of <code class="code docutils literal notranslate"><span class="pre">Broadcast</span></code> above indicates that the argument
+types and the return type must be tensors where the shape of <code class="code docutils literal notranslate"><span class="pre">t3</span></code> is
+the broadcast of the shapes of <code class="code docutils literal notranslate"><span class="pre">t1</span></code> and <code class="code docutils literal notranslate"><span class="pre">t2</span></code>. The type system will
+accept any argument types and return type so long as they fulfill
+<code class="code docutils literal notranslate"><span class="pre">Broadcast</span></code>.</p>
+<p>Note that the above example relations are written in Prolog-like syntax,
+but currently the relations must be implemented by users in C++
+or Python. More specifically, Relay’s type system uses an <em>ad hoc</em> solver
+for type relations in which type relations are actually implemented as
+C++ or Python functions that check whether the relation holds and
+imperatively update any shape variables or incomplete types. In the current
+implementation, the functions implementing relations should return <code class="code docutils literal notranslate"><span class="pre">False</span></code>
+if the relation fails to hold and <code class="code docutils literal notranslate"><span class="pre">True</span></code> if the relation holds or if
+there is not enough information to determine whether it holds or not.</p>
+<p>The functions for all the relations are run as needed (if an input is updated)
+until one of the following conditions holds:</p>
 <ol class="arabic simple">
-<li><p>所有关系都成立并且没有不完整的类型保留（类型检查成功）。</p></li>
-<li><p>关系不成立（类型错误）。</p></li>
-<li><p>在形状变量或不完整类型保留的位置达到固定点（可能需要类型错误或更多类型注释）。</p></li>
+<li><p>All relations hold and no incomplete types remain (typechecking succeeds).</p></li>
+<li><p>A relation fails to hold (a type error).</p></li>
+<li><p>A fixpoint is reached where shape variables or incomplete types remain (either a type error or more type annotations may be needed).</p></li>
 </ol>
-<p>目前 Relay 中使用的所有关系都是用 C++ 实现的。有关在 C++ 中实现的关系示例，请参阅 <code class="code docutils literal notranslate"><span class="pre">src/relay/op</span></code> 中的文件。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeRelation</span></code>。</p>
+<p>Presently all of the relations used in Relay are implemented in C++.
+See the files in <code class="code docutils literal notranslate"><span class="pre">src/relay/op</span></code> for examples of relations implemented
+in C++.</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeRelation</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="incomplete-type">
-<h2>不完整类型<a class="headerlink" href="#incomplete-type" title="永久链接至标题">¶</a></h2>
-<p>不完整类型是未知的类型或类型的一部分。这仅在类型推断期间使用。任何省略的类型注释都会被不完整的类型替换，稍后将被另一种类型替换。</p>
-<p>在编程语言文献中，不完整的类型被称为“类型变量”或“类型漏洞”。我们使用名称“不完整类型”是为了更清楚地将它们与类型参数区分开来：类型参数必须绑定到一个函数并在调用点被具体的类型参数（实例化）替换，而不完整类型可能出现在程序的任何地方并在类型推断期间填写。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">IncompleteType</span></code>。</p>
+<h2>Incomplete Type<a class="headerlink" href="#incomplete-type" title="永久链接至标题">¶</a></h2>
+<p>An incomplete type is a type or portion of a type that is not yet known.
+This is only used during type inference. Any omitted type annotation is
+replaced by an incomplete type, which will be replaced by another
+type at a later point.</p>
+<p>Incomplete types are known as “type variables” or “type holes” in the programming languages
+literature. We use the name “incomplete type” in order to more clearly distinguish them from type
+parameters: Type parameters must be bound to a function and are replaced with concrete type arguments (instantiated)
+at call sites, whereas incomplete types may appear anywhere in the program and are filled in during type inference.</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">IncompleteType</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="algebraic-data-types">
-<span id="adt-typing"></span><h2>代数数据类型<a class="headerlink" href="#algebraic-data-types" title="永久链接至标题">¶</a></h2>
-<p><em>注意：文本格式当前不支持 ADT。</em></p>
-<p>代数数据类型 (ADT) 在 :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>他们的概述 中有更详细的描述&lt;adt-overview&gt;；本节描述它们在类型系统中的实现。</p>
-<p>ADT 由一组命名构造函数定义，每个构造函数都接受特定类型的参数。 ADT 的实例是一个容器，它存储用于生成它的构造函数参数的值以及构造函数的名称；可以通过基于其构造函数进行匹配来解构实例来检索这些值。因此，ADT 有时被称为“标签联合”：与 C 风格联合一样，给定 ADT 的实例的内容在某些情况下可能具有不同的类型，但构造函数用作指示如何解释内容的标记。</p>
-<p>从类型系统的角度来看，最相关的是 ADT 可以接受类型参数（构造函数参数可以是类型参数，但具有不同类型参数的 ADT 实例必须被视为不同的类型）并且是递归的（ADT 的构造函数可以采用该 ADT 的实例，因此可以归纳地建立像树或列表这样的 ADT）。类型系统中 ADT 的表示必须能够适应这些事实，如以下部分将详细说明。</p>
+<span id="adt-typing"></span><h2>Algebraic Data Types<a class="headerlink" href="#algebraic-data-types" title="永久链接至标题">¶</a></h2>
+<p><em>Note: ADTs are not currently supported in the text format.</em></p>
+<p>Algebraic data types (ADTs) are described in more detail in
+<a class="reference internal" href="relay_adt.html#adt-overview"><span class="std std-ref">their overview</span></a>; this section describes
+their implementation in the type system.</p>
+<p>An ADT is defined by a collection of named constructors,
+each of which takes arguments of certain types.
+An instance of an ADT is a container that stores the values
+of the constructor arguments used to produce it as well as the
+name of the constructor; the values can be retrieved by
+deconstructing the instance by matching based on its constructor.
+Hence, ADTs are sometimes called “tagged unions”: like a C-style
+union, the contents of an instance for a given ADT may have
+different types in certain cases, but the constructor serves as a
+tag to indicate how to interpret the contents.</p>
+<p>From the type system’s perspective, it is most pertinent that
+ADTs can take type parameters (constructor arguments can be
+type parameters, though ADT instances with different type
+parameters must be treated as different types) and be
+recursive (a constructor for an ADT can take an instance of
+that ADT, thus an ADT like a tree or list can be inductively
+built up). The representation of ADTs in the type system must
+be able to accommodate these facts, as the below sections will detail.</p>
 <div class="section" id="global-type-variable">
-<h3>全局类型变量<a class="headerlink" href="#global-type-variable" title="永久链接至标题">¶</a></h3>
-<p>为了简洁地表示 ADT，并允许递归 ADT 定义，ADT 定义以全局类型变量的形式被赋予一个handle来唯一标识它。每个 ADT 定义都被赋予一个新的全局类型变量作为handle，因此可以使用指针相等性来区分不同的 ADT 名称。</p>
-<p>就 Relay 的类型系统而言，ADT 是按名称区分的；这意味着如果两个 ADT 具有不同的handle，即使它们的所有构造函数在结构上都相同，它们也会被视为不同的类型。</p>
-<p>因此，ADT 定义中的递归就像全局函数的递归一样：构造函数可以简单地在其定义中引用 ADT handle（全局类型变量）。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">GlobalTypeVar</span></code>。</p>
+<h3>Global Type Variable<a class="headerlink" href="#global-type-variable" title="永久链接至标题">¶</a></h3>
+<p>To represent ADTs compactly and easily allow for recursive ADT definitions,
+an ADT definition is given a handle in the form of a global type variable
+that uniquely identifies it. Each ADT definition is given a fresh global
+type variable as a handle, so pointer equality can be used to distinguish
+different ADT names.</p>
+<p>For the purposes of Relay’s type system, ADTs are differentiated by name;
+that means that if two ADTs have different handles, they will be
+considered different types even if all their constructors are
+structurally identical.</p>
+<p>Recursion in an ADT definition thus follows just like recursion for a
+global function: the constructor can simply reference the ADT handle
+(global type variable) in its definition.</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">GlobalTypeVar</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="definitions-type-data">
-<h3>定义（类型数据）<a class="headerlink" href="#definitions-type-data" title="永久链接至标题">¶</a></h3>
-<p>除了名称之外，ADT 还需要存储用于定义它的构造函数以及其中使用的任何类型参数。这些被存储在模块中，:ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>类似于全局函数定义`&lt;module-description&gt;。</p>
-<p>在使用 ADT 进行类型检查时，类型系统有时必须使用 ADT 名称索引模块以查找有关构造函数的信息。例如，如果在匹配表达式子句中对构造函数进行模式匹配，则类型检查器必须检查构造函数的签名以确保任何绑定变量都被分配了正确的类型。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeData</span></code>。</p>
+<h3>Definitions (Type Data)<a class="headerlink" href="#definitions-type-data" title="永久链接至标题">¶</a></h3>
+<p>Besides a name, an ADT needs to store the constructors that are used
+to define it and any type parameters used within them. These are
+stored in the module, <a class="reference internal" href="relay_expr.html#module-description"><span class="std std-ref">analogous to global function definitions</span></a>.</p>
+<p>While type-checking uses of ADTs, the type system sometimes must
+index into the module using the ADT name to look up information
+about constructors. For example, if a constructor is being pattern-matched
+in a match expression clause, the type-checker must check the constructor’s
+signature to ensure that any bound variables are being assigned the
+correct types.</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeData</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="type-call">
-<h3>类型调用<a class="headerlink" href="#type-call" title="永久链接至标题">¶</a></h3>
-<p>由于 ADT 定义可以采用类型参数，因此 Relay 的类型系统将 ADT 定义视为 <a href="#id1"><span class="problematic" id="id2">*</span></a>类型级函数*（因为该定义采用类型参数并返回具有这些类型参数的 ADT 实例的类型）。因此，使用类型调用对 ADT 的任何实例进行类型化，该调用显式列出了提供给 ADT 定义的类型参数。</p>
-<p>列出 ADT 实例的类型参数很重要，因为两个 ADT 实例使用不同的构造函数构建，但相同的类型参数属于 <em>相同类型</em>，而具有不同类型参数的两个 ADT 实例不应被视为相同类型（例如，整数列表不应与浮点张量对列表具有相同的类型）。</p>
-<p>类型调用中的“函数”是 ADT handle，并且 ADT 定义中的每个类型参数必须有一个参数。 （没有参数的 ADT 定义意味着任何实例都不会传递给类型调用的类型参数）。</p>
-<p>有关其定义和文档，请参阅 <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeCall</span></code>。</p>
+<h3>Type Call<a class="headerlink" href="#type-call" title="永久链接至标题">¶</a></h3>
+<p>Because an ADT definition can take type parameters, Relay’s type
+system considers an ADT definition to be a <em>type-level function</em>
+(in that the definition takes type parameters and returns the
+type of an ADT instance with those type parameters). Thus, any
+instance of an ADT is typed using a type call, which explicitly
+lists the type parameters given to the ADT definition.</p>
+<p>It is important to list the type parameters for an ADT instance,
+as two ADT instances built using different constructors but the
+same type parameters are of the <em>same type</em> while two ADT instances
+with different type parameters should not be considered the same
+type (e.g., a list of integers should not have the same type as
+a list of pairs of floating point tensors).</p>
+<p>The “function” in the type call is the ADT handle and there must
+be one argument for each type parameter in the ADT definition. (An
+ADT definition with no arguments means that any instance will have
+no type arguments passed to the type call).</p>
+<p>See <code class="xref py py-class docutils literal notranslate"><span class="pre">TypeCall</span></code> for its definition and documentation.</p>
 </div>
 <div class="section" id="example-list-adt">
-<h3>示例：List ADT<a class="headerlink" href="#example-list-adt" title="永久链接至标题">¶</a></h3>
-<p>本小节使用简单列表 ADT（作为默认 ADT 包含在 Relay 中）来说明前几节中描述的结构。其定义如下：</p>
+<h3>Example: List ADT<a class="headerlink" href="#example-list-adt" title="永久链接至标题">¶</a></h3>
+<p>This subsection uses the simple list ADT (included as a default
+ADT in Relay) to illustrate the constructs described in the previous
+sections. Its definition is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">a</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="n">Nil</span> <span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span>
   <span class="n">Cons</span> <span class="p">:</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">a</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>因此，全球类型变量：代码：”列表”是 ADT 的句柄。模块中列表 ADT 的类型数据指出：代码：’列表’需要一个类型参数，并具有两个构造器：：代码：’Nil’（带有签名：’fn（）&lt;a&gt;- &gt;列表[a]）和：’代码：’Cons’（带有签名：’fn（a，&lt;a&gt;列表[a]）-&gt;列表[a]）。在：代码：’Cons’构造器中反复引用的”列表”是通过使用构建器定义中的全球类型变量：代码：’列表’来完成的。</p>
-<p>使用类型呼叫，下面两个列表的示例及其类型：</p>
+<p>Thus, the global type variable <code class="code docutils literal notranslate"><span class="pre">List</span></code> is the handle for the ADT.
+The type data for the list ADT in the module notes that
+<code class="code docutils literal notranslate"><span class="pre">List</span></code> takes one type parameter and has two constructors,
+<code class="code docutils literal notranslate"><span class="pre">Nil</span></code> (with signature <code class="code docutils literal notranslate"><span class="pre">fn&lt;a&gt;()</span> <span class="pre">-&gt;</span> <span class="pre">List[a]</span></code>)
+and <code class="code docutils literal notranslate"><span class="pre">Cons</span></code> (with signature <code class="code docutils literal notranslate"><span class="pre">fn&lt;a&gt;(a,</span> <span class="pre">List[a])</span> <span class="pre">-&gt;</span> <span class="pre">List[a]</span></code>).
+The recursive reference to <code class="code docutils literal notranslate"><span class="pre">List</span></code> in the <code class="code docutils literal notranslate"><span class="pre">Cons</span></code>
+constructor is accomplished by using the global type
+variable <code class="code docutils literal notranslate"><span class="pre">List</span></code> in the constructor definition.</p>
+<p>Below two instances of lists with their types given, using type calls:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cons</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Cons</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Nil</span><span class="p">()))</span> <span class="c1"># List[Tensor[(), int32]]</span>
 <span class="n">Cons</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Cons</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">Nil</span><span class="p">()))</span> <span class="c1"># List[(Tensor[(), int32], Tensor[(), int32])]</span>
 </pre></div>
 </div>
-<p>请注意：代码：<cite>Nil()</cite> 可以是任何列表的实例，因为它不接受任何使用类型参数的参数。 （尽管如此，对于任何 <code class="code docutils literal notranslate"><span class="pre">Nil()</span></code> 的*特定* 实例，必须指定类型参数。）</p>
-<p>这是因为类型参数不匹配而被类型系统拒绝的两个列表：</p>
+<p>Note that <code class="code docutils literal notranslate"><span class="pre">Nil()</span></code> can be an instance of any list because it
+does not take any arguments that use a type parameter. (Nevertheless,
+for any <em>particular</em> instance of <code class="code docutils literal notranslate"><span class="pre">Nil()</span></code>, the type parameter must
+be specified.)</p>
+<p>Here are two lists that are rejected by the type system because
+the type parameters do not match:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># attempting to put an integer on a list of int * int tuples</span>
 <span class="n">Cons</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Cons</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Nil</span><span class="p">()))</span>
 <span class="c1"># attempting to put a list of ints on a list of lists of int * int tuples</span>
@@ -510,10 +654,10 @@ plus&lt;(10, 10)&gt;(%a, %b)
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relay_adt.html" class="btn btn-neutral float-right" title="Algebraic Data Types in Relay" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relay_adt.html" class="btn btn-neutral float-right" title="Algebraic Data Types in Relay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="relay_expr.html" class="btn btn-neutral float-left" title="Expressions in Relay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="relay_expr.html" class="btn btn-neutral float-left" title="Expressions in Relay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

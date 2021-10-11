@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Committer Guide &mdash; tvm 0.8.dev1731+gef1bf1547 文档</title>
+  <title>Committer Guide &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="编写文档与教程" href="document.html" />
-    <link rel="prev" title="执行代码审查" href="code_review.html" /> 
+    <link rel="next" title="Write Document and Tutorials" href="document.html" />
+    <link rel="prev" title="Perform Code Reviews" href="code_review.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1731+gef1bf1547
+                  0.8.dev1732+g73c224c2e
                 </div>
             
           
@@ -204,12 +204,12 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">为 TVM 做出贡献</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="community.html">TVM社区指南</a></li>
-<li class="toctree-l2"><a class="reference internal" href="code_review.html">执行代码审查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contribute to TVM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="community.html">TVM Community Guideline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code_review.html">Perform Code Reviews</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Committer Guide</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#community-first">Community First</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#public-archive-principle">Public Archive Principle</a></li>
@@ -218,24 +218,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#broad-collaboration">Broad Collaboration</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="document.html">编写文档与教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="document.html">Write Document and Tutorials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="code_guide.html">Code Guide and Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Error Handling Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pull_request.html">Submit a Pull Request</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git_howto.html">Git 使用技巧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git_howto.html">Git Usage Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release_process.html">Apache TVM Release Process</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -244,23 +244,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
             
@@ -317,7 +317,7 @@
     
       <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-          <li><a href="index.html">为 TVM 做出贡献</a> <span class="br-arrow">></span></li>
+          <li><a href="index.html">Contribute to TVM</a> <span class="br-arrow">></span></li>
         
       <li>Committer Guide</li>
     
@@ -343,7 +343,7 @@
 <p>This is an evolving document to provide some helpful tips for committers.
 Most of them are lessons learned during development.
 We welcome every committer to contribute to this document.
-See the <a class="reference internal" href="community.html#community-guide"><span class="std std-ref">TVM社区指南</span></a> for an overview of
+See the <a class="reference internal" href="community.html#community-guide"><span class="std std-ref">TVM Community Guideline</span></a> for an overview of
 the committership and the general development process.</p>
 <div class="section" id="community-first">
 <h2>Community First<a class="headerlink" href="#community-first" title="永久链接至标题">¶</a></h2>
@@ -380,7 +380,7 @@ so others in the community can benefit from the answer.</p></li>
 <div class="section" id="shepherd-a-pull-request">
 <h2>Shepherd a Pull Request<a class="headerlink" href="#shepherd-a-pull-request" title="永久链接至标题">¶</a></h2>
 <p>Here are some tips to shepherd a pull request.
-You can also take a look at the <a class="reference internal" href="code_review.html#code-review-guide"><span class="std std-ref">执行代码审查</span></a>.</p>
+You can also take a look at the <a class="reference internal" href="code_review.html#code-review-guide"><span class="std std-ref">Perform Code Reviews</span></a>.</p>
 <ul class="simple">
 <li><p>Assign the PR to yourself, so that other committers
 know that the PR has already been tended to.</p></li>
@@ -429,10 +429,10 @@ community members who you do not interact physically.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="document.html" class="btn btn-neutral float-right" title="编写文档与教程" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="document.html" class="btn btn-neutral float-right" title="Write Document and Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="code_review.html" class="btn btn-neutral float-left" title="执行代码审查" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="code_review.html" class="btn btn-neutral float-left" title="Perform Code Reviews" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

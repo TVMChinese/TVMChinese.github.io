@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>编译 ONNX 模型 &mdash; tvm 0.8.dev1731+gef1bf1547 文档</title>
+  <title>Compile ONNX Models &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="编译 Keras 模型" href="from_keras.html" />
-    <link rel="prev" title="编译 MXNet 模型" href="from_mxnet.html" /> 
+    <link rel="next" title="Compile Keras Models" href="from_keras.html" />
+    <link rel="prev" title="Compile MXNet Models" href="from_mxnet.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1731+gef1bf1547
+                  0.8.dev1732+g73c224c2e
                 </div>
             
           
@@ -204,47 +204,47 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
+              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">教程</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">编译 MXNet 模型</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">编译 ONNX 模型</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#load-pretrained-onnx-model">加载预训练的 ONNX 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#load-a-test-image">加载一张测试图片</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compile-the-model-with-relay">通过 Realy 编译模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#execute-on-tvm">在 TVM 上执行</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#display-results">显示结果</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#notes">特别注意</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Compile ONNX Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#load-pretrained-onnx-model">Load pretrained ONNX model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-a-test-image">Load a test image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile-the-model-with-relay">Compile the model with relay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execute-on-tvm">Execute on TVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#display-results">Display results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="from_keras.html">编译 Keras 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_darknet.html">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_gcn.html">构建一个图形卷积网络</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">在Android上部署预训练模型（Pretrained Model)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">在Raspberry Pi上部署预训练模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_object_detection_pytorch.html">编译PyTorch对象检测模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized.html">使用TVM部署一个框架预量化模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized_tflite.html">使用TVM部署预先量化的框架模型-第3部分（TFLite）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_quantized.html">在Cuda上部署一个量化模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_sparse.html">在CPU上部署Hugging Face Pruned模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_ssd_gluoncv.html">部署Single Shot Multibox Detector(SSD)模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_external_lib.html">在Relay中使用外部库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">Compile Caffe2 Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_gcn.html">Building a Graph Convolutional Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">Deploy the Pretrained Model on Raspberry Pi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_object_detection_pytorch.html">Compile PyTorch Object Detection Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized.html">Deploy a Framework-prequantized Model with TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized_tflite.html">Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_quantized.html">Deploy a Quantized Model on Cuda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_sparse.html">Deploy a Hugging Face Pruned Model on CPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_ssd_gluoncv.html">Deploy Single Shot Multibox Detector(SSD) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_external_lib.html">Using External Libraries in Relay</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
@@ -255,23 +255,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考</span></p>
+<p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">深入</span></p>
+<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
+<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -330,7 +330,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>编译 ONNX 模型</li>
+      <li>Compile ONNX Models</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -351,18 +351,19 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-frontend-from-onnx-py"><span class="std std-ref">这里</span></a> 下载完整样例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-frontend-from-onnx-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="compile-onnx-models">
-<span id="sphx-glr-tutorials-frontend-from-onnx-py"></span><h1>编译 ONNX 模型<a class="headerlink" href="#compile-onnx-models" title="永久链接至标题">¶</a></h1>
+<span id="sphx-glr-tutorials-frontend-from-onnx-py"></span><h1>Compile ONNX Models<a class="headerlink" href="#compile-onnx-models" title="永久链接至标题">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://zhreshold.github.io/">Joshua Z. Zhang</a></p>
-<p>本文是使用 Realy 部署 ONNX 模型的介绍性教程。</p>
-<p>首先，我们必须安装 ONNX。</p>
-<p>一种简单的解决方案是安装  protobuf compiler，</p>
+<p>This article is an introductory tutorial to deploy ONNX models with Relay.</p>
+<p>For us to begin with, ONNX package must be installed.</p>
+<p>A quick solution is to install protobuf compiler, and</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install onnx --user
 </pre></div>
 </div>
-<p>或者参考官方网站。 <a class="reference external" href="https://github.com/onnx/onnx">https://github.com/onnx/onnx</a></p>
+<p>or please refer to official site.
+<a class="reference external" href="https://github.com/onnx/onnx">https://github.com/onnx/onnx</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">onnx</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">tvm</span>
@@ -372,8 +373,10 @@
 </pre></div>
 </div>
 <div class="section" id="load-pretrained-onnx-model">
-<h2>加载预训练的 ONNX 模型<a class="headerlink" href="#load-pretrained-onnx-model" title="永久链接至标题">¶</a></h2>
-<p>这里使用的样例超分辨率模型与 onnx 教程中的模型完全相同 <a class="reference external" href="http://pytorch.org/tutorials/advanced/super_resolution_with_caffe2.html">http://pytorch.org/tutorials/advanced/super_resolution_with_caffe2.html</a> 。我们跳过 pytorch 模型构建部分，下载并保存 onnx 模型</p>
+<h2>Load pretrained ONNX model<a class="headerlink" href="#load-pretrained-onnx-model" title="永久链接至标题">¶</a></h2>
+<p>The example super resolution model used here is exactly the same model in onnx tutorial
+<a class="reference external" href="http://pytorch.org/tutorials/advanced/super_resolution_with_caffe2.html">http://pytorch.org/tutorials/advanced/super_resolution_with_caffe2.html</a>
+we skip the pytorch model construction part, and download the saved onnx model</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s2">&quot;https://gist.github.com/zhreshold/&quot;</span><span class="p">,</span>
@@ -389,8 +392,12 @@
 </div>
 </div>
 <div class="section" id="load-a-test-image">
-<h2>加载一张测试图片<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
-<p>样例的主角是只猫！ 该模型获取大小为 224x224 的单个输入图像，并输出一个缩放图像，该图像比输入的图像大3倍，即672x672图像。重新缩放小猫图片以适合此输入形状，然后转换为 <cite>YCbCr</cite>。然后将超分辨率模型应用于亮度（<cite>Y</cite>）通道。</p>
+<h2>Load a test image<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
+<p>A single cat dominates the examples! This model takes a single input image of size
+224x224 and outputs a scaled image that is 3x greater than the input along each
+axis, a 672x672 image. Re-scale the cat image to fit this input shape then
+convert to <cite>YCbCr</cite>. The super resolution model will then be applied to the
+luminance (<cite>Y</cite>) channel.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 
 <span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/dmlc/mxnet.js/blob/main/data/cat.png?raw=true&quot;</span>
@@ -403,9 +410,14 @@
 </div>
 </div>
 <div class="section" id="compile-the-model-with-relay">
-<h2>通过 Realy 编译模型<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
-<p>通常 ONNX 模型将模型输入值与参数值混合，输入的名称为”1”。您应该检查模型的文档以确定此模型依赖的完整输入和名称空间参数。</p>
-<p>将 shape 以字典传递给 <cite>relay.frontend.from_onnx</cite> 函数，告诉 Realy 哪些 ONNX 参数是输入，哪些是参数，并提供静态定义的输入大小。</p>
+<h2>Compile the model with relay<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
+<p>Typically ONNX models mix model input values with parameter values, with
+the input having the name <cite>1</cite>. This model dependent, and you should check
+with the documentation for your model to determine the full input and
+parameter name space.</p>
+<p>Passing in the shape dictionary to the <cite>relay.frontend.from_onnx</cite> method
+tells relay which ONNX parameters are inputs, and which are parameters, and
+provides a static definition of the input size.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;llvm&quot;</span>
 
 <span class="n">input_name</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
@@ -418,7 +430,7 @@
     <span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>../../python/tvm/relay/frontend/onnx.py:4206: UserWarning: Mismatched attribute type in &#39; : kernel_shape&#39;
 
 ==&gt; Context: Bad node spec: input: &quot;1&quot; input: &quot;2&quot; output: &quot;11&quot; op_type: &quot;Conv&quot; attribute { name: &quot;kernel_shape&quot; ints: 5 ints: 5 } attribute { name: &quot;strides&quot; ints: 1 ints: 1 } attribute { name: &quot;pads&quot; ints: 2 ints: 2 ints: 2 ints: 2 } attribute { name: &quot;dilations&quot; ints: 1 ints: 1 } attribute { name: &quot;group&quot; i: 1 }
@@ -427,15 +439,17 @@
 </div>
 </div>
 <div class="section" id="execute-on-tvm">
-<h2>在 TVM 上执行<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
+<h2>Execute on TVM<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;float32&quot;</span>
 <span class="n">tvm_output</span> <span class="o">=</span> <span class="n">executor</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)))</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="display-results">
-<h2>显示结果<a class="headerlink" href="#display-results" title="永久链接至标题">¶</a></h2>
-<p>我们将输入和输出图像并驾齐驱。亮度通道 <cite>Y</cite> 是模型的输出。色度通道 <cite>Cb</cite> 和 <cite>Cr</cite> 使用一个简单的双三次插值算法来调整大小进行匹配。然后将图像重新组合并转换回 <cite>RGB</cite>。</p>
+<h2>Display results<a class="headerlink" href="#display-results" title="永久链接至标题">¶</a></h2>
+<p>We put input and output image neck to neck. The luminance channel, <cite>Y</cite> is the output
+from the model. The chroma channels <cite>Cb</cite> and <cite>Cr</cite> are resized to match with a simple
+bicubic algorithm. The image is then recombined and converted back to <cite>RGB</cite>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="n">out_y</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">((</span><span class="n">tvm_output</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
@@ -452,15 +466,22 @@
 <img alt="../../_images/sphx_glr_from_onnx_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_from_onnx_001.png" />
 </div>
 <div class="section" id="notes">
-<h2>特别注意<a class="headerlink" href="#notes" title="永久链接至标题">¶</a></h2>
-<p>默认情况下，ONNX 以动态图的方式定义模型。ONNX 导入器在导入时保留了这种动态性，而编译器则试图在编译时将模型转换为静态形状。如果转换失败，则代表模型中可能仍有动态操作。目前并非所有的TVM内核都支持动态形状，如果你在使用动态内核时遇到错误，请在discussion.tvm.apache.org上提交问题。</p>
-<p>这个特定模型是使用旧版本的 ONNX 构建的。 在导入阶段，ONNX 导入器将运行 ONNX 验证器，这可能会抛出“不匹配的属性类型”警告。 由于 TVM 支持多种 ONNX 版本，因此 Relay 模型仍然有效。</p>
+<h2>Notes<a class="headerlink" href="#notes" title="永久链接至标题">¶</a></h2>
+<p>By default, ONNX defines models in terms of dynamic shapes. The ONNX importer
+retains that dynamism upon import, and the compiler attempts to convert the model
+into a static shapes at compile time. If this fails, there may still be dynamic
+operations in the model. Not all TVM kernels currently support dynamic shapes,
+please file an issue on discuss.tvm.apache.org if you hit an error with dynamic kernels.</p>
+<p>This particular model was build using an older version of ONNX. During the import
+phase ONNX importer will run the ONNX verifier, which may throw a <cite>Mismatched attribute type</cite>
+warning. Because TVM supports a number of different ONNX versions, the Relay model
+will still be valid.</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-frontend-from-onnx-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/696dd37904ef92773435ca321ff41bfb/from_onnx.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">from_onnx.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/696dd37904ef92773435ca321ff41bfb/from_onnx.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">from_onnx.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/e92c7219a1cd7838e61f9683f4228a7f/from_onnx.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_onnx.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/e92c7219a1cd7838e61f9683f4228a7f/from_onnx.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_onnx.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -477,10 +498,10 @@
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_keras.html" class="btn btn-neutral float-right" title="编译 Keras 模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="from_keras.html" class="btn btn-neutral float-right" title="Compile Keras Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="from_mxnet.html" class="btn btn-neutral float-left" title="编译 MXNet 模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="from_mxnet.html" class="btn btn-neutral float-left" title="Compile MXNet Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 
