@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Adding an Operator to Relay &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
+  <title>向 Realy 中添加一个算子 &mdash; tvm 0.8.dev1733+g199b530c6 文档</title>
   
 
   
@@ -48,7 +48,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Adding a Compiler Pass to Relay" href="relay_add_pass.html" />
-    <link rel="prev" title="Developer How-To Guide" href="how_to.html" /> 
+    <link rel="prev" title="开发者指南" href="how_to.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -180,7 +180,7 @@
             
             
                 <div class="version">
-                  0.8.dev1732+g73c224c2e
+                  0.8.dev1733+g199b530c6
                 </div>
             
           
@@ -205,13 +205,13 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="how_to.html">Developer How-To Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Adding an Operator to Relay</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="how_to.html">开发者指南</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">向 Realy 中添加一个算子</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#defining-an-attribute-node">1. Defining an Attribute Node</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#writing-a-type-relation">2. Writing a Type Relation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#relating-the-arity-and-attributes-to-an-operation">3. Relating the Arity and Attributes to an Operation</a></li>
@@ -234,14 +234,14 @@
 <li class="toctree-l2"><a class="reference internal" href="pytest_target_parametrization.html">Python Target Parametrization</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -250,23 +250,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
 </ul>
 
             
@@ -323,9 +323,9 @@
     
       <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-          <li><a href="how_to.html">Developer How-To Guide</a> <span class="br-arrow">></span></li>
+          <li><a href="how_to.html">开发者指南</a> <span class="br-arrow">></span></li>
         
-      <li>Adding an Operator to Relay</li>
+      <li>向 Realy 中添加一个算子</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -345,7 +345,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="adding-an-operator-to-relay">
-<span id="relay-add-op"></span><h1>Adding an Operator to Relay<a class="headerlink" href="#adding-an-operator-to-relay" title="永久链接至标题">¶</a></h1>
+<span id="relay-add-op"></span><h1>向 Realy 中添加一个算子<a class="headerlink" href="#adding-an-operator-to-relay" title="永久链接至标题">¶</a></h1>
 <p>In this document we will go over the steps needed to register a new TVM operator
 in Relay. We will be following this PR which adds a <a class="reference external" href="https://github.com/apache/tvm/pull/7722">cumulative product</a> operation as an example.
 The PR itself builds upon another PR which adds a <a class="reference external" href="https://github.com/apache/tvm/pull/7334">cumulative sum</a> operation.</p>
@@ -779,10 +779,10 @@ order to register the gradient.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relay_add_pass.html" class="btn btn-neutral float-right" title="Adding a Compiler Pass to Relay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relay_add_pass.html" class="btn btn-neutral float-right" title="Adding a Compiler Pass to Relay" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="how_to.html" class="btn btn-neutral float-left" title="Developer How-To Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="how_to.html" class="btn btn-neutral float-left" title="开发者指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

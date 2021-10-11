@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Design and Architecture &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
+  <title>Design and Architecture &mdash; tvm 0.8.dev1733+g199b530c6 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="TVM Runtime System" href="runtime.html" />
-    <link rel="prev" title="Links to Other API References" href="../api/links.html" /> 
+    <link rel="prev" title="其它 API 参考链接" href="../api/links.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1732+g73c224c2e
+                  0.8.dev1733+g199b530c6
                 </div>
             
           
@@ -204,20 +204,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -226,13 +226,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Design and Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#example-compilation-flow">Example Compilation Flow</a><ul>
@@ -268,12 +268,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#tvm-arith">tvm/arith</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tvm-te">tvm/te</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="inferbound.html">InferBound Pass</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hybrid_script.html">Hybrid Frontend Developer Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hybrid_script.html">混合前端开发指南</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#tvm-topi">tvm/topi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tvm-relay">tvm/relay</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="relay_intro.html">Introduction to Relay IR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_intro.html">Relay 介绍</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_op_strategy.html">Relay Operator Strategy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="convert_layout.html">Convert Layout Pass</a></li>
 </ul>
@@ -283,10 +283,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#frontends">Frontends</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="frontend/tensorflow.html">TensorFlow Frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontend/tensorflow.html">TensorFlow 前端</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#security">Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#security">安全</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="security.html">Security Guide</a></li>
 </ul>
 </li>
@@ -298,13 +298,13 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
 </ul>
 
             
@@ -394,7 +394,7 @@ by the component’s name.</p></li>
 <li><p>The <a class="reference internal" href="device_target_interactions.html#tvm-target-specific-overview"><span class="std std-ref">Device/Target Interactions</span></a>
 page describes how TVM interacts with each supported physical device
 and code-generation target.</p></li>
-<li><p>Feel free to also check out the <a class="reference internal" href="how_to.html#dev-how-to"><span class="std std-ref">Developer How-To Guide</span></a> for useful development tips.</p></li>
+<li><p>Feel free to also check out the <a class="reference internal" href="how_to.html#dev-how-to"><span class="std std-ref">开发者指南</span></a> for useful development tips.</p></li>
 </ul>
 <p>This guide provides a few complementary views of the architecture.
 First, we review a single end-to-end compilation flow and discuss the key data structures and the transformations.
@@ -600,7 +600,7 @@ The ability to save/store, and inspect an IR node provides a foundation for maki
 The components in <cite>tvm/ir</cite> are shared by <cite>tvm/relay</cite> and <cite>tvm/tir</cite>, notable ones include</p>
 <ul class="simple">
 <li><p>IRModule</p></li>
-<li><p>Type</p></li>
+<li><p>类型</p></li>
 <li><p>PassContext and Pass</p></li>
 <li><p>Op</p></li>
 </ul>
@@ -656,7 +656,7 @@ these scheduling components to the a <cite>tir::PrimFunc</cite> itself.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="inferbound.html">InferBound Pass</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hybrid_script.html">Hybrid Frontend Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hybrid_script.html">混合前端开发指南</a></li>
 </ul>
 </div>
 </div>
@@ -673,7 +673,7 @@ and each dialect is designed to support specific styles of optimization. Notable
 memory(for memory optimization).</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="relay_intro.html">Introduction to Relay IR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relay_intro.html">Relay 介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="relay_op_strategy.html">Relay Operator Strategy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convert_layout.html">Convert Layout Pass</a></li>
 </ul>
@@ -702,12 +702,12 @@ customize the search and plugin their algorithms from the Python binding.</p>
 <a class="reference internal" href="../api/python/relay/frontend.html#module-tvm.relay.frontend" title="tvm.relay.frontend"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tvm.relay.frontend</span></code></a> is the namespace for model ingestion APIs.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="frontend/tensorflow.html">TensorFlow Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontend/tensorflow.html">TensorFlow 前端</a></li>
 </ul>
 </div>
 </div>
 <div class="section" id="security">
-<h2>Security<a class="headerlink" href="#security" title="永久链接至标题">¶</a></h2>
+<h2>安全<a class="headerlink" href="#security" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security Guide</a></li>
@@ -735,10 +735,10 @@ customize the search and plugin their algorithms from the Python binding.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="runtime.html" class="btn btn-neutral float-right" title="TVM Runtime System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="runtime.html" class="btn btn-neutral float-right" title="TVM Runtime System" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../api/links.html" class="btn btn-neutral float-left" title="Links to Other API References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../api/links.html" class="btn btn-neutral float-left" title="其它 API 参考链接" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Hybrid Frontend Developer Guide &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
+  <title>混合前端开发指南 &mdash; tvm 0.8.dev1733+g199b530c6 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Introduction to Relay IR" href="relay_intro.html" />
+    <link rel="next" title="Relay 介绍" href="relay_intro.html" />
     <link rel="prev" title="InferBound Pass" href="inferbound.html" /> 
 </head>
 
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1732+g73c224c2e
+                  0.8.dev1733+g199b530c6
                 </div>
             
           
@@ -204,20 +204,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -226,13 +226,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Design and Architecture</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#example-compilation-flow">Example Compilation Flow</a></li>
@@ -246,8 +246,8 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-arith">tvm/arith</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#tvm-te">tvm/te</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="inferbound.html">InferBound Pass</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Hybrid Frontend Developer Guide</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">混合前端开发指南</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#features">特性</a></li>
 </ul>
 </li>
 </ul>
@@ -256,18 +256,18 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-relay">tvm/relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-autotvm">tvm/autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#frontends">Frontends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#security">安全</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#microtvm">microTVM</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
 </ul>
 
             
@@ -326,7 +326,7 @@
         
           <li><a href="index.html">Design and Architecture</a> <span class="br-arrow">></span></li>
         
-      <li>Hybrid Frontend Developer Guide</li>
+      <li>混合前端开发指南</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -346,72 +346,55 @@
            <div itemprop="articleBody">
             
   <div class="section" id="hybrid-frontend-developer-guide">
-<h1>Hybrid Frontend Developer Guide<a class="headerlink" href="#hybrid-frontend-developer-guide" title="永久链接至标题">¶</a></h1>
-<p>If you are a developer:</p>
-<p>1. who is trying writing some preliminary patterns that have not been supported by TVM yet,
-maybe <a class="reference internal" href="../langref/hybrid_script.html#hybrid-langref-label"><span class="std std-ref">Hybrid Frontend Language Reference</span></a> is a better place for you.</p>
+<h1>混合前端开发指南<a class="headerlink" href="#hybrid-frontend-developer-guide" title="永久链接至标题">¶</a></h1>
+<p>如果你是一个开发人员：</p>
+<p>1.当谁正在尝试编写一些尚未被TVM支持的初步模式，也许：ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>hybrid-langref-label`对你来说是一个更好的地方。</p>
 <ol class="arabic simple" start="2">
-<li><p>who wants to know the implementation details of this module, you are right here!</p></li>
+<li><p>如果你想知道如何实现这个模块，你来对地方了！</p></li>
 </ol>
 <div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="永久链接至标题">¶</a></h2>
+<h2>特性<a class="headerlink" href="#features" title="永久链接至标题">¶</a></h2>
 <div class="section" id="software-emulation">
-<h3>Software Emulation<a class="headerlink" href="#software-emulation" title="永久链接至标题">¶</a></h3>
-<p>In software emulation, the most interesting thing is the decorator <code class="docutils literal notranslate"><span class="pre">tvm.te.hybrid.script</span></code>.
-This decorator helps 2 things:</p>
+<h3>软件仿真<a class="headerlink" href="#software-emulation" title="永久链接至标题">¶</a></h3>
+<p>在软件仿真中，最有趣的是装饰器 <code class="docutils literal notranslate"><span class="pre">tvm.te.hybrid.script</span></code>。这个装饰器有助于2件事：</p>
 <ol class="arabic simple">
-<li><p>Importing runtime variables</p></li>
-<li><p>Overloading the function according to the arguments passed</p></li>
+<li><p>导入运行时变量</p></li>
+<li><p>根据传递的参数重载函数</p></li>
 </ol>
-<p>Correct me if I am wrong: I believe that how 1. is implemented is dangerous, but I have no
-choice. What I did is to add those names into python dict <code class="docutils literal notranslate"><span class="pre">func.__global__</span></code> and after
-the call to <code class="docutils literal notranslate"><span class="pre">func</span></code> is done, those names will be cleaned up.</p>
-<p>Overload is simple: the decorator checks the arguments’ types and determines which function
-should be actually called.</p>
+<p>如果我错了，请纠正我：我认为 1. 的实施方式是危险的，但我别无选择。我所做的是将这些名称添加到 python dict <code class="docutils literal notranslate"><span class="pre">func.__global__</span></code> 中，在调用 <code class="docutils literal notranslate"><span class="pre">func</span></code> 之后，这些名称将被清除。</p>
+<p>重载很简单：装饰器检查参数的类型并确定应该实际调用哪个函数。</p>
 </div>
 <div class="section" id="backend-compilation">
-<h3>Backend Compilation<a class="headerlink" href="#backend-compilation" title="永久链接至标题">¶</a></h3>
-<p>Compilation is a large module, you can see <code class="docutils literal notranslate"><span class="pre">python/tvm/te/hybrid/</span></code> for more
-details. The first stage determines the usage, or more accurately the
-declaration of each variable and the second stage does the actual IR
-generation.</p>
+<h3>后端编译<a class="headerlink" href="#backend-compilation" title="永久链接至标题">¶</a></h3>
+<p>编译是一个大模块，更多细节可以查看``python/tvm/te/hybrid/<a href="#id1"><span class="problematic" id="id2">``</span></a>。第一阶段确定用法，或者更准确地说是每个变量的声明，第二阶段进行实际的 IR 生成。</p>
 </div>
 <div class="section" id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="永久链接至标题">¶</a></h3>
-<p>So far, ONLY tensors’ <cite>shape</cite> attribute is supported. You can see <code class="docutils literal notranslate"><span class="pre">visit_Subscript</span></code>
-in <code class="docutils literal notranslate"><span class="pre">python/tvm/te/hybrid/parser.py</span></code> for more details. This is a hacky solution, I just
-check the attributes when subscript.</p>
+<h3>属性<a class="headerlink" href="#attributes" title="永久链接至标题">¶</a></h3>
+<p>到目前为止，只支持张量的 <cite>shape</cite> 属性。您可以在“python/tvm/te/hybrid/parser.py”中查看“visit_Subscript”以了解更多详细信息。这是一个粗暴解决方案，只是在下标时检查属性。</p>
 </div>
 <div class="section" id="loops">
-<h3>Loops<a class="headerlink" href="#loops" title="永久链接至标题">¶</a></h3>
-<p>In HalideIR, loops have in total 4 types: <code class="docutils literal notranslate"><span class="pre">serial</span></code>, <code class="docutils literal notranslate"><span class="pre">unrolled</span></code>, <code class="docutils literal notranslate"><span class="pre">parallel</span></code>, and <code class="docutils literal notranslate"><span class="pre">vectorized</span></code>.</p>
+<h3>循环<a class="headerlink" href="#loops" title="永久链接至标题">¶</a></h3>
+<p>在 HalideIR 中，循环共有 4 种类型：<code class="docutils literal notranslate"><span class="pre">serial</span></code>, <code class="docutils literal notranslate"><span class="pre">unrolled</span></code>, <code class="docutils literal notranslate"><span class="pre">parallel</span></code>, and <code class="docutils literal notranslate"><span class="pre">vectorized</span></code>。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>Unlike what that is in HalideIR, in <code class="docutils literal notranslate"><span class="pre">loop_type(a,</span> <span class="pre">b)</span></code>, <code class="docutils literal notranslate"><span class="pre">a</span></code> is the starting point and <code class="docutils literal notranslate"><span class="pre">b</span></code>
-is the trip count of iterations. Here <code class="docutils literal notranslate"><span class="pre">loop_type(a,</span> <span class="pre">b)</span></code> indicates <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b)</span></code>. Thus, when lowering it
-to HalideIR, we need to do <code class="docutils literal notranslate"><span class="pre">start,</span> <span class="pre">extent</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">b</span> <span class="pre">-</span> <span class="pre">a</span></code></p>
+<p>与 HalideIR 不同的是，在“loop_type(a, b)”中，“a”是起点，“b”是迭代次数。这里的“loop_type(a, b)”表示“[a, b)”。因此，当将其降低到 HalideIR 时，我们需要执行 <code class="docutils literal notranslate"><span class="pre">start,</span> <span class="pre">extent</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">b</span> <span class="pre">-</span> <span class="pre">a</span></code></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>In HalideIR those are enums, they are in passive form.
-Here we use active form to annotate loops, because they are ready to run.</p>
+<p>在 HalideIR 中，这些是enum，它们处于passive form。这里我们使用active form来注释循环，因为它们已准备好运行。</p>
 </div>
 </div>
 <div class="section" id="variables">
-<h3>Variables<a class="headerlink" href="#variables" title="永久链接至标题">¶</a></h3>
-<p>Because there is no variables in <code class="docutils literal notranslate"><span class="pre">HalideIR</span></code>, all the mutable variables will be lowered to an array with size 1.
-It takes the first store of a variable as its declaration.</p>
+<h3>变量<a class="headerlink" href="#variables" title="永久链接至标题">¶</a></h3>
+<p>因为 <code class="docutils literal notranslate"><span class="pre">HalideIR</span></code> 中没有变量，所有可变变量都将被降低到一个大小为 1 的数组。它以变量的第一个存储作为其声明。</p>
 </div>
 <div class="section" id="math-intrinsics">
-<h3>Math Intrinsics<a class="headerlink" href="#math-intrinsics" title="永久链接至标题">¶</a></h3>
-<p>So far, these math intrinsics, <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code>, <code class="docutils literal notranslate"><span class="pre">tanh</span></code>, <code class="docutils literal notranslate"><span class="pre">power</span></code>, and <code class="docutils literal notranslate"><span class="pre">popcount</span></code>, are supported.
-Math intrinsics will be imported by the decorator. Most of the intrinsics are borrowed by library implementation
-except <code class="docutils literal notranslate"><span class="pre">popcount</span></code> and <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code>. I implemented them manually.</p>
+<h3>数学内在函数<a class="headerlink" href="#math-intrinsics" title="永久链接至标题">¶</a></h3>
+<p>到目前为止，支持这些数学内在函数 <code class="docutils literal notranslate"><span class="pre">log</span></code>、<code class="docutils literal notranslate"><span class="pre">exp</span></code>、<code class="docutils literal notranslate"><span class="pre">sigmoid</span></code>、<code class="docutils literal notranslate"><span class="pre">tanh</span></code>、<code class="docutils literal notranslate"><span class="pre">power</span></code> 和 <code class="docutils literal notranslate"><span class="pre">popcount</span></code>。数学内在函数将由装饰器导入。除了 <code class="docutils literal notranslate"><span class="pre">popcount</span></code> 和 <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code> 之外，大多数内在函数都是由库实现借用的。我手动实现了它们。</p>
 </div>
 <div class="section" id="casting">
-<h3>Casting<a class="headerlink" href="#casting" title="永久链接至标题">¶</a></h3>
-<p>You can cast values by using the keywords <code class="docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="docutils literal notranslate"><span class="pre">uint16</span></code> <code class="docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="docutils literal notranslate"><span class="pre">uint64</span></code>, <code class="docutils literal notranslate"><span class="pre">int8</span></code>, <code class="docutils literal notranslate"><span class="pre">int16</span></code>, <code class="docutils literal notranslate"><span class="pre">int32</span></code>, <code class="docutils literal notranslate"><span class="pre">int64</span></code>,
-<code class="docutils literal notranslate"><span class="pre">float16</span></code>, <code class="docutils literal notranslate"><span class="pre">float32</span></code>, <code class="docutils literal notranslate"><span class="pre">float64</span></code>.</p>
+<h3>转换<a class="headerlink" href="#casting" title="永久链接至标题">¶</a></h3>
+<p>您可以使用关键字  <code class="docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="docutils literal notranslate"><span class="pre">uint16</span></code> <code class="docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="docutils literal notranslate"><span class="pre">uint64</span></code>, <code class="docutils literal notranslate"><span class="pre">int8</span></code>, <code class="docutils literal notranslate"><span class="pre">int16</span></code>, <code class="docutils literal notranslate"><span class="pre">int32</span></code>, <code class="docutils literal notranslate"><span class="pre">int64</span></code>, <code class="docutils literal notranslate"><span class="pre">float16</span></code>, <code class="docutils literal notranslate"><span class="pre">float32</span></code>, <a href="#id1"><span class="problematic" id="id2">``</span></a>float64``来转换数据类型。</p>
 </div>
 </div>
 </div>
@@ -426,10 +409,10 @@ except <code class="docutils literal notranslate"><span class="pre">popcount</sp
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relay_intro.html" class="btn btn-neutral float-right" title="Introduction to Relay IR" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relay_intro.html" class="btn btn-neutral float-right" title="Relay 介绍" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="inferbound.html" class="btn btn-neutral float-left" title="InferBound Pass" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="inferbound.html" class="btn btn-neutral float-left" title="InferBound Pass" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

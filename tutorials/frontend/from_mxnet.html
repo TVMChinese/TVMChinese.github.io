@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compile MXNet Models &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
+  <title>编译 MXNet 模型 &mdash; tvm 0.8.dev1733+g199b530c6 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Compile ONNX Models" href="from_onnx.html" />
-    <link rel="prev" title="Compile Tensorflow Models" href="from_tensorflow.html" /> 
+    <link rel="next" title="编译 ONNX 模型" href="from_onnx.html" />
+    <link rel="prev" title="编译 Tensorflow 模型" href="from_tensorflow.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1732+g73c224c2e
+                  0.8.dev1733+g199b530c6
                 </div>
             
           
@@ -204,45 +204,45 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Compile MXNet Models</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#download-resnet18-model-from-gluon-model-zoo">Download Resnet18 model from Gluon Model Zoo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compile-the-graph">Compile the Graph</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#execute-the-portable-graph-on-tvm">Execute the portable graph on TVM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#use-mxnet-symbol-with-pretrained-weights">Use MXNet symbol with pretrained weights</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">编译 MXNet 模型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-resnet18-model-from-gluon-model-zoo">从 Gluon Model Zoo 中下载 Resnet18 模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile-the-graph">编译计算图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#execute-the-portable-graph-on-tvm">在 TVM 上执行计算图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-mxnet-symbol-with-pretrained-weights">使用带有预训练权重的 MXNet symbol</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="from_onnx.html">Compile ONNX Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">Compile Caffe2 Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build_gcn.html">Building a Graph Convolutional Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">Deploy the Pretrained Model on Android</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">Deploy the Pretrained Model on Raspberry Pi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_object_detection_pytorch.html">Compile PyTorch Object Detection Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized.html">Deploy a Framework-prequantized Model with TVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized_tflite.html">Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_quantized.html">Deploy a Quantized Model on Cuda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_sparse.html">Deploy a Hugging Face Pruned Model on CPU</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deploy_ssd_gluoncv.html">Deploy Single Shot Multibox Detector(SSD) model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="using_external_lib.html">Using External Libraries in Relay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_keras.html">编译 Keras 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_darknet.html">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_gcn.html">构建一个图形卷积网络</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_android.html">在Android上部署预训练模型（Pretrained Model)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_model_on_rasp.html">在Raspberry Pi上部署预训练模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_object_detection_pytorch.html">编译PyTorch对象检测模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized.html">使用TVM部署一个框架预量化模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_prequantized_tflite.html">使用TVM部署预先量化的框架模型-第3部分（TFLite）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_quantized.html">在Cuda上部署一个量化模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_sparse.html">在CPU上部署Hugging Face Pruned模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy_ssd_gluoncv.html">部署Single Shot Multibox Detector(SSD)模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using_external_lib.html">在Relay中使用外部库</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
@@ -253,23 +253,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -328,7 +328,7 @@
         
           <li><a href="../index.html">Getting Started With TVM</a> <span class="br-arrow">></span></li>
         
-      <li>Compile MXNet Models</li>
+      <li>编译 MXNet 模型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -349,19 +349,18 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-frontend-from-mxnet-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorials-frontend-from-mxnet-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="compile-mxnet-models">
-<span id="tutorial-from-mxnet"></span><span id="sphx-glr-tutorials-frontend-from-mxnet-py"></span><h1>Compile MXNet Models<a class="headerlink" href="#compile-mxnet-models" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://zhreshold.github.io/">Joshua Z. Zhang</a>,             <a class="reference external" href="https://github.com/kazum">Kazutaka Morita</a></p>
-<p>This article is an introductory tutorial to deploy mxnet models with Relay.</p>
-<p>For us to begin with, mxnet module is required to be installed.</p>
-<p>A quick solution is</p>
+<span id="tutorial-from-mxnet"></span><span id="sphx-glr-tutorials-frontend-from-mxnet-py"></span><h1>编译 MXNet 模型<a class="headerlink" href="#compile-mxnet-models" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://zhreshold.github.io/">Joshua Z. Zhang</a>, <a class="reference external" href="https://github.com/kazum">Kazutaka Morita</a></p>
+<p>本文是使用 Relay 部署 MXNet 模型的介绍性教程。</p>
+<p>首先，我们需要安装 mxnet 模块。</p>
+<p>一个快速的解决办法是</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install mxnet --user
 </pre></div>
 </div>
-<p>or please refer to official installation guide.
-<a class="reference external" href="https://mxnet.apache.org/versions/master/install/index.html">https://mxnet.apache.org/versions/master/install/index.html</a></p>
+<p>或者你也可以参考官方安装指南。 <a class="reference external" href="https://mxnet.apache.org/versions/master/install/index.html">https://mxnet.apache.org/versions/master/install/index.html</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># some standard imports</span>
 <span class="kn">import</span> <span class="nn">mxnet</span> <span class="k">as</span> <span class="nn">mx</span>
 <span class="kn">import</span> <span class="nn">tvm</span>
@@ -370,8 +369,8 @@
 </pre></div>
 </div>
 <div class="section" id="download-resnet18-model-from-gluon-model-zoo">
-<h2>Download Resnet18 model from Gluon Model Zoo<a class="headerlink" href="#download-resnet18-model-from-gluon-model-zoo" title="永久链接至标题">¶</a></h2>
-<p>In this section, we download a pretrained imagenet model and classify an image.</p>
+<h2>从 Gluon Model Zoo 中下载 Resnet18 模型<a class="headerlink" href="#download-resnet18-model-from-gluon-model-zoo" title="永久链接至标题">¶</a></h2>
+<p>在这一节中，我们下载一个预训练的 imagenet 模型并将一张图片进行分类。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tvm.contrib.download</span> <span class="k">import</span> <span class="n">download_testdata</span>
 <span class="kn">from</span> <span class="nn">mxnet.gluon.model_zoo.vision</span> <span class="k">import</span> <span class="n">get_model</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
@@ -411,16 +410,14 @@
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_from_mxnet_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_from_mxnet_001.png" />
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>x (1, 3, 224, 224)
 </pre></div>
 </div>
 </div>
 <div class="section" id="compile-the-graph">
-<h2>Compile the Graph<a class="headerlink" href="#compile-the-graph" title="永久链接至标题">¶</a></h2>
-<p>Now we would like to port the Gluon model to a portable computational graph.
-It’s as easy as several lines.
-We support MXNet static graph(symbol) and HybridBlock in mxnet.gluon</p>
+<h2>编译计算图<a class="headerlink" href="#compile-the-graph" title="永久链接至标题">¶</a></h2>
+<p>现在我们想将 Gluon 模型移植到一个可移植的计算图上。 它非常简单，就几行代码。 我们在 mxnet.gluon 中支持 MXNet 静态图（symbol）和 HybridBlock</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shape_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">}</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_mxnet</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">shape_dict</span><span class="p">)</span>
 <span class="c1">## we want a probability so add a softmax operator</span>
@@ -428,7 +425,7 @@ We support MXNet static graph(symbol) and HybridBlock in mxnet.gluon</p>
 <span class="n">func</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="n">relay</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">body</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">type_params</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>now compile the graph</p>
+<p>现在编译计算图</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span>
 <span class="k">with</span> <span class="n">tvm</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">PassContext</span><span class="p">(</span><span class="n">opt_level</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">lib</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
@@ -436,8 +433,8 @@ We support MXNet static graph(symbol) and HybridBlock in mxnet.gluon</p>
 </div>
 </div>
 <div class="section" id="execute-the-portable-graph-on-tvm">
-<h2>Execute the portable graph on TVM<a class="headerlink" href="#execute-the-portable-graph-on-tvm" title="永久链接至标题">¶</a></h2>
-<p>Now, we would like to reproduce the same forward computation using TVM.</p>
+<h2>在 TVM 上执行计算图<a class="headerlink" href="#execute-the-portable-graph-on-tvm" title="永久链接至标题">¶</a></h2>
+<p>现在，我们想使用 TVM 重现相同的前向计算。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tvm.contrib</span> <span class="k">import</span> <span class="n">graph_executor</span>
 
 <span class="n">dev</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -453,15 +450,14 @@ We support MXNet static graph(symbol) and HybridBlock in mxnet.gluon</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TVM prediction top-1:&quot;</span><span class="p">,</span> <span class="n">top1</span><span class="p">,</span> <span class="n">synset</span><span class="p">[</span><span class="n">top1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>TVM prediction top-1: 282 tiger cat
 </pre></div>
 </div>
 </div>
 <div class="section" id="use-mxnet-symbol-with-pretrained-weights">
-<h2>Use MXNet symbol with pretrained weights<a class="headerlink" href="#use-mxnet-symbol-with-pretrained-weights" title="永久链接至标题">¶</a></h2>
-<p>MXNet often use <cite>arg_params</cite> and <cite>aux_params</cite> to store network parameters
-separately, here we show how to use these weights with existing API</p>
+<h2>使用带有预训练权重的 MXNet symbol<a class="headerlink" href="#use-mxnet-symbol-with-pretrained-weights" title="永久链接至标题">¶</a></h2>
+<p>MXNet 通常使用 <cite>arg_params</cite> 和 <cite>aux_params</cite> 分开存储网络参数，这里我们将展示如何在现有 API 中使用这些权重</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">block2symbol</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">sym</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
     <span class="n">sym</span> <span class="o">=</span> <span class="n">block</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -478,7 +474,7 @@ separately, here we show how to use these weights with existing API</p>
 <span class="c1"># there are &#39;resnet18_v1-0000.params&#39; and &#39;resnet18_v1-symbol.json&#39; on disk</span>
 </pre></div>
 </div>
-<p>for a normal mxnet model, we start from here</p>
+<p>对于普通的 mxnet 模型，我们从这里开始</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mx_sym</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">auxs</span> <span class="o">=</span> <span class="n">mx</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">load_checkpoint</span><span class="p">(</span><span class="s2">&quot;resnet18_v1&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="c1"># now we use the same API to get Relay computation graph</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">relay_params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_mxnet</span><span class="p">(</span><span class="n">mx_sym</span><span class="p">,</span> <span class="n">shape_dict</span><span class="p">,</span> <span class="n">arg_params</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">aux_params</span><span class="o">=</span><span class="n">auxs</span><span class="p">)</span>
@@ -487,10 +483,10 @@ separately, here we show how to use these weights with existing API</p>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-frontend-from-mxnet-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/ea0c81cab71096d16b825a33fd276c58/from_mxnet.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">from_mxnet.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/ea0c81cab71096d16b825a33fd276c58/from_mxnet.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">from_mxnet.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/f2f3dea1548903b315df5847ee60f87d/from_mxnet.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_mxnet.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/f2f3dea1548903b315df5847ee60f87d/from_mxnet.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_mxnet.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -507,10 +503,10 @@ separately, here we show how to use these weights with existing API</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_onnx.html" class="btn btn-neutral float-right" title="Compile ONNX Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="from_onnx.html" class="btn btn-neutral float-right" title="编译 ONNX 模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="from_tensorflow.html" class="btn btn-neutral float-left" title="Compile Tensorflow Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="from_tensorflow.html" class="btn btn-neutral float-left" title="编译 Tensorflow 模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

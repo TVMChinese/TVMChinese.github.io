@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TensorFlow Frontend &mdash; tvm 0.8.dev1732+g73c224c2e 文档</title>
+  <title>TensorFlow 前端 &mdash; tvm 0.8.dev1733+g199b530c6 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1732+g73c224c2e
+                  0.8.dev1733+g199b530c6
                 </div>
             
           
@@ -204,20 +204,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">How to</span></p>
+              <p class="caption" role="heading"><span class="caption-text">引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contribute to TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">Deploy and Integration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../how_to.html">Developer How-To Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../errors.html">What do to when encountering TVM Errors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">为 TVM 做出贡献</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deploy/index.html">部署和集成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../errors.html">使用 TVM 时遇到 Errors 怎么做</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">教程</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Getting Started With TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#compile-deep-learning-models">编译深度学习模型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#tensor-expression-and-schedules">Tensor Expression and Schedules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#autotvm-template-based-auto-tuning">AutoTVM : Template-based Auto Tuning</a></li>
@@ -226,13 +226,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#topi-tvm-operator-inventory">TOPI: TVM Operator Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html#microtvm">microTVM</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">References</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api/python/index.html">Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">Links to Other API References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/links.html">其它 API 参考链接</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p class="caption" role="heading"><span class="caption-text">深入</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Design and Architecture</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#example-compilation-flow">Example Compilation Flow</a></li>
@@ -249,27 +249,27 @@
 <li class="toctree-l2"><a class="reference internal" href="../index.html#tvm-relay">tvm/relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#tvm-autotvm">tvm/autotvm</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#frontends">Frontends</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">TensorFlow Frontend</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#preparing-a-model-for-inference">Preparing a Model for Inference</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#import-the-model">Import the Model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#best-practices">Best Practices</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#supported-ops">Supported Ops</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">TensorFlow 前端</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparing-a-model-for-inference">准备一个推理模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-the-model">导入模型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#best-practices">最佳做法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#supported-ops">支持的算子</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#security">安全</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#microtvm">microTVM</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">MISC</span></p>
+<p class="caption" role="heading"><span class="caption-text">杂项</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vta/index.html">VTA: Deep Learning Accelerator Stack</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../profiling/index.html">Profiling Deep Learning Models</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -328,7 +328,7 @@
         
           <li><a href="../index.html">Design and Architecture</a> <span class="br-arrow">></span></li>
         
-      <li>TensorFlow Frontend</li>
+      <li>TensorFlow 前端</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -348,13 +348,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tensorflow-frontend">
-<h1>TensorFlow Frontend<a class="headerlink" href="#tensorflow-frontend" title="永久链接至标题">¶</a></h1>
-<p>The TensorFlow frontend helps in importing TensorFlow models into TVM.</p>
-<p>Supported versions:</p>
+<h1>TensorFlow 前端<a class="headerlink" href="#tensorflow-frontend" title="永久链接至标题">¶</a></h1>
+<p>TensorFlow 前端有助于导入 TensorFlow 模型到 TVM</p>
+<p>支持版本：</p>
 <ul class="simple">
-<li><p>1.12 and below</p></li>
+<li><p>1.12 及以下</p></li>
 </ul>
-<p>Tested models:</p>
+<p>经过测试的模型：</p>
 <ul class="simple">
 <li><p>Inception (V1/V2/V3/V4)</p></li>
 <li><p>Resnet (All)</p></li>
@@ -363,23 +363,23 @@
 <li><p>BERT (Base/3-layer)</p></li>
 </ul>
 <div class="section" id="preparing-a-model-for-inference">
-<h2>Preparing a Model for Inference<a class="headerlink" href="#preparing-a-model-for-inference" title="永久链接至标题">¶</a></h2>
+<h2>准备一个推理模型<a class="headerlink" href="#preparing-a-model-for-inference" title="永久链接至标题">¶</a></h2>
 <div class="section" id="remove-unneeded-nodes">
-<h3>Remove Unneeded Nodes<a class="headerlink" href="#remove-unneeded-nodes" title="永久链接至标题">¶</a></h3>
-<p>The export process will remove many nodes that are not needed for inference, but unfortunately will leave some remaining. The nodes that should be manually removed are:</p>
+<h3>删除不需要的节点<a class="headerlink" href="#remove-unneeded-nodes" title="永久链接至标题">¶</a></h3>
+<p>导出过程将删除许多推理不需要的节点，但不幸的是有些不需要的节点在导出过程中无法删除。 应该手动删除的节点：</p>
 <ul class="simple">
-<li><p>Dropout, including <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout">Dropout</a> and <a class="reference external" href="https://www.tensorflow.org/versions/r1.12/api_docs/python/tf/nn/rnn_cell/DropoutWrapper?hl=hr">DropoutWrapper</a></p></li>
+<li><p>Dropout, including <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/nn/dropout">Dropout</a> 和 <a class="reference external" href="https://www.tensorflow.org/versions/r1.12/api_docs/python/tf/nn/rnn_cell/DropoutWrapper?hl=hr">DropoutWrapper</a></p></li>
 <li><p><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/debugging/Assert">Assert</a></p></li>
 </ul>
 </div>
 <div class="section" id="convert-none-dimensions-to-constants">
-<h3>Convert None Dimensions to Constants<a class="headerlink" href="#convert-none-dimensions-to-constants" title="永久链接至标题">¶</a></h3>
-<p>TVM has minimal support for dynamic tensor shapes. Dimensions that are <code class="docutils literal notranslate"><span class="pre">None</span></code> should be replaced with constants. For example, a model may accept an input with shape <code class="docutils literal notranslate"><span class="pre">(None,20)</span></code>. This should be converted to a shape like <code class="docutils literal notranslate"><span class="pre">(1,20)</span></code>. The model should be modified accordingly to ensure that these shapes match throughout the graph.</p>
+<h3>将维度中的 None 转换为常数<a class="headerlink" href="#convert-none-dimensions-to-constants" title="永久链接至标题">¶</a></h3>
+<p>TVM 对动态张量 shape 的支持最少。维度中出现的 <code class="docutils literal notranslate"><span class="pre">None</span></code> 应替换为常数。例如，模型接受形状为 <code class="docutils literal notranslate"><span class="pre">(None,20)</span></code> 的输入。这应该转换为 <code class="docutils literal notranslate"><span class="pre">(1,20)</span></code> 的shape。应当相应地修改模型，以确保这些 shape 在整个计算图中匹配。</p>
 </div>
 <div class="section" id="export">
-<h3>Export<a class="headerlink" href="#export" title="永久链接至标题">¶</a></h3>
-<p>TensorFlow frontend expects a frozen protobuf (.pb) or saved model as input. It currently does not support checkpoint (.ckpt). The graphdef needed by the TensorFlow frontend can be extracted from the active session, or by using the <a class="reference external" href="https://github.com/apache/tvm/blob/main/python/tvm/relay/frontend/tensorflow_parser.py">TFParser</a> helper class.</p>
-<p>The model should be exported with a number of transformations to prepare the model for inference. It is also important to set <code class="docutils literal notranslate"><span class="pre">`add_shapes=True`</span></code>, as this will embed the output shapes of each node into the graph. Here is one function to export a model as a protobuf given a session:</p>
+<h3>导出<a class="headerlink" href="#export" title="永久链接至标题">¶</a></h3>
+<p>TensorFlow 前端需要一个冻结的 protobuf (.pb) 或保存的模型作为输入。 它目前不支持 checkpoint  (.ckpt)。 TensorFlow 前端所需的 graphdef 可以从活动会话中提取，也可以使用 <a class="reference external" href="https://github.com/apache/tvm/blob/main/python/tvm/relay/frontend/tensorflow_parser.py">TFParser</a> helper 类。</p>
+<p>导出模型时应进行大量转换，以准备模型进行推理。设置 <code class="docutils literal notranslate"><span class="pre">`add_shapes=True`</span></code> 也很重要，因为这会将每个节点的输出 shape 嵌入到计算图中。 下面是一个函数，用于将模型导出为给定会话的 protobuf：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
 <span class="kn">from</span> <span class="nn">tensorflow.tools.graph_transforms</span> <span class="kn">import</span> <span class="n">TransformGraph</span>
 
@@ -411,29 +411,29 @@
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">graph_def</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>Another method is to <a class="reference external" href="https://github.com/tensorflow/models/tree/master/research/slim#exporting-the-inference-graph">export and freeze the graph</a>.</p>
+<p>另一种方法是 <a class="reference external" href="https://github.com/tensorflow/models/tree/master/research/slim#exporting-the-inference-graph">导出和冻结计算图</a></p>
 </div>
 </div>
 <div class="section" id="import-the-model">
-<h2>Import the Model<a class="headerlink" href="#import-the-model" title="永久链接至标题">¶</a></h2>
+<h2>导入模型<a class="headerlink" href="#import-the-model" title="永久链接至标题">¶</a></h2>
 <div class="section" id="explicit-shape">
-<h3>Explicit Shape:<a class="headerlink" href="#explicit-shape" title="永久链接至标题">¶</a></h3>
-<p>To ensure shapes can be known throughout the entire graph, pass the <code class="docutils literal notranslate"><span class="pre">`shape`</span></code> argument to <code class="docutils literal notranslate"><span class="pre">`from_tensorflow`</span></code>. This dictionary maps input names to input shapes. Please refer to these <a class="reference external" href="https://github.com/apache/tvm/blob/main/tests/python/frontend/tensorflow/test_forward.py#L36">test cases</a> for examples.</p>
+<h3>明确 Shape：<a class="headerlink" href="#explicit-shape" title="永久链接至标题">¶</a></h3>
+<p>为了确保在整个计算图中都可以知道 shape，请将 <code class="docutils literal notranslate"><span class="pre">`shape`</span></code> 参数传递给 <code class="docutils literal notranslate"><span class="pre">`from_tensorflow`</span></code> 。 该字典键值分别为输入名称和输入shape。 有关示例，请参阅这些  <a class="reference external" href="https://github.com/apache/tvm/blob/main/tests/python/frontend/tensorflow/test_forward.py#L36">测试用例</a> 。</p>
 </div>
 <div class="section" id="data-layout">
-<h3>Data Layout<a class="headerlink" href="#data-layout" title="永久链接至标题">¶</a></h3>
-<p>Most TensorFlow models are released with NHWC layout. NCHW layout often provides better performance, especially on GPU. The TensorFlow frontend can automatically convert the model’s data layout by passing the argument <code class="docutils literal notranslate"><span class="pre">`layout='NCHW'`</span></code> to <code class="docutils literal notranslate"><span class="pre">`from_tensorflow`</span></code>.</p>
+<h3>数据布局<a class="headerlink" href="#data-layout" title="永久链接至标题">¶</a></h3>
+<p>大多数 TensorFlow 模型都是以 NHWC 布局发布的。 NCHW 布局通常提供更好的性能，尤其是在 GPU 上。 TensorFlow 前端可以通过将参数 <code class="docutils literal notranslate"><span class="pre">`layout='NCHW'`</span></code> 传递给 <code class="docutils literal notranslate"><span class="pre">`from_tensorflow`</span></code> 来自动转换模型的数据布局。</p>
 </div>
 </div>
 <div class="section" id="best-practices">
-<h2>Best Practices<a class="headerlink" href="#best-practices" title="永久链接至标题">¶</a></h2>
+<h2>最佳做法<a class="headerlink" href="#best-practices" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>Use static tensor shapes instead of dynamic shapes (remove <code class="docutils literal notranslate"><span class="pre">`None`</span></code> dimensions).</p></li>
-<li><p>Use static RNN instead of dynamic RNN, as <code class="docutils literal notranslate"><span class="pre">`TensorArray`</span></code> isn’t supported yet.</p></li>
+<li><p>使用静态张量 shape 而不是动态 shape（删除 <code class="docutils literal notranslate"><span class="pre">`None`</span></code>  维度）。</p></li>
+<li><p>使用静态 RNN 而不是动态 RNN，因为 <code class="docutils literal notranslate"><span class="pre">`TensorArray`</span></code> 尚未得到支持。</p></li>
 </ul>
 </div>
 <div class="section" id="supported-ops">
-<h2>Supported Ops<a class="headerlink" href="#supported-ops" title="永久链接至标题">¶</a></h2>
+<h2>支持的算子<a class="headerlink" href="#supported-ops" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>Abs</p></li>
 <li><p>Add</p></li>
@@ -584,10 +584,10 @@
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../security.html" class="btn btn-neutral float-right" title="Security Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../security.html" class="btn btn-neutral float-right" title="Security Guide" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../benchmark.html" class="btn btn-neutral float-left" title="Benchmark Performance Log Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../benchmark.html" class="btn btn-neutral float-left" title="Benchmark Performance Log Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 
