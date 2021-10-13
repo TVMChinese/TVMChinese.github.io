@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.relay.vision &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>tvm.relay.vision &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,33 +204,33 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ndarray.html">tvm.runtime.ndarray</a></li>
@@ -268,7 +268,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -349,7 +349,7 @@
   <div class="section" id="module-tvm.relay.vision">
 <span id="tvm-relay-vision"></span><h1>tvm.relay.vision<a class="headerlink" href="#module-tvm.relay.vision" title="永久链接至标题">¶</a></h1>
 <p>Vision network related operators.</p>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -635,7 +635,7 @@ of total stride in convolutional layers, which should be in range (0.0, 1.0]</p>
 This layer shuffles the input tensor values based on the stride value.
 Along with the shuffling, it does the shape transform.
 If ‘(n, c, h, w)’ is the data shape and ‘s’ is stride, output shape is ‘(n, c*s*s, h/s, w/s)’.</p>
-<p>Example:</p>
+<p>举例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="p">[[[[</span> <span class="mi">0</span>  <span class="mi">1</span><span class="p">]</span> <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">]]</span>
                     <span class="p">[[</span> <span class="mi">4</span>  <span class="mi">5</span><span class="p">]</span> <span class="p">[</span> <span class="mi">6</span>  <span class="mi">7</span><span class="p">]]</span>
                     <span class="p">[[</span> <span class="mi">8</span>  <span class="mi">9</span><span class="p">]</span> <span class="p">[</span><span class="mi">10</span> <span class="mi">11</span><span class="p">]]</span>
@@ -679,10 +679,10 @@ If ‘(n, c, h, w)’ is the data shape and ‘s’ is stride, output shape is �
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="image.html" class="btn btn-neutral float-right" title="tvm.relay.image" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="image.html" class="btn btn-neutral float-right" title="tvm.relay.image" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="nn.html" class="btn btn-neutral float-left" title="tvm.relay.nn" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="nn.html" class="btn btn-neutral float-left" title="tvm.relay.nn" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

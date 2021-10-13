@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Algebraic Data Types in Relay &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>Algebraic Data Types in Relay &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Relay Core Tensor Operators" href="relay_op.html" />
-    <link rel="prev" title="Relay’s Type System" href="relay_type.html" /> 
+    <link rel="next" title="Relay 基础张量算子" href="relay_op.html" />
+    <link rel="prev" title="Relay 系统类型" href="relay_type.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,36 +204,36 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Language Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#introduction-to-relay">Introduction to Relay</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">语言参考</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#introduction-to-relay">Relay简介</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="relay_expr.html">Expressions in Relay</a></li>
-<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay’s Type System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay 系统类型</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Algebraic Data Types in Relay</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#defining-and-matching-on-an-adt">Defining and Matching on an ADT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#type-checking-adts-and-polymorphism">Type-Checking ADTs and Polymorphism</a></li>
@@ -243,17 +243,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#implementing-neural-nets-using-adts">Implementing Neural Nets Using ADTs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="relay_op.html">Relay Core Tensor Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_op.html">Relay 基础张量算子</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_pattern.html">Pattern Matching in Relay</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#hybrid-script">Hybrid Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hybrid-script">混合式脚本</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -310,7 +310,7 @@
     
       <li><a href="../../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-          <li><a href="index.html">Language Reference</a> <span class="br-arrow">></span></li>
+          <li><a href="index.html">语言参考</a> <span class="br-arrow">></span></li>
         
       <li>Algebraic Data Types in Relay</li>
     
@@ -794,10 +794,10 @@ def @bidirectional_rnn&lt;state1_type, state2_type, in_type, out1_type, out2_typ
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relay_op.html" class="btn btn-neutral float-right" title="Relay Core Tensor Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relay_op.html" class="btn btn-neutral float-right" title="Relay 基础张量算子" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="relay_type.html" class="btn btn-neutral float-left" title="Relay’s Type System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="relay_type.html" class="btn btn-neutral float-left" title="Relay 系统类型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

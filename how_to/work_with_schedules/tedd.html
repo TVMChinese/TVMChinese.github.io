@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Use Tensor Expression Debug Display (TEDD) for Visualization &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>Use Tensor Expression Debug Display (TEDD) for Visualization &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,22 +204,22 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Work With Tensor Expression and Schedules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">TVM中的调度原语</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reduction.html">Reduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">Intrinsics and Math Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">内部函数和数学函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="scan.html">Scan and Recurrent Kernel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extern_op.html">External Tensor Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tensorize.html">Use Tensorize to Leverage Hardware Intrinsics</a></li>
@@ -227,7 +227,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Use Tensor Expression Debug Display (TEDD) for Visualization</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#define-and-schedule-convolution-with-bias-and-relu">Define and Schedule Convolution with Bias and ReLU</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#render-graphs-with-tedd">Render Graphs with TEDD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">总结</a></li>
 </ul>
 </li>
 </ul>
@@ -239,31 +239,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -459,7 +459,7 @@ IterVars don’t drive any transformation node and have non-negative indices,
 such as ax0.ax1.fused.ax2.fused.ax3.fused.outer with index of 0.</p>
 </div>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial demonstrates the usage of TEDD.  We use an example built
 with TOPI to show the schedules under the hood.  You can also use
 it before and after any schedule primitive to inspect its effect.</p>
@@ -485,10 +485,10 @@ it before and after any schedule primitive to inspect its effect.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../optimize_operators/index.html" class="btn btn-neutral float-right" title="Optimize Tensor Operators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../optimize_operators/index.html" class="btn btn-neutral float-right" title="Optimize Tensor Operators" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tuple_inputs.html" class="btn btn-neutral float-left" title="Compute and Reduce with Tuple Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tuple_inputs.html" class="btn btn-neutral float-left" title="Compute and Reduce with Tuple Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

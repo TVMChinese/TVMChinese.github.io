@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.autotvm &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>tvm.autotvm &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,33 +204,33 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ndarray.html">tvm.runtime.ndarray</a></li>
@@ -274,7 +274,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -402,9 +402,9 @@ Each row of this file is an encoded record pair. Otherwise, it is an iterator.</
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>costs</strong> (<em>Array of float</em><em> or </em><em>Array of Exception</em>) – If no error occurs during measurement, it is an array of measured running times.
 If an error occurs during measurement, it is an array of the exception objections.</p></li>
-<li><p><strong>error_no</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – Denote error type, defined by MeasureErrorNo</p></li>
+<li><p><strong>error_no</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – 表示错误类型， 由MeasureErrorNo定义</p></li>
 <li><p><strong>all_cost</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – All cost of this measure, including rpc, compilation, test runs</p></li>
-<li><p><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – The absolute time stamp when we finish measurement.</p></li>
+<li><p><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – 完成测量时的绝对时间戳</p></li>
 </ul>
 </dd>
 </dl>
@@ -442,24 +442,19 @@ They have their own options on timeout, parallel, etc.</p>
 &gt;&gt;&gt;)</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>To make measurement results accurate, you should pick the correct value for the argument
-<cite>number</cite> and <cite>repeat</cite> in Runner(). Some devices need a certain minimum running time to
-“warm up,” such as GPUs that need time to reach a performance power state.
-Using <cite>min_repeat_ms</cite> can dynamically adjusts <cite>number</cite>, so it is recommended.
-The typical value for NVIDIA GPU is 150 ms.</p>
+<p>为了使测量结果准确，您应该为 Runner() 中的参数 <cite>number</cite> 和 <cite>repeat</cite> 选择正确的值。某些设备需要一定的最短运行时间来“预热”，例如 GPU 需要时间才能达到性能最佳状态。推荐使用`min_repeat_ms`，因为它可以动态调 <cite>number</cite>。 NVIDIA GPU 的典型值为 150 毫秒</p>
 </div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.autotvm.measure.create_measure_batch">
 <span class="sig-prename descclassname"><span class="pre">tvm.autotvm.measure.</span></span><span class="sig-name descname"><span class="pre">create_measure_batch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">option</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.autotvm.measure.create_measure_batch" title="永久链接至目标">¶</a></dt>
-<dd><p>Get a standard measure_batch function.</p>
+<dd><p>获取标准的 measure_batch 函数</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>task</strong> (<em>tvm.autotvm.task.Task</em>) – The tuning task</p></li>
-<li><p><strong>option</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(在 Python v3.10)"><em>dict</em></a>) – The option for measuring generated code.
-You should use the return value of function <a class="reference internal" href="#tvm.autotvm.measure.measure_option" title="tvm.autotvm.measure.measure_option"><code class="xref any py py-func docutils literal notranslate"><span class="pre">measure_option</span></code></a> for this argument.</p></li>
+<li><p><strong>option</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(在 Python v3.10)"><em>dict</em></a>) – 测量生成代码的选项。您应该使用 function:any:<cite>measure_option</cite> 的返回值。</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回</dt>
@@ -474,14 +469,13 @@ You should use the return value of function <a class="reference internal" href="
 <dl class="py class">
 <dt class="sig sig-object py" id="tvm.autotvm.measure.measure_methods.LocalBuilder">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tvm.autotvm.measure.measure_methods.</span></span><span class="sig-name descname"><span class="pre">LocalBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">build_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_fork</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.autotvm.measure.measure_methods.LocalBuilder" title="永久链接至目标">¶</a></dt>
-<dd><p>Run compilation on local machine</p>
+<dd><p>在本地机器上运行编译</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – The timeout of a compilation</p></li>
-<li><p><strong>n_parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – The number of tasks run in parallel. “None” will use all cpu cores</p></li>
-<li><p><strong>build_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(在 Python v3.10)"><em>dict</em></a>) – If supplied, additional kwargs passed to build_func. Overrides any build_kwargs supplied
-by the Runner.</p></li>
+<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – 编译超时</p></li>
+<li><p><strong>n_parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – 多个任务并行运行。 “None”将使用所有 CPU 内核</p></li>
+<li><p><strong>build_kwargs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(在 Python v3.10)"><em>dict</em></a>) – 如果提供额外的 kwargs 传递给 build_func。覆盖 Runner 提供的任何 build_kwargs</p></li>
 <li><p><strong>build_func</strong> (<em>callable</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – If is ‘default’, use default build function
 If is ‘ndk’, use function for android ndk
 If id ‘stackvm’, use function for stackvm
@@ -501,7 +495,7 @@ This function will ask a RPC Tracker to get device for measurement.</p>
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – The timeout of a RPCRunner measurement task</p></li>
-<li><p><strong>n_parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – The number of tasks run in parallel. “None” will use all cpu cores</p></li>
+<li><p><strong>n_parallel</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – 多个任务并行运行。 “None”将使用所有 CPU 内核</p></li>
 <li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The key of the device registered in the tracker</p></li>
 <li><p><strong>host</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(在 Python v3.10)"><em>str</em></a>) – The host address of RPC Tracker</p></li>
 <li><p><strong>port</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – The port of RPC Tracker</p></li>
@@ -538,7 +532,7 @@ If not given, default_module_loader is used.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – The timeout of a compilation</p></li>
+<li><p><strong>timeout</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(在 Python v3.10)"><em>float</em></a>) – 编译超时</p></li>
 <li><p><strong>number</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a>) – The number of times to run the generated code for taking average.
 We call these runs as one <cite>repeat</cite> of measurement.</p></li>
 <li><p><strong>repeat</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(在 Python v3.10)"><em>int</em></a><em>, </em><em>optional</em>) – The number of times to repeat the measurement.
@@ -2591,10 +2585,10 @@ in_file and out_file will be saved.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="auto_scheduler.html" class="btn btn-neutral float-right" title="tvm.auto_scheduler" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="auto_scheduler.html" class="btn btn-neutral float-right" title="tvm.auto_scheduler" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="relay/testing.html" class="btn btn-neutral float-left" title="tvm.relay.testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="relay/testing.html" class="btn btn-neutral float-left" title="tvm.relay.testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

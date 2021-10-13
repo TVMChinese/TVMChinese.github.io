@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>External Tensor Functions &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>External Tensor Functions &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,29 +204,29 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Work With Tensor Expression and Schedules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">TVM中的调度原语</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reduction.html">Reduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">Intrinsics and Math Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">内部函数和数学函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="scan.html">Scan and Recurrent Kernel</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">External Tensor Functions</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#use-extern-tensor-function">Use Extern Tensor Function</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#verify-the-result">Verify the Result</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#extern-contrib-wrappers">Extern Contrib Wrappers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hook-python-function-as-extern">Hook Python Function as Extern</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">总结</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="tensorize.html">Use Tensorize to Leverage Hardware Intrinsics</a></li>
@@ -241,31 +241,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -351,7 +351,7 @@
 </div>
 <div class="sphx-glr-example-title section" id="external-tensor-functions">
 <span id="sphx-glr-how-to-work-with-schedules-extern-op-py"></span><h1>External Tensor Functions<a class="headerlink" href="#external-tensor-functions" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
+<p><strong>作者</strong>: <a class="reference external" href="https://tqchen.github.io">Tianqi Chen</a></p>
 <p>While TVM supports transparent code generation, sometimes
 it is also helpful to incorporate manual written code into
 the pipeline. For example, we might want to use cuDNN for
@@ -458,13 +458,13 @@ with TVM.</p>
 <span class="n">tvm</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_allclose</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>my_tvm_addone signatures: &lt;class &#39;tvm.runtime.ndarray.NDArray&#39;&gt;, &lt;class &#39;tvm.runtime.ndarray.NDArray&#39;&gt;
 </pre></div>
 </div>
 </div>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>TVM calls extern tensor function via <a class="reference internal" href="../../reference/api/python/te.html#tvm.te.extern" title="tvm.te.extern"><code class="xref any py py-func docutils literal notranslate"><span class="pre">te.extern</span></code></a></p></li>
 <li><p>Use contrib wrappers for short sugars of extern tensor calls.</p></li>
@@ -492,10 +492,10 @@ with TVM.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tensorize.html" class="btn btn-neutral float-right" title="Use Tensorize to Leverage Hardware Intrinsics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tensorize.html" class="btn btn-neutral float-right" title="Use Tensorize to Leverage Hardware Intrinsics" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="scan.html" class="btn btn-neutral float-left" title="Scan and Recurrent Kernel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="scan.html" class="btn btn-neutral float-left" title="Scan and Recurrent Kernel" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

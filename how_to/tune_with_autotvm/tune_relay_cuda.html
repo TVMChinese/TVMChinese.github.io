@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-tuning a Convolutional Network for NVIDIA GPU &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>Auto-tuning a Convolutional Network for NVIDIA GPU &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Auto-tuning a Convolutional Network for x86 CPU" href="tune_relay_x86.html" />
+    <link rel="next" title="为x86CPU 自动调优一个卷积网络" href="tune_relay_x86.html" />
     <link rel="prev" title="Tuning High Performance Convolution on NVIDIA GPUs" href="tune_conv2d_cuda.html" /> 
 </head>
 
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,17 +204,17 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
@@ -225,11 +225,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#define-network">Define Network</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-tuning-options">Set Tuning Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#begin-tuning">Begin Tuning</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sample-output">Sample Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sample-output">样本输出</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#scale-up-measurement-by-using-multiple-devices">Scale up measurement by using multiple devices</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="tune_relay_x86.html">Auto-tuning a Convolutional Network for x86 CPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tune_relay_x86.html">为x86CPU 自动调优一个卷积网络</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tune_relay_arm.html">Auto-tuning a Convolutional Network for ARM CPU</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tune_relay_mobile_gpu.html">Auto-tuning a Convolutional Network for Mobile GPU</a></li>
 </ul>
@@ -239,31 +239,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -566,7 +566,7 @@ We will introduce a more sophisticated tuning scheduler in the future.</p>
 </div>
 </div>
 <div class="section" id="sample-output">
-<h2>Sample Output<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
+<h2>样本输出<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
 <p>The tuning needs to compile many programs and extract feature from them.
 So a high performance CPU is recommended. One sample output is listed below.
 It takes about 4 hours to get the following output on a 32T AMD Ryzen Threadripper.
@@ -625,7 +625,7 @@ this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.rpc_tracker --host<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
-<p>The expected output is</p>
+<p>预期输出是</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:RPCTracker:bind to <span class="m">0</span>.0.0.0:9190
 </pre></div>
 </div>
@@ -637,7 +637,7 @@ we need to add <cite>–no-fork</cite> to the argument list.)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.rpc_server --tracker<span class="o">=</span><span class="m">127</span>.0.0.1:9190 --key<span class="o">=</span>1080ti
 </pre></div>
 </div>
-<p>After registering devices, we can confirm it by querying rpc_tracker</p>
+<p>注册设备后，我们可以通过查询rpc_tracker确认</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.query_rpc_tracker --host<span class="o">=</span><span class="m">127</span>.0.0.1 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
@@ -696,10 +696,10 @@ to replace the corresponding part above.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tune_relay_x86.html" class="btn btn-neutral float-right" title="Auto-tuning a Convolutional Network for x86 CPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tune_relay_x86.html" class="btn btn-neutral float-right" title="为x86CPU 自动调优一个卷积网络" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tune_conv2d_cuda.html" class="btn btn-neutral float-left" title="Tuning High Performance Convolution on NVIDIA GPUs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tune_conv2d_cuda.html" class="btn btn-neutral float-left" title="Tuning High Performance Convolution on NVIDIA GPUs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

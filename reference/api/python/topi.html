@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.topi &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>tvm.topi &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -180,7 +180,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -205,33 +205,33 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ndarray.html">tvm.runtime.ndarray</a></li>
@@ -274,7 +274,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -354,12 +354,10 @@
             
   <div class="section" id="tvm-topi">
 <h1>tvm.topi<a class="headerlink" href="#tvm-topi" title="永久链接至标题">¶</a></h1>
-<p>TVM Operator Inventory.</p>
-<p>TOPI is the operator collection library for TVM, to provide sugars
-for constructing compute declaration as well as optimized schedules.</p>
-<p>Some of the schedule function may have been specially optimized for a
-specific workload.</p>
-<p><strong>Classes:</strong></p>
+<p>TVM 运算符清单</p>
+<p>TOPI是TVM的运算符集合库，为构建计算声明和调度优化提供了支持。</p>
+<p>针对一些特定的工作负载，一些调度函数可能已经被特定优化了。</p>
+<p><strong>类：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -367,7 +365,7 @@ specific workload.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">AssertStmt</span></code>(condition, message, body[, span])</p></td>
-<td><p>AssertStmt node.</p></td>
+<td><p>AssertStmt 节点。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Callable</span></code>(*args, **kwds)</p></td>
 <td><p>Callable type; Callable[[int], str] is a function of (int) -&gt; str.</p></td>
@@ -383,7 +381,7 @@ specific workload.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -818,7 +816,7 @@ specific workload.</p>
 <dl class="py class">
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">AssertStmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>AssertStmt node.</p>
+<dd><p>AssertStmt 节点。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3965,7 +3963,7 @@ by the index and False otherwise</p>
 <div class="section" id="module-tvm.topi.nn">
 <span id="tvm-topi-nn"></span><h2>tvm.topi.nn<a class="headerlink" href="#module-tvm.topi.nn" title="永久链接至标题">¶</a></h2>
 <p>Neural network operators</p>
-<p><strong>Classes:</strong></p>
+<p><strong>类：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -3977,7 +3975,7 @@ by the index and False otherwise</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -7009,7 +7007,7 @@ or [batch, in_depth*scale, in_height*scale, in_width*scale, channel]</p>
 <div class="section" id="module-tvm.topi.image">
 <span id="tvm-topi-image"></span><h2>tvm.topi.image<a class="headerlink" href="#module-tvm.topi.image" title="永久链接至标题">¶</a></h2>
 <p>IMAGE network operators</p>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -7443,7 +7441,7 @@ or 5-D with shape
 <div class="section" id="module-tvm.topi.sparse">
 <span id="tvm-topi-sparse"></span><h2>tvm.topi.sparse<a class="headerlink" href="#module-tvm.topi.sparse" title="永久链接至标题">¶</a></h2>
 <p>Sparse operators</p>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -7540,10 +7538,10 @@ Either data or weight should be tvm.contrib.sparse.CSRNDArray.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="vta/index.html" class="btn btn-neutral float-right" title="vta" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vta/index.html" class="btn btn-neutral float-right" title="vta" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="graph_executor.html" class="btn btn-neutral float-left" title="tvm.contrib.graph_executor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="graph_executor.html" class="btn btn-neutral float-left" title="tvm.contrib.graph_executor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

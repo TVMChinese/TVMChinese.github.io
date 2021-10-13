@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Work With Relay &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>Work With Relay &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Building a Graph Convolutional Network" href="build_gcn.html" />
-    <link rel="prev" title="Deploy Single Shot Multibox Detector(SSD) model" href="../deploy_models/deploy_ssd_gluoncv.html" /> 
+    <link rel="next" title="构建一个图形卷积网络" href="build_gcn.html" />
+    <link rel="prev" title="部署Single Shot Multibox Detector(SSD)模型" href="../deploy_models/deploy_ssd_gluoncv.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,20 +204,20 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Work With Relay</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build_gcn.html">Building a Graph Convolutional Network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="using_external_lib.html">Using External Libraries in Relay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build_gcn.html">构建一个图形卷积网络</a></li>
+<li class="toctree-l3"><a class="reference internal" href="using_external_lib.html">在Relay中使用外部库</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
@@ -228,31 +228,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -334,13 +334,13 @@
 <span id="sphx-glr-how-to-work-with-relay"></span><h1>Work With Relay<a class="headerlink" href="#work-with-relay" title="永久链接至标题">¶</a></h1>
 <div class="sphx-glr-thumbcontainer" tooltip="This article is an introductory tutorial to build a Graph Convolutional Network (GCN) with Rela..."><div class="figure align-default" id="id1">
 <img alt="../../_images/sphx_glr_build_gcn_thumb.png" src="../../_images/sphx_glr_build_gcn_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="build_gcn.html#sphx-glr-how-to-work-with-relay-build-gcn-py"><span class="std std-ref">Building a Graph Convolutional Network</span></a></span><a class="headerlink" href="#id1" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="build_gcn.html#sphx-glr-how-to-work-with-relay-build-gcn-py"><span class="std std-ref">构建一个图形卷积网络</span></a></span><a class="headerlink" href="#id1" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-thumbcontainer" tooltip="This is a short tutorial on how to use external libraries such as cuDNN, or cuBLAS with Relay."><div class="figure align-default" id="id2">
 <img alt="../../_images/sphx_glr_using_external_lib_thumb.png" src="../../_images/sphx_glr_using_external_lib_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="using_external_lib.html#sphx-glr-how-to-work-with-relay-using-external-lib-py"><span class="std std-ref">Using External Libraries in Relay</span></a></span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="using_external_lib.html#sphx-glr-how-to-work-with-relay-using-external-lib-py"><span class="std std-ref">在Relay中使用外部库</span></a></span><a class="headerlink" href="#id2" title="永久链接至图片">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
@@ -357,10 +357,10 @@
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="build_gcn.html" class="btn btn-neutral float-right" title="Building a Graph Convolutional Network" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="build_gcn.html" class="btn btn-neutral float-right" title="构建一个图形卷积网络" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../deploy_models/deploy_ssd_gluoncv.html" class="btn btn-neutral float-left" title="Deploy Single Shot Multibox Detector(SSD) model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../deploy_models/deploy_ssd_gluoncv.html" class="btn btn-neutral float-left" title="部署Single Shot Multibox Detector(SSD)模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deploy Single Shot Multibox Detector(SSD) model &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>部署Single Shot Multibox Detector(SSD)模型 &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Work With Relay" href="../work_with_relay/index.html" />
-    <link rel="prev" title="Deploy a Hugging Face Pruned Model on CPU" href="deploy_sparse.html" /> 
+    <link rel="prev" title="在CPU上部署Hugging Face Pruned模型" href="deploy_sparse.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,22 +204,22 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">Build the TVM runtime library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">Cross compile the TVM runtime for other architectures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">Optimize and tune models for target devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">Deploy optimized model on target devices</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">Additional Deployment How-Tos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">构建 TVM 运行 runtime 库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">为其它架构交叉编译TVM runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">针对目标设备优化和调整模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">在目标设备上部署优化的模型</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">其他部署方式</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">Deploy Deep Learning Models</a></li>
 </ul>
 </li>
@@ -234,31 +234,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
 </ul>
 
             
@@ -317,11 +317,11 @@
         
           <li><a href="../index.html">How To Guides</a> <span class="br-arrow">></span></li>
         
-          <li><a href="../deploy/index.html">Deploy Models and Integrate TVM</a> <span class="br-arrow">></span></li>
+          <li><a href="../deploy/index.html">TVM 部署模型和集成</a> <span class="br-arrow">></span></li>
         
           <li><a href="index.html">Deploy Deep Learning Models</a> <span class="br-arrow">></span></li>
         
-      <li>Deploy Single Shot Multibox Detector(SSD) model</li>
+      <li>部署Single Shot Multibox Detector(SSD)模型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -342,14 +342,12 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-ssd-gluoncv-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-ssd-gluoncv-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="deploy-single-shot-multibox-detector-ssd-model">
-<span id="sphx-glr-how-to-deploy-models-deploy-ssd-gluoncv-py"></span><h1>Deploy Single Shot Multibox Detector(SSD) model<a class="headerlink" href="#deploy-single-shot-multibox-detector-ssd-model" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://github.com/kevinthesun">Yao Wang</a>
-<a class="reference external" href="https://github.com/Laurawly">Leyuan Wang</a></p>
-<p>This article is an introductory tutorial to deploy SSD models with TVM.
-We will use GluonCV pre-trained SSD model and convert it to Relay IR</p>
+<span id="sphx-glr-how-to-deploy-models-deploy-ssd-gluoncv-py"></span><h1>部署Single Shot Multibox Detector(SSD)模型<a class="headerlink" href="#deploy-single-shot-multibox-detector-ssd-model" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://github.com/kevinthesun">Yao Wang</a> <a class="reference external" href="https://github.com/Laurawly">Leyuan Wang</a></p>
+<p>本文是使用TVM部署SSD模型的入门教程。我们将使用GluonCV预先训练的SSD模型，并将其转换为Relay IR</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
 
@@ -360,30 +358,19 @@ We will use GluonCV pre-trained SSD model and convert it to Relay IR</p>
 <span class="kn">from</span> <span class="nn">gluoncv</span> <span class="k">import</span> <span class="n">model_zoo</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">utils</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.6/dist-packages/gluoncv/__init__.py:40: UserWarning: Both `mxnet==1.6.0` and `torch==1.7.0` are installed. You might encounter increased GPU memory footprint if both framework are used at the same time.
   warnings.warn(f&#39;Both `mxnet=={mx.__version__}` and `torch=={torch.__version__}` are installed. &#39;
 </pre></div>
 </div>
 <div class="section" id="preliminary-and-set-parameters">
-<h2>Preliminary and Set parameters<a class="headerlink" href="#preliminary-and-set-parameters" title="永久链接至标题">¶</a></h2>
+<h2>初步设定参数<a class="headerlink" href="#preliminary-and-set-parameters" title="永久链接至标题">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>We support compiling SSD on both CPUs and GPUs now.</p>
-<p>To get best inference performance on CPU, change
-target argument according to your device and
-follow the <a class="reference internal" href="../tune_with_autotvm/tune_relay_x86.html#tune-relay-x86"><span class="std std-ref">Auto-tuning a Convolutional Network for x86 CPU</span></a> to tune x86 CPU and
-<a class="reference internal" href="../tune_with_autotvm/tune_relay_arm.html#tune-relay-arm"><span class="std std-ref">Auto-tuning a Convolutional Network for ARM CPU</span></a> for arm CPU.</p>
-<p>To get best inference performance on Intel graphics,
-change target argument to <code class="code docutils literal notranslate"><span class="pre">opencl</span> <span class="pre">-device=intel_graphics</span></code>.
-But when using Intel graphics on Mac, target needs to
-be set to <cite>opencl</cite> only for the reason that Intel subgroup
-extension is not supported on Mac.</p>
-<p>To get best inference performance on CUDA-based GPUs,
-change the target argument to <code class="code docutils literal notranslate"><span class="pre">cuda</span></code>; and for
-OPENCL-based GPUs, change target argument to
-<code class="code docutils literal notranslate"><span class="pre">opencl</span></code> followed by device argument according
-to your device.</p>
+<p>我们现在支持在CPU和GPU上编译 SSD。</p>
+<p>要在CPU上获得最佳推理性能，请根据您的设备更改目标参数，并按照:ref:<cite>tune_relay_x86</cite> to tune x86 CPU and :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>tune_relay_arm`调整arm CPU。</p>
+<p>要在Intel graphics上获得最佳推理性能，请将目标参数更改为:code:<cite>opencl -device=intel_graphics</cite>。但在Mac上使用Intel graphics时，target需要设置为`opencl`，这只是因为Mac上不支持Intel subgroup extension。</p>
+<p>要在基于CUDA的GPU上获得最佳推理性能，请将目标参数更改为 <code class="code docutils literal notranslate"><span class="pre">cuda</span></code>；对于基于OPENCL的GPU，根据您的设备，将目标参数更改为:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>opencl`后跟设备参数。</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">supported_model</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;ssd_512_resnet50_v1_voc&quot;</span><span class="p">,</span>
@@ -398,7 +385,7 @@ to your device.</p>
 <span class="n">dshape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Download and pre-process demo image</p>
+<p>下载并预处理演示图像</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">im_fname</span> <span class="o">=</span> <span class="n">download_testdata</span><span class="p">(</span>
     <span class="s2">&quot;https://github.com/dmlc/web-data/blob/main/&quot;</span> <span class="o">+</span> <span class="s2">&quot;gluoncv/detection/street_small.jpg?raw=true&quot;</span><span class="p">,</span>
     <span class="s2">&quot;street_small.jpg&quot;</span><span class="p">,</span>
@@ -407,7 +394,7 @@ to your device.</p>
 <span class="n">x</span><span class="p">,</span> <span class="n">img</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">presets</span><span class="o">.</span><span class="n">ssd</span><span class="o">.</span><span class="n">load_test</span><span class="p">(</span><span class="n">im_fname</span><span class="p">,</span> <span class="n">short</span><span class="o">=</span><span class="mi">512</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Convert and compile model for CPU.</p>
+<p>转换和编译CPU模型。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">block</span> <span class="o">=</span> <span class="n">model_zoo</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
@@ -418,14 +405,13 @@ to your device.</p>
     <span class="k">return</span> <span class="n">lib</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.6/dist-packages/mxnet/gluon/block.py:1389: UserWarning: Cannot decide type for the following arguments. Consider providing them as input:
         data: None
   input_sym_arg_type = in_param.infer_type()[0]
 </pre></div>
 </div>
-<p>Create TVM runtime and do inference
-.. note:</p>
+<p>创建TVM运行时间并做推论.. 注意:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Use</span> <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;cuda -libs&quot;</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">thrust</span> <span class="n">based</span> <span class="n">sort</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span>
 <span class="n">enabled</span> <span class="n">thrust</span> <span class="n">during</span> <span class="n">cmake</span> <span class="n">by</span> <span class="o">-</span><span class="n">DUSE_THRUST</span><span class="o">=</span><span class="n">ON</span><span class="o">.</span>
 </pre></div>
@@ -449,7 +435,7 @@ to your device.</p>
         <span class="n">class_IDs</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">bounding_boxs</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">lib</span><span class="p">,</span> <span class="n">dev</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Display result</p>
+<p>显示结果</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">viz</span><span class="o">.</span><span class="n">plot_bbox</span><span class="p">(</span>
     <span class="n">img</span><span class="p">,</span>
     <span class="n">bounding_boxs</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span>
@@ -461,13 +447,13 @@ to your device.</p>
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_deploy_ssd_gluoncv_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_deploy_ssd_gluoncv_001.png" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  31.833 seconds)</p>
+<p class="sphx-glr-timing"><strong>脚本总运行时间:</strong> ( 2 minutes  31.833 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-deploy-models-deploy-ssd-gluoncv-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/cccb17d28e5e8b2e94ea8cd5ec59f6ed/deploy_ssd_gluoncv.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_ssd_gluoncv.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/cccb17d28e5e8b2e94ea8cd5ec59f6ed/deploy_ssd_gluoncv.py"><code class="xref download docutils literal notranslate"><span class="pre">下载Python源代码:</span> <span class="pre">deploy_ssd_gluoncv.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/d92aacfae35477bed0f7f60aa8d2714e/deploy_ssd_gluoncv.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_ssd_gluoncv.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/d92aacfae35477bed0f7f60aa8d2714e/deploy_ssd_gluoncv.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_ssd_gluoncv.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -484,10 +470,10 @@ to your device.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../work_with_relay/index.html" class="btn btn-neutral float-right" title="Work With Relay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../work_with_relay/index.html" class="btn btn-neutral float-right" title="Work With Relay" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="deploy_sparse.html" class="btn btn-neutral float-left" title="Deploy a Hugging Face Pruned Model on CPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="deploy_sparse.html" class="btn btn-neutral float-left" title="在CPU上部署Hugging Face Pruned模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

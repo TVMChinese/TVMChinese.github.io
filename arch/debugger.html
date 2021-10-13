@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Debugger &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
+  <title>Debugger &mdash; tvm 0.8.dev1927+gdb99926e0 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1926+g93b7b04f9
+                  0.8.dev1927+gdb99926e0
                 </div>
             
           
@@ -204,22 +204,22 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installing TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">贡献者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dev/how_to/how_to.html">Developer How-To Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/how_to/how_to.html">开发者指南</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Design and Architecture</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#example-compilation-flow">Example Compilation Flow</a></li>
@@ -231,7 +231,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Debugger</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#debug-exchange-format">Debug Exchange Format</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#how-to-use-debugger">How to use Debugger?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sample-output">Sample Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sample-output">样本输出</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="virtual_machine.html">Putting the VM in TVM: The Relay Virtual Machine</a></li>
@@ -249,23 +249,23 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-relay">tvm/relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-autotvm">tvm/autotvm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#frontends">Frontends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#security">安全</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#microtvm">microTVM</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
 </ul>
 
             
@@ -490,7 +490,7 @@ of debug runtime will be slightly different</p>
 folder specified while creating the runtime.</p>
 </div>
 <div class="section" id="sample-output">
-<h2>Sample Output<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
+<h2>样本输出<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
 <p>The below is the an example output of the debugger.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span> <span class="n">Name</span>               <span class="n">Ops</span>                                                                  <span class="n">Time</span><span class="p">(</span><span class="n">us</span><span class="p">)</span>   <span class="n">Time</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>  <span class="n">Start</span> <span class="n">Time</span>       <span class="n">End</span> <span class="n">Time</span>         <span class="n">Shape</span>                <span class="n">Inputs</span>  <span class="n">Outputs</span>
 <span class="o">---------</span>               <span class="o">---</span>                                                                  <span class="o">--------</span>   <span class="o">-------</span>  <span class="o">----------</span>       <span class="o">--------</span>         <span class="o">-----</span>                <span class="o">------</span>  <span class="o">-------</span>
@@ -518,10 +518,10 @@ folder specified while creating the runtime.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="virtual_machine.html" class="btn btn-neutral float-right" title="Putting the VM in TVM: The Relay Virtual Machine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="virtual_machine.html" class="btn btn-neutral float-right" title="Putting the VM in TVM: The Relay Virtual Machine" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="runtimes/vulkan.html" class="btn btn-neutral float-left" title="Vulkan Runtime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="runtimes/vulkan.html" class="btn btn-neutral float-left" title="Vulkan Runtime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 
