@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>在CPU上部署Hugging Face Pruned模型 &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Deploy a Hugging Face Pruned Model on CPU &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="部署Single Shot Multibox Detector(SSD)模型" href="deploy_ssd_gluoncv.html" />
-    <link rel="prev" title="在Cuda上部署一个量化模型" href="deploy_quantized.html" /> 
+    <link rel="next" title="Deploy Single Shot Multibox Detector(SSD) model" href="deploy_ssd_gluoncv.html" />
+    <link rel="prev" title="Deploy a Quantized Model on Cuda" href="deploy_quantized.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,21 +204,21 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">构建 TVM 运行 runtime 库</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">为其它架构交叉编译TVM runtime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">针对目标设备优化和调整模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">在目标设备上部署优化的模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">Build the TVM runtime library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">Cross compile the TVM runtime for other architectures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">Optimize and tune models for target devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">Deploy optimized model on target devices</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">Additional Deployment How-Tos</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">Deploy Deep Learning Models</a></li>
 </ul>
@@ -234,31 +234,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -321,7 +321,7 @@
         
           <li><a href="index.html">Deploy Deep Learning Models</a> <span class="br-arrow">></span></li>
         
-      <li>在CPU上部署Hugging Face Pruned模型</li>
+      <li>Deploy a Hugging Face Pruned Model on CPU</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -345,8 +345,8 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-sparse-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="deploy-a-hugging-face-pruned-model-on-cpu">
-<span id="sphx-glr-how-to-deploy-models-deploy-sparse-py"></span><h1>在CPU上部署Hugging Face Pruned模型<a class="headerlink" href="#deploy-a-hugging-face-pruned-model-on-cpu" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://github.com/jwfromm">Josh Fromm</a></p>
+<span id="sphx-glr-how-to-deploy-models-deploy-sparse-py"></span><h1>Deploy a Hugging Face Pruned Model on CPU<a class="headerlink" href="#deploy-a-hugging-face-pruned-model-on-cpu" title="永久链接至标题">¶</a></h1>
+<p><strong>Author</strong>: <a class="reference external" href="https://github.com/jwfromm">Josh Fromm</a></p>
 <p>This tutorial demonstrates how to take any pruned model, in this case <a class="reference external" href="https://huggingface.co/huggingface/prunebert-base-uncased-6-finepruned-w-distil-squad">PruneBert
 from Hugging Face</a>,
 and use TVM to leverage the model’s sparsity support to produce real speedups. Although
@@ -391,8 +391,9 @@ When generating random sparse weights for an unpruned model, we do so with struc
 sparsity. A fun exercise is comparing the real speed of PruneBert with the block
 sparse speed using fake weights to see the benefit of structured sparsity.</p>
 <div class="section" id="load-required-modules">
-<h2>加载所需的模块<a class="headerlink" href="#load-required-modules" title="永久链接至标题">¶</a></h2>
-<p>除TVM、scipy外，还需要最新的transformers和tensorflow 2.2+。</p>
+<h2>Load Required Modules<a class="headerlink" href="#load-required-modules" title="永久链接至标题">¶</a></h2>
+<p>Other than TVM, scipy, the latest transformers, and
+tensorflow 2.2+ are required.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -422,14 +423,15 @@ sparse speed using fake weights to see the benefit of structured sparsity.</p>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;experimental.set_memory_growth option is not available: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>tensorflow will use experimental.set_memory_growth(True)
 </pre></div>
 </div>
 </div>
 <div class="section" id="configure-settings">
-<h2>配置设置<a class="headerlink" href="#configure-settings" title="永久链接至标题">¶</a></h2>
-<p>让我们从定义一些参数开始，这些参数定义了要运行的模型类型和稀疏度。</p>
+<h2>Configure Settings<a class="headerlink" href="#configure-settings" title="永久链接至标题">¶</a></h2>
+<p>Let’s start by defining some parameters that define the type of model
+and sparsity to run.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The name of the transformer model to download and run.</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;huggingface/prunebert-base-uncased-6-finepruned-w-distil-squad&quot;</span>
 <span class="c1"># The number of batches in an input.</span>
@@ -455,7 +457,7 @@ sparse speed using fake weights to see the benefit of structured sparsity.</p>
 </div>
 </div>
 <div class="section" id="download-and-convert-transformers-model">
-<h2>下载并转换Transformers Model<a class="headerlink" href="#download-and-convert-transformers-model" title="永久链接至标题">¶</a></h2>
+<h2>Download and Convert Transformers Model<a class="headerlink" href="#download-and-convert-transformers-model" title="永久链接至标题">¶</a></h2>
 <p>Now we’ll grab a model from the transformers module, download it,
 convert it into a TensorFlow graphdef in preperation for converting that graphdef into
 a relay graph that we can optimize and deploy.</p>
@@ -497,7 +499,7 @@ a relay graph that we can optimize and deploy.</p>
 </div>
 </div>
 <div class="section" id="convert-to-relay-graph">
-<h2>转换为Relay Graph<a class="headerlink" href="#convert-to-relay-graph" title="永久链接至标题">¶</a></h2>
+<h2>Convert to Relay Graph<a class="headerlink" href="#convert-to-relay-graph" title="永久链接至标题">¶</a></h2>
 <p>We now have all the tooling to get a transformers model in the right format
 for relay conversion. Let’s import it! In the following function we
 save the imported graph in relay’s json format so that we dont have
@@ -537,7 +539,7 @@ to reimport from tensorflow each time this script is run.</p>
 </div>
 </div>
 <div class="section" id="run-the-dense-graph">
-<h2>运行稠密图<a class="headerlink" href="#run-the-dense-graph" title="永久链接至标题">¶</a></h2>
+<h2>Run the Dense Graph<a class="headerlink" href="#run-the-dense-graph" title="永久链接至标题">¶</a></h2>
 <p>Let’s run the default version of the imported model. Note that even if
 the weights are sparse, we won’t see any speedup because we are using
 regular dense matrix multiplications on these dense (but mostly zero)
@@ -564,7 +566,7 @@ tensors instead of sparse aware kernels.</p>
 </div>
 </div>
 <div class="section" id="run-the-sparse-graph">
-<h2>运行稀疏图<a class="headerlink" href="#run-the-sparse-graph" title="永久链接至标题">¶</a></h2>
+<h2>Run the Sparse Graph<a class="headerlink" href="#run-the-sparse-graph" title="永久链接至标题">¶</a></h2>
 <p>Next we’ll convert the graph into a sparse representation and generate
 fake sparse weights if needed. Then we’ll use the same benchmarking
 script as dense to see how much faster we go! We apply a few relay passes
@@ -634,8 +636,10 @@ run faster.</p>
 </div>
 </div>
 <div class="section" id="run-all-the-code">
-<h2>运行所有代码！<a class="headerlink" href="#run-all-the-code" title="永久链接至标题">¶</a></h2>
-<p>就这样！现在我们只需调用所有需要的函数，根据设置的参数对模型进行基准测试。请注意，要运行此代码，首先需要取消最后一行的注释。</p>
+<h2>Run All the Code!<a class="headerlink" href="#run-all-the-code" title="永久链接至标题">¶</a></h2>
+<p>And that’s it! Now we’ll simply call all the needed function to benchmark
+the model according to the set parameters. Note that to run this code
+you’ll need to uncomment the last line first.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">benchmark</span><span class="p">():</span>
     <span class="n">mod</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">shape_dict</span> <span class="o">=</span> <span class="n">import_graphdef</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_len</span><span class="p">)</span>
     <span class="n">run_dense</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">shape_dict</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">dev</span><span class="p">)</span>
@@ -649,7 +653,7 @@ run faster.</p>
 </div>
 </div>
 <div class="section" id="sample-output">
-<h2>样本输出<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
+<h2>Sample Output<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
 <p>For reference, below is the output of the script when run on an AMD CPU
 and shows about a 2.5X speedup from using sparsity.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dense Model Benchmark:</span>
@@ -681,10 +685,10 @@ and shows about a 2.5X speedup from using sparsity.</p>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-deploy-models-deploy-sparse-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/9c3764c88ab3eb57dc223b4eda1e8a2f/deploy_sparse.py"><code class="xref download docutils literal notranslate"><span class="pre">下载Python源代码:</span> <span class="pre">deploy_sparse.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/9c3764c88ab3eb57dc223b4eda1e8a2f/deploy_sparse.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_sparse.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/0b60295044fd20226a0d5adc52b50b2f/deploy_sparse.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_sparse.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/0b60295044fd20226a0d5adc52b50b2f/deploy_sparse.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_sparse.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -701,10 +705,10 @@ and shows about a 2.5X speedup from using sparsity.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deploy_ssd_gluoncv.html" class="btn btn-neutral float-right" title="部署Single Shot Multibox Detector(SSD)模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy_ssd_gluoncv.html" class="btn btn-neutral float-right" title="Deploy Single Shot Multibox Detector(SSD) model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="deploy_quantized.html" class="btn btn-neutral float-left" title="在Cuda上部署一个量化模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="deploy_quantized.html" class="btn btn-neutral float-left" title="Deploy a Quantized Model on Cuda" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

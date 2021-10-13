@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>编译 Keras 模型 &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Compile Keras Models &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="编译 TFLite 模型" href="from_tflite.html" />
-    <link rel="prev" title="编译 ONNX 模型" href="from_onnx.html" /> 
+    <link rel="next" title="Compile TFLite Models" href="from_tflite.html" />
+    <link rel="prev" title="Compile ONNX Models" href="from_onnx.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,32 +204,32 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">编译深度学习模型</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_mxnet.html">编译 MXNet 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">编译 Keras 模型</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#load-pretrained-keras-model">加载预训练 Keras 模型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#load-a-test-image">加载一张测试图片</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#compile-the-model-with-relay">通过 Realy 编译模型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#execute-on-tvm">在 TVM 上执行</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#look-up-synset-name">在同义词集合（synset）中查找类别名称</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Compile Deep Learning Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_onnx.html">Compile ONNX Models</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Compile Keras Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load-pretrained-keras-model">Load pretrained keras model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load-a-test-image">Load a test image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-the-model-with-relay">Compile the model with Relay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execute-on-tvm">Execute on TVM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#look-up-synset-name">Look up synset name</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_darknet.html">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_caffe2.html">Compile Caffe2 Models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="from_paddle.html">Compile PaddlePaddle Models</a></li>
 </ul>
 </li>
@@ -243,31 +243,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -326,9 +326,9 @@
         
           <li><a href="../index.html">How To Guides</a> <span class="br-arrow">></span></li>
         
-          <li><a href="index.html">编译深度学习模型</a> <span class="br-arrow">></span></li>
+          <li><a href="index.html">Compile Deep Learning Models</a> <span class="br-arrow">></span></li>
         
-      <li>编译 Keras 模型</li>
+      <li>Compile Keras Models</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -352,16 +352,18 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-how-to-compile-models-from-keras-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="compile-keras-models">
-<span id="sphx-glr-how-to-compile-models-from-keras-py"></span><h1>编译 Keras 模型<a class="headerlink" href="#compile-keras-models" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://Huyuwei.github.io/">Yuwei Hu</a></p>
-<p>本文是一篇介绍如何使用 Relay 部署 keras 模型的介绍性教程。</p>
-<p>首先，我们应该安装 Keras。Tensorflow 也是必需的，因为它被 Keras 作为默认的后端。</p>
-<p>我们可以使用 pip 来快速安装依赖</p>
+<span id="sphx-glr-how-to-compile-models-from-keras-py"></span><h1>Compile Keras Models<a class="headerlink" href="#compile-keras-models" title="永久链接至标题">¶</a></h1>
+<p><strong>Author</strong>: <a class="reference external" href="https://Huyuwei.github.io/">Yuwei Hu</a></p>
+<p>This article is an introductory tutorial to deploy keras models with Relay.</p>
+<p>For us to begin with, keras should be installed.
+Tensorflow is also required since it’s used as the default backend of keras.</p>
+<p>A quick solution is to install via pip</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U keras --user
 pip install -U tensorflow --user
 </pre></div>
 </div>
-<p>或者参考官方网站 <a class="reference external" href="https://keras.io/#installation">https://keras.io/#installation</a></p>
+<p>or please refer to official site
+<a class="reference external" href="https://keras.io/#installation">https://keras.io/#installation</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
 <span class="kn">import</span> <span class="nn">tvm.relay</span> <span class="k">as</span> <span class="nn">relay</span>
@@ -371,8 +373,8 @@ pip install -U tensorflow --user
 </pre></div>
 </div>
 <div class="section" id="load-pretrained-keras-model">
-<h2>加载预训练 Keras 模型<a class="headerlink" href="#load-pretrained-keras-model" title="永久链接至标题">¶</a></h2>
-<p>我们加载一个由 Keras 提供的预训练 resnet-50 分类模型。</p>
+<h2>Load pretrained keras model<a class="headerlink" href="#load-pretrained-keras-model" title="永久链接至标题">¶</a></h2>
+<p>We load a pretrained resnet-50 classification model provided by keras.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">keras</span><span class="o">.</span><span class="n">__version__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span> <span class="o">&lt;</span> <span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">):</span>
     <span class="n">weights_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
         <span class="p">[</span>
@@ -400,8 +402,8 @@ pip install -U tensorflow --user
 </div>
 </div>
 <div class="section" id="load-a-test-image">
-<h2>加载一张测试图片<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
-<p>样例的主角是只猫！</p>
+<h2>Load a test image<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
+<p>A single cat dominates the examples!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">keras.applications.resnet50</span> <span class="k">import</span> <span class="n">preprocess_input</span>
@@ -418,14 +420,14 @@ pip install -U tensorflow --user
 </pre></div>
 </div>
 <img alt="../../_images/sphx_glr_from_keras_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_from_keras_001.png" />
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>input_1 (1, 3, 224, 224)
 </pre></div>
 </div>
 </div>
 <div class="section" id="compile-the-model-with-relay">
-<h2>通过 Realy 编译模型<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
-<p>将 keras 模型（NHWC）转换为 Realy 格式（NCHW）。</p>
+<h2>Compile the model with Relay<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
+<p>convert the keras model(NHWC layout) to Relay format(NCHW layout).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shape_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;input_1&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">}</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_keras</span><span class="p">(</span><span class="n">keras_resnet50</span><span class="p">,</span> <span class="n">shape_dict</span><span class="p">)</span>
 <span class="c1"># compile the model</span>
@@ -442,7 +444,7 @@ pip install -U tensorflow --user
 </div>
 </div>
 <div class="section" id="execute-on-tvm">
-<h2>在 TVM 上执行<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
+<h2>Execute on TVM<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;float32&quot;</span>
 <span class="n">tvm_out</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)))</span>
 <span class="n">top1_tvm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">tvm_out</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
@@ -450,8 +452,8 @@ pip install -U tensorflow --user
 </div>
 </div>
 <div class="section" id="look-up-synset-name">
-<h2>在同义词集合（synset）中查找类别名称<a class="headerlink" href="#look-up-synset-name" title="永久链接至标题">¶</a></h2>
-<p>在有1000个类的同义词集合（synset）中查找预测排名第一的类别索引。</p>
+<h2>Look up synset name<a class="headerlink" href="#look-up-synset-name" title="永久链接至标题">¶</a></h2>
+<p>Look up prediction top 1 index in 1000 class synset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">synset_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s2">&quot;https://gist.githubusercontent.com/zhreshold/&quot;</span><span class="p">,</span>
@@ -471,17 +473,17 @@ pip install -U tensorflow --user
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Keras top-1 id: </span><span class="si">{}</span><span class="s2">, class name: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">top1_keras</span><span class="p">,</span> <span class="n">synset</span><span class="p">[</span><span class="n">top1_keras</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Relay top-1 id: 285, class name: Egyptian cat
 Keras top-1 id: 285, class name: Egyptian cat
 </pre></div>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-compile-models-from-keras-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/c23f7654585d9b0fa2129e1765b2a8f2/from_keras.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">from_keras.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/c23f7654585d9b0fa2129e1765b2a8f2/from_keras.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">from_keras.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/c82f632d47458e76d2af9821b6778e36/from_keras.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_keras.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/c82f632d47458e76d2af9821b6778e36/from_keras.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">from_keras.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -498,10 +500,10 @@ Keras top-1 id: 285, class name: Egyptian cat
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="from_tflite.html" class="btn btn-neutral float-right" title="编译 TFLite 模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="from_tflite.html" class="btn btn-neutral float-right" title="Compile TFLite Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="from_onnx.html" class="btn btn-neutral float-left" title="编译 ONNX 模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="from_onnx.html" class="btn btn-neutral float-left" title="Compile ONNX Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

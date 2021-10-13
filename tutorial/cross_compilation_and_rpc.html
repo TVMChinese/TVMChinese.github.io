@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cross Compilation and RPC &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Cross Compilation and RPC &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="编译深度学习模型的快速开始教程" href="relay_quick_start.html" />
+    <link rel="next" title="Quick Start Tutorial for Compiling Deep Learning Models" href="relay_quick_start.html" />
     <link rel="prev" title="Optimizing Operators with Auto-scheduling" href="auto_scheduler_matmul_x86.html" /> 
 </head>
 
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,58 +204,58 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Tutorial</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">介绍</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">使用TVMC编译和优化一个模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">Compiling and Optimizing a Model with TVMC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_relay_x86.html">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">使用张量表达式来处理运算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">Working with Operators Using Tensor Expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto_scheduler_matmul_x86.html">Optimizing Operators with Auto-scheduling</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Cross Compilation and RPC</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#build-tvm-runtime-on-device">在设备上构建 TVM 运行时间</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-up-rpc-server-on-device">在设备上设置 RPC 服务器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-tvm-runtime-on-device">Build TVM Runtime on Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-rpc-server-on-device">Set Up RPC Server on Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#declare-and-cross-compile-kernel-on-local-machine">Declare and Cross Compile Kernel on Local Machine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-cpu-kernel-remotely-by-rpc">Run CPU Kernel Remotely by RPC</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-opencl-kernel-remotely-by-rpc">Run OpenCL Kernel Remotely by RPC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#summary">总结</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">Quick Start Tutorial for Compiling Deep Learning Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_topi.html">Introduction to TOPI</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
 </ul>
 
             
@@ -348,8 +348,8 @@ the remote device resource are limited, like Raspberry Pi and mobile
 platforms. In this tutorial, we will use the Raspberry Pi for a CPU example
 and the Firefly-RK3399 for an OpenCL example.</p>
 <div class="section" id="build-tvm-runtime-on-device">
-<h2>在设备上构建 TVM 运行时间<a class="headerlink" href="#build-tvm-runtime-on-device" title="永久链接至标题">¶</a></h2>
-<p>第一步是在远程设备上构建TVM运行时间。</p>
+<h2>Build TVM Runtime on Device<a class="headerlink" href="#build-tvm-runtime-on-device" title="永久链接至标题">¶</a></h2>
+<p>The first step is to build the TVM runtime on the remote device.</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>All instructions in both this section and the next section should be
@@ -371,10 +371,10 @@ directory is in <code class="code docutils literal notranslate"><span class="pre
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:~/tvm/python
 </pre></div>
 </div>
-<p>要更新环境变量，请执行:code:<cite>source ~/.bashrc</cite>。</p>
+<p>To update the environment variables, execute <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code>.</p>
 </div>
 <div class="section" id="set-up-rpc-server-on-device">
-<h2>在设备上设置 RPC 服务器<a class="headerlink" href="#set-up-rpc-server-on-device" title="永久链接至标题">¶</a></h2>
+<h2>Set Up RPC Server on Device<a class="headerlink" href="#set-up-rpc-server-on-device" title="永久链接至标题">¶</a></h2>
 <p>To start an RPC server, run the following command on your remote device
 (Which is Raspberry Pi in this example).</p>
 <blockquote>
@@ -382,7 +382,8 @@ directory is in <code class="code docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 </div></blockquote>
-<p>如果您看到下面的行，则表示RPC服务器在您的设备上成功启动。</p>
+<p>If you see the line below, it means the RPC server started
+successfully on your device.</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:root:RPCServer: <span class="nb">bind</span> to <span class="m">0</span>.0.0.0:9090
 </pre></div>
@@ -502,7 +503,7 @@ device and returns the measured cost. Network overhead is excluded.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%g</span><span class="s2"> secs/op&quot;</span> <span class="o">%</span> <span class="n">cost</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>3.126e-07 secs/op
 </pre></div>
 </div>
@@ -558,7 +559,7 @@ make runtime -j4
 </div>
 </div>
 <div class="section" id="summary">
-<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial provides a walk through of cross compilation and RPC
 features in TVM.</p>
 <ul class="simple">
@@ -589,10 +590,10 @@ local machine.</p></li>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relay_quick_start.html" class="btn btn-neutral float-right" title="编译深度学习模型的快速开始教程" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relay_quick_start.html" class="btn btn-neutral float-right" title="Quick Start Tutorial for Compiling Deep Learning Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="auto_scheduler_matmul_x86.html" class="btn btn-neutral float-left" title="Optimizing Operators with Auto-scheduling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="auto_scheduler_matmul_x86.html" class="btn btn-neutral float-left" title="Optimizing Operators with Auto-scheduling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

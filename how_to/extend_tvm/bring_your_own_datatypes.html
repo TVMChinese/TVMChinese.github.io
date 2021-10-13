@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Bring Your Own Datatypes to TVM &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Bring Your Own Datatypes to TVM &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,16 +204,16 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
@@ -222,12 +222,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autoscheduler/index.html">Use AutoScheduler for Template-Free Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_microtvm/index.html">Work With microTVM</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Extend TVM</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="low_level_custom_pass.html">编写自定义通行证</a></li>
+<li class="toctree-l3"><a class="reference internal" href="low_level_custom_pass.html">Writing a Customized Pass</a></li>
 <li class="toctree-l3"><a class="reference internal" href="use_pass_infra.html">How to Use TVM Pass Infra</a></li>
 <li class="toctree-l3"><a class="reference internal" href="use_pass_instrument.html">How to Use TVM Pass Instrument</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Bring Your Own Datatypes to TVM</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#datatype-libraries">Datatype Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#setup">设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#a-simple-tvm-program">A Simple TVM Program</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adding-custom-datatypes">Adding Custom Datatypes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#running-models-with-custom-datatypes">Running Models With Custom Datatypes</a></li>
@@ -237,31 +237,31 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -367,7 +367,7 @@ This datatype, which we dubbed “myfloat”, is really just a IEE-754 float und
 to show that any datatype can be used in the BYODT framework.</p>
 </div>
 <div class="section" id="setup">
-<h2>设置<a class="headerlink" href="#setup" title="永久链接至标题">¶</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="永久链接至标题">¶</a></h2>
 <p>Since we do not use any 3rdparty library, there is no setup needed.</p>
 <p>If you would like to try this with your own datatype library, first bring the library’s functions into the process space with <code class="docutils literal notranslate"><span class="pre">CDLL</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ctypes</span><span class="o">.</span><span class="n">CDLL</span><span class="p">(</span><span class="s1">&#39;my-datatype-lib.so&#39;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">RTLD_GLOBAL</span><span class="p">)</span>
@@ -399,7 +399,7 @@ to show that any datatype can be used in the BYODT framework.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y_input</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>x: [0.51729786 0.9469626  0.7654598 ]
 y: [0.28239584 0.22104536 0.6862221 ]
 </pre></div>
@@ -409,7 +409,7 @@ y: [0.28239584 0.22104536 0.6862221 ]
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;z: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">z_output</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>z: [0.7996937 1.168008  1.4516819]
 </pre></div>
 </div>
@@ -431,7 +431,7 @@ Additionally, note the “32” after the datatype: this is the bitwidth of the 
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
@@ -457,7 +457,7 @@ Now we can generate our program again:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">program</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>fn (%x: Tensor[(3), float32], %y: Tensor[(3), float32]) {
   %0 = cast(%x, dtype=&quot;custom[myfloat]32&quot;);
   %1 = cast(%y, dtype=&quot;custom[myfloat]32&quot;);
@@ -476,7 +476,7 @@ Now we can generate our program again:</p>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Check failed: (lower) is false: Cast lowering function for target llvm destination type 150 source type 2 not found
 </pre></div>
 </div>
@@ -519,7 +519,7 @@ For more information, see <a class="reference external" href="https://github.com
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Check failed: (lower) is false: Add lowering function for target llvm type 150 not found
 </pre></div>
 </div>
@@ -555,7 +555,7 @@ while for all other operations, the bit length is the same between the operands 
 <span class="c1"># Perhaps as expected, the ``myfloat32`` results and ``float32`` are exactly the same!</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>z: [0.7996937 1.168008  1.4516819]
 x:              [0.51729786 0.9469626  0.7654598 ]
 y:              [0.28239584 0.22104536 0.6862221 ]
@@ -605,7 +605,7 @@ In this alpha state of the Bring Your Own Datatypes framework, we have not imple
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[:</span><span class="mi">10</span><span class="p">])</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ -7.5350165   2.0368009 -12.706646   -5.63786   -12.684058    4.0723605
    2.618876    3.4049501  -9.867913  -24.53311  ]
 </pre></div>
@@ -655,7 +655,7 @@ In this alpha state of the Bring Your Own Datatypes framework, we have not imple
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Check failed: (lower) is false: FloatImm lowering function for target llvm type 150 not found
 </pre></div>
 </div>
@@ -748,7 +748,7 @@ where the minimum representable custom datatype value is implemented using calls
 <span class="n">np</span><span class="o">.</span><span class="n">testing</span><span class="o">.</span><span class="n">assert_array_equal</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">result_myfloat</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[ -7.5350165   2.0368009 -12.706646   -5.63786   -12.684058    4.0723605
    2.618876    3.4049501  -9.867913  -24.53311  ]
 </pre></div>
@@ -775,10 +775,10 @@ where the minimum representable custom datatype value is implemented using calls
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../profile/index.html" class="btn btn-neutral float-right" title="Profile Models" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../profile/index.html" class="btn btn-neutral float-right" title="Profile Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="use_pass_instrument.html" class="btn btn-neutral float-left" title="How to Use TVM Pass Instrument" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="use_pass_instrument.html" class="btn btn-neutral float-left" title="How to Use TVM Pass Instrument" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

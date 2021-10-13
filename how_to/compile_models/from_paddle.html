@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compile PaddlePaddle Models &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Compile PaddlePaddle Models &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="Deploy Models and Integrate TVM" href="../deploy/index.html" />
-    <link rel="prev" title="编译 Caffe2 模型" href="from_caffe2.html" /> 
+    <link rel="prev" title="Compile Caffe2 Models" href="from_caffe2.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,31 +204,31 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">编译深度学习模型</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="from_pytorch.html">编译 PyTorch 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_tensorflow.html">编译 Tensorflow 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_mxnet.html">编译 MXNet 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_onnx.html">编译 ONNX 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_keras.html">编译 Keras 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_tflite.html">编译 TFLite 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_coreml.html">编译 CoreML 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_darknet.html">编译 DrakNet 框架下 YOLO-V2 和 YOLO-V3 模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="from_caffe2.html">编译 Caffe2 模型</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Compile Deep Learning Models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="from_pytorch.html">Compile PyTorch Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_tensorflow.html">Compile Tensorflow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_mxnet.html">Compile MXNet Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_onnx.html">Compile ONNX Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_keras.html">Compile Keras Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_tflite.html">Compile TFLite Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_coreml.html">Compile CoreML Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_darknet.html">Compile YOLO-V2 and YOLO-V3 in DarkNet Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="from_caffe2.html">Compile Caffe2 Models</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Compile PaddlePaddle Models</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#load-pretrained-resnet50-model">Load pretrained ResNet50 model</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#load-a-test-image">加载一张测试图片</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#compile-the-model-with-relay">通过 Realy 编译模型</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#execute-on-tvm">在 TVM 上执行</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#look-up-synset-name">在同义词集合（synset）中查找类别名称</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load-a-test-image">Load a test image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-the-model-with-relay">Compile the model with relay</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execute-on-tvm">Execute on TVM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#look-up-synset-name">Look up synset name</a></li>
 </ul>
 </li>
 </ul>
@@ -243,31 +243,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -326,7 +326,7 @@
         
           <li><a href="../index.html">How To Guides</a> <span class="br-arrow">></span></li>
         
-          <li><a href="index.html">编译深度学习模型</a> <span class="br-arrow">></span></li>
+          <li><a href="index.html">Compile Deep Learning Models</a> <span class="br-arrow">></span></li>
         
       <li>Compile PaddlePaddle Models</li>
     
@@ -386,8 +386,8 @@ A quick solution is</p>
 </div>
 </div>
 <div class="section" id="load-a-test-image">
-<h2>加载一张测试图片<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
-<p>样例的主角是只猫！</p>
+<h2>Load a test image<a class="headerlink" href="#load-a-test-image" title="永久链接至标题">¶</a></h2>
+<p>A single cat dominates the examples!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="kn">import</span> <span class="nn">paddle.vision.transforms</span> <span class="k">as</span> <span class="nn">T</span>
 
@@ -411,7 +411,7 @@ A quick solution is</p>
 </div>
 </div>
 <div class="section" id="compile-the-model-with-relay">
-<h2>通过 Realy 编译模型<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
+<h2>Compile the model with relay<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;llvm&quot;</span>
 <span class="n">shape_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">}</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_paddle</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">shape_dict</span><span class="p">)</span>
@@ -428,15 +428,15 @@ A quick solution is</p>
 </div>
 </div>
 <div class="section" id="execute-on-tvm">
-<h2>在 TVM 上执行<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
+<h2>Execute on TVM<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;float32&quot;</span>
 <span class="n">tvm_output</span> <span class="o">=</span> <span class="n">executor</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)))</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="look-up-synset-name">
-<h2>在同义词集合（synset）中查找类别名称<a class="headerlink" href="#look-up-synset-name" title="永久链接至标题">¶</a></h2>
-<p>在有1000个类的同义词集合（synset）中查找预测排名第一的类别索引。</p>
+<h2>Look up synset name<a class="headerlink" href="#look-up-synset-name" title="永久链接至标题">¶</a></h2>
+<p>Look up prediction top 1 index in 1000 class synset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">synset_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s2">&quot;https://gist.githubusercontent.com/zhreshold/&quot;</span><span class="p">,</span>
@@ -481,10 +481,10 @@ A quick solution is</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../deploy/index.html" class="btn btn-neutral float-right" title="Deploy Models and Integrate TVM" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../deploy/index.html" class="btn btn-neutral float-right" title="Deploy Models and Integrate TVM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="from_caffe2.html" class="btn btn-neutral float-left" title="编译 Caffe2 模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="from_caffe2.html" class="btn btn-neutral float-left" title="Compile Caffe2 Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

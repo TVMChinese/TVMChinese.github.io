@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Use Tensorize to Leverage Hardware Intrinsics &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Use Tensorize to Leverage Hardware Intrinsics &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,22 +204,22 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Work With Tensor Expression and Schedules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">TVM中的调度原语</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reduction.html">Reduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">内部函数和数学函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">Intrinsics and Math Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="scan.html">Scan and Recurrent Kernel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extern_op.html">External Tensor Functions</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Use Tensorize to Leverage Hardware Intrinsics</a><ul>
@@ -227,7 +227,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#schedule-the-matmul">Schedule the Matmul</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#define-gemv-tensorization-intrinsic">Define GEMV Tensorization Intrinsic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#reduce-update-for-tensorize">Reduce-update for Tensorize</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summary">总结</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="tuple_inputs.html">Compute and Reduce with Tuple Inputs</a></li>
@@ -241,31 +241,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -382,7 +382,7 @@ The following lines describe the computation <code class="code docutils literal 
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -416,7 +416,7 @@ Thus we break down the matmul loops to make the innermost loops a (16x64) GEMV.<
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -504,7 +504,7 @@ such placeholder can be put to let TVM automatically bind the inferred value for
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -549,7 +549,7 @@ The importing needs to happen before the tensorized GEMV being executed.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -779,7 +779,7 @@ due to the tiling.</p>
 </div>
 </div>
 <div class="section" id="summary">
-<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial demonstrates the usage of tensorize intrinsic in TVM.
 Tensorize provides a way for users to get fully optimized schedule via micro-kernels.
 For example, INT8 quantization on Intel CPUs uses tensorization
@@ -810,10 +810,10 @@ which helps users inject asm easily into the schedule.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tuple_inputs.html" class="btn btn-neutral float-right" title="Compute and Reduce with Tuple Inputs" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tuple_inputs.html" class="btn btn-neutral float-right" title="Compute and Reduce with Tuple Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="extern_op.html" class="btn btn-neutral float-left" title="External Tensor Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="extern_op.html" class="btn btn-neutral float-left" title="External Tensor Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

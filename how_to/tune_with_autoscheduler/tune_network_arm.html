@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-scheduling a Neural Network for ARM CPU &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Auto-scheduling a Neural Network for ARM CPU &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,16 +204,16 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
@@ -225,7 +225,7 @@
 <li class="toctree-l3"><a class="reference internal" href="tune_network_cuda.html">Auto-scheduling a Neural Network for NVIDIA GPU</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Auto-scheduling a Neural Network for ARM CPU</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#define-a-network">Define a Network</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#start-rpc-tracker">启动 RPC 跟踪器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-rpc-tracker">Start RPC Tracker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#register-devices-to-rpc-tracker">Register Devices to RPC Tracker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-tuning-options">Set Tuning Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#extract-search-tasks">Extract Search Tasks</a></li>
@@ -241,31 +241,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -470,7 +470,7 @@ You can use <a class="reference internal" href="../../arch/convert_layout.html#c
 </div>
 </div>
 <div class="section" id="start-rpc-tracker">
-<h2>启动 RPC 跟踪器<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
+<h2>Start RPC Tracker<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
 <p>TVM uses RPC session to communicate with ARM boards.
 During tuning, the tuner will send the generated code to the board and
 measure the speed of code on the board.</p>
@@ -484,7 +484,7 @@ this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.rpc_tracker --host<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
-<p>预期输出是</p>
+<p>The expected output is</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:RPCTracker:bind to <span class="m">0</span>.0.0.0:9190
 </pre></div>
 </div>
@@ -495,7 +495,7 @@ this command:</p>
 build the TVM runtime for the ARM devices.</p>
 <ul>
 <li><p>For Linux:
-Follow this section <a class="reference internal" href="../deploy_models/deploy_model_on_rasp.html#build-tvm-runtime-on-device"><span class="std std-ref">在设备上构建 TVM 运行时间</span></a> to build
+Follow this section <a class="reference internal" href="../deploy_models/deploy_model_on_rasp.html#build-tvm-runtime-on-device"><span class="std std-ref">Build TVM Runtime on Device</span></a> to build
 the TVM runtime on the device. Then register the device to tracker by</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.rpc_server --tracker<span class="o">=[</span>HOST_IP<span class="o">]</span>:9190 --key<span class="o">=</span>rasp4b-64
 </pre></div>
@@ -508,7 +508,7 @@ install the TVM RPC APK on the android device. Make sure you can pass the androi
 Then you have already registered your device. During tuning, you have to go to developer option
 and enable “Keep screen awake during changing” and charge your phone to make it stable.</p></li>
 </ul>
-<p>注册设备后，我们可以通过查询rpc_tracker确认</p>
+<p>After registering devices, we can confirm it by querying rpc_tracker</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.query_rpc_tracker --host<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
@@ -582,7 +582,7 @@ The task scheduler will just optimize this objective.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">compute_dag</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Get model...
 Extract tasks...
 ========== Task 0  (workload key: [&quot;6b7583cf23c7c37d3212cad9d06e58c1&quot;, [1, 14, 14, 256], [1, 1, 256, 512], [1, 1, 1, 512], [1, 14, 14, 512]]) ==========
@@ -958,10 +958,10 @@ with <a class="reference internal" href="../../reference/api/python/auto_schedul
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tune_network_mali.html" class="btn btn-neutral float-right" title="Auto-scheduling a Neural Network for mali GPU" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tune_network_mali.html" class="btn btn-neutral float-right" title="Auto-scheduling a Neural Network for mali GPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tune_network_cuda.html" class="btn btn-neutral float-left" title="Auto-scheduling a Neural Network for NVIDIA GPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="tune_network_cuda.html" class="btn btn-neutral float-left" title="Auto-scheduling a Neural Network for NVIDIA GPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

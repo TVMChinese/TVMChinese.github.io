@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,16 +204,16 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">Compile Deep Learning Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
@@ -239,31 +239,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../extend_tvm/index.html">Extend TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../profile/index.html">Profile Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../errors.html">Handle TVM Errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../faq.html">常见提问</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../faq.html">Frequently Asked Questions</a></li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -481,7 +481,7 @@ The task scheduler will just optimize this objective.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">compute_dag</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Extract tasks...
 ========== Task 0  (workload key: [&quot;12b88bedece6984af589a28b43e0f3c4&quot;, [1, 56, 56, 64], [3, 3, 64, 128], [1, 1, 1, 128], [1, 28, 28, 128]]) ==========
 placeholder = PLACEHOLDER [1, 56, 56, 64]
@@ -908,13 +908,13 @@ so we can read the log file and load the best schedules.</p>
 <span class="x">  1: tvm::transform::ModulePassNode::operator()(tvm::IRModule, tvm::transform::PassContext const&amp;) const</span>
 <span class="x">  0: std::_Function_handler&lt;void (tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*), tvm::runtime::TypedPackedFunc&lt;tvm::IRModule (tvm::IRModule, tvm::transform::PassContext)&gt;::AssignTypedLambda&lt;tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1}&gt;(tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1})::{lambda(tvm::runtime::TVMArgs const&amp;, tvm::runtime::TVMRetValue*)#1}&gt;::_M_invoke(std::_Any_data const&amp;, tvm::runtime::TVMArgs&amp;&amp;, tvm::runtime::TVMRetValue*&amp;&amp;)</span>
 <span class="x">  Did you forget to bind?</span>
+<span class="x">    Variable `T_relu` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
-<span class="x">    Variable `T_add` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
   File <span class="nb">&quot;/tvm_chinese/tvm/src/tir/analysis/verify_memory.cc&quot;</span>, line <span class="m">206</span>
 <span class="gr">RuntimeError</span>: <span class="n">Memory verification failed with the following errors:</span>
-<span class="x">PrimFunc([placeholder, placeholder, placeholder, T_add]) attrs={&quot;target&quot;: cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, &quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_2&quot;, &quot;from_legacy_te_schedule&quot;: (bool)1} {</span>
+<span class="x">PrimFunc([placeholder, placeholder, placeholder, T_relu]) attrs={&quot;target&quot;: cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, &quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_nn_relu_2&quot;, &quot;from_legacy_te_schedule&quot;: (bool)1} {</span>
 <span class="x">  allocate data_pad[float32 * 401408], storage_scope = global</span>
 <span class="x">  allocate input_tile[float32 * 401408], storage_scope = global</span>
 <span class="x">  allocate B[float32 * 16], storage_scope = global</span>
@@ -994,7 +994,14 @@ so we can read the log file and load the best schedules.</p>
 <span class="x">  for (ax1, 0, 28) {</span>
 <span class="x">    for (ax2, 0, 28) {</span>
 <span class="x">      for (ax3, 0, 128) {</span>
-<span class="x">        T_add[(((ax1*3584) + (ax2*128)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[(((ax1*3584) + (ax2*128)) + ax3)])</span>
+<span class="x">        data_pad[(((ax1*3584) + (ax2*128)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[ax3])</span>
+<span class="x">      }</span>
+<span class="x">    }</span>
+<span class="x">  }</span>
+<span class="x">  for (ax1, 0, 28) {</span>
+<span class="x">    for (ax2, 0, 28) {</span>
+<span class="x">      for (ax3, 0, 128) {</span>
+<span class="x">        T_relu[(((ax1*3584) + (ax2*128)) + ax3)] = max(data_pad[(((ax1*3584) + (ax2*128)) + ax3)], 0f)</span>
 <span class="x">      }</span>
 <span class="x">    }</span>
 <span class="x">  }</span>
@@ -1042,10 +1049,10 @@ with <a class="reference internal" href="../../reference/api/python/auto_schedul
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tune_network_arm.html" class="btn btn-neutral float-right" title="Auto-scheduling a Neural Network for ARM CPU" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tune_network_arm.html" class="btn btn-neutral float-right" title="Auto-scheduling a Neural Network for ARM CPU" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tune_network_x86.html" class="btn btn-neutral float-left" title="Auto-scheduling a Neural Network for x86 CPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="tune_network_x86.html" class="btn btn-neutral float-left" title="Auto-scheduling a Neural Network for x86 CPU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

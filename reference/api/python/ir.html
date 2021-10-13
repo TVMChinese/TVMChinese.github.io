@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.ir &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>tvm.ir &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,33 +204,33 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ndarray.html">tvm.runtime.ndarray</a></li>
@@ -268,7 +268,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -348,8 +348,8 @@
             
   <div class="section" id="module-tvm.ir">
 <span id="tvm-ir"></span><h1>tvm.ir<a class="headerlink" href="#module-tvm.ir" title="永久链接至标题">¶</a></h1>
-<p>IR相关的常见数据结构</p>
-<p><strong>类：</strong></p>
+<p>Common data structures across all IR variants.</p>
+<p><strong>Classes:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -463,7 +463,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>函数：</strong></p>
+<p><strong>Functions:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1898,7 +1898,7 @@ You can use convert to create a dict[Object-&gt; Object] into a Map</p>
 <div class="section" id="module-tvm.instrument">
 <span id="tvm-instrument"></span><h1>tvm.instrument<a class="headerlink" href="#module-tvm.instrument" title="永久链接至标题">¶</a></h1>
 <p>Common pass instrumentation across IR variants.</p>
-<p><strong>类：</strong></p>
+<p><strong>Classes:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -1913,7 +1913,7 @@ You can use convert to create a dict[Object-&gt; Object] into a Map</p>
 </tr>
 </tbody>
 </table>
-<p><strong>函数：</strong></p>
+<p><strong>Functions:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -2017,7 +2017,7 @@ Instead, a <cite>PassInstrument</cite> instance should be created through
 <div class="section" id="module-tvm.transform">
 <span id="tvm-transform"></span><h1>tvm.transform<a class="headerlink" href="#module-tvm.transform" title="永久链接至标题">¶</a></h1>
 <p>Common pass infrastructure across IR variants.</p>
-<p><strong>类：</strong></p>
+<p><strong>Classes:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -2041,7 +2041,7 @@ Instead, a <cite>PassInstrument</cite> instance should be created through
 </tr>
 </tbody>
 </table>
-<p><strong>函数：</strong></p>
+<p><strong>Functions:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -2312,10 +2312,10 @@ a user defined transform function.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="target.html" class="btn btn-neutral float-right" title="tvm.target" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="target.html" class="btn btn-neutral float-right" title="tvm.target" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="error.html" class="btn btn-neutral float-left" title="tvm.error" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="error.html" class="btn btn-neutral float-left" title="tvm.error" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 

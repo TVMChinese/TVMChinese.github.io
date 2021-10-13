@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-tuning a convolutional network on VTA &mdash; tvm 0.8.dev1925+g5f395b9ed 文档</title>
+  <title>Auto-tuning a convolutional network on VTA &mdash; tvm 0.8.dev1926+g93b7b04f9 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
-    <link rel="next" title="语言参考" href="../../../../reference/langref/index.html" />
+    <link rel="next" title="Language Reference" href="../../../../reference/langref/index.html" />
     <link rel="prev" title="Auto-tuning a ALU fused op on VTA" href="tune_alu_vta.html" /> 
 </head>
 
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1925+g5f395b9ed
+                  0.8.dev1926+g93b7b04f9
                 </div>
             
           
@@ -204,39 +204,39 @@
               
             
             
-              <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">安装 TVM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">贡献值指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">Contributor Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../how_to/index.html">How To Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">开发者引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../dev/tutorial/index.html">Developer Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dev/how_to/how_to.html">开发者指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev/how_to/how_to.html">Developer How-To Guide</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">架构指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../arch/index.html">Design and Architecture</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">VTA: Versatile Tensor Accelerator</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../install.html">VTA安装指南</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/index.html">VTA设计与开发指南</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">VTA教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../install.html">VTA Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/index.html">VTA Design and Developer Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">VTA Tutorials</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../matrix_multiply.html">Simple Matrix Multiply</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vta_get_started.html">从 VTA 开始</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vta_get_started.html">Get Started with VTA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html#auto-tuning">Auto tuning</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html">Auto-tuning a ALU fused op on VTA</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#compile-network">编译网络</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#compile-network">Compile network</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#set-tuning-options">Set Tuning Options</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Auto-tuning a convolutional network on VTA</a></li>
 </ul>
@@ -247,13 +247,13 @@
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reference/publications.html">Publications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">索引</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../genindex.html">Index</a></li>
 </ul>
 
             
@@ -312,7 +312,7 @@
         
           <li><a href="../../index.html">VTA: Versatile Tensor Accelerator</a> <span class="br-arrow">></span></li>
         
-          <li><a href="../index.html">VTA教程</a> <span class="br-arrow">></span></li>
+          <li><a href="../index.html">VTA Tutorials</a> <span class="br-arrow">></span></li>
         
       <li>Auto-tuning a convolutional network on VTA</li>
     
@@ -384,7 +384,7 @@ sudo make cython3
 </div>
 </div>
 <div class="section" id="compile-network">
-<h2>编译网络<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h2>
+<h2>Compile network<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h2>
 <p>Perform vta-specific compilation with Relay from a Gluon model</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compile_network</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">start_pack</span><span class="p">,</span> <span class="n">stop_pack</span><span class="p">):</span>
 
@@ -423,7 +423,7 @@ sudo make cython3
 </div>
 </div>
 <div class="section" id="start-rpc-tracker">
-<h2>启动 RPC 跟踪器<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
+<h2>Start RPC Tracker<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
 <p>TVM uses an RPC session to communicate with Pynq boards.
 During tuning, the tuner will send the generated code to the board and
 measure the speed of code on the board.</p>
@@ -738,7 +738,7 @@ the <code class="docutils literal notranslate"><span class="pre">`TARGET</span><
 <span class="n">tune_and_evaluate</span><span class="p">(</span><span class="n">tuning_option</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Extract tasks...
 Extracted 10 conv2d tasks:
 (1, 14, 14, 256, 512, 1, 1, 0, 0, 2, 2)
@@ -755,7 +755,7 @@ Extracted 10 conv2d tasks:
 </div>
 </div>
 <div class="section" id="sample-output">
-<h2>样本输出<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
+<h2>Sample Output<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
 <p>The tuning needs to compile many programs and extract feature from them.
 So a high performance CPU is recommended.
 One sample output is listed below.
@@ -827,10 +827,10 @@ error messages.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../../../reference/langref/index.html" class="btn btn-neutral float-right" title="语言参考" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../../../reference/langref/index.html" class="btn btn-neutral float-right" title="Language Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tune_alu_vta.html" class="btn btn-neutral float-left" title="Auto-tuning a ALU fused op on VTA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="tune_alu_vta.html" class="btn btn-neutral float-left" title="Auto-tuning a ALU fused op on VTA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
 
