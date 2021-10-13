@@ -1,0 +1,470 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>介绍 &mdash; tvm 0.8.dev1734+gca660ba1e 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/tlcpack_theme.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/tvm-logo-square.png"/>
+  
+
+  
+  
+  
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <script type="text/javascript" src="../_static/js/tlcpack_theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="安装 TVM" href="install.html" />
+    <link rel="prev" title="User Tutorial" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    
+<header class="header">
+    <div class="innercontainer">
+      <div class="headerInner d-flex justify-content-between align-items-center">
+          <div class="headerLogo">
+               <a href="https://tvm.apache.org/"><img src=https://tvm.apache.org/assets/images/logo.svg alt="logo"></a>
+          </div>
+
+          <div id="headMenu" class="headerNav">
+            <button type="button" id="closeHeadMenu" class="navCloseBtn"><img src="../_static/img/close-icon.svg" alt="Close"></button>
+             <ul class="nav">
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvm.apache.org/community>Community</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvm.apache.org/download>Download</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvm.apache.org/vta>VTA</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvm.apache.org/blog>Blog</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvm.apache.org/docs>Docs</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmconf.org>Conference</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://github.com/apache/tvm/>Github</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href=https://tvmchinese.github.io/declaration_zh_CN.html>About-Translators</a>
+                </li>
+             </ul>
+               <div class="responsivetlcdropdown">
+                 <button type="button" class="btn-link">
+                   ASF
+                 </button>
+                 <ul>
+                     <li>
+                       <a href=https://apache.org/>Apache Homepage</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/licenses/>License</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/foundation/sponsorship.html>Sponsorship</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/security/>Security</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/foundation/thanks.html>Thanks</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/events/current-event>Events</a>
+                     </li>
+                     <li>
+                       <a href=https://www.zhihu.com/column/c_1429578595417563136>Zhihu</a>
+                     </li>
+                 </ul>
+               </div>
+          </div>
+            <div class="responsiveMenuIcon">
+              <button type="button" id="menuBtn" class="btn-menu"><img src="../_static/img/menu-icon.svg" alt="Menu Icon"></button>
+            </div>
+
+            <div class="tlcDropdown">
+              <div class="dropdown">
+                <button type="button" class="btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ASF
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <ul>
+                     <li>
+                       <a href=https://apache.org/>Apache Homepage</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/licenses/>License</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/foundation/sponsorship.html>Sponsorship</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/security/>Security</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/foundation/thanks.html>Thanks</a>
+                     </li>
+                     <li>
+                       <a href=https://www.apache.org/events/current-event>Events</a>
+                     </li>
+                     <li>
+                       <a href=https://www.zhihu.com/column/c_1429578595417563136>Zhihu</a>
+                     </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+       </div>
+    </div>
+ </header>
+ 
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side fixed">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/tvm-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+                <div class="version">
+                  0.8.dev1734+gca660ba1e
+                </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">Contributor Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contents">内容目录</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">使用TVMC编译和优化一个模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotvm_relay_x86.html">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">使用张量表达式来处理运算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_scheduler_matmul_x86.html">Optimizing Operators with Auto-scheduling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cross_compilation_and_rpc.html">Cross Compilation and RPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_topi.html">Introduction to TOPI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to/index.html">How To Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/tutorial/index.html">Developer Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/how_to/how_to.html">开发者指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Architecture  Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../arch/index.html">Design and Architecture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/api/python/index.html">Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/api/links.html">Other APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/publications.html">Publications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">索引</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      
+      <nav class="wy-nav-top" aria-label="top navigation" data-toggle="wy-nav-top">
+        
+            <div class="togglemenu">
+
+            </div>
+            <div class="nav-content">
+              <!-- tvm -->
+              Table of content
+            </div>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> <span class="br-arrow">></span></li>
+        
+          <li><a href="index.html">User Tutorial</a> <span class="br-arrow">></span></li>
+        
+      <li>介绍</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorial/introduction.rst.txt" rel="nofollow"> <img src="../_static//img/source.svg" alt="viewsource"/></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">注解</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorial-introduction-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="introduction">
+<span id="sphx-glr-tutorial-introduction-py"></span><h1>介绍<a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://github.com/">Jocelyn Shiue</a>, <a class="reference external" href="https://github.com/hogepodge">Chris Hoge</a>, <a class="reference external" href="https://github.com/merrymercy">Lianmin Zheng</a></p>
+<p>ApacheTVM是一个面向CPU、GPU和机器学习加速器的开源机器学习编译器框架。它旨在使机器学习工程师能够在任何后端设备高效地优化并运行计算。本教程的目的是通过解释和说明关键概念，引导您了解TVM的所有主要功能。新用户应该能够从头到尾学习本教程并可以操作TVM进行自动模型优化，同时对TVM体系结构及其工作原理有基本了解。</p>
+<div class="section" id="contents">
+<h2>内容目录<a class="headerlink" href="#contents" title="永久链接至标题">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#"><span class="doc">Introduction</span></a></p></li>
+<li><p><a class="reference internal" href="install.html"><span class="doc">Installing TVM</span></a></p></li>
+<li><p><a class="reference internal" href="tvmc_command_line_driver.html"><span class="doc">Compiling and Optimizing a Model with the Command Line Interface</span></a></p></li>
+<li><p><a class="reference internal" href="autotvm_relay_x86.html"><span class="doc">Compiling and Optimizing a Model with the Python Interface</span></a></p></li>
+<li><p><a class="reference internal" href="tensor_expr_get_started.html"><span class="doc">Working with Operators Using Tensor Expression</span></a></p></li>
+<li><p><a class="reference internal" href="autotvm_matmul_x86.html"><span class="doc">Optimizing Operators with Templates and AutoTVM</span></a></p></li>
+<li><p><a class="reference internal" href="auto_scheduler_matmul_x86.html"><span class="doc">Optimizing Operators with Template-free AutoScheduler</span></a></p></li>
+<li><p><a class="reference internal" href="cross_compilation_and_rpc.html"><span class="doc">Cross Compilation and Remote Procedure Calls (RPC)</span></a></p></li>
+<li><p><a class="reference internal" href="relay_quick_start.html"><span class="doc">Compiling Deep Learning Models for GPUs</span></a></p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="an-overview-of-tvm-and-model-optimization">
+<h1>TVM和模型优化的概述<a class="headerlink" href="#an-overview-of-tvm-and-model-optimization" title="永久链接至标题">¶</a></h1>
+<p>下图说明了机器模型在使用TVM优化编译器框架进行转换时所采取的步骤。</p>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/apache/tvm-site/main/images/tutorial/overview.png"><img alt="TVM高级视图" src="https://raw.githubusercontent.com/apache/tvm-site/main/images/tutorial/overview.png" style="width: 100%;" /></a>
+<ol class="arabic">
+<li><p>从 “Tensorflow”、”Pytorch”或”Onnx”等框架导入模型。导入层是 TVM 可以从其他框架（如Tensorflow、PyTorch 或 ONNX）中接收模型的地方。随着我们不断改进开源项目，TVM为每个前端提供的支持水平会各不相同。如果您在将模型导入 TVM 时遇到问题，您可能需要尝试将其转换为 ONNX。</p></li>
+<li><p><em>Relay</em>，TVM 的高级别模型语言。已导入TVM的模型会在Relay中表示。Relay是一种用于神经网络的功能性语言和中间代表（IR）。它支持：</p>
+<ul class="simple">
+<li><p>传统数据流式表示</p></li>
+<li><p>Functional-style scoping, let-binding which makes it a fully featured
+differentiable language</p></li>
+<li><p>Ability to allow the user to mix the two programming styles</p></li>
+</ul>
+<p>Relay应用图级优化通道来优化模型</p>
+</li>
+<li><p>降低至 <em>Tensor Expression</em> （TE） 表示。降低是指将较高级别的表示转换为较低级别的表示。应用高级优化后，Relay运行FuseOps 将模型划分为许多小子图并将子图降低到TE表示。Tensor Expression （TE） 是描述张力计算的特定域语言。TE还提供了几个*schedule*原语来指定低级循环优化，例如平铺、矢量化、并行化、展开和融合。为了促进将Relay表示转换为TE表示的过程，TVM包括一个张量运算符清单（TOPI），该清单具有公共张量运算符的预定义模板（例如conv2d、transpose）。</p></li>
+<li><p>使用自动调整模块*AutoVM*或*AutoScheduler*搜索最佳方案。计划为TE中定义的运算符或子图指定低级循环优化。自动调整模块搜索最佳计划并将其与成本模型和设备测量值进行比较。TVM中有两个自动调谐模块。</p>
+<ul class="simple">
+<li><p><strong>AutoTVM</strong>：基于模板的自动调整模块。它运行搜索算法为用户定义的模板中的可调旋钮找到最佳值。对于普通操作者，其模板已在TOPI中提供。</p></li>
+<li><p><strong>AutoScheduler (又称Ansor)</strong>：无模板自动调整模块。它不需要预定义的计划模板。相反，它通过分析计算定义自动生成搜索空间。然后在生成的搜索空间中搜索最佳计划。</p></li>
+</ul>
+</li>
+<li><p>为模型编译选择最佳配置。调整之后，自动调整模块以JSON格式生成调整记录。此步骤为每个子图选择最佳计划。</p></li>
+<li><p>降低Tensor Intermediate Representation (TIR)，TVM的低水平中间表示。在根据调整步骤选择最佳配置后，每个TE子图被降低到TIR并通过低级优化过程进行优化。接下来，将优化的TIR降低到硬件平台的目标编译器。这是生成可部署到生产中的优化模型的最后代码生成阶段。TVM支持几种不同的编译器后端，包括：</p>
+<ul class="simple">
+<li><p>LLVM，可针对任意微处理器体的系结构，包括标准x86和ARM处理器、AMDGPU和NVPTX代码生成，以及LLVM支持的任何其他平台。</p></li>
+<li><p>专门的编译器，如NVCC，NVIDIA的编译器。</p></li>
+<li><p>通过TVM的自带Codegen（BYOC）框架实现的嵌入式和专用目标。</p></li>
+</ul>
+</li>
+<li><p>编译到机器代码。在此过程结束时，特定于编译器生成的代码可以降低为机器代码。</p>
+<p>TVM可以将模型编译为可链接的对象模块，然后在可以使用轻量级TVM运行时运行该模块，该运行时提供了动态加载模型的C APIs以及Python和Rust等其他语言的接口。TVM还可以构建一个运行时与模型组合在一个包中的捆绑部署。</p>
+</li>
+</ol>
+<p>本教程的其余部分将更详细地介绍TVM的这些方面。</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-introduction-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/31d82e25454740f5ba711497485c0dd4/introduction.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">introduction.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/9f81bc348ac4107d0670f512b8943a99/introduction.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">introduction.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          
+
+<footer>
+
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="安装 TVM" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="User Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+      
+    </div>
+
+<div id="button" class="backtop"><img src="../_static//img/right.svg" alt="backtop"/> </div>
+<section class="footerSec">
+    <div class="footerHeader">
+      <ul class="d-flex align-md-items-center justify-content-between flex-column flex-md-row">
+        <li class="copywrite d-flex align-items-center">
+          <h5 id="copy-right-info">© 2020 Apache Software Foundation | All right reserved</h5>
+        </li>
+      </ul>
+
+    </div>
+
+    <ul>
+      <li class="footernote">Copyright © 2020 The Apache Software Foundation. Apache TVM, Apache, the Apache feather, and the Apache TVM project logo are either trademarks or registered trademarks of the Apache Software Foundation.</li>
+    </ul>
+
+</section>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-75982049-2', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

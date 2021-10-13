@@ -1,0 +1,14 @@
+
+:orphan:
+
+.. _sphx_glr_how_to_tune_with_autotvm_sg_execution_times:
+
+Computation times
+=================
+**00:41.843** total execution time for **how_to_tune_with_autotvm** files:
+
+- **00:40.816**: :ref:`sphx_glr_how_to_tune_with_autotvm_tune_conv2d_cuda.py` (``tune_conv2d_cuda.py``)
+- **00:00.263**: :ref:`sphx_glr_how_to_tune_with_autotvm_tune_relay_arm.py` (``tune_relay_arm.py``)
+- **00:00.261**: :ref:`sphx_glr_how_to_tune_with_autotvm_tune_relay_cuda.py` (``tune_relay_cuda.py``)
+- **00:00.253**: :ref:`sphx_glr_how_to_tune_with_autotvm_tune_relay_x86.py` (``tune_relay_x86.py``)
+- **00:00.250**: :ref:`sphx_glr_how_to_tune_with_autotvm_tune_relay_mobile_gpu.py` (``tune_relay_mobile_gpu.py``)
