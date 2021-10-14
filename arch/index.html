@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Design and Architecture &mdash; tvm 0.8.dev1928+gf780d8655 文档</title>
+  <title>Design and Architecture &mdash; tvm 0.8.dev1929+g701e06fdc 文档</title>
   
 
   
@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="../_static/css/tlcpack_theme.css" type="text/css" />
 
   
+  
+    <link rel="shortcut icon" href="../_static/tvm-logo-square.png"/>
   
 
   
@@ -164,9 +166,12 @@
           
 
           
-            <a href="../index.html" class="sidetitle" alt="Documentation Home"> tvm
+            <a href="../index.html">
           
 
+          
+            
+            <img src="../_static/tvm-logo-small.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -174,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1928+gf780d8655
+                  0.8.dev1929+g701e06fdc
                 </div>
             
           
@@ -219,7 +224,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Design and Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#example-compilation-flow">编译流程示例</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#key-data-structures">关键数据结构</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#transformations">Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformations">转换</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#search-space-and-learning-based-transformations">Search-space and Learning-based Transformations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#target-translation">Target Translation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#runtime-execution">Runtime Execution</a></li>
@@ -397,17 +402,15 @@ and code-generation target.</p></li>
 <p><a href="#id1"><span class="problematic" id="id2">**</span></a>IRModule**是整个堆栈中主要的数据结构。一个IR模块（IRmodule，中间表示模块）包含一组函数。目前我们支持两种主要的函数变体。</p>
 <ul class="simple">
 <li><p><strong>relay::Function</strong> 是一种高级函数程序表示。一个relay.Function通常对应一个端到端模型。你可以将relay.Function看作一个计算图，额外带有对控制流，递归和复杂数据结构的支持。</p></li>
-<li><p><strong>tir::PrimFunc</strong> is a low-level program representation that contains elements including loop-nest choices, multi-dimensional load/store,
-threading, and vector/tensor instructions. It is usually used to represent an operator program that executes a (possibly-fused) layer in a model.</p></li>
+<li><p><strong>tir::PrimFunc</strong> 是一种低级程序表示，包含元素，包含循环嵌套选择、多维加载/存储、线程和向量/张量指令等元素。它通常被用于表示在一个模型模型中处理一个（可能融合的）层的算子程序。</p></li>
 </ul>
-<p>During the compilation, a relay function may be lowered to multiple tir::PrimFunc functions and a top-level function that calls into
-those tir::PrimFunc functions.</p>
+<p>在编译时，一个relay 函数可能被底层化为多个tir::PrimFunc 函数 和一个调用这些tir::PrimFunc函数的顶层函数。</p>
 </div>
 <div class="section" id="transformations">
-<h3>Transformations<a class="headerlink" href="#transformations" title="永久链接至标题">¶</a></h3>
-<p>Now that we have covered the key data structures, let us talk about the transformations. Each transformation could serve one of the following purposes:</p>
+<h3>转换<a class="headerlink" href="#transformations" title="永久链接至标题">¶</a></h3>
+<p>现在我们已经介绍了关键数据结构，让我们来讨论转换。每个转换都被可用于以下目的之一：</p>
 <ul class="simple">
-<li><p>optimization: transform a program to an equivalent, possibly more optimized version.</p></li>
+<li><p>优化：将程序转换为一个等效的或者更优化的版本。</p></li>
 <li><p>lowering: transform a program to a lower-level representation that is closer to the target.</p></li>
 </ul>
 <p><strong>relay/transform</strong> contains a collection of passes that optimize the model. The optimizations include common program
@@ -707,10 +710,10 @@ customize the search and plugin their algorithms from the Python binding.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="runtime.html" class="btn btn-neutral float-right" title="TVM Runtime System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="runtime.html" class="btn btn-neutral float-right" title="TVM Runtime System" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../dev/how_to/pytest_target_parametrization.html" class="btn btn-neutral float-left" title="Python Target Parametrization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../dev/how_to/pytest_target_parametrization.html" class="btn btn-neutral float-left" title="Python Target Parametrization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 
