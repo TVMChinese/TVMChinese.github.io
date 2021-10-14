@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Design and Architecture &mdash; tvm 0.8.dev1929+g701e06fdc 文档</title>
+  <title>Design and Architecture &mdash; tvm 0.8.dev1930+g6db80718d 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1929+g701e06fdc
+                  0.8.dev1930+g6db80718d
                 </div>
             
           
@@ -411,22 +411,17 @@ and code-generation target.</p></li>
 <p>现在我们已经介绍了关键数据结构，让我们来讨论转换。每个转换都被可用于以下目的之一：</p>
 <ul class="simple">
 <li><p>优化：将程序转换为一个等效的或者更优化的版本。</p></li>
-<li><p>lowering: transform a program to a lower-level representation that is closer to the target.</p></li>
+<li><p>底层化：将一个程序转化为更靠近目标，更底层的表达式。</p></li>
 </ul>
-<p><strong>relay/transform</strong> contains a collection of passes that optimize the model. The optimizations include common program
-optimizations such as constant folding and dead-code elimination, and tensor-computation specific passes such as layout
-transformation and scaling factor folding.</p>
-<p>Near the end of the relay optimization pipeline, we will run a pass(FuseOps) to break the end-to-end function(e.g. MobileNet)
-into sub-function(e.g. conv2d-relu) segments. We call these segments of functions.
-This process helps us to divide the original problem into two sub-problems:</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>relay/transform**包含一组优化模型的passes。优化包含常见的程序优化比如常数折叠和死码消除，以及张量特定的passes例如布局转换和比例因子折叠。</p>
+<p>在relay优化pipeline的末尾，我们会运行一个pass（FuseOps）来将端到端函数（例如：MobileNet）拆分为子函数（例如：conv2d-relu）段。我们把这些称为函数段。这个过程帮助我们将原始的问题分为两个子问题。</p>
 <ul class="simple">
-<li><p>Compilation and optimization for each sub-function.</p></li>
-<li><p>Overall execution structure: we need to do a sequence of calls into the generated sub-functions to execute the whole model.</p></li>
+<li><p>子函数的编译和优化。</p></li>
+<li><p>总体执行结构：我们需要对生成的子函数做一系列的调用来执行整个模型。</p></li>
 </ul>
-<p>We use the low-level tir phase to compile and optimize each sub-functions. For specific targets, we may also directly go to the target translation
-phase and use external code generators.</p>
-<p>There are a few different ways(in relay/backend) to handle the calls into the overall execution problem. For simple models with known shapes and no control flow, we can lower to a graph executor that stores the execution structure in a graph. We also support a virtual machine backend for dynamic executions. Finally, we plan to support ahead of time compilation that compiles the high-level execution structure into the executable and generated primitive functions. All of these execution modes are encapsulated by a unified <strong>runtime.Module</strong> interface, which we will discuss in the latter part of the guide.</p>
-<p><strong>tir/transform</strong> contains transformation passes for TIR level functions. Many tir passes serve the purpose of lowering. For example, there are passes to flatten multi-dimensional access to one-dimensional pointer access, to expand the intrinsics into target-specific ones, and to decorate the function entry to meet the runtime calling convention. Of course, there are also optimizations passes, such as access index simplification and dead code elimination.</p>
+<p>我们用底层tir阶段来编译和优化每个子函数。对特定的目标，我们也可以直接进入目标转化阶段并使用外部代码生成器。</p>
+<p>有几种不同的方法（在relay/backend）里来处理对整个执行问题的调用。对于具有已知形状且没有控制流的简单模型，我们可以底层化为一个将执行结构存储在图像里的图像执行器。我们也支持用于动态执行的虚拟机后端。最后，我们计划支持提前编译，将高层执行结构编译为可执行的和被生成的原语函数。所有的这些执行模式都被封装在一个同意的 <strong>runtime.Module</strong> 接口，我们将在这个指南的后半部分讨论这个接口。</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>tir/transform**包含TIR层函数的转换passes。很多tir passes的目的是底层化。例如，有些passes将多维访问扁平化为一维指针访问，来内部函数扩展为目标指定函数，以及修饰函数入口来满足runtime调用习惯。当然，也有一些优化passes比如访问索引简化和死码消除。</p>
 <p>Many low-level optimizations can be handled in the target phase by the LLVM, CUDA C, and other target compilers. As a result, we leave low-level optimizations such as register allocation to the downstream compilers and only focus on optimizations that are not covered by them.</p>
 </div>
 <div class="section" id="search-space-and-learning-based-transformations">
