@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.relay &mdash; tvm 0.8.dev1930+g6db80718d 文档</title>
+  <title>tvm.relay &mdash; tvm 0.8.dev1931+ga735e3baf 文档</title>
   
 
   
@@ -180,7 +180,7 @@
             
             
                 <div class="version">
-                  0.8.dev1930+g6db80718d
+                  0.8.dev1931+ga735e3baf
                 </div>
             
           
@@ -388,7 +388,7 @@
 <td><p>Bind an free variables in expr or function arguments.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code>(data)</p></td>
-<td><p>Compute element-wise absolute of data.</p></td>
+<td><p>数据的点对应取绝对值运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">acos</span></code>(data)</p></td>
 <td><p>Compute elementwise acos of data.</p></td>
@@ -397,28 +397,28 @@
 <td><p>Compute elementwise acosh of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code>(lhs, rhs)</p></td>
-<td><p>Addition with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播加法运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">adv_index</span></code>(inputs)</p></td>
 <td><p>Numpy style advanced indexing.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code>(data[, axis, keepdims, exclude])</p></td>
-<td><p>Computes the logical AND of boolean array elements over given axes.</p></td>
+<td><p>沿着给定的轴对布尔数组的元素执行逻辑与计算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code>(data[, axis, keepdims, exclude])</p></td>
-<td><p>Computes the logical OR of boolean array elements over given axes.</p></td>
+<td><p>沿着给定的轴对布尔数组的元素执行逻辑或计算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">arange</span></code>(start[, stop, step, dtype])</p></td>
-<td><p>Return evenly spaced values within a given interval.</p></td>
+<td><p>在给定范围内返回均匀间隔的值。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmax</span></code>(data[, axis, keepdims, exclude, …])</p></td>
-<td><p>Returns the indices of the maximum values along an axis.</p></td>
+<td><p>沿轴返回最大值的索引。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmin</span></code>(data[, axis, keepdims, exclude, …])</p></td>
-<td><p>Returns the indices of the minimum values along an axis.</p></td>
+<td><p>沿轴返回最小值的索引。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argsort</span></code>(data[, axis, is_ascend, dtype])</p></td>
-<td><p>Performs sorting along the given axis and returns an array of indicies having same shape as an input array that index data in sorted order.</p></td>
+<td><p>沿给定轴对数组执行排序操作后，保持数组形状不变，输出排序数组对应的索引数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argwhere</span></code>(condition)</p></td>
 <td><p>Find the indices of elements of a tensor that are non-zero.</p></td>
@@ -448,10 +448,10 @@
 <td><p>bitwise XOR with numpy-style broadcasting.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">broadcast_to</span></code>(data, shape)</p></td>
-<td><p>Return a scalar value array with the same type, broadcast to the provided shape.</p></td>
+<td><p>将标量数组广播至给定的形状并返回，且不改变其数据类型。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">broadcast_to_like</span></code>(data, broadcast_type)</p></td>
-<td><p>Return a scalar value array with the same shape and type as the input array.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cast</span></code>(data, dtype)</p></td>
 <td><p>Cast input tensor to data type.</p></td>
@@ -466,7 +466,7 @@
 <td><p>Clip the elements in <cite>a</cite> between <cite>a_min</cite> and <cite>a_max</cite>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">collapse_sum_like</span></code>(data, collapse_type)</p></td>
-<td><p>Return a scalar value array with the same shape and type as the input array.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">collapse_sum_to</span></code>(data, shape)</p></td>
 <td><p>Return a summation of data to the specified shape.</p></td>
@@ -529,7 +529,7 @@
 <td><p>Fill array with scalar value.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">full_like</span></code>(data, fill_value)</p></td>
-<td><p>Return a scalar value array with the same shape and type as the input array.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather</span></code>(data, axis, indices)</p></td>
 <td><p>Gather values along given axis from given indices.</p></td>
@@ -703,7 +703,7 @@
 <td><p>Compute elementwise sigmoid of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign</span></code>(data)</p></td>
-<td><p>Compute element-wise absolute of data.</p></td>
+<td><p>数据的点对应取绝对值运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sin</span></code>(data)</p></td>
 <td><p>Compute elementwise sin of data.</p></td>
@@ -760,7 +760,7 @@
 <td><p>Compute elementwise tan of data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tanh</span></code>(data)</p></td>
-<td><p>Compute element-wise tanh of data.</p></td>
+<td><p>数据的点对应 tanh 运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code>(data, reps)</p></td>
 <td><p>Repeats the whole array multiple times.</p></td>
@@ -1654,7 +1654,7 @@ as an argument to an FFI function.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Compute element-wise absolute of data.</p>
+<dd><p>数据的点对应取绝对值运算。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><p><strong>data</strong> (<em>relay.Expr</em>) – The input data</p>
@@ -1705,7 +1705,7 @@ as an argument to an FFI function.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lhs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhs</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Addition with numpy-style broadcasting.</p>
+<dd><p>Numpy 风格的广播加法运算。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1749,7 +1749,7 @@ The first tensor is input data and rests are indices.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Computes the logical AND of boolean array elements over given axes.</p>
+<dd><p>沿着给定的轴对布尔数组的元素执行逻辑与计算。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1794,7 +1794,7 @@ NOT in axis instead.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">any</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Computes the logical OR of boolean array elements over given axes.</p>
+<dd><p>沿着给定的轴对布尔数组的元素执行逻辑或计算。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1839,7 +1839,7 @@ NOT in axis instead.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">arange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'float32'</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Return evenly spaced values within a given interval.</p>
+<dd><p>在给定范围内返回均匀间隔的值。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
 <p>Similar to <code class="docutils literal notranslate"><span class="pre">numpy.arange</span></code>, when only one argument is given, it is used
@@ -1875,7 +1875,7 @@ value is 0.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">argmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_last_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Returns the indices of the maximum values along an axis.</p>
+<dd><p>沿轴返回最大值的索引。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1904,7 +1904,7 @@ multiple indices, default is False (first index).</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">argmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_last_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Returns the indices of the minimum values along an axis.</p>
+<dd><p>沿轴返回最小值的索引。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1933,8 +1933,7 @@ multiple indices, default is False (first index).</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">argsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_ascend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int32'</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Performs sorting along the given axis and returns an array of indicies
-having same shape as an input array that index data in sorted order.</p>
+<dd><p>沿给定轴对数组执行排序操作后，保持数组形状不变，输出排序数组对应的索引数组。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2125,8 +2124,7 @@ non-zero.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">broadcast_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Return a scalar value array with the same type, broadcast to
-the provided shape.</p>
+<dd><p>将标量数组广播至给定的形状并返回，且不改变其数据类型。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2146,7 +2144,7 @@ the provided shape.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">broadcast_to_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast_type</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Return a scalar value array with the same shape and type as the input array.</p>
+<dd><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2251,7 +2249,7 @@ the provided shape.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">collapse_sum_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">collapse_type</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Return a scalar value array with the same shape and type as the input array.</p>
+<dd><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2712,7 +2710,7 @@ is a Q-number with 31 fractional bits</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">full_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Return a scalar value array with the same shape and type as the input array.</p>
+<dd><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -4161,7 +4159,7 @@ equivalent to the number of unique segment_ids</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Compute element-wise absolute of data.</p>
+<dd><p>数据的点对应取绝对值运算。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><p><strong>data</strong> (<em>relay.Expr</em>) – The input data</p>
@@ -4644,7 +4642,7 @@ fast: no clip or wrap around (user must make sure indices are in-bound).</p></li
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.</span></span><span class="sig-name descname"><span class="pre">tanh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Compute element-wise tanh of data.</p>
+<dd><p>数据的点对应 tanh 运算。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><p><strong>data</strong> (<em>relay.Expr</em>) – The input data</p>

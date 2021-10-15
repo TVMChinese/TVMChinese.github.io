@@ -632,100 +632,93 @@ so we can read the log file and load the best schedules.
       1: tvm::transform::ModulePassNode::operator()(tvm::IRModule, tvm::transform::PassContext const&) const
       0: std::_Function_handler<void (tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*), tvm::runtime::TypedPackedFunc<tvm::IRModule (tvm::IRModule, tvm::transform::PassContext)>::AssignTypedLambda<tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1}>(tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1})::{lambda(tvm::runtime::TVMArgs const&, tvm::runtime::TVMRetValue*)#1}>::_M_invoke(std::_Any_data const&, tvm::runtime::TVMArgs&&, tvm::runtime::TVMRetValue*&&)
       Did you forget to bind?
-        Variable `T_relu` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
         Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
+        Variable `T_add` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
         Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
         Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
       File "/tvm_chinese/tvm/src/tir/analysis/verify_memory.cc", line 206
     RuntimeError: Memory verification failed with the following errors:
-    PrimFunc([placeholder, placeholder, placeholder, T_relu]) attrs={"target": cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, "tir.noalias": (bool)1, "global_symbol": "tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_nn_relu_2", "from_legacy_te_schedule": (bool)1} {
-      allocate data_pad[float32 * 401408], storage_scope = global
-      allocate input_tile[float32 * 401408], storage_scope = global
-      allocate B[float32 * 16], storage_scope = global
-      for (i1, 0, 30) {
-        for (i2, 0, 30) {
-          for (i3, 0, 128) {
-            data_pad[(((i1*3840) + (i2*128)) + i3)] = tir.if_then_else(((((1 <= i1) && (i1 < 29)) && (1 <= i2)) && (i2 < 29)), placeholder[((((i1*3584) + (i2*128)) + i3) - 3712)], 0f)
+    PrimFunc([placeholder, placeholder, placeholder, T_add]) attrs={"target": cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, "tir.noalias": (bool)1, "global_symbol": "tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_3", "from_legacy_te_schedule": (bool)1} {
+      allocate data_pad[float32 * 451584], storage_scope = global
+      allocate input_tile[float32 * 451584], storage_scope = global
+      allocate B[float32 * 36], storage_scope = global
+      for (i1, 0, 58) {
+        for (i2, 0, 58) {
+          for (i3, 0, 64) {
+            data_pad[(((i1*3712) + (i2*64)) + i3)] = tir.if_then_else(((((1 <= i1) && (i1 < 57)) && (1 <= i2)) && (i2 < 57)), placeholder[((((i1*3584) + (i2*64)) + i3) - 3648)], 0f)
           }
         }
       }
-      for (eps, 0, 4) {
-        for (nu, 0, 4) {
+      for (eps, 0, 6) {
+        for (nu, 0, 6) {
           for (p, 0, 196) {
-            for (ci, 0, 128) {
-              input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] = data_pad[(((((floordiv(p, 14)*7680) + (eps*3840)) + (floormod(p, 14)*256)) + (nu*128)) + ci)]
+            for (ci, 0, 64) {
+              input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] = data_pad[(((((floordiv(p, 14)*14848) + (eps*3712)) + (floormod(p, 14)*256)) + (nu*64)) + ci)]
             }
           }
         }
       }
-      for (i, 0, 4) {
+      for (i, 0, 6) {
+        for (j, 0, 6) {
+          B[((i*6) + j)] = select(((i == 5) && (j == 5)), 1f, select(((i == 5) && (j == 4)), 0f, select(((i == 5) && (j == 3)), 0f, select(((i == 5) && (j == 2)), 0f, select(((i == 5) && (j == 1)), 0f, select(((i == 5) && (j == 0)), 0f, select(((i == 4) && (j == 5)), 1.5f, select(((i == 4) && (j == 4)), 1f, select(((i == 4) && (j == 3)), 1f, select(((i == 4) && (j == 2)), 1f, select(((i == 4) && (j == 1)), 1f, select(((i == 4) && (j == 0)), 1f, select(((i == 3) && (j == 5)), -2f, select(((i == 3) && (j == 4)), -0.5f, select(((i == 3) && (j == 3)), 2f, select(((i == 3) && (j == 2)), 2.5f, select(((i == 3) && (j == 1)), 0.5f, select(((i == 3) && (j == 0)), 1.5f, select(((i == 2) && (j == 5)), -1.5f, select(((i == 2) && (j == 4)), -1f, select(((i == 2) && (j == 3)), -1f, select(((i == 2) && (j == 2)), 0.5f, select(((i == 2) && (j == 1)), -2.5f, select(((i == 2) && (j == 0)), -2f, select(((i == 1) && (j == 5)), 1f, select(((i == 1) && (j == 4)), 0.5f, select(((i == 1) && (j == 3)), -2f, select(((i == 1) && (j == 2)), -1f, select(((i == 1) && (j == 1)), 1f, select(((i == 1) && (j == 0)), -1.5f, select(((i == 0) && (j == 5)), 0f, select(((i == 0) && (j == 4)), 0f, select(((i == 0) && (j == 3)), 0f, select(((i == 0) && (j == 2)), 0f, select(((i == 0) && (j == 1)), 0f, select(((i == 0) && (j == 0)), 1f, 0f))))))))))))))))))))))))))))))))))))
+        }
+      }
+      for (eps, 0, 6) {
+        for (nu, 0, 6) {
+          for (p, 0, 196) {
+            for (ci, 0, 64) {
+              data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] = 0f
+              for (r_a, 0, 6) {
+                for (r_b, 0, 6) {
+                  data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] = (data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] + ((input_tile[((((r_a*75264) + (r_b*12544)) + (p*64)) + ci)]*B[((r_a*6) + eps)])*B[((r_b*6) + nu)]))
+                }
+              }
+            }
+          }
+        }
+      }
+      for (eps, 0, 6) {
+        for (nu, 0, 6) {
+          for (p, 0, 196) {
+            for (co, 0, 64) {
+              input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + co)] = 0f
+              for (ci, 0, 64) {
+                input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + co)] = (input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + co)] + (data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)]*placeholder[((((eps*24576) + (nu*4096)) + (co*64)) + ci)]))
+              }
+            }
+          }
+        }
+      }
+      for (i, 0, 6) {
         for (j, 0, 4) {
-          B[((i*4) + j)] = select(((i == 3) && (j == 3)), 1f, select(((i == 3) && (j == 2)), 0f, select(((i == 3) && (j == 1)), 0f, select(((i == 3) && (j == 0)), 0f, select(((i == 2) && (j == 3)), 0f, select(((i == 2) && (j == 2)), 1f, select(((i == 2) && (j == 1)), 1f, select(((i == 2) && (j == 0)), -1f, select(((i == 1) && (j == 3)), -1f, select(((i == 1) && (j == 2)), 1f, select(((i == 1) && (j == 1)), -1f, select(((i == 1) && (j == 0)), 0f, select(((i == 0) && (j == 3)), 0f, select(((i == 0) && (j == 2)), 0f, select(((i == 0) && (j == 1)), 0f, select(((i == 0) && (j == 0)), 1f, 0f))))))))))))))))
+          B[((i*4) + j)] = select(((i == 5) && (j == 3)), 1f, select(((i == 5) && (j == 2)), 0f, select(((i == 5) && (j == 1)), 0f, select(((i == 5) && (j == 0)), 0f, select(((i == 4) && (j == 3)), -8f, select(((i == 4) && (j == 2)), 4f, select(((i == 4) && (j == 1)), -2f, select(((i == 4) && (j == 0)), 1f, select(((i == 3) && (j == 3)), 0.125f, select(((i == 3) && (j == 2)), 0.25f, select(((i == 3) && (j == 1)), 0.5f, select(((i == 3) && (j == 0)), 1f, select(((i == 2) && (j == 3)), 1f, select(((i == 2) && (j == 2)), 1f, select(((i == 2) && (j == 1)), 1f, select(((i == 2) && (j == 0)), 1f, select(((i == 1) && (j == 3)), -1f, select(((i == 1) && (j == 2)), 1f, select(((i == 1) && (j == 1)), -1f, select(((i == 1) && (j == 0)), 1f, select(((i == 0) && (j == 3)), 0f, select(((i == 0) && (j == 2)), 0f, select(((i == 0) && (j == 1)), 0f, select(((i == 0) && (j == 0)), 1f, 0f))))))))))))))))))))))))
         }
       }
-      for (eps, 0, 4) {
-        for (nu, 0, 4) {
+      for (vh, 0, 4) {
+        for (vw, 0, 4) {
           for (p, 0, 196) {
-            for (ci, 0, 128) {
-              data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] = 0f
-              for (r_a, 0, 4) {
-                for (r_b, 0, 4) {
-                  data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] = (data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] + ((input_tile[((((r_a*100352) + (r_b*25088)) + (p*128)) + ci)]*B[((r_a*4) + eps)])*B[((r_b*4) + nu)]))
+            for (co, 0, 64) {
+              data_pad[((((vh*50176) + (vw*12544)) + (p*64)) + co)] = 0f
+              for (r_a, 0, 6) {
+                for (r_b, 0, 6) {
+                  data_pad[((((vh*50176) + (vw*12544)) + (p*64)) + co)] = (data_pad[((((vh*50176) + (vw*12544)) + (p*64)) + co)] + ((input_tile[((((r_a*75264) + (r_b*12544)) + (p*64)) + co)]*B[((r_a*4) + vh)])*B[((r_b*4) + vw)]))
                 }
               }
             }
           }
         }
       }
-      for (eps, 0, 4) {
-        for (nu, 0, 4) {
-          for (p, 0, 196) {
-            for (co, 0, 128) {
-              input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + co)] = 0f
-              for (ci, 0, 128) {
-                input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + co)] = (input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + co)] + (data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)]*placeholder[((((eps*65536) + (nu*16384)) + (co*128)) + ci)]))
-              }
-            }
+      for (h, 0, 56) {
+        for (w, 0, 56) {
+          for (co, 0, 64) {
+            input_tile[(((h*3584) + (w*64)) + co)] = data_pad[(((((floormod(h, 4)*50176) + (floormod(w, 4)*12544)) + (floordiv(h, 4)*896)) + (floordiv(w, 4)*64)) + co)]
           }
         }
       }
-      for (i, 0, 4) {
-        for (j, 0, 2) {
-          B[((i*2) + j)] = select(((i == 3) && (j == 1)), 1f, select(((i == 3) && (j == 0)), 0f, select(((i == 2) && (j == 1)), 1f, select(((i == 2) && (j == 0)), 1f, select(((i == 1) && (j == 1)), -1f, select(((i == 1) && (j == 0)), 1f, select(((i == 0) && (j == 1)), 0f, select(((i == 0) && (j == 0)), 1f, 0f))))))))
-        }
-      }
-      for (vh, 0, 2) {
-        for (vw, 0, 2) {
-          for (p, 0, 196) {
-            for (co, 0, 128) {
-              data_pad[((((vh*50176) + (vw*25088)) + (p*128)) + co)] = 0f
-              for (r_a, 0, 4) {
-                for (r_b, 0, 4) {
-                  data_pad[((((vh*50176) + (vw*25088)) + (p*128)) + co)] = (data_pad[((((vh*50176) + (vw*25088)) + (p*128)) + co)] + ((input_tile[((((r_a*100352) + (r_b*25088)) + (p*128)) + co)]*B[((r_a*2) + vh)])*B[((r_b*2) + vw)]))
-                }
-              }
-            }
-          }
-        }
-      }
-      for (h, 0, 28) {
-        for (w, 0, 28) {
-          for (co, 0, 128) {
-            input_tile[(((h*3584) + (w*128)) + co)] = data_pad[(((((floormod(h, 2)*50176) + (floormod(w, 2)*25088)) + (floordiv(h, 2)*1792)) + (floordiv(w, 2)*128)) + co)]
-          }
-        }
-      }
-      for (ax1, 0, 28) {
-        for (ax2, 0, 28) {
-          for (ax3, 0, 128) {
-            data_pad[(((ax1*3584) + (ax2*128)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[ax3])
-          }
-        }
-      }
-      for (ax1, 0, 28) {
-        for (ax2, 0, 28) {
-          for (ax3, 0, 128) {
-            T_relu[(((ax1*3584) + (ax2*128)) + ax3)] = max(data_pad[(((ax1*3584) + (ax2*128)) + ax3)], 0f)
+      for (ax1, 0, 56) {
+        for (ax2, 0, 56) {
+          for (ax3, 0, 64) {
+            T_add[(((ax1*3584) + (ax2*64)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*64)) + ax3)] + placeholder[(((ax1*3584) + (ax2*64)) + ax3)])
           }
         }
       }
