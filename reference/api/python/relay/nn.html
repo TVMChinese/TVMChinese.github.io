@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.relay.nn &mdash; tvm 0.8.dev1931+ga735e3baf 文档</title>
+  <title>tvm.relay.nn &mdash; tvm 0.8.dev1932+ge6e913622 文档</title>
   
 
   
@@ -180,7 +180,7 @@
             
             
                 <div class="version">
-                  0.8.dev1931+ga735e3baf
+                  0.8.dev1932+ge6e913622
                 </div>
             
           
@@ -394,13 +394,13 @@
 <td><p>1D average pooling operator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.avg_pool2d" title="tvm.relay.nn.avg_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">avg_pool2d</span></code></a>(data[, pool_size, strides, …])</p></td>
-<td><p>2D average pooling operator.</p></td>
+<td><p>2D 平均池化算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.avg_pool2d_grad" title="tvm.relay.nn.avg_pool2d_grad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">avg_pool2d_grad</span></code></a>(out_grad, data[, pool_size, …])</p></td>
 <td><p>Gradient of 2D average pooling operator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.avg_pool3d" title="tvm.relay.nn.avg_pool3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">avg_pool3d</span></code></a>(data[, pool_size, strides, …])</p></td>
-<td><p>3D average pooling operator.</p></td>
+<td><p>3D 平均池化算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.batch_flatten" title="tvm.relay.nn.batch_flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_flatten</span></code></a>(data)</p></td>
 <td><p>BatchFlatten.</p></td>
@@ -409,22 +409,22 @@
 <td><p>Compute batch matrix multiplication of <cite>tensor_a</cite> and <cite>tensor_b</cite>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.batch_norm" title="tvm.relay.nn.batch_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_norm</span></code></a>(data, gamma, beta, moving_mean, …)</p></td>
-<td><p>Batch normalization layer (Ioffe and Szegedy, 2014).</p></td>
+<td><p>批量处理规范化层 （Ioffe and Szegedy, 2014）。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.batch_to_space_nd" title="tvm.relay.nn.batch_to_space_nd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">batch_to_space_nd</span></code></a>(data, block_shape, crops)</p></td>
 <td><p>Reshape the batch dimension into spatial dimensions.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.bias_add" title="tvm.relay.nn.bias_add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bias_add</span></code></a>(data, bias[, axis])</p></td>
-<td><p>add_bias operator.</p></td>
+<td><p>add_bias 算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.bitpack" title="tvm.relay.nn.bitpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bitpack</span></code></a>(data[, bits, pack_axis, bit_axis, …])</p></td>
-<td><p>Tensor packing for bitserial operations.</p></td>
+<td><p>对于位序列算子的张量包装。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.bitserial_conv2d" title="tvm.relay.nn.bitserial_conv2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bitserial_conv2d</span></code></a>(data, weight[, strides, …])</p></td>
-<td><p>2D convolution using bitserial computation.</p></td>
+<td><p>使用位序列计算的 2D 卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.bitserial_dense" title="tvm.relay.nn.bitserial_dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bitserial_dense</span></code></a>(data, weight[, units, …])</p></td>
-<td><p>Bitserial Dense operator.</p></td>
+<td><p>位序列稠密算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.const" title="tvm.relay.nn.const"><code class="xref py py-obj docutils literal notranslate"><span class="pre">const</span></code></a>(value[, dtype])</p></td>
 <td><p>Create a constant value.</p></td>
@@ -439,22 +439,22 @@
 <td><p>Variant of 2D convolution.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.contrib_conv2d_winograd_nnpack_weight_transform" title="tvm.relay.nn.contrib_conv2d_winograd_nnpack_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contrib_conv2d_winograd_nnpack_weight_transform</span></code></a>(…)</p></td>
-<td><p>Weight Transformation part for 2D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法对 2D 卷积的转换部分进行加权。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.contrib_conv2d_winograd_weight_transform" title="tvm.relay.nn.contrib_conv2d_winograd_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contrib_conv2d_winograd_weight_transform</span></code></a>(…)</p></td>
-<td><p>Weight Transformation part for 2D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法对 2D 卷积的转换部分进行加权。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform" title="tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contrib_conv2d_winograd_without_weight_transform</span></code></a>(…)</p></td>
-<td><p>2D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法的 2D 卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.contrib_conv3d_winograd_weight_transform" title="tvm.relay.nn.contrib_conv3d_winograd_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contrib_conv3d_winograd_weight_transform</span></code></a>(…)</p></td>
-<td><p>Weight Transformation part for 3D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法对 3D 卷积的转换部分进行加权。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform" title="tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contrib_conv3d_winograd_without_weight_transform</span></code></a>(…)</p></td>
-<td><p>3D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法的 3D 卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.contrib_dense_pack" title="tvm.relay.nn.contrib_dense_pack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contrib_dense_pack</span></code></a>(data, weight[, …])</p></td>
-<td><p>Dense operator.</p></td>
+<td><p>稠密算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.contrib_depthwise_conv2d_nchwc" title="tvm.relay.nn.contrib_depthwise_conv2d_nchwc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contrib_depthwise_conv2d_nchwc</span></code></a>(data, kernel)</p></td>
 <td><p>Variant of 2D depthwise convolution.</p></td>
@@ -466,16 +466,16 @@
 <td><p>One dimensional transposed convolution operator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.conv2d" title="tvm.relay.nn.conv2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv2d</span></code></a>(data, weight[, strides, padding, …])</p></td>
-<td><p>2D convolution.</p></td>
+<td><p>2D 卷积。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.conv2d_transpose" title="tvm.relay.nn.conv2d_transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv2d_transpose</span></code></a>(data, weight[, strides, …])</p></td>
-<td><p>Two dimensional transposed convolution operator.</p></td>
+<td><p>二维转置卷积算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.conv3d" title="tvm.relay.nn.conv3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv3d</span></code></a>(data, weight[, strides, padding, …])</p></td>
-<td><p>3D convolution.</p></td>
+<td><p>3D 卷积。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.conv3d_transpose" title="tvm.relay.nn.conv3d_transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv3d_transpose</span></code></a>(data, weight[, strides, …])</p></td>
-<td><p>3D transpose convolution.</p></td>
+<td><p>3D 转置卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.correlation" title="tvm.relay.nn.correlation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">correlation</span></code></a>(data1, data2, kernel_size, …)</p></td>
 <td><p>Applies correlation to inputs.</p></td>
@@ -490,7 +490,7 @@
 <td><p>Deformable 2d convolution.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.dense" title="tvm.relay.nn.dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dense</span></code></a>(data, weight[, units, out_dtype])</p></td>
-<td><p>Dense operator.</p></td>
+<td><p>稠密算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.depth_to_space" title="tvm.relay.nn.depth_to_space"><code class="xref py py-obj docutils literal notranslate"><span class="pre">depth_to_space</span></code></a>(data, block_size[, layout, mode])</p></td>
 <td><p>Convert channels into spatial blocks.</p></td>
@@ -499,13 +499,13 @@
 <td><p>Dilate data with given dilation value (0 by default).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.dropout" title="tvm.relay.nn.dropout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropout</span></code></a>(data[, rate])</p></td>
-<td><p>Applies the dropout operation to the input array.</p></td>
+<td><p>对输入数列使用 dropout 算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.dropout_raw" title="tvm.relay.nn.dropout_raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropout_raw</span></code></a>(data[, rate])</p></td>
-<td><p>Applies the dropout operation to the input array.</p></td>
+<td><p>对输入数列使用 dropout 算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.fast_softmax" title="tvm.relay.nn.fast_softmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fast_softmax</span></code></a>(data[, axis])</p></td>
-<td><p>Computes softmax.</p></td>
+<td><p>计算 softmax。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.fifo_buffer" title="tvm.relay.nn.fifo_buffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fifo_buffer</span></code></a>(data, buffer, axis)</p></td>
 <td><p>FIFO buffer to enable computation reuse in CNNs with sliding indow input</p></td>
@@ -523,7 +523,7 @@
 <td><p>1D global average pooling operator.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.global_avg_pool2d" title="tvm.relay.nn.global_avg_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">global_avg_pool2d</span></code></a>(data[, layout])</p></td>
-<td><p>2D global average pooling operator.</p></td>
+<td><p>2D 全局平均池化算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.global_avg_pool3d" title="tvm.relay.nn.global_avg_pool3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">global_avg_pool3d</span></code></a>(data[, layout])</p></td>
 <td><p>3D global average pooling operator.</p></td>
@@ -532,7 +532,7 @@
 <td><p>1D global maximum pooling operator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.global_max_pool2d" title="tvm.relay.nn.global_max_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">global_max_pool2d</span></code></a>(data[, layout])</p></td>
-<td><p>2D global maximum pooling operator.</p></td>
+<td><p>2D 全局最大池化算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.global_max_pool3d" title="tvm.relay.nn.global_max_pool3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">global_max_pool3d</span></code></a>(data[, layout])</p></td>
 <td><p>3D global maximum pooling operator.</p></td>
@@ -544,16 +544,16 @@
 <td><p>Instance Normalization (Ulyanov and et al., 2016) Applies instance normalization to the n-dimensional input array.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.l2_normalize" title="tvm.relay.nn.l2_normalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">l2_normalize</span></code></a>(data, eps[, axis])</p></td>
-<td><p>Perform L2 normalization on the input data</p></td>
+<td><p>对输入数据执行L2标准化</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.layer_norm" title="tvm.relay.nn.layer_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">layer_norm</span></code></a>(data, gamma, beta[, axis, …])</p></td>
 <td><p>Layer normalization (Lei Ba and et al., 2016).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.leaky_relu" title="tvm.relay.nn.leaky_relu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leaky_relu</span></code></a>(data[, alpha])</p></td>
-<td><p>This operator takes data as input and does Leaky version of a Rectified Linear Unit.</p></td>
+<td><p>该算子将数据作为输入，并代入带泄露的修正线性单元。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.log_softmax" title="tvm.relay.nn.log_softmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_softmax</span></code></a>(data[, axis])</p></td>
-<td><p>Computes log softmax.</p></td>
+<td><p>计算 log_softmax。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.lrn" title="tvm.relay.nn.lrn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lrn</span></code></a>(data[, size, axis, bias, alpha, beta])</p></td>
 <td><p>This operator takes data as input and does local response normalization.</p></td>
@@ -565,13 +565,13 @@
 <td><p>1D maximum pooling operator.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.max_pool2d" title="tvm.relay.nn.max_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_pool2d</span></code></a>(data[, pool_size, strides, …])</p></td>
-<td><p>2D maximum pooling operator.</p></td>
+<td><p>2D 最大池化算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.max_pool2d_grad" title="tvm.relay.nn.max_pool2d_grad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_pool2d_grad</span></code></a>(out_grad, data[, pool_size, …])</p></td>
 <td><p>Gradient of 2D maximum pooling operator.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.max_pool3d" title="tvm.relay.nn.max_pool3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_pool3d</span></code></a>(data[, pool_size, strides, …])</p></td>
-<td><p>3D maximum pooling operator.</p></td>
+<td><p>3D 最大池化算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.mirror_pad" title="tvm.relay.nn.mirror_pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mirror_pad</span></code></a>(data, pad_width[, mode])</p></td>
 <td><p>MirrorPadding</p></td>
@@ -580,16 +580,16 @@
 <td><p>Negative log likelihood loss.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.pad" title="tvm.relay.nn.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(data, pad_width[, pad_value, pad_mode])</p></td>
-<td><p>Padding</p></td>
+<td><p>填充</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.prelu" title="tvm.relay.nn.prelu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prelu</span></code></a>(data, alpha[, axis])</p></td>
-<td><p>This operator takes data as input and does Leaky version of a Rectified Linear Unit.</p></td>
+<td><p>该算子将数据作为输入，并代入带泄露的修正线性单元。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.relu" title="tvm.relay.nn.relu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relu</span></code></a>(data)</p></td>
-<td><p>Rectified linear unit.</p></td>
+<td><p>修正线性单元。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.softmax" title="tvm.relay.nn.softmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">softmax</span></code></a>(data[, axis])</p></td>
-<td><p>Computes softmax.</p></td>
+<td><p>计算 softmax。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.space_to_batch_nd" title="tvm.relay.nn.space_to_batch_nd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">space_to_batch_nd</span></code></a>(data, block_shape, paddings)</p></td>
 <td><p>Divide spatial dimensions of the data into a grid of blocks and interleave them into batch dim.</p></td>
@@ -607,10 +607,10 @@
 <td><p>Computes the fast matrix transpose of x, where x is a sparse tensor in CSR format (represented as a namedtuple with fields <cite>data</cite>, <cite>indices</cite>, and <cite>indptr</cite>).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.nn.upsampling" title="tvm.relay.nn.upsampling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upsampling</span></code></a>(data[, scale_h, scale_w, layout, …])</p></td>
-<td><p>Upsampling.</p></td>
+<td><p>上采样。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.nn.upsampling3d" title="tvm.relay.nn.upsampling3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upsampling3d</span></code></a>(data[, scale_d, scale_h, …])</p></td>
-<td><p>3D Upsampling.</p></td>
+<td><p>3D 上采样。</p></td>
 </tr>
 </tbody>
 </table>
@@ -904,7 +904,7 @@ This operator accepts data layout specification.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.avg_pool2d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">avg_pool2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ceil_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_include_pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.avg_pool2d" title="永久链接至目标">¶</a></dt>
-<dd><p>2D average pooling operator.</p>
+<dd><p>2D 平均池化算子。</p>
 <p>This operator takes data as input and does 2D average value calculation
 with in pool_size sized window by striding defined by stride</p>
 <p>In the default case, where the data_layout is <cite>NCHW</cite>
@@ -970,7 +970,7 @@ This operator accepts data layout specification.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.avg_pool3d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">avg_pool3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ceil_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count_include_pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.avg_pool3d" title="永久链接至目标">¶</a></dt>
-<dd><p>3D average pooling operator.</p>
+<dd><p>3D 平均池化算子。</p>
 <p>This operator takes data as input and does 3D average value calculation
 with in pool_size sized window by striding defined by stride</p>
 <p>In the default case, where the data_layout is <cite>NCDHW</cite>
@@ -1138,7 +1138,7 @@ remaining_shape]</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.bias_add">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">bias_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.bias_add" title="永久链接至目标">¶</a></dt>
-<dd><p>add_bias operator.</p>
+<dd><p>add_bias 算子。</p>
 <p>Add 1D bias to the axis of data.
 This function is a special case of add which allows
 inference of shape of the bias from data.</p>
@@ -1162,7 +1162,7 @@ inference of shape of the bias from data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.bitpack">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">bitpack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pack_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bit_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pack_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uint32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'BitPack'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.bitpack" title="永久链接至目标">¶</a></dt>
-<dd><p>Tensor packing for bitserial operations.</p>
+<dd><p>对于位序列算子的张量包装。</p>
 <p>The values along the input tensor’s pack_axis are quantized
 and packed together into the specified pack_type in a new bit axis.</p>
 <p>For example, consider bitpacking with data to be a tensor with shape <cite>[1, 64, 128, 128]</cite>,
@@ -1194,7 +1194,7 @@ ready to be used in a bitserial operation.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.bitserial_conv2d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">bitserial_conv2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(3,</span> <span class="pre">3)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OIHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pack_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uint32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int16'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unipolar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.bitserial_conv2d" title="永久链接至目标">¶</a></dt>
-<dd><p>2D convolution using bitserial computation.</p>
+<dd><p>使用位序列计算的 2D 卷积。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1367,7 +1367,7 @@ NCHWc data layout.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.contrib_conv2d_winograd_nnpack_weight_transform">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">contrib_conv2d_winograd_nnpack_weight_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convolution_algorithm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.contrib_conv2d_winograd_nnpack_weight_transform" title="永久链接至目标">¶</a></dt>
-<dd><p>Weight Transformation part for 2D convolution with winograd algorithm.</p>
+<dd><p>基于 Winograd 算法对 2D 卷积的转换部分进行加权。</p>
 <p>We separate this as a single op to enable pre-compute for inference.
 Use this together with nn.contrib_conv2d_winograd_without_weight_transform</p>
 <dl class="field-list simple">
@@ -1389,7 +1389,7 @@ Use this together with nn.contrib_conv2d_winograd_without_weight_transform</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.contrib_conv2d_winograd_weight_transform">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">contrib_conv2d_winograd_weight_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.contrib_conv2d_winograd_weight_transform" title="永久链接至目标">¶</a></dt>
-<dd><p>Weight Transformation part for 2D convolution with winograd algorithm.</p>
+<dd><p>基于 Winograd 算法对 2D 卷积的转换部分进行加权。</p>
 <p>We separate this as a single op to enable pre-compute for inference.
 Use this together with nn.contrib_conv2d_winograd_without_weight_transform</p>
 <dl class="field-list simple">
@@ -1411,7 +1411,7 @@ Use this together with nn.contrib_conv2d_winograd_without_weight_transform</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">contrib_conv2d_winograd_without_weight_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OIHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform" title="永久链接至目标">¶</a></dt>
-<dd><p>2D convolution with winograd algorithm.</p>
+<dd><p>基于 Winograd 算法的 2D 卷积。</p>
 <p>The basic parameters are the same as the ones in vanilla conv2d.
 It assumes the weight is pre-transformed by nn.contrib_conv2d_winograd_weight_transform</p>
 <dl class="field-list simple">
@@ -1444,7 +1444,7 @@ It assumes the weight is pre-transformed by nn.contrib_conv2d_winograd_weight_tr
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.contrib_conv3d_winograd_weight_transform">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">contrib_conv3d_winograd_weight_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.contrib_conv3d_winograd_weight_transform" title="永久链接至目标">¶</a></dt>
-<dd><p>Weight Transformation part for 3D convolution with winograd algorithm.</p>
+<dd><p>基于 Winograd 算法对 3D 卷积的转换部分进行加权。</p>
 <p>We separate this as a single op to enable pre-compute for inference.
 Use this together with nn.contrib_conv3d_winograd_without_weight_transform</p>
 <dl class="field-list simple">
@@ -1466,7 +1466,7 @@ Use this together with nn.contrib_conv3d_winograd_without_weight_transform</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">contrib_conv3d_winograd_without_weight_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tile_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OIDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform" title="永久链接至目标">¶</a></dt>
-<dd><p>3D convolution with winograd algorithm.</p>
+<dd><p>基于 Winograd 算法的 3D 卷积。</p>
 <p>The basic parameters are the same as the ones in vanilla conv3d.
 It assumes the weight is pre-transformed by nn.contrib_conv3d_winograd_weight_transform</p>
 <dl class="field-list simple">
@@ -1638,7 +1638,7 @@ then convert to the out_layout.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.conv2d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">conv2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OIHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.conv2d" title="永久链接至目标">¶</a></dt>
-<dd><p>2D convolution.</p>
+<dd><p>2D 卷积。</p>
 <p>This operator takes the weight as the convolution kernel
 and convolves it with data to produce an output.</p>
 <p>In the default case, where the data_layout is <cite>NCHW</cite>
@@ -1684,7 +1684,7 @@ then convert to the out_layout.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.conv2d_transpose">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">conv2d_transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OIHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.conv2d_transpose" title="永久链接至目标">¶</a></dt>
-<dd><p>Two dimensional transposed convolution operator.</p>
+<dd><p>二维转置卷积算子。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1715,7 +1715,7 @@ then convert to the out_layout.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.conv3d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">conv3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OIDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.conv3d" title="永久链接至目标">¶</a></dt>
-<dd><p>3D convolution.</p>
+<dd><p>3D 卷积。</p>
 <p>This operator takes the weight as the convolution kernel
 and convolves it with data to produce an output.</p>
 <p>In the default case, where the data_layout is <cite>NCDHW</cite>
@@ -1761,7 +1761,7 @@ then convert to the out_layout.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.conv3d_transpose">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">conv3d_transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'OIDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.conv3d_transpose" title="永久链接至目标">¶</a></dt>
-<dd><p>3D transpose convolution.</p>
+<dd><p>3D 转置卷积。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1996,7 +1996,7 @@ are accessed in.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.dropout">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">dropout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.dropout" title="永久链接至目标">¶</a></dt>
-<dd><p>Applies the dropout operation to the input array.</p>
+<dd><p>对输入数列使用 dropout 算子。</p>
 <p>During training, each element of the input is set to zero with
 probability <code class="docutils literal notranslate"><span class="pre">p</span></code>. The whole array is rescaled by <code class="docutils literal notranslate"><span class="pre">1/(1-p)</span></code>
 to keep the expected sum of the input unchanged.</p>
@@ -2019,7 +2019,7 @@ to keep the expected sum of the input unchanged.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.dropout_raw">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">dropout_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.dropout_raw" title="永久链接至目标">¶</a></dt>
-<dd><p>Applies the dropout operation to the input array.</p>
+<dd><p>对输入数列使用 dropout 算子。</p>
 <p>During training, each element of the input is set to zero with
 probability <code class="docutils literal notranslate"><span class="pre">p</span></code>. The whole array is rescaled by <code class="docutils literal notranslate"><span class="pre">1/(1-p)</span></code>
 to keep the expected sum of the input unchanged.</p>
@@ -2187,7 +2187,7 @@ to produce an output Tensor with the following rule:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.global_avg_pool2d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">global_avg_pool2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.global_avg_pool2d" title="永久链接至目标">¶</a></dt>
-<dd><p>2D global average pooling operator.</p>
+<dd><p>2D 全局平均池化算子。</p>
 <p>This operator takes data as input and does 2D average value calculation
 across each window represented by WxH.</p>
 <p>In the default case, where the data_layout is <cite>NCHW</cite>
@@ -2275,7 +2275,7 @@ to produce an output Tensor with the following rule:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.global_max_pool2d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">global_max_pool2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.global_max_pool2d" title="永久链接至目标">¶</a></dt>
-<dd><p>2D global maximum pooling operator.</p>
+<dd><p>2D 全局最大池化算子。</p>
 <p>This operator takes data as input and does 2D max value calculation
 across each window represented by WxH.</p>
 <p>In the default case, where the data_layout is <cite>NCHW</cite>
@@ -2423,7 +2423,7 @@ beta is ignored.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.l2_normalize">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">l2_normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.l2_normalize" title="永久链接至目标">¶</a></dt>
-<dd><p>Perform L2 normalization on the input data</p>
+<dd><p>对输入数据执行L2标准化</p>
 <div class="math notranslate nohighlight">
 \[y(i, j) = x(i, j) / sqrt(max(sum(x^2), eps))\]</div>
 <dl class="field-list simple">
@@ -2484,8 +2484,7 @@ beta is ignored.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.leaky_relu">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">leaky_relu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.leaky_relu" title="永久链接至目标">¶</a></dt>
-<dd><p>This operator takes data as input and does Leaky version
-of a Rectified Linear Unit.</p>
+<dd><p>该算子将数据作为输入，并代入带泄露的修正线性单元。</p>
 <div class="math notranslate nohighlight">
 \[`y = x &gt; 0 ? x : alpha * x`\]</div>
 <dl class="field-list simple">
@@ -2507,7 +2506,7 @@ of a Rectified Linear Unit.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.log_softmax">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">log_softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.log_softmax" title="永久链接至目标">¶</a></dt>
-<dd><p>Computes log softmax.</p>
+<dd><p>计算 log_softmax。</p>
 <div class="math notranslate nohighlight">
 \[\text{log_softmax}(x)_i = \log \frac{exp(x_i)}{\sum_j exp(x_j)}\]</div>
 <div class="admonition note">
@@ -2626,7 +2625,7 @@ This operator accepts data layout specification.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.max_pool2d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">max_pool2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ceil_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.max_pool2d" title="永久链接至目标">¶</a></dt>
-<dd><p>2D maximum pooling operator.</p>
+<dd><p>2D 最大池化算子。</p>
 <p>This operator takes data as input and does 2D max value calculation
 with in pool_size sized window by striding defined by stride</p>
 <p>In the default case, where the data_layout is <cite>NCHW</cite>
@@ -2689,7 +2688,7 @@ This operator accepts data layout specification.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.max_pool3d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">max_pool3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pool_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dilation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ceil_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.max_pool3d" title="永久链接至目标">¶</a></dt>
-<dd><p>3D maximum pooling operator.</p>
+<dd><p>3D 最大池化算子。</p>
 <p>This operator takes data as input and does 3D max value calculation
 with in pool_size sized window by striding defined by stride.</p>
 <p>In the default case, where the data_layout is <cite>NCDHW</cite>
@@ -2779,7 +2778,7 @@ Possible values are “mean”, “sum” and “none”.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.pad">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'constant'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.pad" title="永久链接至目标">¶</a></dt>
-<dd><p>Padding</p>
+<dd><p>填充</p>
 <p>This operator takes in a tensor and pads each axis by the specified
 widths using the specified value.</p>
 <dl class="field-list simple">
@@ -2806,8 +2805,7 @@ of ((before_1, after_1), …, (before_N, after_N))</p></li>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.prelu">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">prelu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.prelu" title="永久链接至目标">¶</a></dt>
-<dd><p>This operator takes data as input and does Leaky version
-of a Rectified Linear Unit.</p>
+<dd><p>该算子将数据作为输入，并代入带泄露的修正线性单元。</p>
 <div class="math notranslate nohighlight">
 \[y = x &gt; 0 ? x : alpha * x\]</div>
 <dl class="field-list simple">
@@ -2830,7 +2828,7 @@ of a Rectified Linear Unit.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.relu">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">relu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.relu" title="永久链接至目标">¶</a></dt>
-<dd><p>Rectified linear unit.</p>
+<dd><p>修正线性单元。</p>
 <div class="math notranslate nohighlight">
 \[out = max(x, 0)\]</div>
 <dl class="field-list simple">
@@ -2849,7 +2847,7 @@ of a Rectified Linear Unit.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.softmax">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.softmax" title="永久链接至目标">¶</a></dt>
-<dd><p>Computes softmax.</p>
+<dd><p>计算 softmax。</p>
 <div class="math notranslate nohighlight">
 \[\text{softmax}(x)_i = \frac{exp(x_i)}{\sum_j exp(x_j)}\]</div>
 <div class="admonition note">
@@ -3033,7 +3031,7 @@ i.e. if CSR then output is in ([data, indices, indptr]) form</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.upsampling">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">upsampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest_neighbor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align_corners</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.upsampling" title="永久链接至目标">¶</a></dt>
-<dd><p>Upsampling.</p>
+<dd><p>上采样。</p>
 <p>This operator takes data as input and does 2D scaling to the given scale factor.
 In the default case, where the data_layout is <cite>NCHW</cite>
 with data of shape (n, c, h, w)
@@ -3063,7 +3061,7 @@ and method can be one of (“bilinear”, “nearest_neighbor”, “bicubic”)
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.nn.upsampling3d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.nn.</span></span><span class="sig-name descname"><span class="pre">upsampling3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'nearest_neighbor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate_transformation_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'half_pixel'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.nn.upsampling3d" title="永久链接至目标">¶</a></dt>
-<dd><p>3D Upsampling.</p>
+<dd><p>3D 上采样。</p>
 <p>This operator takes data as input and does 3D scaling to the given scale factor.
 In the default case, where the data_layout is <cite>NCDHW</cite>
 with data of shape (n, c, d, h, w)

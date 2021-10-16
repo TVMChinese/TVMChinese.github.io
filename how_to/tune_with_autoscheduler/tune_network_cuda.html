@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1931+ga735e3baf 文档</title>
+  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1932+ge6e913622 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1931+ga735e3baf
+                  0.8.dev1932+ge6e913622
                 </div>
             
           
@@ -908,13 +908,13 @@ so we can read the log file and load the best schedules.</p>
 <span class="x">  1: tvm::transform::ModulePassNode::operator()(tvm::IRModule, tvm::transform::PassContext const&amp;) const</span>
 <span class="x">  0: std::_Function_handler&lt;void (tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*), tvm::runtime::TypedPackedFunc&lt;tvm::IRModule (tvm::IRModule, tvm::transform::PassContext)&gt;::AssignTypedLambda&lt;tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1}&gt;(tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1})::{lambda(tvm::runtime::TVMArgs const&amp;, tvm::runtime::TVMRetValue*)#1}&gt;::_M_invoke(std::_Any_data const&amp;, tvm::runtime::TVMArgs&amp;&amp;, tvm::runtime::TVMRetValue*&amp;&amp;)</span>
 <span class="x">  Did you forget to bind?</span>
+<span class="x">    Variable `T_relu` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
-<span class="x">    Variable `T_add` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
   File <span class="nb">&quot;/tvm_chinese/tvm/src/tir/analysis/verify_memory.cc&quot;</span>, line <span class="m">206</span>
 <span class="gr">RuntimeError</span>: <span class="n">Memory verification failed with the following errors:</span>
-<span class="x">PrimFunc([placeholder, placeholder, placeholder, T_add]) attrs={&quot;target&quot;: cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, &quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_3&quot;, &quot;from_legacy_te_schedule&quot;: (bool)1} {</span>
+<span class="x">PrimFunc([placeholder, placeholder, placeholder, T_relu]) attrs={&quot;target&quot;: cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, &quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_nn_relu_3&quot;, &quot;from_legacy_te_schedule&quot;: (bool)1} {</span>
 <span class="x">  allocate data_pad[float32 * 451584], storage_scope = global</span>
 <span class="x">  allocate input_tile[float32 * 451584], storage_scope = global</span>
 <span class="x">  allocate B[float32 * 36], storage_scope = global</span>
@@ -994,7 +994,14 @@ so we can read the log file and load the best schedules.</p>
 <span class="x">  for (ax1, 0, 56) {</span>
 <span class="x">    for (ax2, 0, 56) {</span>
 <span class="x">      for (ax3, 0, 64) {</span>
-<span class="x">        T_add[(((ax1*3584) + (ax2*64)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*64)) + ax3)] + placeholder[(((ax1*3584) + (ax2*64)) + ax3)])</span>
+<span class="x">        data_pad[(((ax1*3584) + (ax2*64)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*64)) + ax3)] + placeholder[ax3])</span>
+<span class="x">      }</span>
+<span class="x">    }</span>
+<span class="x">  }</span>
+<span class="x">  for (ax1, 0, 56) {</span>
+<span class="x">    for (ax2, 0, 56) {</span>
+<span class="x">      for (ax3, 0, 64) {</span>
+<span class="x">        T_relu[(((ax1*3584) + (ax2*64)) + ax3)] = max(data_pad[(((ax1*3584) + (ax2*64)) + ax3)], 0f)</span>
 <span class="x">      }</span>
 <span class="x">    }</span>
 <span class="x">  }</span>

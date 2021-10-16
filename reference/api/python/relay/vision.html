@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.relay.vision &mdash; tvm 0.8.dev1931+ga735e3baf 文档</title>
+  <title>tvm.relay.vision &mdash; tvm 0.8.dev1932+ge6e913622 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1931+ga735e3baf
+                  0.8.dev1932+ge6e913622
                 </div>
             
           
@@ -363,7 +363,7 @@
 <td><p>Get valid count of bounding boxes given a score threshold.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.vision.multibox_prior" title="tvm.relay.vision.multibox_prior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multibox_prior</span></code></a>(data[, sizes, ratios, steps, …])</p></td>
-<td><p>Generate prior(anchor) boxes from data, sizes and ratios.</p></td>
+<td><p>在 data 中，根据 sizes 和 ratios 生成先验框（锚框）。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.vision.multibox_transform_loc" title="tvm.relay.vision.multibox_transform_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multibox_transform_loc</span></code></a>(cls_prob, loc_pred, …)</p></td>
 <td><p>Location transformation for multibox detection</p></td>
@@ -457,7 +457,7 @@ Also moves valid boxes to the top of input data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.vision.multibox_prior">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.vision.</span></span><span class="sig-name descname"><span class="pre">multibox_prior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-</span> <span class="pre">1.0,</span> <span class="pre">-</span> <span class="pre">1.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.vision.multibox_prior" title="永久链接至目标">¶</a></dt>
-<dd><p>Generate prior(anchor) boxes from data, sizes and ratios.</p>
+<dd><p>在 data 中，根据 sizes 和 ratios 生成先验框（锚框）。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
