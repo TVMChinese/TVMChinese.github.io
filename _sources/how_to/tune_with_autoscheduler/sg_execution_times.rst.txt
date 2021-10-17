@@ -5,9 +5,9 @@
 
 Computation times
 =================
-**00:18.054** total execution time for **how_to_tune_with_autoscheduler** files:
+**00:17.731** total execution time for **how_to_tune_with_autoscheduler** files:
 
-- **00:18.054**: :ref:`sphx_glr_how_to_tune_with_autoscheduler_tune_network_cuda.py` (``tune_network_cuda.py``)
+- **00:17.731**: :ref:`sphx_glr_how_to_tune_with_autoscheduler_tune_network_cuda.py` (``tune_network_cuda.py``)
 - **00:00.000**: :ref:`sphx_glr_how_to_tune_with_autoscheduler_tune_conv2d_layer_cuda.py` (``tune_conv2d_layer_cuda.py``)
 - **00:00.000**: :ref:`sphx_glr_how_to_tune_with_autoscheduler_tune_network_arm.py` (``tune_network_arm.py``)
 - **00:00.000**: :ref:`sphx_glr_how_to_tune_with_autoscheduler_tune_network_mali.py` (``tune_network_mali.py``)
