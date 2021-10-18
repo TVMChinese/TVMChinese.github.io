@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>使用TVMC编译和优化一个模型 &mdash; tvm 0.8.dev1933+ge30af020e 文档</title>
+  <title>Compiling and Optimizing a Model with TVMC &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Compiling and Optimizing a Model with the Python Interface (AutoTVM)" href="autotvm_relay_x86.html" />
-    <link rel="prev" title="安装 TVM" href="install.html" /> 
+    <link rel="prev" title="Installing TVM" href="install.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1933+ge30af020e
+                  0.8.dev1934+gfa3ce683a
                 </div>
             
           
@@ -212,31 +212,31 @@
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Tutorial</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">介绍</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">使用TVMC编译和优化一个模型</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-tvmc">使用TVMC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#obtaining-the-model">获取模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compiling-an-onnx-model-to-the-tvm-runtime">编译一个ONNX模型到TVM运行时</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-the-model-from-the-compiled-module-with-tvmc">使用TVMC运行编译好的模型</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#input-pre-processing">输入前处理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-the-compiled-module">运行编译好的模块</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#output-post-processing">输入后处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing TVM</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Compiling and Optimizing a Model with TVMC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-tvmc">Using TVMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obtaining-the-model">Obtaining the Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-an-onnx-model-to-the-tvm-runtime">Compiling an ONNX Model to the TVM Runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-model-from-the-compiled-module-with-tvmc">Running the Model from The Compiled Module with TVMC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input-pre-processing">Input pre-processing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-compiled-module">Running the Compiled Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-post-processing">Output Post-Processing</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#automatically-tuning-the-resnet-model">自动调整ResNet模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compiling-an-optimized-model-with-tuning-data">使用调优数据编译一个优化后的模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comparing-the-tuned-and-untuned-models">比较调优和未调优的模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#final-remarks">结语</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#automatically-tuning-the-resnet-model">Automatically Tuning the ResNet Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-an-optimized-model-with-tuning-data">Compiling an Optimized Model with Tuning Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparing-the-tuned-and-untuned-models">Comparing the Tuned and Untuned Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#final-remarks">Final Remarks</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_relay_x86.html">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">使用张量表达式来处理运算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">Working with Operators Using Tensor Expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto_scheduler_matmul_x86.html">Optimizing Operators with Auto-scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cross_compilation_and_rpc.html">Cross Compilation and RPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">Quick Start Tutorial for Compiling Deep Learning Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_topi.html">Introduction to TOPI</a></li>
 </ul>
 </li>
@@ -253,7 +253,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -321,7 +321,7 @@
         
           <li><a href="index.html">User Tutorial</a> <span class="br-arrow">></span></li>
         
-      <li>使用TVMC编译和优化一个模型</li>
+      <li>Compiling and Optimizing a Model with TVMC</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -342,27 +342,43 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorial-tvmc-command-line-driver-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorial-tvmc-command-line-driver-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="compiling-and-optimizing-a-model-with-tvmc">
-<span id="sphx-glr-tutorial-tvmc-command-line-driver-py"></span><h1>使用TVMC编译和优化一个模型<a class="headerlink" href="#compiling-and-optimizing-a-model-with-tvmc" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://github.com/leandron">Leandro Nunes</a>, <a class="reference external" href="https://github.com/mbaret">Matthew Barrett</a>, <a class="reference external" href="https://github.com/hogepodge">Chris Hoge</a></p>
-<p>在这个教程中，我们将使用TVMC（TVM命令行驱动程序）。TVMC是一个将TVM的一些特性比如自动调优，编译，分析和运行模型等通过命令行前端暴露出来的工具。</p>
-<p>在本教程中，我们会基于TVMC完成以下任务：</p>
+<span id="sphx-glr-tutorial-tvmc-command-line-driver-py"></span><h1>Compiling and Optimizing a Model with TVMC<a class="headerlink" href="#compiling-and-optimizing-a-model-with-tvmc" title="永久链接至标题">¶</a></h1>
+<p><strong>Authors</strong>:
+<a class="reference external" href="https://github.com/leandron">Leandro Nunes</a>,
+<a class="reference external" href="https://github.com/mbaret">Matthew Barrett</a>,
+<a class="reference external" href="https://github.com/hogepodge">Chris Hoge</a></p>
+<p>In this section, we will work with TVMC, the TVM command line driver. TVMC is a
+tool that exposes TVM features such as auto-tuning, compiling, profiling and
+execution of models through a command line interface.</p>
+<p>Upon completion of this section, we will have used TVMC to accomplish the
+following tasks:</p>
 <ul class="simple">
-<li><p>将一个预训练的ResNet50 V2模型编译为TVM运行时。</p></li>
-<li><p>基于编译完成的模型运行一张真实的图片，并分析输出和模型的性能。</p></li>
-<li><p>使用TVM在CPU上对模型调优。</p></li>
-<li><p>基于TVM收集的调优数据再编译一个优化后的模型。</p></li>
-<li><p>基于优化后的模型运行一张真实的图片，并且对比输出和性能（这里是和未优化的模型进行对比）。</p></li>
+<li><p>Compile a pre-trained ResNet 50 v2 model for the TVM runtime.</p></li>
+<li><p>Run a real image through the compiled model, and interpret the output and
+model performance.</p></li>
+<li><p>Tune the model on a CPU using TVM.</p></li>
+<li><p>Re-compile an optimized model using the tuning data collected by TVM.</p></li>
+<li><p>Run the image through the optimized model, and compare the output and model
+performance.</p></li>
 </ul>
-<p>这一节的目标是向你概述TVM和TVMC的功能，并为了解TVM的工作原理奠定基础。</p>
+<p>The goal of this section is to give you an overview of TVM and TVMC’s
+capabilities, and set the stage for understanding how TVM works.</p>
 <div class="section" id="using-tvmc">
-<h2>使用TVMC<a class="headerlink" href="#using-tvmc" title="永久链接至标题">¶</a></h2>
-<p>TVMC是一个Python应用程序，是TVM Python包的一部分。当你使用Python包安装TVM时，您将获得一个叫作``tvmc``的命令行应用程序。此命令的位置将根据你的平台和安装方法而各有不同。</p>
-<p>或者，如果你将TVM编译为在``$PYTHONPATH`` 中的Python模块，你可以通过下面的命令来启动TVMC命令行驱动程序`python -m tvm.driver.tvmc``。</p>
-<p>简单起见，本教程以``tvmc <a href="#id1"><span class="problematic" id="id2">``</span></a>的方式提起TVMC命令行，但使用``python -m tvm.driver.tvmc <a href="#id3"><span class="problematic" id="id4">``</span></a>可以获得相同的结果。</p>
-<p>你可以使用以下方法查看帮助页面：</p>
+<h2>Using TVMC<a class="headerlink" href="#using-tvmc" title="永久链接至标题">¶</a></h2>
+<p>TVMC is a Python application, part of the TVM Python package.
+When you install TVM using a Python package, you will get TVMC as
+as a command line application called <code class="docutils literal notranslate"><span class="pre">tvmc</span></code>. The location of this command
+will vary depending on your platform and installation method.</p>
+<p>Alternatively, if you have TVM as a Python module on your
+<code class="docutils literal notranslate"><span class="pre">$PYTHONPATH</span></code>,you can access the command line driver functionality
+via the executable python module, <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">tvm.driver.tvmc</span></code>.</p>
+<p>For simplicity, this tutorial will mention TVMC command line using
+<code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">&lt;options&gt;</span></code>, but the same results can be obtained with
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">tvm.driver.tvmc</span> <span class="pre">&lt;options&gt;</span></code>.</p>
+<p>You can check the help page using:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc --help
 </pre></div>
 </div>
@@ -373,65 +389,102 @@ these commands in this tutorial, but first we need to download a pre-trained
 model to work with.</p>
 </div>
 <div class="section" id="obtaining-the-model">
-<h2>获取模型<a class="headerlink" href="#obtaining-the-model" title="永久链接至标题">¶</a></h2>
-<p>在本教程中，我们将使用ResNet-50 v2。ResNet-50是一个深度为50层的卷积神经网络，被用于图像分类。我们将要使用的模型已经在超过100万张具有1000种的不同分类图像上进行了预训练。该网络的输入大小是224x224。如果你对ResNet-50的结构很感兴趣，我们建议你下载 <cite>Netron &lt;https://netron.app&gt;</cite>,它是一款免费的ML模型可视化软件。</p>
-<p>在本教程中，我们将使用ONNX格式的模型。</p>
+<h2>Obtaining the Model<a class="headerlink" href="#obtaining-the-model" title="永久链接至标题">¶</a></h2>
+<p>For this tutorial, we will be working with ResNet-50 v2. ResNet-50 is a
+convolutional neural network that is 50-layers deep and designed to classify
+images. The model we will be using has been pre-trained on more than a
+million images with 1000 different classifications. The network has an input
+image size of 224x224. If you are interested exploring more of how the
+ResNet-50 model is structured, we recommend downloading <cite>Netron
+&lt;https://netron.app&gt;</cite>, a freely available ML model viewer.</p>
+<p>For this tutorial we will be using the model in ONNX format.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://github.com/onnx/models/raw/master/vision/classification/resnet/model/resnet50-v2-7.onnx
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>已支持的模型格式。</p>
-<p>TVMC支持使用Keras，ONNX，TensorFlow，TFLite和Torch创建的模型。如果你需要明确提供你正在使用的模型格式，请使用选项``–model-format``。 有关更多信息，请参阅“tvmc compile –help”。</p>
+<p>Supported model formats</p>
+<p>TVMC supports models created with Keras, ONNX, TensorFlow, TFLite
+and Torch. Use the option``–model-format`` if you need to
+explicitly provide the model format you are using. See <code class="docutils literal notranslate"><span class="pre">tvmc</span>
+<span class="pre">compile</span> <span class="pre">--help</span></code> for more information.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>给TVM添加ONNX支持</p>
-<p>TVM依赖于你系统上有可用的ONNX Python库。你可以使用命令``pip3 install –user onnx``来安装ONNX。如果你具有root权限并且想全局安装ONNX，则可以删除``–user`` 选项。  <code class="docutils literal notranslate"><span class="pre">onnxoptimizer</span></code> 依赖是可选的，仅用于 <code class="docutils literal notranslate"><span class="pre">onnx&gt;=1.9</span></code>。</p>
+<p>Adding ONNX Support to TVM</p>
+<p>TVM relies on the ONNX python library being available on your system. You can
+install ONNX using the command <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">onnx</span> <span class="pre">onnxoptimizer</span></code>. You
+may remove the <code class="docutils literal notranslate"><span class="pre">--user</span></code> option if you have root access and want to install
+ONNX globally.  The <code class="docutils literal notranslate"><span class="pre">onnxoptimizer</span></code> dependency is optional, and is only used
+for <code class="docutils literal notranslate"><span class="pre">onnx&gt;=1.9</span></code>.</p>
 </div>
 </div>
 <div class="section" id="compiling-an-onnx-model-to-the-tvm-runtime">
-<h2>编译一个ONNX模型到TVM运行时<a class="headerlink" href="#compiling-an-onnx-model-to-the-tvm-runtime" title="永久链接至标题">¶</a></h2>
-<p>一旦我们下载好ResNet-50模型，下一步就是编译它。需要调用``tvmc compile``.来实现它。从编译过程中获得的输出是一个将模型编译为目标平台动态库的TAR包。我们可以使用TVM运行时在的目标设备上运行该模型。</p>
+<h2>Compiling an ONNX Model to the TVM Runtime<a class="headerlink" href="#compiling-an-onnx-model-to-the-tvm-runtime" title="永久链接至标题">¶</a></h2>
+<p>Once we’ve downloaded the ResNet-50 model, the next step is to compile it. To
+accomplish that, we are going to use <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">compile</span></code>. The output we get from
+the compilation process is a TAR package of the model compiled to a dynamic
+library for our target platform. We can run that model on our target device
+using the TVM runtime.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc compile <span class="se">\</span>
 --target <span class="s2">&quot;llvm&quot;</span> <span class="se">\</span>
 --output resnet50-v2-7-tvm.tar <span class="se">\</span>
 resnet50-v2-7.onnx
 </pre></div>
 </div>
-<p>我们来看看 <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">compile</span></code> 在模块中创建的文件：</p>
+<p>Let’s take a look at the files that <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">compile</span></code> creates in the module:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir model
 tar -xvf resnet50-v2-7-tvm.tar -C model
 ls model
 </pre></div>
 </div>
-<p>你将看到列出的三个文件。</p>
+<p>You will see three files listed.</p>
 <ul class="simple">
-<li><p><cite>mod.so`</cite> 是模型，用一个可以由TVM运行时加载的C++库来表示。</p></li>
-<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>mod.json``是TVM Relay计算图的文本表示。</p></li>
-<li><p><a href="#id1"><span class="problematic" id="id2">``</span></a>mod.params``是一个包含预训练模型参数的文件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod.so</span></code> is the model, represented as a C++ library, that can be loaded
+by the TVM runtime.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod.json</span></code> is a text representation of the TVM Relay computation graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mod.params</span></code> is a file containing the parameters for the pre-trained
+model.</p></li>
 </ul>
-<p>该模块可以由你的应用程序直接加载，并且模型可以通过TVM运行时APIs来运行。</p>
+<p>This module can be directly loaded by your application, and the model can be
+run via the TVM runtime APIs.</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>定义正确的目标</p>
-<p>指定正确的目标（选项``–target``）会对编译后的模块的性能产生巨大的影响，因为它可以利用目标上的可用硬件特性。有关更多信息，请参阅`给X86 CPU自动调优一个卷积神经网络 &lt;<a class="reference external" href="https://tvm.apache.org/docs/tutorials/autotvm/tune_relay_x86.html#define-network">https://tvm.apache.org/docs/tutorials/autotvm/tune_relay_x86.html#define-network</a>&gt;`_。我们建议指明你正在运行的CPU以及可选特点，并合适的设置目标。</p>
+<p>Defining the Correct Target</p>
+<p>Specifying the correct target (option <code class="docutils literal notranslate"><span class="pre">--target</span></code>) can have a huge
+impact on the performance of the compiled module, as it can take
+advantage of hardware features available on the target. For more
+information, please refer to <a class="reference external" href="https://tvm.apache.org/docs/tutorials/autotvm/tune_relay_x86.html#define-network">Auto-tuning a convolutional network
+for x86 CPU</a>.
+We recommend identifying which CPU you are running, along with optional features,
+and set the target appropriately.</p>
 </div>
 </div>
 <div class="section" id="running-the-model-from-the-compiled-module-with-tvmc">
-<h2>使用TVMC运行编译好的模型<a class="headerlink" href="#running-the-model-from-the-compiled-module-with-tvmc" title="永久链接至标题">¶</a></h2>
-<p>现在我们已经将模型编译到了这个模块中，我们可以使用TVM运行时来进行预测。TVMC内置了TVM运行时，允许你运行编译好的TVM模型。要使用TVMC运行模型并进行预测，我们需要做两个东西:</p>
+<h2>Running the Model from The Compiled Module with TVMC<a class="headerlink" href="#running-the-model-from-the-compiled-module-with-tvmc" title="永久链接至标题">¶</a></h2>
+<p>Now that we’ve compiled the model to this module, we can use the TVM runtime
+to make predictions with it. TVMC has the TVM runtime built in to it,
+allowing you to run compiled TVM models. To use TVMC to run the model and
+make predictions, we need two things:</p>
 <ul class="simple">
-<li><p>我们刚刚产生的编译好的模块。</p></li>
-<li><p>模型进行预测的合法输入。</p></li>
+<li><p>The compiled module, which we just produced.</p></li>
+<li><p>Valid input to the model to make predictions on.</p></li>
 </ul>
-<p>当涉及到预期的张量形状，格式和数据类型时每个模型都是特殊的。出于这个原因，大多数模型需要一些预处理和后处理，以确保输入有效并解释输出。TVMC对输入和输出数据都采用了NumPy的``.npz`` 格式。这是一种得到良好支持的NumPy格式，用于将多个数组序列化为一个文件。</p>
-<p>作为本教程的输入，我们将使用猫的图片，但你可以随意替换为任何你选择的图片。</p>
+<p>Each model is particular when it comes to expected tensor shapes, formats and
+data types. For this reason, most models require some pre and
+post-processing, to ensure the input is valid and to interpret the output.
+TVMC has adopted NumPy’s <code class="docutils literal notranslate"><span class="pre">.npz</span></code> format for both input and output data. This
+is a well-supported NumPy format to serialize multiple arrays into a file</p>
+<p>As input for this tutorial, we will use the image of a cat, but you can feel
+free to substitute image for any of your choosing.</p>
 <a class="reference internal image-reference" href="https://s3.amazonaws.com/model-server/inputs/kitten.jpg"><img alt="https://s3.amazonaws.com/model-server/inputs/kitten.jpg" class="align-center" src="https://s3.amazonaws.com/model-server/inputs/kitten.jpg" style="width: 224px; height: 224px;" /></a>
 <div class="section" id="input-pre-processing">
-<h3>输入前处理<a class="headerlink" href="#input-pre-processing" title="永久链接至标题">¶</a></h3>
-<p>对于我们的ResNet-50 V2模型，输入被期望是ImageNet格式。下面是为ResNet-50 V2预处理图形的脚本示例。</p>
-<p>你需要安装一个支持的Python图像库。你可以使用 <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">pillow</span></code> 来满足脚本的这个需求。</p>
+<h3>Input pre-processing<a class="headerlink" href="#input-pre-processing" title="永久链接至标题">¶</a></h3>
+<p>For our ResNet 50 V2 model, the input is expected to be in ImageNet format.
+Here is an example of a script to pre-process an image for ResNet 50 V2.</p>
+<p>You will need to have a supported version of the Python Image Library
+installed. You can use <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">pillow</span></code> to satisfy this
+requirement for the script.</p>
 <div class="literal-block-wrapper docutils container" id="preprocess-py">
 <div class="code-block-caption"><span class="caption-text">preprocess.py</span><a class="headerlink" href="#preprocess-py" title="永久链接至代码">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="c1">#!python ./preprocess.py</span>
@@ -466,22 +519,33 @@ ls model
 </div>
 </div>
 <div class="section" id="running-the-compiled-module">
-<h3>运行编译好的模块<a class="headerlink" href="#running-the-compiled-module" title="永久链接至标题">¶</a></h3>
-<p>有了模型和输入数据，我们现在可以运行TVMC来进行预测：</p>
+<h3>Running the Compiled Module<a class="headerlink" href="#running-the-compiled-module" title="永久链接至标题">¶</a></h3>
+<p>With both the model and input data in hand, we can now run TVMC to make a
+prediction:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc run <span class="se">\</span>
 --inputs imagenet_cat.npz <span class="se">\</span>
 --output predictions.npz <span class="se">\</span>
 resnet50-v2-7-tvm.tar
 </pre></div>
 </div>
-<p>回想一下，<cite>.tar</cite> 模型文件包含一个C++库，一个Relay模型的描述和模型的参数。TVMC包括TVM运行时，它可以加载模型并根据输入进行预测。运行上述命令时，TVMC会输出一个新文件``predictions.npz``，其中包含NumPy格式的模型输出张量。</p>
-<p>在此示例中，我们在用于编译的同一台机器上运行模式。在某些情况下，我们可能希望通过RPC Tracker远程运行它。要阅读有关这些选项的更多信息，请检查``tvmc run –help``。</p>
+<p>Recall that the <cite>.tar</cite> model file includes a C++ library, a description of
+the Relay model, and the parameters for the model. TVMC includes the TVM
+runtime, which can load the model and make predictions against input. When
+running the above command, TVMC outputs a new file, <code class="docutils literal notranslate"><span class="pre">predictions.npz</span></code>, that
+contains the model output tensors in NumPy format.</p>
+<p>In this example, we are running the model on the same machine that we used
+for compilation. In some cases we might want to run it remotely via an RPC
+Tracker. To read more about these options please check <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">run</span> <span class="pre">--help</span></code>.</p>
 </div>
 <div class="section" id="output-post-processing">
-<h3>输入后处理<a class="headerlink" href="#output-post-processing" title="永久链接至标题">¶</a></h3>
-<p>如前所述，每个模型都有自己特定的提供输出张量的方式。</p>
-<p>在我们的例子中，我们会基于为模型提供的查找表执行一些后处理来使得ResNet-50 V2的输出呈现为更易读的形式。</p>
-<p>下面的脚本显示了从我们的编译后模块的输出中提取标签的后处理示例。</p>
+<h3>Output Post-Processing<a class="headerlink" href="#output-post-processing" title="永久链接至标题">¶</a></h3>
+<p>As previously mentioned, each model will have its own particular way of
+providing output tensors.</p>
+<p>In our case, we need to run some post-processing to render the outputs from
+ResNet 50 V2 into a more human-readable form, using the lookup-table provided
+for the model.</p>
+<p>The script below shows an example of the post-processing to extract labels
+from the output of our compiled module.</p>
 <div class="literal-block-wrapper docutils container" id="postprocess-py">
 <div class="code-block-caption"><span class="caption-text">postprocess.py</span><a class="headerlink" href="#postprocess-py" title="永久链接至代码">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!python ./postprocess.py</span>
@@ -513,7 +577,7 @@ resnet50-v2-7-tvm.tar
 </pre></div>
 </div>
 </div>
-<p>运行这个脚本会产生下面的输出：</p>
+<p>Running this script should produce the following output:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python postprocess.py
 
 <span class="c1"># class=&#39;n02123045 tabby, tabby cat&#39; with probability=0.610553</span>
@@ -523,34 +587,60 @@ resnet50-v2-7-tvm.tar
 <span class="c1"># class=&#39;n04040759 radiator&#39; with probability=0.000261</span>
 </pre></div>
 </div>
-<p>尝试用其它图形替换猫的图像，看看ResNet模型会做出什么样的预测。</p>
+<p>Try replacing the cat image with other images, and see what sort of
+predictions the ResNet model makes.</p>
 </div>
 </div>
 <div class="section" id="automatically-tuning-the-resnet-model">
-<h2>自动调整ResNet模型<a class="headerlink" href="#automatically-tuning-the-resnet-model" title="永久链接至标题">¶</a></h2>
-<p>之前的模型被编译为在TVM运行时工作，但不包括任何特定平台的优化。在本节中，我们将向你展示如何使用TVMC构建基于你工作平台的优化模型。</p>
-<p>在某些情况下，使用我们编译的模块进行推理时，我们可能无法获得预期的性能。在这种情况下，我们可以利用自动调优器为我们的模型找到更好的配置并提示性能。TVM中的调优是指在给定目标上优化模型使其运行更快的过程。这与训练和微调的不同之处在于，它不会影响模型的准确率，而只会影响运行时性能。作为调优过程的一部分，TVM将尝试运行许多不同的算子实现变体来看看哪个性能最佳。这些运行结果存储在调整记录文件中，该文件最终是 <a href="#id1"><span class="problematic" id="id2">``</span></a>tune``子命令的输出。</p>
-<p>以最简形式，调优需要你提供三个东西：</p>
+<h2>Automatically Tuning the ResNet Model<a class="headerlink" href="#automatically-tuning-the-resnet-model" title="永久链接至标题">¶</a></h2>
+<p>The previous model was compiled to work on the TVM runtime, but did not
+include any platform specific optimization. In this section, we will show you
+how to build an optimized model using TVMC to target your working platform.</p>
+<p>In some cases, we might not get the expected performance when running
+inferences using our compiled module.  In cases like this, we can make use of
+the auto-tuner, to find a better configuration for our model and get a boost
+in performance. Tuning in TVM refers to the process by which a model is
+optimized to run faster on a given target. This differs from training or
+fine-tuning in that it does not affect the accuracy of the model, but only
+the runtime performance. As part of the tuning process, TVM will try running
+many different operator implementation variants to see which perform best.
+The results of these runs are stored in a tuning records file, which is
+ultimately the output of the <code class="docutils literal notranslate"><span class="pre">tune</span></code> subcommand.</p>
+<p>In the simplest form, tuning requires you to provide three things:</p>
 <ul class="simple">
-<li><p>你打算将这个模型运行运行在哪个目标设备</p></li>
-<li><p>最后调优文件将被存储的路径</p></li>
-<li><p>要调整的模型的路径</p></li>
+<li><p>the target specification of the device you intend to run this model on</p></li>
+<li><p>the path to an output file in which the tuning records will be stored, and
+finally</p></li>
+<li><p>a path to the model to be tuned.</p></li>
 </ul>
-<p>下面的例子演示了它实际上是怎么工作的：</p>
+<p>The example below demonstrates how that works in practice:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc tune <span class="se">\</span>
 --target <span class="s2">&quot;llvm&quot;</span> <span class="se">\</span>
 --output resnet50-v2-7-autotuner_records.json <span class="se">\</span>
 resnet50-v2-7.onnx
 </pre></div>
 </div>
-<p>在这个例子中，如果你为`–target`标志指定一个具体的目标，你会看到更好的结果。比如，在Intel i7处理器上，你可以使用 <cite>–target llvm -mcpu=skylake</cite>。对于此调优示例，我们将LLVM作为指定架构的编译器在CPU上进行本地调优。</p>
-<p>TVMC将针对模型的参数空间执行搜索，为算子尝试不同的配置并选择在你的平台上运行最快的配置。虽然这是基于CPU和模型算子的启发式搜索，但仍可能需要几个小时才能完成搜索。此搜索的输出将保存到`resnet50-v2-7-autotuner_records.json` 文件，稍后将用于编译一个优化后的模型。</p>
+<p>In this example, you will see better results if you indicate a more specific
+target for the <cite>–target</cite> flag.  For example, on an Intel i7 processor you
+could use <cite>–target llvm -mcpu=skylake</cite>. For this tuning example, we are
+tuning locally on the CPU using LLVM as the compiler for the specified
+achitecture.</p>
+<p>TVMC will perform a search against the parameter space for the model, trying
+out different configurations for operators and choosing the one that runs
+fastest on your platform. Although this is a guided search based on the CPU
+and model operations, it can still take several hours to complete the search.
+The output of this search will be saved to the
+<cite>resnet50-v2-7-autotuner_records.json</cite> file, which will later be used to
+compile an optimized model.</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>定义调优搜索算法</p>
-<p>默认情况下，此搜索使用`XGBoost Grid` 算法。根据你的模型的复杂性和可用时间，你可能需要选择不同的算法。完整列表可以通过``tvmc tune –help``获得。</p>
+<p>Defining the Tuning Search Algorithm</p>
+<p>By default this search is guided using an <cite>XGBoost Grid</cite> algorithm.
+Depending on your model complexity and amount of time avilable, you might
+want to choose a different algorithm. A full list is available by
+consulting <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">tune</span> <span class="pre">--help</span></code>.</p>
 </div>
-<p>对于消费级的Skylake CPU，输出将如下所示：</p>
+<p>The output will look something like this for a consumer-level Skylake CPU:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc tune   --target <span class="s2">&quot;llvm -mcpu=broadwell&quot;</span>   --output resnet50-v2-7-autotuner_records.json   resnet50-v2-7.onnx
 <span class="c1"># [Task  1/24]  Current/Best:    9.65/  23.16 GFLOPS | Progress: (60/1000) | 130.74 s Done.</span>
 <span class="c1"># [Task  1/24]  Current/Best:    3.56/  23.16 GFLOPS | Progress: (192/1000) | 381.32 s Done.</span>
@@ -579,17 +669,24 @@ resnet50-v2-7.onnx
 <span class="c1"># [Task 24/24]  Current/Best:   17.27/  55.25 GFLOPS | Progress: (1000/1000) | 1428.74 s Done.</span>
 </pre></div>
 </div>
-<p>调整会话可能需要很长时间，因此 <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">tune``提供了许多选项来自定义你的调整过程，就重复次数而已（例如，</span></code>–repeat`` 和–number`），要使用的调整算法等等。检查``tvmc tune –help``获得更多信息。</p>
+<p>Tuning sessions can take a long time, so <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">tune</span></code> offers many options to customize your tuning
+process, in terms of number of repetitions (<code class="docutils literal notranslate"><span class="pre">--repeat</span></code> and <code class="docutils literal notranslate"><span class="pre">--number</span></code>, for example), the tuning
+algorithm to be used, and so on. Check <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">tune</span> <span class="pre">--help</span></code> for more information.</p>
 </div>
 <div class="section" id="compiling-an-optimized-model-with-tuning-data">
-<h2>使用调优数据编译一个优化后的模型<a class="headerlink" href="#compiling-an-optimized-model-with-tuning-data" title="永久链接至标题">¶</a></h2>
-<p>作为上述调优过程的输出，我们获得了存储在``resnet50-v2-7-autotuner_records.json``文件中的调优记录。该文件可以通过两种方式使用：</p>
+<h2>Compiling an Optimized Model with Tuning Data<a class="headerlink" href="#compiling-an-optimized-model-with-tuning-data" title="永久链接至标题">¶</a></h2>
+<p>As an output of the tuning process above, we obtained the tuning records
+stored in <code class="docutils literal notranslate"><span class="pre">resnet50-v2-7-autotuner_records.json</span></code>. This file can be used in
+two ways:</p>
 <ul class="simple">
-<li><p>作为进一步调优的输入（通过 <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">tune</span> <span class="pre">--tuning-records</span></code>）</p></li>
-<li><p>作为编译器的输入</p></li>
+<li><p>As input to further tuning (via <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">tune</span> <span class="pre">--tuning-records</span></code>).</p></li>
+<li><p>As input to the compiler</p></li>
 </ul>
-<p>编译器将使用调优结果为指定目标上的模型生成高性能代码。为此，我们可以用``tvmc compile –tuning-records``。 检查 <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">compile</span> <span class="pre">--help</span></code> 以获取更多信息。</p>
-<p>现在我们已经收集了模型的调优数据，我们可以使用优化后的算子来重新编译模型以加快运算速度。</p>
+<p>The compiler will use the results to generate high performance code for the
+model on your specified target. To do that we can use <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">compile</span>
+<span class="pre">--tuning-records</span></code>. Check <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">compile</span> <span class="pre">--help</span></code> for more information.</p>
+<p>Now that tuning data for the model has been collected, we can re-compile the
+model using optimized operators to speed up our computations.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc compile <span class="se">\</span>
 --target <span class="s2">&quot;llvm&quot;</span> <span class="se">\</span>
 --tuning-records resnet50-v2-7-autotuner_records.json  <span class="se">\</span>
@@ -597,7 +694,7 @@ resnet50-v2-7.onnx
 resnet50-v2-7.onnx
 </pre></div>
 </div>
-<p>验证优化后模型运行并产生相同的结果：</p>
+<p>Verify that the optimized model runs and produces the same results:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc run <span class="se">\</span>
 --inputs imagenet_cat.npz <span class="se">\</span>
 --output predictions.npz <span class="se">\</span>
@@ -606,7 +703,7 @@ resnet50-v2-7-tvm_autotuned.tar
 python postprocess.py
 </pre></div>
 </div>
-<p>验证预测结果是相同的：</p>
+<p>Verifying that the predictions are the same:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># class=&#39;n02123045 tabby, tabby cat&#39; with probability=0.610550</span>
 <span class="c1"># class=&#39;n02123159 tiger cat&#39; with probability=0.367181</span>
 <span class="c1"># class=&#39;n02124075 Egyptian cat&#39; with probability=0.019365</span>
@@ -616,8 +713,12 @@ python postprocess.py
 </div>
 </div>
 <div class="section" id="comparing-the-tuned-and-untuned-models">
-<h2>比较调优和未调优的模型<a class="headerlink" href="#comparing-the-tuned-and-untuned-models" title="永久链接至标题">¶</a></h2>
-<p>TVMC为你提供了再模型之间进行基本性能基准测试的工具。你可以指定重复次数然后TVMC会报告模型的运行时间（独立于运行时启动）。我们可以大概了解调优对模型性能的改进程度。例如，在Intel i7的测试中，我们看到调优后的模型运行速度比调优前快47%。</p>
+<h2>Comparing the Tuned and Untuned Models<a class="headerlink" href="#comparing-the-tuned-and-untuned-models" title="永久链接至标题">¶</a></h2>
+<p>TVMC gives you tools for basic performance benchmarking between the models.
+You can specify a number of repetitions and that TVMC report on the model run
+time (independent of runtime startup). We can get a rough idea of how much
+tuning has improved the model performance. For example, on a test Intel i7
+system, we see that the tuned model runs 47% faster than the untuned model:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tvmc run <span class="se">\</span>
 --inputs imagenet_cat.npz <span class="se">\</span>
 --output predictions.npz  <span class="se">\</span>
@@ -643,17 +744,26 @@ resnet50-v2-7-tvm.tar
 </div>
 </div>
 <div class="section" id="final-remarks">
-<h2>结语<a class="headerlink" href="#final-remarks" title="永久链接至标题">¶</a></h2>
-<p>在本教程中，我们介绍了 TVMC，这是 TVM 的命令行驱动程序。 我们演示了如何编译、运行和调优模型。 我们还讨论了对输入和输出进行预处理和后处理的必要性。 在调优过程之后，我们演示了如何比较未优化和优化模型的性能。</p>
-<p>这里我们展示了一个在本地使用 ResNet-50 V2 的简单示例。 但是，TVMC 支持更多功能，包括交叉编译、远程执行和分析/基准测试。</p>
-<p>要查看其他可用选项，请查看 <code class="docutils literal notranslate"><span class="pre">tvmc</span> <span class="pre">--help</span></code>。</p>
-<p>在下一个教程中, <a class="reference external" href="auto_tuning_with_pyton">使用 Python 接口编译和优化模型</a>, 我们将使用 Python 接口实现相同的编译和优化步骤。</p>
+<h2>Final Remarks<a class="headerlink" href="#final-remarks" title="永久链接至标题">¶</a></h2>
+<p>In this tutorial, we presented TVMC, a command line driver for TVM. We
+demonstrated how to compile, run, and tune a model. We also discussed the
+need for pre and post-processing of inputs and outputs. After the tuning
+process, we demonstrated how to compare the performance of the unoptimized
+and optimize models.</p>
+<p>Here we presented a simple example using ResNet 50 V2 locally. However, TVMC
+supports many more features including cross-compilation, remote execution and
+profiling/benchmarking.</p>
+<p>To see what other options are available, please have a look at <code class="docutils literal notranslate"><span class="pre">tvmc</span>
+<span class="pre">--help</span></code>.</p>
+<p>In the next tutorial, <a class="reference external" href="auto_tuning_with_pyton">Compiling and Optimizing a Model with the Python
+Interface</a>, we will cover the same compilation
+and optimization steps using the Python interface.</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-tvmc-command-line-driver-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/233ceda3a682ae5df93b4ce0bcfbf870/tvmc_command_line_driver.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源码:</span> <span class="pre">tvmc_command_line_driver.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/233ceda3a682ae5df93b4ce0bcfbf870/tvmc_command_line_driver.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">tvmc_command_line_driver.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/efe0b02e219b28e0bd85fbdda35ba8ac/tvmc_command_line_driver.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tvmc_command_line_driver.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/efe0b02e219b28e0bd85fbdda35ba8ac/tvmc_command_line_driver.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tvmc_command_line_driver.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -673,7 +783,7 @@ resnet50-v2-7-tvm.tar
         <a href="autotvm_relay_x86.html" class="btn btn-neutral float-right" title="Compiling and Optimizing a Model with the Python Interface (AutoTVM)" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="install.html" class="btn btn-neutral float-left" title="安装 TVM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installing TVM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

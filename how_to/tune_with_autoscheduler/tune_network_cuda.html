@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1933+ge30af020e 文档</title>
+  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1933+ge30af020e
+                  0.8.dev1934+gfa3ce683a
                 </div>
             
           
@@ -254,7 +254,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -912,9 +912,10 @@ so we can read the log file and load the best schedules.</p>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
 <span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
+<span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
   File <span class="nb">&quot;/tvm_chinese/tvm/src/tir/analysis/verify_memory.cc&quot;</span>, line <span class="m">206</span>
 <span class="gr">RuntimeError</span>: <span class="n">Memory verification failed with the following errors:</span>
-<span class="x">PrimFunc([placeholder, placeholder, placeholder, T_relu]) attrs={&quot;target&quot;: cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, &quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_nn_relu_2&quot;, &quot;from_legacy_te_schedule&quot;: (bool)1} {</span>
+<span class="x">PrimFunc([placeholder, placeholder, placeholder, placeholder, T_relu]) attrs={&quot;target&quot;: cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, &quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_add_nn_relu_1&quot;, &quot;from_legacy_te_schedule&quot;: (bool)1} {</span>
 <span class="x">  allocate data_pad[float32 * 401408], storage_scope = global</span>
 <span class="x">  allocate input_tile[float32 * 401408], storage_scope = global</span>
 <span class="x">  allocate B[float32 * 16], storage_scope = global</span>
@@ -994,14 +995,21 @@ so we can read the log file and load the best schedules.</p>
 <span class="x">  for (ax1, 0, 28) {</span>
 <span class="x">    for (ax2, 0, 28) {</span>
 <span class="x">      for (ax3, 0, 128) {</span>
-<span class="x">        data_pad[(((ax1*3584) + (ax2*128)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[ax3])</span>
+<span class="x">        data_pad[(((ax1*3584) + (ax2*128)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[(((ax1*3584) + (ax2*128)) + ax3)])</span>
 <span class="x">      }</span>
 <span class="x">    }</span>
 <span class="x">  }</span>
 <span class="x">  for (ax1, 0, 28) {</span>
 <span class="x">    for (ax2, 0, 28) {</span>
 <span class="x">      for (ax3, 0, 128) {</span>
-<span class="x">        T_relu[(((ax1*3584) + (ax2*128)) + ax3)] = max(data_pad[(((ax1*3584) + (ax2*128)) + ax3)], 0f)</span>
+<span class="x">        input_tile[(((ax1*3584) + (ax2*128)) + ax3)] = (data_pad[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[ax3])</span>
+<span class="x">      }</span>
+<span class="x">    }</span>
+<span class="x">  }</span>
+<span class="x">  for (ax1, 0, 28) {</span>
+<span class="x">    for (ax2, 0, 28) {</span>
+<span class="x">      for (ax3, 0, 128) {</span>
+<span class="x">        T_relu[(((ax1*3584) + (ax2*128)) + ax3)] = max(input_tile[(((ax1*3584) + (ax2*128)) + ax3)], 0f)</span>
 <span class="x">      }</span>
 <span class="x">    }</span>
 <span class="x">  }</span>

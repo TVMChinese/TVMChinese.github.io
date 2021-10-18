@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TVM Runtime System &mdash; tvm 0.8.dev1933+ge30af020e 文档</title>
+  <title>TVM runtime系统 &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1933+ge30af020e
+                  0.8.dev1934+gfa3ce683a
                 </div>
             
           
@@ -223,10 +223,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Design and Architecture</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html#example-compilation-flow">编译流程示例</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#logical-architecture-components">Logical Architecture Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#logical-architecture-components">逻辑架构组件</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#tvm-support">tvm/support</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#tvm-runtime">tvm/runtime</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">TVM Runtime System</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">TVM runtime系统</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#packedfunc">PackedFunc</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module">Module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remote-deployment">Remote Deployment</a></li>
@@ -261,7 +261,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -329,7 +329,7 @@
         
           <li><a href="index.html">Design and Architecture</a> <span class="br-arrow">></span></li>
         
-      <li>TVM Runtime System</li>
+      <li>TVM runtime系统</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -349,21 +349,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tvm-runtime-system">
-<span id="id1"></span><h1>TVM Runtime System<a class="headerlink" href="#tvm-runtime-system" title="永久链接至标题">¶</a></h1>
-<p>TVM supports multiple programming languages for the compiler stack development and deployment.
-In this note, we explain the key elements of the TVM runtime.</p>
+<span id="id1"></span><h1>TVM runtime系统<a class="headerlink" href="#tvm-runtime-system" title="永久链接至标题">¶</a></h1>
+<p>TVM支持多种编程语言用于编译器堆栈的开发和部署。在本文中，我们会解释TVM runtime的关键元素。</p>
 <img alt="https://tvm.apache.org/images/release/tvm_flexible.png" src="https://tvm.apache.org/images/release/tvm_flexible.png" />
-<p>We need to satisfy quite a few interesting requirements:</p>
+<p>我们需要满足许多有趣的要求：</p>
 <ul class="simple">
-<li><p>Deployment: invoke the compiled function from python/javascript/c++ language.</p></li>
-<li><p>Debug: define a function in python and call that from a compiled function.</p></li>
-<li><p>Link: write driver code to call device specific code (CUDA) and call it from compiled host function.</p></li>
-<li><p>Prototype: define an IR pass from python and call that from C++ backend.</p></li>
-<li><p>Expose: compiler stack developed in c++ to front-end (i.e, python)</p></li>
-<li><p>Experiment: ship a compiled function to an embedded device to directly run there.</p></li>
+<li><p>部署：用python/javascrip/c++语言调用编译后的函数。</p></li>
+<li><p>调试：用python定义一个函数并在一个编译后的函数中调用它。</p></li>
+<li><p>链接：编写驱动代码来调用设备特定代码（CUDA）并在编译后的主机函数中调用它。</p></li>
+<li><p>原型：用python定义一个IR pass然后从C++后端中调用。</p></li>
+<li><p>公开：从用c++开发的编译器堆栈到前端（如python）</p></li>
+<li><p>实验：将编译后的函数发送到嵌入式设备来直接运行。</p></li>
 </ul>
-<p>We want to be able to define a function from any language and call from another.
-We also want the runtime core to be minimal to deploy to embedded devices.</p>
+<p>我们想要能用任何语言定义一个函数然后用另一个语言来调用它。我们还希望runtime核能小到足以部署在嵌入式设备上。</p>
 <div class="section" id="packedfunc">
 <span id="tvm-runtime-system-packed-func"></span><h2>PackedFunc<a class="headerlink" href="#packedfunc" title="永久链接至标题">¶</a></h2>
 <p><a class="reference external" href="https://github.com/apache/tvm/blob/main/include/tvm/runtime/packed_func.h">PackedFunc</a> is a simple but elegant solution we find to solve the

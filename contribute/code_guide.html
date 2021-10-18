@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Code Guide and Tips &mdash; tvm 0.8.dev1933+ge30af020e 文档</title>
+  <title>代码指南和提示 &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1933+ge30af020e
+                  0.8.dev1934+gfa3ce683a
                 </div>
             
           
@@ -212,11 +212,11 @@
 <li class="toctree-l2"><a class="reference internal" href="code_review.html">执行代码审查</a></li>
 <li class="toctree-l2"><a class="reference internal" href="committer_guide.html">Committer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="document.html">Write Documentation for TVM</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Code Guide and Tips</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#c-code-styles">C++ Code Styles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-code-styles">Python Code Styles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#writing-python-tests">Writing Python Tests</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#handle-integer-constant-expression">Handle Integer Constant Expression</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">代码指南和提示</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#c-code-styles">C++ 代码规范</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-code-styles">Python代码规范</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#writing-python-tests">编写Python测试代码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#handle-integer-constant-expression">处理整数常量表达式</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Error Handling Guide</a></li>
@@ -242,7 +242,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -310,7 +310,7 @@
         
           <li><a href="index.html">贡献者指南</a> <span class="br-arrow">></span></li>
         
-      <li>Code Guide and Tips</li>
+      <li>代码指南和提示</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -330,28 +330,22 @@
            <div itemprop="articleBody">
             
   <div class="section" id="code-guide-and-tips">
-<span id="code-guide"></span><h1>Code Guide and Tips<a class="headerlink" href="#code-guide-and-tips" title="永久链接至标题">¶</a></h1>
-<p>This is a document used to record tips in TVM codebase for reviewers and contributors.
-Most of them are summarized through lessons during the contributing and process.</p>
+<span id="code-guide"></span><h1>代码指南和提示<a class="headerlink" href="#code-guide-and-tips" title="永久链接至标题">¶</a></h1>
+<p>本文档用于为审阅者和贡献者在TVM代码库中记录提示。其中大部分都是从贡献和审核过程中的教训里总结得到。</p>
 <div class="section" id="c-code-styles">
-<h2>C++ Code Styles<a class="headerlink" href="#c-code-styles" title="永久链接至标题">¶</a></h2>
+<h2>C++ 代码规范<a class="headerlink" href="#c-code-styles" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>Use the Google C/C++ style.</p></li>
-<li><p>The public facing functions are documented in doxygen format.</p></li>
-<li><p>Favor concrete type declaration over <code class="docutils literal notranslate"><span class="pre">auto</span></code> as long as it is short.</p></li>
-<li><p>Favor passing by const reference (e.g. <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">Expr&amp;</span></code>) over passing by value.
-Except when the function consumes the value by copy constructor or move,
-pass by value is better than pass by const reference in such cases.</p></li>
-<li><p>Favor <code class="docutils literal notranslate"><span class="pre">const</span></code> member function when possible.</p></li>
+<li><p>使用Google C/C++ 规范</p></li>
+<li><p>面向大众的函数按照Doxygen格式进行记录</p></li>
+<li><p>尽量使用简短的具体类型声明而不是``auto``</p></li>
+<li><p>尽量通过常量引用传递（例如``const Expr&amp;``）而不是数值传递。除非在函数通过复制构造函数或移动来使用数值时，数值传递才比常量引用传递更好。</p></li>
+<li><p>尽量使用 <a href="#id1"><span class="problematic" id="id2">``</span></a>const``成员函数</p></li>
 </ul>
-<p>We use <cite>clang-format</cite> to enforce the code style. Because different version
-of clang-format might change by its version, it is recommended to use the same
-version of the clang-format as the main one.
-You can also use the following command via docker.</p>
+<p>我们使用`clang-format`来确保代码规范。因为不同版本的clang-format可能会有差异，我们推荐使用和主分支相同版本的clang-format。您也可以通过docker使用如下指令。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker/bash.sh tlcpack/ci-lint clang-format-10 <span class="o">[</span>path-to-file<span class="o">]</span>
 </pre></div>
 </div>
-<p>clang-format is also not perfect, when necessary, you can use disble clang-format on certain code regions.</p>
+<p>clang-format也不是完美的，如有必要，您也可以在特定代码区域不使用clang-format。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// clang-format off</span>
 <span class="kt">void</span> <span class="nf">Test</span><span class="p">()</span> <span class="p">{</span>
    <span class="c1">// clang-format will be disabled in this region.</span>
@@ -359,7 +353,7 @@ You can also use the following command via docker.</p>
 <span class="c1">// clang-format on</span>
 </pre></div>
 </div>
-<p>Because clang-format may not recognize macros, it is recommended to use macro like normal function styles.</p>
+<p>因为clang-format可能无法识别宏，因此我们推荐按照普通代码规范使用宏。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MACRO_IMPL { custom impl; }</span>
 <span class="cp">#define MACRO_FUNC(x)</span>
 
@@ -377,29 +371,29 @@ You can also use the following command via docker.</p>
 </div>
 </div>
 <div class="section" id="python-code-styles">
-<h2>Python Code Styles<a class="headerlink" href="#python-code-styles" title="永久链接至标题">¶</a></h2>
+<h2>Python代码规范<a class="headerlink" href="#python-code-styles" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
-<li><p>The functions and classes are documented in <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/">numpydoc</a> format.</p></li>
-<li><p>Check your code style using <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">pylint</span></code></p></li>
-<li><p>Stick to language features as in <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3.6</span></code></p></li>
+<li><p>函数和类的规范记录在`numpydoc &lt;<a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/">https://numpydoc.readthedocs.io/en/latest/</a>&gt;`_ 中.</p></li>
+<li><p>通过``make pylint``检查您的代码规范。</p></li>
+<li><p>和``python 3.6``的语言特性保持一致</p></li>
 </ul>
 </div>
 <div class="section" id="writing-python-tests">
-<h2>Writing Python Tests<a class="headerlink" href="#writing-python-tests" title="永久链接至标题">¶</a></h2>
-<p>We use <a class="reference external" href="https://docs.pytest.org/en/stable/">pytest</a> for all python testing. <code class="docutils literal notranslate"><span class="pre">tests/python</span></code> contains all the tests.</p>
-<p>If you want your test to run over a variety of targets, use the <code class="xref py py-func docutils literal notranslate"><span class="pre">tvm.testing.parametrize_targets()</span></code> decorator. For example:</p>
+<h2>编写Python测试代码<a class="headerlink" href="#writing-python-tests" title="永久链接至标题">¶</a></h2>
+<p>我们使用 <a href="#id1"><span class="problematic" id="id2">`</span></a>pytest &lt;<a class="reference external" href="https://docs.pytest.org/en/stable/">https://docs.pytest.org/en/stable/</a>&gt;`_进行所有的python测试。<a href="#id3"><span class="problematic" id="id4">``</span></a>tests/python``被包含在所有的测试中。</p>
+<p>如果您希望您的测试能在各种目标环境下运行，请使用:py:func:<a href="#id1"><span class="problematic" id="id2">`</span></a>tvm.testing.parametrize_targets`装饰器。例如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@tvm.testing.parametrize_targets</span>
 <span class="k">def</span> <span class="nf">test_mytest</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">dev</span><span class="p">):</span>
   <span class="o">...</span>
 </pre></div>
 </div>
-<p>will run <code class="docutils literal notranslate"><span class="pre">test_mytest</span></code> with <code class="docutils literal notranslate"><span class="pre">target=&quot;llvm&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">target=&quot;cuda&quot;</span></code>, and few others. This also ensures that your test is run on the correct hardware by the CI. If you only want to test against a couple targets use <code class="docutils literal notranslate"><span class="pre">&#64;tvm.testing.parametrize_targets(&quot;target_1&quot;,</span> <span class="pre">&quot;target_2&quot;)</span></code>. If you want to test on a single target, use the associated decorator from <code class="xref py py-func docutils literal notranslate"><span class="pre">tvm.testing()</span></code>. For example, CUDA tests use the <code class="docutils literal notranslate"><span class="pre">&#64;tvm.testing.requires_cuda</span></code> decorator.</p>
+<p>将会使用``target=”llvm”<code class="docutils literal notranslate"><span class="pre">，``target=&quot;cuda&quot;``和一些其它参数运行``test_mytest</span></code>。这也通过CI保证您的测试运行在正确的硬件上。如果您只希望针对几个环境进行测试，请使用``&#64;tvm.testing.parametrize_targets(“target_1”, “target_2”)``。如果您希望在单个场景下进行测试，请使用 :py:func:<a href="#id1"><span class="problematic" id="id2">`</span></a>tvm.testing`里的相关的装饰器。例如，CUDA测试使用``&#64;tvm.testing.requires_cuda``装饰器。</p>
 </div>
 <div class="section" id="handle-integer-constant-expression">
-<h2>Handle Integer Constant Expression<a class="headerlink" href="#handle-integer-constant-expression" title="永久链接至标题">¶</a></h2>
-<p>We often need to handle constant integer expressions in TVM. Before we do so, the first question we want to ask is that is it really necessary to get a constant integer. If symbolic expression also works and let the logic flow, we should use symbolic expression as much as possible. So the generated code works for shapes that are not known ahead of time.</p>
-<p>Note that in some cases we cannot know certain information, e.g. sign of symbolic variable, it is ok to make assumptions in certain cases. While adding precise support if the variable is constant.</p>
-<p>If we do have to get constant integer expression, we should get the constant value using type <code class="docutils literal notranslate"><span class="pre">int64_t</span></code> instead of <code class="docutils literal notranslate"><span class="pre">int</span></code>, to avoid potential integer overflow. We can always reconstruct an integer with the corresponding expression type via <code class="docutils literal notranslate"><span class="pre">make_const</span></code>. The following code gives an example.</p>
+<h2>处理整数常量表达式<a class="headerlink" href="#handle-integer-constant-expression" title="永久链接至标题">¶</a></h2>
+<p>我们在TVM中经常需要处理整数常量表达式。在这样做之前，我们想要问的第一个问题是，是否真的有必要得到一个整数常量。如果符号表达式也有效并符合逻辑，我们应该尽量使用符号表达式。因此生成的代码适用于事先未知的形状。</p>
+<p>注意在某些情况下我们不能获取特定信息，例如符号变量的符号，因此在某些情况下可以做出假设。但如果变量是常量，则需要添加精准支持。</p>
+<p>如果我们必须获得整数常量表达式，我们应该使用类型``int64_t``的常量值而不是``int``的，来避免潜在的整数溢出。我们总可以通过``make_const``用相应的表达式类型重新构建一个整数。下列代码提供了一个示例。</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Expr</span> <span class="nf">CalculateExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
   <span class="kt">int64_t</span> <span class="n">int_value</span> <span class="o">=</span> <span class="n">GetConstInt</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
   <span class="n">int_value</span> <span class="o">=</span> <span class="n">CalculateExprInInt64</span><span class="p">(</span><span class="n">int_value</span><span class="p">);</span>

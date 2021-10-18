@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>语言参考 &mdash; tvm 0.8.dev1933+ge30af020e 文档</title>
+  <title>语言参考 &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1933+ge30af020e
+                  0.8.dev1934+gfa3ce683a
                 </div>
             
           
@@ -225,7 +225,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -233,9 +233,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">语言参考</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction-to-relay">Relay简介</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="relay_expr.html">Expressions in Relay</a></li>
-<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay 系统类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay’s Type System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_adt.html">Algebraic Data Types in Relay</a></li>
-<li class="toctree-l3"><a class="reference internal" href="relay_op.html">Relay 基础张量算子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_op.html">Relay Core Tensor Operators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_pattern.html">Pattern Matching in Relay</a></li>
 </ul>
 </li>
@@ -336,7 +336,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="relay_expr.html">Expressions in Relay</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="relay_expr.html#dataflow-and-control-fragments">Dataflow and Control Fragments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_expr.html#variables">变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_expr.html#variables">Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay_expr.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay_expr.html#operators">Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relay_expr.html#adt-constructors">ADT Constructors</a></li>
@@ -351,16 +351,16 @@
 <li class="toctree-l2"><a class="reference internal" href="relay_expr.html#tempexprs">TempExprs</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="relay_type.html">Relay 系统类型</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type">类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#tensor-type">张量类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#tuple-type">元组类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type-parameter">类型参数</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type-constraint">类型约束</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#function-type">函数类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type-relation">类型关系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#incomplete-type">不完整类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_type.html#algebraic-data-types">代数数据类型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relay_type.html">Relay’s Type System</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type">Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#tensor-type">Tensor Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#tuple-type">Tuple Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type-parameter">Type Parameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type-constraint">Type Constraint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#function-type">Function Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#type-relation">Type Relation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#incomplete-type">Incomplete Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_type.html#algebraic-data-types">Algebraic Data Types</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="relay_adt.html">Algebraic Data Types in Relay</a><ul>
@@ -372,8 +372,8 @@
 <li class="toctree-l2"><a class="reference internal" href="relay_adt.html#implementing-neural-nets-using-adts">Implementing Neural Nets Using ADTs</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="relay_op.html">Relay 基础张量算子</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="relay_op.html#overview-of-operators">算子概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relay_op.html">Relay Core Tensor Operators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="relay_op.html#overview-of-operators">Overview of Operators</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="relay_pattern.html">Pattern Matching in Relay</a><ul>
