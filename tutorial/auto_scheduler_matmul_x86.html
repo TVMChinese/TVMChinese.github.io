@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Optimizing Operators with Auto-scheduling &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
+  <title>Optimizing Operators with Auto-scheduling &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1934+gfa3ce683a
+                  0.8.dev1935+g887aa051a
                 </div>
             
           
@@ -212,12 +212,12 @@
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Tutorial</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">Installing TVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">Compiling and Optimizing a Model with TVMC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">使用TVMC编译和优化一个模型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_relay_x86.html">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">Working with Operators Using Tensor Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">使用张量表达式来处理运算符</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Optimizing Operators with Auto-scheduling</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#defining-the-matrix-multiplication">Defining the Matrix Multiplication</a></li>
@@ -227,11 +227,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#inspecting-the-optimized-schedule">Inspecting the Optimized Schedule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#check-correctness-and-evaluate-performance">Check correctness and evaluate performance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#using-the-record-file">Using the record file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#final-notes-and-summary">Final Notes and Summary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#final-notes-and-summary">最终说明总结</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cross_compilation_and_rpc.html">Cross Compilation and RPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">Quick Start Tutorial for Compiling Deep Learning Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_topi.html">Introduction to TOPI</a></li>
 </ul>
 </li>
@@ -248,7 +248,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -337,11 +337,11 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorial-auto-scheduler-matmul-x86-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-tutorial-auto-scheduler-matmul-x86-py"><span class="std std-ref">此处</span></a> 获取完整示例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="optimizing-operators-with-auto-scheduling">
 <span id="sphx-glr-tutorial-auto-scheduler-matmul-x86-py"></span><h1>Optimizing Operators with Auto-scheduling<a class="headerlink" href="#optimizing-operators-with-auto-scheduling" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://github.com/merrymercy">Lianmin Zheng</a>,             <a class="reference external" href="https://github.com/jcf94/">Chengfan Jia</a></p>
+<p><strong>作者</strong>: <a class="reference external" href="https://github.com/merrymercy">Lianmin Zheng</a>,             <a class="reference external" href="https://github.com/jcf94/">Chengfan Jia</a></p>
 <p>In this tutorial, we will show how TVM’s Auto Scheduling feature can find
 optimal schedules without the need for writing a custom template.</p>
 <p>Different from the template-based <a class="reference internal" href="autotvm_matmul_x86.html"><span class="doc">AutoTVM</span></a> which relies on
@@ -414,7 +414,7 @@ you will want to manuall specify your CPU capabilities. For example:
 <span class="nb">print</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">compute_dag</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Computational DAG:
 A = PLACEHOLDER [1024, 1024]
 B = PLACEHOLDER [1024, 1024]
@@ -457,7 +457,7 @@ trials, we can load the best schedule from the log file and apply it.</p>
 <span class="n">sch</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">apply_best</span><span class="p">(</span><span class="n">log_file</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
@@ -472,7 +472,7 @@ operator fusion.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">sch</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Lowered TIR:
 primfn(A_1: handle, B_1: handle, C_1: handle, out_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
@@ -566,7 +566,7 @@ primfn(A_1: handle, B_1: handle, C_1: handle, out_1: handle) -&gt; ()
 <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Execution time of this operator: 35.062 ms
 </pre></div>
 </div>
@@ -583,7 +583,7 @@ the behavior of the auto-scheduler.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">print_best</span><span class="p">(</span><span class="n">log_file</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Equivalent python schedule:
 matmul_i, matmul_j, matmul_k = tuple(matmul.op.axis) + tuple(matmul.op.reduce_axis)
 out_i, out_j = tuple(out.op.axis) + tuple(out.op.reduce_axis)
@@ -626,7 +626,7 @@ resume the status and do more 5 trials.</p>
 <span class="n">resume_search</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">log_file</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Resume search:
 /usr/local/lib/python3.6/dist-packages/xgboost/training.py:17: UserWarning: Old style callback is deprecated.  See: https://xgboost.readthedocs.io/en/latest/python/callbacks.html
   warnings.warn(f&#39;Old style callback is deprecated.  See: {link}&#39;, UserWarning)
@@ -634,7 +634,7 @@ resume the status and do more 5 trials.</p>
 </div>
 </div>
 <div class="section" id="final-notes-and-summary">
-<h2>Final Notes and Summary<a class="headerlink" href="#final-notes-and-summary" title="永久链接至标题">¶</a></h2>
+<h2>最终说明总结<a class="headerlink" href="#final-notes-and-summary" title="永久链接至标题">¶</a></h2>
 <p>In this tutorial, we have shown how to use the TVM Auto-Scheduler to
 automatically optimize a matrix multiplication, without the need to specify a
 search template.  It ends a series of examples that starts from the Tensor
@@ -642,10 +642,10 @@ Expression (TE) language that demonstrates how TVM can optimize computational
 operations.</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-auto-scheduler-matmul-x86-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/eac4389b114db015e95cb3cdf8b86b83/auto_scheduler_matmul_x86.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">auto_scheduler_matmul_x86.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/eac4389b114db015e95cb3cdf8b86b83/auto_scheduler_matmul_x86.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">源码下载:</span> <span class="pre">auto_scheduler_matmul_x86.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../_downloads/246d4b8509474fd9046e69f6cc9b7f87/auto_scheduler_matmul_x86.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">auto_scheduler_matmul_x86.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../_downloads/246d4b8509474fd9046e69f6cc9b7f87/auto_scheduler_matmul_x86.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">notebook</span> <span class="pre">下载:</span> <span class="pre">auto_scheduler_matmul_x86.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TVM Codebase Walkthrough by Example &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
+  <title>TVM Codebase Walkthrough by Example &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1934+gfa3ce683a
+                  0.8.dev1935+g887aa051a
                 </div>
             
           
@@ -232,7 +232,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -342,7 +342,7 @@
 </div>
 <div class="section" id="vector-add-example">
 <h2>Vector Add Example<a class="headerlink" href="#vector-add-example" title="永久链接至标题">¶</a></h2>
-<p>We use a simple example that uses the low level TVM API directly. The example is vector addition, which is covered in detail in <a class="reference internal" href="../../tutorial/tensor_expr_get_started.html#tutorial-tensor-expr-get-started"><span class="std std-ref">Working with Operators Using Tensor Expression</span></a></p>
+<p>We use a simple example that uses the low level TVM API directly. The example is vector addition, which is covered in detail in <a class="reference internal" href="../../tutorial/tensor_expr_get_started.html#tutorial-tensor-expr-get-started"><span class="std std-ref">使用张量表达式来处理运算符</span></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1024</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">te</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">te</span><span class="o">.</span><span class="n">placeholder</span><span class="p">((</span><span class="n">n</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>

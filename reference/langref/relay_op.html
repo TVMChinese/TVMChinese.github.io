@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Relay Core Tensor Operators &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
+  <title>Relay 基础张量算子 &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1934+gfa3ce683a
+                  0.8.dev1935+g887aa051a
                 </div>
             
           
@@ -225,7 +225,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -233,10 +233,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">语言参考</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#introduction-to-relay">Relay简介</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="relay_expr.html">Expressions in Relay</a></li>
-<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay’s Type System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay 系统类型</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_adt.html">Algebraic Data Types in Relay</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Relay Core Tensor Operators</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#overview-of-operators">Overview of Operators</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Relay 基础张量算子</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview-of-operators">算子概述</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="relay_pattern.html">Pattern Matching in Relay</a></li>
@@ -307,7 +307,7 @@
         
           <li><a href="index.html">语言参考</a> <span class="br-arrow">></span></li>
         
-      <li>Relay Core Tensor Operators</li>
+      <li>Relay 基础张量算子</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -327,20 +327,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="relay-core-tensor-operators">
-<h1>Relay Core Tensor Operators<a class="headerlink" href="#relay-core-tensor-operators" title="永久链接至标题">¶</a></h1>
-<p>This page contains the list of core tensor operator primitives pre-defined in tvm.relay.
-The core tensor operator primitives cover typical workloads in deep learning.
-They can represent workloads in front-end frameworks and provide basic building blocks for optimization.
-Since deep learning is a fast evolving field, it is possible to have operators that are not in here.</p>
+<h1>Relay 基础张量算子<a class="headerlink" href="#relay-core-tensor-operators" title="永久链接至标题">¶</a></h1>
+<p>此页面包含 tvm.realy 中预先定义的核心张量算子原始数列表。核心张量算子原语涵盖深度学习中的典型工作量。它们可以代表前端框架中的工作内容，并为优化提供基本构建基块。由于深度学习是一个快速发展的领域，因此有可能有些算子不在这里。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>This document will directly list the function signature of
-these operators in the python frontend.</p>
+<p>本文档将直接列出这些算子在 python 前端中的函数签名。</p>
 </div>
 <div class="section" id="overview-of-operators">
-<h2>Overview of Operators<a class="headerlink" href="#overview-of-operators" title="永久链接至标题">¶</a></h2>
-<p><strong>Level 1: Basic Operators</strong></p>
-<p>This level enables fully connected multi-layer perceptron.</p>
+<h2>算子概述<a class="headerlink" href="#overview-of-operators" title="永久链接至标题">¶</a></h2>
+<p><strong>级别 1：基础算子</strong></p>
+<p>此级别可实现多层的全连接感知器。</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -348,66 +344,66 @@ these operators in the python frontend.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.log</span></code></p></td>
-<td><p>Compute elementwise log of data.</p></td>
+<td><p>数据的点对应对数运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.sqrt</span></code></p></td>
-<td><p>Compute elementwise sqrt of data.</p></td>
+<td><p>数据的点对应平方根运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.rsqrt</span></code></p></td>
-<td><p>Compute elementwise rsqrt of data.</p></td>
+<td><p>数据的点对应平方根倒数运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.exp</span></code></p></td>
-<td><p>Compute elementwise exp of data.</p></td>
+<td><p>数据的点对应以 e 为底的指数运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.sigmoid</span></code></p></td>
-<td><p>Compute elementwise sigmoid of data.</p></td>
+<td><p>数据的点对应 sigmoid 运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.add</span></code></p></td>
-<td><p>Addition with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播加法运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.subtract</span></code></p></td>
-<td><p>Subtraction with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播减法运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.multiply</span></code></p></td>
-<td><p>Multiplication with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播乘法运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.divide</span></code></p></td>
-<td><p>Division with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播除法运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.mod</span></code></p></td>
-<td><p>Mod with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播取模运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.tanh</span></code></p></td>
-<td><p>Compute element-wise tanh of data.</p></td>
+<td><p>数据的点对应 tanh 运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.concatenate</span></code></p></td>
-<td><p>Concatenate the input tensors along the given axis.</p></td>
+<td><p>根据给定的轴连接输入张量。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.expand_dims</span></code></p></td>
-<td><p>Insert <cite>num_newaxis</cite> axes at the position given by <cite>axis</cite>.</p></td>
+<td><p>在 <cite>axis</cite> 给定的位置插入 <cite>num_newaxis</cite> 坐标轴。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.softmax" title="tvm.relay.nn.softmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.softmax</span></code></a></p></td>
-<td><p>Computes softmax.</p></td>
+<td><p>计算 softmax。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.log_softmax" title="tvm.relay.nn.log_softmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.log_softmax</span></code></a></p></td>
-<td><p>Computes log softmax.</p></td>
+<td><p>计算 log_softmax。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.relu" title="tvm.relay.nn.relu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.relu</span></code></a></p></td>
-<td><p>Rectified linear unit.</p></td>
+<td><p>修正线性单元。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.dropout" title="tvm.relay.nn.dropout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.dropout</span></code></a></p></td>
-<td><p>Applies the dropout operation to the input array.</p></td>
+<td><p>对输入数列使用 dropout 算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.batch_norm" title="tvm.relay.nn.batch_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.batch_norm</span></code></a></p></td>
-<td><p>Batch normalization layer (Ioffe and Szegedy, 2014).</p></td>
+<td><p>批量处理规范化层 （Ioffe and Szegedy, 2014）。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.bias_add" title="tvm.relay.nn.bias_add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.bias_add</span></code></a></p></td>
-<td><p>add_bias operator.</p></td>
+<td><p>add_bias 算子。</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Level 2: Convolutions</strong></p>
-<p>This level enables typical convnet models.</p>
+<p><strong>级别 2： 卷积</strong></p>
+<p>此级别使用在典型的卷积模型。</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -415,81 +411,81 @@ these operators in the python frontend.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.conv2d" title="tvm.relay.nn.conv2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.conv2d</span></code></a></p></td>
-<td><p>2D convolution.</p></td>
+<td><p>2D 卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.conv2d_transpose" title="tvm.relay.nn.conv2d_transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.conv2d_transpose</span></code></a></p></td>
-<td><p>Two dimensional transposed convolution operator.</p></td>
+<td><p>二维转置卷积算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.conv3d" title="tvm.relay.nn.conv3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.conv3d</span></code></a></p></td>
-<td><p>3D convolution.</p></td>
+<td><p>3D 卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.conv3d_transpose" title="tvm.relay.nn.conv3d_transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.conv3d_transpose</span></code></a></p></td>
-<td><p>3D transpose convolution.</p></td>
+<td><p>3D 转置卷积。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.dense" title="tvm.relay.nn.dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.dense</span></code></a></p></td>
-<td><p>Dense operator.</p></td>
+<td><p>稠密算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.max_pool2d" title="tvm.relay.nn.max_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.max_pool2d</span></code></a></p></td>
-<td><p>2D maximum pooling operator.</p></td>
+<td><p>2D 最大池化算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.max_pool3d" title="tvm.relay.nn.max_pool3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.max_pool3d</span></code></a></p></td>
-<td><p>3D maximum pooling operator.</p></td>
+<td><p>3D 最大池化算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.avg_pool2d" title="tvm.relay.nn.avg_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.avg_pool2d</span></code></a></p></td>
-<td><p>2D average pooling operator.</p></td>
+<td><p>2D 平均池化算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.avg_pool3d" title="tvm.relay.nn.avg_pool3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.avg_pool3d</span></code></a></p></td>
-<td><p>3D average pooling operator.</p></td>
+<td><p>3D 平均池化算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.global_max_pool2d" title="tvm.relay.nn.global_max_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.global_max_pool2d</span></code></a></p></td>
-<td><p>2D global maximum pooling operator.</p></td>
+<td><p>2D 全局最大池化算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.global_avg_pool2d" title="tvm.relay.nn.global_avg_pool2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.global_avg_pool2d</span></code></a></p></td>
-<td><p>2D global average pooling operator.</p></td>
+<td><p>2D 全局平均池化算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.upsampling" title="tvm.relay.nn.upsampling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.upsampling</span></code></a></p></td>
-<td><p>Upsampling.</p></td>
+<td><p>上采样。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.upsampling3d" title="tvm.relay.nn.upsampling3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.upsampling3d</span></code></a></p></td>
-<td><p>3D Upsampling.</p></td>
+<td><p>3D 上采样。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.batch_flatten" title="tvm.relay.nn.batch_flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.batch_flatten</span></code></a></p></td>
 <td><p>BatchFlatten.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.pad" title="tvm.relay.nn.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.pad</span></code></a></p></td>
-<td><p>Padding</p></td>
+<td><p>填充</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.lrn" title="tvm.relay.nn.lrn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.lrn</span></code></a></p></td>
-<td><p>This operator takes data as input and does local response normalization.</p></td>
+<td><p>该算子将数据作为输入，并进行局部响应归一化。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.l2_normalize" title="tvm.relay.nn.l2_normalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.l2_normalize</span></code></a></p></td>
-<td><p>Perform L2 normalization on the input data</p></td>
+<td><p>对输入数据执行L2标准化</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.bitpack" title="tvm.relay.nn.bitpack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.bitpack</span></code></a></p></td>
-<td><p>Tensor packing for bitserial operations.</p></td>
+<td><p>对于位序列算子的张量包装。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.bitserial_dense" title="tvm.relay.nn.bitserial_dense"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.bitserial_dense</span></code></a></p></td>
-<td><p>Bitserial Dense operator.</p></td>
+<td><p>位序列稠密算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.bitserial_conv2d" title="tvm.relay.nn.bitserial_conv2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.bitserial_conv2d</span></code></a></p></td>
-<td><p>2D convolution using bitserial computation.</p></td>
+<td><p>使用位序列计算的 2D 卷积。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform" title="tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.contrib_conv2d_winograd_without_weight_transform</span></code></a></p></td>
-<td><p>2D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法的 2D 卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.contrib_conv2d_winograd_weight_transform" title="tvm.relay.nn.contrib_conv2d_winograd_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.contrib_conv2d_winograd_weight_transform</span></code></a></p></td>
-<td><p>Weight Transformation part for 2D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法对 2D 卷积的转换部分进行加权。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform" title="tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.contrib_conv3d_winograd_without_weight_transform</span></code></a></p></td>
-<td><p>3D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法的 3D 卷积。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.contrib_conv3d_winograd_weight_transform" title="tvm.relay.nn.contrib_conv3d_winograd_weight_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.contrib_conv3d_winograd_weight_transform</span></code></a></p></td>
-<td><p>Weight Transformation part for 3D convolution with winograd algorithm.</p></td>
+<td><p>基于 Winograd 算法对 3D 卷积的转换部分进行加权。</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Level 3: Additional Math And Transform Operators</strong></p>
-<p>This level enables additional math and transform operators.</p>
+<p><strong>级别 3：附加数学函数和Transform 算子</strong></p>
+<p>此级别是额外的数学函数和transform 算子。</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -497,116 +493,116 @@ these operators in the python frontend.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.leaky_relu" title="tvm.relay.nn.leaky_relu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.leaky_relu</span></code></a></p></td>
-<td><p>This operator takes data as input and does Leaky version of a Rectified Linear Unit.</p></td>
+<td><p>该算子将数据作为输入，并代入带泄露的修正线性单元。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/nn.html#tvm.relay.nn.prelu" title="tvm.relay.nn.prelu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.nn.prelu</span></code></a></p></td>
-<td><p>This operator takes data as input and does Leaky version of a Rectified Linear Unit.</p></td>
+<td><p>该算子将数据作为输入，并代入带泄露的修正线性单元。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.reshape</span></code></p></td>
-<td><p>Reshape the input array.</p></td>
+<td><p>重塑输入数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.reshape_like</span></code></p></td>
-<td><p>Reshapes the input tensor by the size of another tensor.</p></td>
+<td><p>根据其他张量的形状，对输入张量进行重塑。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.copy</span></code></p></td>
-<td><p>Copy a tensor.</p></td>
+<td><p>复制张量。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.transpose</span></code></p></td>
-<td><p>Permutes the dimensions of an array.</p></td>
+<td><p>对数组进行换维操作。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.squeeze</span></code></p></td>
-<td><p>Squeeze axes in the array.</p></td>
+<td><p>对数组进行维度压缩。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.floor</span></code></p></td>
-<td><p>Compute element-wise floor of data.</p></td>
+<td><p>数据的点对应向下取整运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.ceil</span></code></p></td>
-<td><p>Compute element-wise ceil of data.</p></td>
+<td><p>数据的点对应向上取整运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.sign</span></code></p></td>
-<td><p>Compute element-wise absolute of data.</p></td>
+<td><p>数据的点对应取绝对值运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.trunc</span></code></p></td>
-<td><p>Compute element-wise trunc of data.</p></td>
+<td><p>数据的点对应舍尾取整运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.clip</span></code></p></td>
-<td><p>Clip the elements in <cite>a</cite> between <cite>a_min</cite> and <cite>a_max</cite>.</p></td>
+<td><p>将 <cite>a</cite> 中的元素裁剪至 <cite>a_min</cite> 到 <cite>a_max</cite> 之间。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.round</span></code></p></td>
-<td><p>Compute element-wise round of data.</p></td>
+<td><p>数据的点对应四舍五入运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.abs</span></code></p></td>
-<td><p>Compute element-wise absolute of data.</p></td>
+<td><p>数据的点对应取绝对值运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.negative</span></code></p></td>
-<td><p>Compute element-wise negative of data.</p></td>
+<td><p>数据的点对应取相反数运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.take</span></code></p></td>
-<td><p>Take elements from an array along an axis.</p></td>
+<td><p>从数组的一条轴上取元素。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.zeros</span></code></p></td>
-<td><p>Fill array with zeros.</p></td>
+<td><p>用0填充数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.zeros_like</span></code></p></td>
-<td><p>Returns an array of zeros, with same type and shape as the input.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的全零数组。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.ones</span></code></p></td>
-<td><p>Fill array with ones.</p></td>
+<td><p>用1填充数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.ones_like</span></code></p></td>
-<td><p>Returns an array of ones, with same type and shape as the input.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的全一数组。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.gather</span></code></p></td>
-<td><p>Gather values along given axis from given indices.</p></td>
+<td><p>在给定的轴上对给定索引的值进行聚合。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.gather_nd</span></code></p></td>
-<td><p>Gather elements or slices from data and store to a tensor whose shape is defined by indices.</p></td>
+<td><p>聚合数据的元素或切片，并将其储存到一个尺寸由索引定义的张量里。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.full</span></code></p></td>
-<td><p>Fill array with scalar value.</p></td>
+<td><p>用标量填充数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.full_like</span></code></p></td>
-<td><p>Return a scalar value array with the same shape and type as the input array.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.cast</span></code></p></td>
-<td><p>Cast input tensor to data type.</p></td>
+<td><p>转换输入向量的数据类型。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.reinterpret</span></code></p></td>
-<td><p>Reinterpret input tensor to data type.</p></td>
+<td><p>将输入张量重新解释为指定数据类型。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.split</span></code></p></td>
-<td><p>Split input tensor along axis by sections or indices.</p></td>
+<td><p>沿轴按照一个元素或数组对输入张量进行切分。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.arange</span></code></p></td>
-<td><p>Return evenly spaced values within a given interval.</p></td>
+<td><p>在给定范围内返回均匀间隔的值。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.meshgrid</span></code></p></td>
-<td><p>Create coordinate matrices from coordinate vectors.</p></td>
+<td><p>从坐标向量中创建坐标矩阵。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.stack</span></code></p></td>
-<td><p>Join a sequence of arrays along a new axis.</p></td>
+<td><p>沿新轴连接一个数组序列。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.repeat</span></code></p></td>
-<td><p>Repeats elements of an array.</p></td>
+<td><p>重复数组元素。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.tile</span></code></p></td>
-<td><p>Repeats the whole array multiple times.</p></td>
+<td><p>将整个数组重复若干次。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.reverse</span></code></p></td>
-<td><p>Reverses the order of elements along given axis while preserving array shape.</p></td>
+<td><p>在保持数组形状不变的情况下，沿给定的轴反转元素顺序。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.reverse_sequence</span></code></p></td>
-<td><p>Reverse the tensor for variable length slices.</p></td>
+<td><p>将张量内的每个可变长度切片进行翻转。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.unravel_index</span></code></p></td>
-<td><p>Convert a flat index or array of flat indices into a tuple of coordinate arrays.</p></td>
+<td><p>将平面索引或平面索引数组转换为坐标数组的元组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.sparse_to_dense</span></code></p></td>
-<td><p>Converts a sparse representation into a dense tensor.</p></td>
+<td><p>将稀疏张量表示转换为稠密张量。</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Level 4: Broadcast and Reductions</strong></p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>级别 4：广播和降维*</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -614,101 +610,101 @@ these operators in the python frontend.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.right_shift</span></code></p></td>
-<td><p>Right shift with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播向右移位运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.left_shift</span></code></p></td>
-<td><p>Left shift with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播向左移位运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.equal</span></code></p></td>
-<td><p>Broadcasted elementwise test for (lhs == rhs).</p></td>
+<td><p>对于(lhs == rhs)，进行基于广播后的点对应判断。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.not_equal</span></code></p></td>
-<td><p>Broadcasted elementwise test for (lhs != rhs).</p></td>
+<td><p>对于(lhs != rhs)，进行基于广播后的点对应判断。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.greater</span></code></p></td>
-<td><p>Broadcasted elementwise test for (lhs &gt; rhs).</p></td>
+<td><p>对于(lhs &gt; rhs)，进行基于广播后的点对应判断。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.greater_equal</span></code></p></td>
-<td><p>Broadcasted elementwise test for (lhs &gt;= rhs).</p></td>
+<td><p>对于(lhs &gt;= rhs)，进行基于广播后的点对应判断。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.less</span></code></p></td>
-<td><p>Broadcasted elementwise test for (lhs &lt; rhs).</p></td>
+<td><p>对于(lhs &lt; rhs)，进行基于广播后的点对应判断。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.less_equal</span></code></p></td>
-<td><p>Broadcasted elementwise test for (lhs &lt;= rhs).</p></td>
+<td><p>对于(lhs &lt;= rhs)，进行基于广播后的点对应判断。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.all</span></code></p></td>
-<td><p>Computes the logical AND of boolean array elements over given axes.</p></td>
+<td><p>沿着给定的轴对布尔数组的元素执行逻辑与计算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.any</span></code></p></td>
-<td><p>Computes the logical OR of boolean array elements over given axes.</p></td>
+<td><p>沿着给定的轴对布尔数组的元素执行逻辑或计算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.logical_and</span></code></p></td>
-<td><p>logical AND with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播逻辑与运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.logical_or</span></code></p></td>
-<td><p>logical OR with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播逻辑或运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.logical_not</span></code></p></td>
-<td><p>Compute element-wise logical not of data.</p></td>
+<td><p>数据的点对应逻辑否运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.logical_xor</span></code></p></td>
-<td><p>logical XOR with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播逻辑异或运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.maximum</span></code></p></td>
-<td><p>Maximum with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播取最大值运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.minimum</span></code></p></td>
-<td><p>Minimum with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播取最小值运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.power</span></code></p></td>
-<td><p>Power with numpy-style broadcasting.</p></td>
+<td><p>Numpy 风格的广播幂运算。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.where</span></code></p></td>
-<td><p>Selecting elements from either x or y depending on the value of the condition.</p></td>
+<td><p>根据 condition 的值来决定选择 x 或 y 的元素。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.argmax</span></code></p></td>
-<td><p>Returns the indices of the maximum values along an axis.</p></td>
+<td><p>沿轴返回最大值的索引。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.argmin</span></code></p></td>
-<td><p>Returns the indices of the minimum values along an axis.</p></td>
+<td><p>沿轴返回最小值的索引。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.sum</span></code></p></td>
-<td><p>Computes the sum of array elements over given axes.</p></td>
+<td><p>计算给定轴上数组元素的和。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.max</span></code></p></td>
-<td><p>Computes the max of array elements over given axes.</p></td>
+<td><p>计算给定轴上数组元素的最大值。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.min</span></code></p></td>
-<td><p>Computes the min of array elements over given axes.</p></td>
+<td><p>计算给定轴上数组元素的最小值。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.mean</span></code></p></td>
-<td><p>Computes the mean of array elements over given axes.</p></td>
+<td><p>计算给定轴上数组元素的平均值。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.variance</span></code></p></td>
-<td><p>Computes the variance of data over given axes.</p></td>
+<td><p>计算给定轴上数组元素的方差。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.std</span></code></p></td>
-<td><p>Computes the standard deviation of data over given axes.</p></td>
+<td><p>计算给定轴上数组元素的标准差。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.mean_variance</span></code></p></td>
-<td><p>Computes the mean and variance of data over given axes.</p></td>
+<td><p>计算给定轴上数组元素的平均值与方差。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.mean_std</span></code></p></td>
-<td><p>Computes the mean and standard deviation of data over given axes.</p></td>
+<td><p>计算给定轴上数组元素的平均值与标准差。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.prod</span></code></p></td>
-<td><p>Computes the products of array elements over given axes.</p></td>
+<td><p>计算给定轴上数组元素的乘积。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.strided_slice</span></code></p></td>
-<td><p>Strided slice of an array.</p></td>
+<td><p>提取数组的分段切片。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.broadcast_to</span></code></p></td>
-<td><p>Return a scalar value array with the same type, broadcast to the provided shape.</p></td>
+<td><p>将标量数组广播至给定的形状并返回，且不改变其数据类型。</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Level 5: Vision/Image Operators</strong></p>
+<p><strong>级别 5：视觉/图像算子</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -716,22 +712,22 @@ these operators in the python frontend.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/image.html#tvm.relay.image.resize1d" title="tvm.relay.image.resize1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.image.resize1d</span></code></a></p></td>
-<td><p>Image resize1d operator.</p></td>
+<td><p>图像 1 维重塑算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/image.html#tvm.relay.image.resize2d" title="tvm.relay.image.resize2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.image.resize2d</span></code></a></p></td>
-<td><p>Image resize2d operator.</p></td>
+<td><p>图像 2 维重塑算子。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/image.html#tvm.relay.image.resize3d" title="tvm.relay.image.resize3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.image.resize3d</span></code></a></p></td>
-<td><p>Image resize3d operator.</p></td>
+<td><p>图像 3 维重塑算子。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/image.html#tvm.relay.image.crop_and_resize" title="tvm.relay.image.crop_and_resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.image.crop_and_resize</span></code></a></p></td>
-<td><p>Crop input images and resize them.</p></td>
+<td><p>裁剪并调整输入图像的大小。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/image.html#tvm.relay.image.dilation2d" title="tvm.relay.image.dilation2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.image.dilation2d</span></code></a></p></td>
-<td><p>Morphological Dilation 2D.</p></td>
+<td><p>2D 形态学膨胀。</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../api/python/relay/vision.html#tvm.relay.vision.multibox_prior" title="tvm.relay.vision.multibox_prior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.vision.multibox_prior</span></code></a></p></td>
-<td><p>Generate prior(anchor) boxes from data, sizes and ratios.</p></td>
+<td><p>在 data 中，根据 sizes 和 ratios 生成先验框（锚框）。</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../api/python/relay/vision.html#tvm.relay.vision.multibox_transform_loc" title="tvm.relay.vision.multibox_transform_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.vision.multibox_transform_loc</span></code></a></p></td>
 <td><p>Location transformation for multibox detection</p></td>
@@ -744,7 +740,7 @@ these operators in the python frontend.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Level 6: Algorithm Operators</strong></p>
+<p><strong>级别 6：算法算子</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -752,15 +748,15 @@ these operators in the python frontend.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.argsort</span></code></p></td>
-<td><p>Performs sorting along the given axis and returns an array of indicies having same shape as an input array that index data in sorted order.</p></td>
+<td><p>沿给定轴对数组执行排序操作后，保持数组形状不变，输出排序数组对应的索引数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.topk</span></code></p></td>
-<td><p>Get the top k elements in an input tensor along the given axis.</p></td>
+<td><p>沿给定的轴，获取输入张量的最大 k 个元素。</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Level 10: Temporary Operators</strong></p>
-<p>This level support backpropagation of broadcast operators. It is temporary.</p>
+<p><strong>级别 10： 临时算子</strong></p>
+<p>此级别支持广播算子的反向传播。这是暂时的。</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -768,25 +764,25 @@ these operators in the python frontend.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.broadcast_to_like</span></code></p></td>
-<td><p>Return a scalar value array with the same shape and type as the input array.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.collapse_sum_like</span></code></p></td>
-<td><p>Return a scalar value array with the same shape and type as the input array.</p></td>
+<td><p>返回一个与输入数据相同数据类型与尺寸的标量数组。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.slice_like</span></code></p></td>
-<td><p>Slice the first input with respect to the second input.</p></td>
+<td><p>按照第二个输出值的形状对第一个输出值进行切分。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.shape_of</span></code></p></td>
-<td><p>Get shape of a tensor.</p></td>
+<td><p>获得张量的形状。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.ndarray_size</span></code></p></td>
-<td><p>Get number of elements of input tensor.</p></td>
+<td><p>获得张量的元素数量。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.layout_transform</span></code></p></td>
-<td><p>Transform the layout of a tensor</p></td>
+<td><p>变换张量的布局。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.device_copy</span></code></p></td>
-<td><p>Copy data from the source device to the destination device.</p></td>
+<td><p>将数据从源设备复制到目标设备。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tvm.relay.annotation.on_device</span></code></p></td>
 <td><p>Annotates an expression with the device type on which its result should be stored.</p></td>
@@ -811,7 +807,7 @@ these operators in the python frontend.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Level 11: Dialect Operators</strong></p>
+<p><strong>级别 11：Dialect 算子</strong></p>
 <p>This level supports dialect operators.</p>
 <table class="longtable docutils align-default">
 <colgroup>

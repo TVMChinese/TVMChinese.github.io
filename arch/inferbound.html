@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>InferBound Pass &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
+  <title>InferBound Pass &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1934+gfa3ce683a
+                  0.8.dev1935+g887aa051a
                 </div>
             
           
@@ -253,7 +253,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -472,7 +472,7 @@
 </div>
 <div class="section" id="inferrootbound">
 <h2>InferRootBound<a class="headerlink" href="#inferrootbound" title="永久链接至标题">¶</a></h2>
-<p>Recall that InferBound calls InferRootBound, followed by <a class="reference internal" href="#passdowndomain"><span class="std std-ref">PassDownDomain</span></a> on each stage in the stage graph. The purpose of InferRootBound is to set the Range of each root_iter_var of the Stage’s operation. These Ranges will be propagated to the rest of the stage’s IterVars using <a class="reference internal" href="#passdowndomain"><span class="std std-ref">PassDownDomain</span></a>. Note that InferRootBound does not set the Range of any other IterVar, only those belonging to the stage’s root_iter_vars.</p>
+<p>回想一下， InferBound 调用了 InferRootBound，然后在阶段图中的每个阶段调用 <a class="reference internal" href="#passdowndomain"><span class="std std-ref">PassDownDomain</span></a> 。InferRootBound 的目的是设置阶段的操作(operation)的每个 root_iter_var 范围。这些范围将使用 <a class="reference internal" href="#passdowndomain"><span class="std std-ref">PassDownDomain</span></a>  被传播到阶段的其余 IterVars。请注意，InferRootBound 不会设置任何其他 IterVar 的范围，而只会设置那些属于该阶段的 root_iter_vars。</p>
 <p>If the stage is an output stage or placeholder, InferRootBound simply sets the root_iter_var Ranges to their default values. The default Range for a root_iter_var is taken from the <code class="docutils literal notranslate"><span class="pre">dom</span></code> member of the IterVar (see the IterVarNode class declaration above).</p>
 <p>Otherwise, InferRootBound iterates through the consumers of the stage. IntSets are created for each of the consumer’s IterVars, as follows. Phase 1) IntSets are initialized for the consumer’s leaf_iter_vars, and propagated to the consumer’s root_iter_vars by PassUpDomain (Phase 2). These IntSets are used to create TensorDom of the input tensors of the consumer stage (Phase 3). Finally, once all of the consumers have been processed, InferRootBound calls GatherBound, to set the Ranges of the stage’s root_iter_vars, based on the TensorDoms (Phase 4).</p>
 <p>This process can seem complicated. One reason is that a stage can have more than one consumer. Each consumer has different requirements, and these must somehow be consolidated. Similarly, the stage may output more than one tensor, and each consumer only uses a particular subset of these tensors. Furthermore, even if a consumer uses a particular tensor, it may not use all elements of the tensor.</p>

@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TVM runtime系统 &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
+  <title>TVM runtime系统 &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1934+gfa3ce683a
+                  0.8.dev1935+g887aa051a
                 </div>
             
           
@@ -228,7 +228,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#tvm-runtime">tvm/runtime</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">TVM runtime系统</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#packedfunc">PackedFunc</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module">Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module">模块</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remote-deployment">Remote Deployment</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#tvm-object-and-compiler-stack">TVM Object and Compiler Stack</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#implementation-details">Implementation Details</a></li>
@@ -261,7 +261,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
@@ -364,10 +364,8 @@
 <p>我们想要能用任何语言定义一个函数然后用另一个语言来调用它。我们还希望runtime核能小到足以部署在嵌入式设备上。</p>
 <div class="section" id="packedfunc">
 <span id="tvm-runtime-system-packed-func"></span><h2>PackedFunc<a class="headerlink" href="#packedfunc" title="永久链接至标题">¶</a></h2>
-<p><a class="reference external" href="https://github.com/apache/tvm/blob/main/include/tvm/runtime/packed_func.h">PackedFunc</a> is a simple but elegant solution we find to solve the
-challenges listed.  A single <code class="docutils literal notranslate"><span class="pre">PackedFunc</span></code> object represents a
-function call whose caller and callee may be in different languages.</p>
-<p>The following code block provides an example in C++</p>
+<p>我们发现，<cite>PackedFunc`_是一种简单但优雅的解决方案，可以解决提出的挑战。单个 ``PackedFunc`</cite> 对象表示一个函数调用，这个函数的调用方和被调用方可能使用的不同语言。</p>
+<p>下面代码块提供了一个C++中的例子</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;tvm/runtime/packed_func.h&gt;</span><span class="cp"></span>
 
 <span class="kt">void</span> <span class="nf">MyAdd</span><span class="p">(</span><span class="n">TVMArgs</span> <span class="n">args</span><span class="p">,</span> <span class="n">TVMRetValue</span><span class="o">*</span> <span class="n">rv</span><span class="p">)</span> <span class="p">{</span>
@@ -385,13 +383,8 @@ function call whose caller and callee may be in different languages.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In the above codeblock, we defined a PackedFunc MyAdd. It takes two arguments
-: <code class="docutils literal notranslate"><span class="pre">args</span></code> represents input arguments and <code class="docutils literal notranslate"><span class="pre">rv</span></code> represents return value.
-The function is type-erased, which means that the function signature does not restrict which input type to pass in or type to return.
-Under the hood, when we call a PackedFunc, it packs the input arguments to TVMArgs on stack,
-and gets the result back via TVMRetValue.</p>
-<p>Thanks to template tricks in C++, we can call a PackedFunc just like a normal function. Because of its type-erased nature, we can call a PackedFunc from dynamic languages like python, without additional glue code for each new type function created.
-The following example registers PackedFunc in C++ and calls from python.</p>
+<p>在上述代码块中，我们定义了一个PackedFunc MyAdd。 它有两个参数： <code class="docutils literal notranslate"><span class="pre">args</span></code> 表示输入参数， <code class="docutils literal notranslate"><span class="pre">rv</span></code> 表示返回值。这个函数被类型擦除，即这个函数签名不限制要传入的输入类型和要返回的类型。在后台，当我们调用一个 PackedFunc,它将输入参数打包到堆栈上的TVMArgs，然后通过TVMRetValue得到返回结果。</p>
+<p>多亏于C++中的模板技巧，我们可以像调用一个正常函数一样调用一个 PackedFunc。因为他的类型擦除特性，我们可以从动态语言像python调用一个 PackedFunc，而无需为每一个新类型函数的生成添加额外的粘合代码。下面的示例用C++注册了 PackedFunc然后用python来调用它。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// register a global packed function in c++</span>
 <span class="n">TVM_REGISTER_GLOBAL</span><span class="p">(</span><span class="s">&quot;myadd&quot;</span><span class="p">)</span>
 <span class="p">.</span><span class="n">set_body</span><span class="p">(</span><span class="n">MyAdd</span><span class="p">);</span>
@@ -404,21 +397,16 @@ The following example registers PackedFunc in C++ and calls from python.</p>
 <span class="k">print</span><span class="p">(</span><span class="n">myadd</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Most of the magic of PackedFunc lies in <code class="docutils literal notranslate"><span class="pre">TVMArgs</span></code> and <code class="docutils literal notranslate"><span class="pre">TVMRetValue</span></code> structure.
-We restrict a list of possible types which can be passed.
-Here are the common ones:</p>
+<p>PackedFunc的大部分魔力在于``TVMArgs`` 和 <a href="#id1"><span class="problematic" id="id2">``</span></a>TVMRetValue``的结构。我们限制了一系列可能会被传输的类型。以下是常见的：</p>
 <ul class="simple">
-<li><p>int, float and string</p></li>
-<li><p>PackedFunc itself</p></li>
-<li><p>Module for compiled modules</p></li>
-<li><p>DLTensor* for tensor object exchange</p></li>
-<li><p>TVM Object to represent any object in IR</p></li>
+<li><p>int, float 和 string</p></li>
+<li><p>PackedFunc 本身</p></li>
+<li><p>编译模块的模块</p></li>
+<li><p>用于张量对象交换的DLTensor*</p></li>
+<li><p>表示任意IR对象的TVM对象</p></li>
 </ul>
-<p>The restriction makes the implementation simple without the need of serialization.
-Despite being minimum, the PackedFunc is sufficient for the use-case of deep learning deployment as
-most functions only take DLTensor or numbers.</p>
-<p>Since one PackedFunc can take another PackedFunc as an argument,
-we can pass functions from python (as PackedFunc) to C++.</p>
+<p>该限制使得实现简单，无需序列化。尽管PackedFunc是最小的，但对于深度学习部署的用例来说已经足够了，因为大多数函数只接受DLTensor或数字。</p>
+<p>既然一个PackedFunc可以将另一个PackedFunc当作输入，我们可以把函数（作为PackedFunc）从python传给C++。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">TVM_REGISTER_GLOBAL</span><span class="p">(</span><span class="s">&quot;callhello&quot;</span><span class="p">)</span>
 <span class="p">.</span><span class="n">set_body</span><span class="p">([](</span><span class="n">TVMArgs</span> <span class="n">args</span><span class="p">,</span> <span class="n">TVMRetValue</span><span class="o">*</span> <span class="n">rv</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">PackedFunc</span> <span class="n">f</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
@@ -438,33 +426,20 @@ we can pass functions from python (as PackedFunc) to C++.</p>
 <span class="n">callhello</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>TVM provides a <a class="reference external" href="https://github.com/apache/tvm/blob/main/include/tvm/runtime/c_runtime_api.h">minimum C API</a>,
-which allows us to embed the PackedFunc into any languages. Besides python, so far we supported
-<a class="reference external" href="https://github.com/apache/tvm/tree/main/jvm">java</a> and <a class="reference external" href="https://github.com/apache/tvm/tree/main/web">javascript</a>.
-This philosophy of embedded API is very like Lua, except that we don’t have a new language but use C++.</p>
-<p>One fun fact about PackedFunc is that we use it for both compiler and deployment stack.</p>
+<p>TVM提供一个允许我们将PackedFunc嵌入到任何语言的`最小 C API`_。除了python，目前我们还支持 <a class="reference external" href="https://github.com/apache/tvm/tree/main/jvm">java</a> 和 <a class="reference external" href="https://github.com/apache/tvm/tree/main/web">javascript</a>。这种嵌入式API的概念非常像Lua，只是我们没有用新的语言而是使用C++。</p>
+<p>一个关于PackedFunc的有趣的事实是，我们在编译器和部署堆栈都用到了它。</p>
 <ul class="simple">
-<li><p>All compiler pass functions of TVM are exposed to frontend as PackedFunc</p></li>
-<li><p>The compiled module also returns the compiled function as PackedFunc</p></li>
+<li><p>TVM所有的编译pass函数都作为PackedFunc公开给了前端，</p></li>
+<li><p>编译后的模块也将作为 PackedFunc的编译后函数返回。</p></li>
 </ul>
-<p>To keep the runtime minimum, we isolated the IR Object support from the deployment runtime. The resulting runtime takes around 200K - 600K depending on how many runtime driver modules (e.g., CUDA) get included.</p>
-<p>The overhead of calling into PackedFunc vs. a normal function is small, as it is only saving a few values on the stack.
-So it is OK as long as we don’t wrap small functions.
-In summary, the PackedFunc is the universal glue in TVM where we use it extensively to support our compiler and deployment.</p>
+<p>为了保持runtime的最小化，我们将IR对象支持与部署runtime分离。根据包含的驱动模块的数量（如CUDA），生成的runtime大概占200-600K。</p>
+<p>与普通函数相比，调用PackedFunc的开销很小，因为它只在堆栈上保存了一些值。因此，只要我们不包装小函数就可以了。总之，PackedFunc是TVM中的通用粘合剂，我们在TVM中广泛使用它来支持编译器和部署。</p>
 </div>
 <div class="section" id="module">
-<span id="tvm-runtime-system-module"></span><h2>Module<a class="headerlink" href="#module" title="永久链接至标题">¶</a></h2>
-<p>Since TVM supports multiple types of devices, we need to support different type of drivers.
-We have to use the driver API to load the kernel, set up the argument in packed format and perform kernel launch.
-We also need to patch up the driver API so that the exposed functions are threadsafe.
-So we often need to implement these driver glues in C++ and expose them to the user.
-We can certainly not do it for each type of functions, so again PackedFunc is our answer.</p>
-<p>TVM defines the compiled object as <a class="reference external" href="https://github.com/apache/tvm/blob/main/include/tvm/runtime/module.h">Module</a>.
-The user can get the compiled function from Module as PackedFunc.
-The generated compiled code can dynamically get function from Module in runtime. It caches the function handle in the first call and reuses in subsequent calls. We use this to link device code and callback into any PackedFunc(e.g., python) from generated code.</p>
-<p>The ModuleNode is an abstract class that can be implemented by each type of device.
-So far we support modules for CUDA, Metal, OpenCL and loading dynamic shared libraries. This abstraction makes introduction
-of new device easy, and we do not need to redo the host code generation for each type of device.</p>
+<span id="tvm-runtime-system-module"></span><h2>模块<a class="headerlink" href="#module" title="永久链接至标题">¶</a></h2>
+<p>由于TVM支持多种类型的设备，我们需要支持不同类型的驱动程序。我们必须使用驱动程序API加载内核，以压缩格式设置参数并启动内核。我们还需要修补驱动程序API，以便公开的函数是线程安全的。因此，我们经常需要在C++中实现这些驱动程序粘合，并将它们公开给用户。我们当然不能对每种类型的函数都这样做，所以PackedFunc仍是我们的答案。</p>
+<p>TVM将编译对象定义为 <a class="reference internal" href="#module">模块</a>。用户就可以从模块中以PackedFunc的形式得到编译后的函数。生成的编译代码可以在runtime中动态得从模块中获得函数。它在第一次调用中缓存函数句柄，并在后续调用中再次使用。我们使用它链接设备代码并用生成的代码调回到到任意PackedFunc（例如python）中。</p>
+<p>ModuleNode 是一个抽象类，可以被每种设备实现。到目前为止，我们支持CUDA、Metal、OpenCL和加载动态共享库的模块。这种抽象易于引入新设备，并且我们不需要为每种类型的设备重新生成主机代码。</p>
 </div>
 <div class="section" id="remote-deployment">
 <h2>Remote Deployment<a class="headerlink" href="#remote-deployment" title="永久链接至标题">¶</a></h2>

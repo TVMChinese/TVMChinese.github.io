@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>microTVM: TVM on bare-metal &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
+  <title>microTVM：裸机使用TVM &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1934+gfa3ce683a
+                  0.8.dev1935+g887aa051a
                 </div>
             
           
@@ -225,11 +225,11 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">microTVM: TVM on bare-metal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#supported-hardware">Supported Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-started-with-microtvm">Getting Started with microTVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-microtvm-works">How microTVM Works</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#help-and-discussion">Help and Discussion</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">microTVM：裸机使用TVM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#supported-hardware">受支持的硬件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started-with-microtvm">开始使用 microTVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-microtvm-works">microTVM 如何工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#help-and-discussion">帮助和讨论</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
@@ -297,7 +297,7 @@
     
       <li><a href="../../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-      <li>microTVM: TVM on bare-metal</li>
+      <li>microTVM：裸机使用TVM</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -317,24 +317,20 @@
            <div itemprop="articleBody">
             
   <div class="section" id="microtvm-tvm-on-bare-metal">
-<span id="microtvm-index"></span><h1>microTVM: TVM on bare-metal<a class="headerlink" href="#microtvm-tvm-on-bare-metal" title="永久链接至标题">¶</a></h1>
-<p>microTVM runs TVM models on bare-metal (i.e. IoT) devices. microTVM depends only on the C standard
-library, and doesn’t require an operating system to execute. microTVM is currently under heavy
-development.</p>
+<span id="microtvm-index"></span><h1>microTVM：裸机使用TVM<a class="headerlink" href="#microtvm-tvm-on-bare-metal" title="永久链接至标题">¶</a></h1>
+<p>microTVM 用于在裸机（即物联网）设备上运行 TVM 模型。它仅仅依赖于 C 标准库且不需要操作系统，目前正在大力开发中。</p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/tvmai/web-data/main/images/dev/microtvm_workflow.svg"><img alt="https://raw.githubusercontent.com/tvmai/web-data/main/images/dev/microtvm_workflow.svg" src="https://raw.githubusercontent.com/tvmai/web-data/main/images/dev/microtvm_workflow.svg" width="85%" /></a>
 </div>
-<p>microTVM is:</p>
+<p>microTVM 是:</p>
 <ul class="simple">
-<li><p>an extension to TVM’s compiler to allow it to target microcontrollers</p></li>
-<li><p>a way to run the TVM RPC server on-device, to allow autotuning</p></li>
-<li><p>a minimal C runtime that supports standalone model inference on bare metal devices.</p></li>
+<li><p>一个TVM 编译器的扩展，使TVM能够应用于微控制器</p></li>
+<li><p>一种在设备上运行 TVM RPC 服务以完成自动调优的方法</p></li>
+<li><p>一套最小化 C 语言runtime，使得裸机设备可以独立完成模型推理</p></li>
 </ul>
 <div class="section" id="supported-hardware">
-<h2>Supported Hardware<a class="headerlink" href="#supported-hardware" title="永久链接至标题">¶</a></h2>
-<p>microTVM currently tests against Cortex-M microcontrollers with the Zephyr RTOS; however, it is
-flexible and portable to other processors such as RISC-V and does not require Zephyr. The current
-demos run against QEMU and the following hardware:</p>
+<h2>受支持的硬件<a class="headerlink" href="#supported-hardware" title="永久链接至标题">¶</a></h2>
+<p>microTVM 目前正在测试 Cortex-M 微控制器和 Zephyr RTOS；然而它具备灵活性并可移植到其他处理器（例如 RISC-V）中并且无需 Zephyr。目前示例基于 QEMU 及以下硬件运行：</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.st.com/en/evaluation-tools/nucleo-f746zg.html">STM Nucleo-F746ZG</a></p></li>
 <li><p><a class="reference external" href="https://www.st.com/en/evaluation-tools/32f746gdiscovery.html">STM STM32F746 Discovery</a></p></li>
@@ -342,25 +338,21 @@ demos run against QEMU and the following hardware:</p>
 </ul>
 </div>
 <div class="section" id="getting-started-with-microtvm">
-<h2>Getting Started with microTVM<a class="headerlink" href="#getting-started-with-microtvm" title="永久链接至标题">¶</a></h2>
-<p>Before working with microTVM, we recommend you have a supported development board. Then, follow these
-tutorials to get started with microTVM:</p>
+<h2>开始使用 microTVM<a class="headerlink" href="#getting-started-with-microtvm" title="永久链接至标题">¶</a></h2>
+<p>在开始使用 microTVM 之前，我们建议您购买一块受支持的开发板。然后，按照以下教程开始使用 microTVM：</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="../../how_to/work_with_microtvm/micro_reference_vm.html#tutorial-micro-reference-vm"><span class="std std-ref">Start the microTVM Reference VM</span></a>. The microTVM tutorials
-depend on Zephyr and on a compiler toolchain for your hardware. The reference VM is a convenient
-way to install those dependencies.</p></li>
-<li><p>Try the <a class="reference internal" href="../../how_to/work_with_microtvm/micro_tflite.html#microtvm-with-tflite"><span class="std std-ref">microTVM with TFLite Tutorial</span></a>.</p></li>
-<li><p>Try running a more complex <a class="reference external" href="https://github.com/areusch/microtvm-blogpost-eval">CIFAR10-CNN model</a>.</p></li>
+<li><p><a class="reference internal" href="../../how_to/work_with_microtvm/micro_reference_vm.html#tutorial-micro-reference-vm"><span class="std std-ref">从microTVM虚拟机开始</span></a>。microTVM 教程依赖于 Zephyr 和一套针对您的开发板的编译器工具链。microTVM虚拟机是安装这些依赖的快捷方式。</p></li>
+<li><p>尝试 <a class="reference internal" href="../../how_to/work_with_microtvm/micro_tflite.html#microtvm-with-tflite"><span class="std std-ref">microTVM TFLite 教程</span></a>.</p></li>
+<li><p>教程：使用microTVM运行更复杂的 <a class="reference external" href="https://github.com/areusch/microtvm-blogpost-eval">CIFAR10-CNN 模型</a>。</p></li>
 </ol>
 </div>
 <div class="section" id="how-microtvm-works">
-<h2>How microTVM Works<a class="headerlink" href="#how-microtvm-works" title="永久链接至标题">¶</a></h2>
-<p>You can read more about the design of these pieces at the <a class="reference internal" href="../../arch/microtvm_design.html#microtvm-design"><span class="std std-ref">microTVM Design Document</span></a>.</p>
+<h2>microTVM 如何工作<a class="headerlink" href="#how-microtvm-works" title="永久链接至标题">¶</a></h2>
+<p>你可以在这里阅读到更多关于 <a class="reference internal" href="../../arch/microtvm_design.html#microtvm-design"><span class="std std-ref">microTVM 的设计文档</span></a>.</p>
 </div>
 <div class="section" id="help-and-discussion">
-<h2>Help and Discussion<a class="headerlink" href="#help-and-discussion" title="永久链接至标题">¶</a></h2>
-<p>The <a class="reference external" href="https://discuss.tvm.ai">TVM Discuss Forum</a> is a great place to collaborate on microTVM tasks,
-and maintains a searchable history of past problems.</p>
+<h2>帮助和讨论<a class="headerlink" href="#help-and-discussion" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="https://discuss.tvm.ai">TVM 论坛</a> 是完成 microTVM 任务协作的好地方，并针对过去的问题保留了搜索历史。</p>
 </div>
 </div>
 

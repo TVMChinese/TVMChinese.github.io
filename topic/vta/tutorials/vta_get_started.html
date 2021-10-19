@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Get Started with VTA &mdash; tvm 0.8.dev1934+gfa3ce683a 文档</title>
+  <title>从 VTA 开始 &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1934+gfa3ce683a
+                  0.8.dev1935+g887aa051a
                 </div>
             
           
@@ -225,13 +225,13 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">VTA: Versatile Tensor Accelerator</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../install.html">VTA Installation Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/index.html">VTA Design and Developer Guide</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">VTA Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install.html">VTA安装指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev/index.html">VTA设计与开发指南</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">VTA教程</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="matrix_multiply.html">Simple Matrix Multiply</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Get Started with VTA</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">从 VTA 开始</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#loading-in-vta-parameters">Loading in VTA Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#input-placeholders">Input Placeholders</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#copy-buffers">Copy Buffers</a></li>
@@ -245,9 +245,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#loading-the-module">Loading the Module</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#auto-tuning">Auto tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#compile-deep-learning-models">编译深度学习模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#optimize-tensor-operators">优化张量算子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#auto-tuning">自动调整</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#literature">Literature</a></li>
@@ -319,9 +319,9 @@
         
           <li><a href="../index.html">VTA: Versatile Tensor Accelerator</a> <span class="br-arrow">></span></li>
         
-          <li><a href="index.html">VTA Tutorials</a> <span class="br-arrow">></span></li>
+          <li><a href="index.html">VTA教程</a> <span class="br-arrow">></span></li>
         
-      <li>Get Started with VTA</li>
+      <li>从 VTA 开始</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -345,16 +345,11 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-topic-vta-tutorials-vta-get-started-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="get-started-with-vta">
-<span id="vta-get-started"></span><span id="sphx-glr-topic-vta-tutorials-vta-get-started-py"></span><h1>Get Started with VTA<a class="headerlink" href="#get-started-with-vta" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
-<p>This is an introduction tutorial on how to use TVM to program the VTA design.</p>
-<p>In this tutorial, we will demonstrate the basic TVM workflow to implement
-a vector addition on the VTA design’s vector ALU.
-This process includes specific scheduling transformations necessary to lower
-computation down to low-level accelerator operations.</p>
-<p>To begin, we need to import TVM which is our deep learning optimizing compiler.
-We also need to import the VTA python package which contains VTA specific
-extensions for TVM to target the VTA design.</p>
+<span id="vta-get-started"></span><span id="sphx-glr-topic-vta-tutorials-vta-get-started-py"></span><h1>从 VTA 开始<a class="headerlink" href="#get-started-with-vta" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
+<p>这是一份关于如何使用 TVM 来完成VTA编程设计的介绍教程。</p>
+<p>在此教程中，我们将演示基本的 TVM 工作流程，在基于VTA 设计的向量 ALU 上执行向量加法。此过程包括特定的调度转换，这对于将计算降低至低级加速器操作是必要的。</p>
+<p>首先我们需要导入 TVM ，这是我们的深度学习优化编译器。除此之外，我们还需要导入 VTA Python 包，其中包含针对 TVM 的 VTA 特定扩展，它是针对VTA设计的。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
@@ -366,23 +361,13 @@ extensions for TVM to target the VTA design.</p>
 </div>
 <div class="section" id="loading-in-vta-parameters">
 <h2>Loading in VTA Parameters<a class="headerlink" href="#loading-in-vta-parameters" title="永久链接至标题">¶</a></h2>
-<p>VTA is a modular and customizable design. Consequently, the user
-is free to modify high-level hardware parameters that affect
-the hardware design layout.
-These parameters are specified in the <code class="code docutils literal notranslate"><span class="pre">vta_config.json</span></code> file by their
-<code class="code docutils literal notranslate"><span class="pre">log2</span></code> values.
-These VTA parameters can be loaded with the <code class="code docutils literal notranslate"><span class="pre">vta.get_env</span></code>
-function.</p>
-<p>Finally, the TVM target is also specified in the <code class="code docutils literal notranslate"><span class="pre">vta_config.json</span></code> file.
-When set to <em>sim</em>, execution will take place inside of a behavioral
-VTA simulator.
-If you want to run this tutorial on the Pynq FPGA development platform,
-follow the <em>VTA Pynq-Based Testing Setup</em> guide.</p>
+<p>VTA 是一种模块化和可定制化的设计。因此，用户可以自由修改影响硬件设计布局的高级别的硬件参数，它们在  <code class="code docutils literal notranslate"><span class="pre">vta_config.json</span></code>  文件通过 <code class="code docutils literal notranslate"><span class="pre">log2</span></code> 的值来指定。另外，VTA 参数可以通过函数 <code class="code docutils literal notranslate"><span class="pre">vta.get_env</span></code> 进行加载。</p>
+<p>最后，TVM 的目标也在 <code class="code docutils literal notranslate"><span class="pre">vta_config.json</span></code>  文件中指定。设置为 <em>sim</em> 时，将在行为 VTA 模拟器内执行。如果您想在 Pynq FPGA 开发平台上运行此教程，请参照 <em>VTA Pynq-Based Testing Setup</em> 指南。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">env</span> <span class="o">=</span> <span class="n">vta</span><span class="o">.</span><span class="n">get_env</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="section" id="fpga-programming">
-<h3>FPGA Programming<a class="headerlink" href="#fpga-programming" title="永久链接至标题">¶</a></h3>
+<h3>FPGA 编程<a class="headerlink" href="#fpga-programming" title="永久链接至标题">¶</a></h3>
 <p>When targeting the Pynq FPGA development board, we need to configure
 the board with a VTA bitstream.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We&#39;ll need the TVM RPC module and the VTA simulator module</span>
@@ -545,7 +530,7 @@ primitives.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {A: Buffer(A_2: Pointer(int32), int32, [1, 64, 1, 16], []),
@@ -635,7 +620,7 @@ with an <code class="code docutils literal notranslate"><span class="pre">env.al
 <span class="nb">print</span><span class="p">(</span><span class="n">vta</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(int8), int8, [1, 64, 1, 16], []),
@@ -743,13 +728,13 @@ matrix multiplication indeed is correct</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successful vector add test!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Successful vector add test!
 </pre></div>
 </div>
 </div>
 <div class="section" id="summary">
-<h3>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h3>
+<h3>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h3>
 <p>This tutorial provides a walk-through of TVM for programming the
 deep learning accelerator VTA with a simple vector addition example.
 The general workflow includes:</p>
