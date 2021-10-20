@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Design and Architecture &mdash; tvm 0.8.dev1935+g887aa051a 文档</title>
+  <title>Design and Architecture &mdash; tvm 0.8.dev1936+gd8b770f2e 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1935+g887aa051a
+                  0.8.dev1936+gd8b770f2e
                 </div>
             
           
@@ -225,8 +225,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#example-compilation-flow">编译流程示例</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#key-data-structures">关键数据结构</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#transformations">转换</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#search-space-and-learning-based-transformations">搜索空间和基于学习的转换
-Search-space and Learning-based Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search-space-and-learning-based-transformations">搜索空间和基于学习的转换</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#target-translation">目标转化
 Target Translation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#runtime-execution">Runtime 执行</a></li>
@@ -427,8 +426,7 @@ and code-generation target.</p></li>
 <p>LLVM, CUDA C 可以和其他目标编译器可以在目标阶段进行许多底层优化。所以，我们将底层优化如寄存器分配留给下游编译器，而只关注于它们未能涵盖的优化。</p>
 </div>
 <div class="section" id="search-space-and-learning-based-transformations">
-<h3>搜索空间和基于学习的转换
-Search-space and Learning-based Transformations<a class="headerlink" href="#search-space-and-learning-based-transformations" title="永久链接至标题">¶</a></h3>
+<h3>搜索空间和基于学习的转换<a class="headerlink" href="#search-space-and-learning-based-transformations" title="永久链接至标题">¶</a></h3>
 <p>目前为止，我们讨论过的转换过程都是确定和基于规则的。TVM堆栈的一个设计目标就是去支持不同硬件平台上的高性能代码优化。为此，我们需要尽可能多的研究优化的选择，包括但不限于多维张量访问，循环平铺表现，特殊的加速器内存层级和线程。</p>
 <p>很难定义一种启发式方法来决定所有的选择。相反，我们将采取基于搜索和学习的方法。我们首先定义一组可以用来转换程序的操作。示例操作包括循环转换、内联、向量化。我们将这些操作称为**调度原语**。调度原语的集合定义了我们可以对程序进行优化的搜索空间。然后，系统搜索不同的可能调度序列来选择最佳调度组合。搜索过程通常由机器学习算法引导。</p>
 <p>一旦搜索完成，我们可以为（可能融合的）算子记录最佳调度序列。然后，编译器可以查找最佳调度序列并将其应用于程序。值得注意的是，此调度应用程序阶段与基于规则的转换**完全相同**，使我们能够与传统的passes共享接口协定。</p>
