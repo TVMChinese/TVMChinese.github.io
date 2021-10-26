@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>microTVM Design Document &mdash; tvm 0.8.dev1942+gc8824d02d 文档</title>
+  <title>microTVM设计文档 &mdash; tvm 0.8.dev1943+g6247d8c3f 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1942+gc8824d02d
+                  0.8.dev1943+g6247d8c3f
                 </div>
             
           
@@ -238,9 +238,9 @@
 <li class="toctree-l2"><a class="reference internal" href="index.html#frontends">Frontends</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#security">安全</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html#microtvm">microTVM</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">microTVM Design Document</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#background">Background</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#typical-use">Typical Use</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">microTVM设计文档</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#background">背景知识</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#typical-use">典型案例</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#design-goals">Design Goals</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#future-work">Future Work</a></li>
@@ -322,7 +322,7 @@
         
           <li><a href="index.html">Design and Architecture</a> <span class="br-arrow">></span></li>
         
-      <li>microTVM Design Document</li>
+      <li>microTVM设计文档</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -342,14 +342,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="microtvm-design-document">
-<span id="microtvm-design"></span><h1><a class="toc-backref" href="#id1">microTVM Design Document</a><a class="headerlink" href="#microtvm-design-document" title="永久链接至标题">¶</a></h1>
+<span id="microtvm-design"></span><h1><a class="toc-backref" href="#id1">microTVM设计文档</a><a class="headerlink" href="#microtvm-design-document" title="永久链接至标题">¶</a></h1>
 <div class="contents topic" id="table-of-contents">
-<p class="topic-title">Table of Contents</p>
+<p class="topic-title">目录</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#microtvm-design-document" id="id1">microTVM Design Document</a></p>
+<li><p><a class="reference internal" href="#microtvm-design-document" id="id1">microTVM设计文档</a></p>
 <ul>
-<li><p><a class="reference internal" href="#background" id="id2">Background</a></p></li>
-<li><p><a class="reference internal" href="#typical-use" id="id3">Typical Use</a></p></li>
+<li><p><a class="reference internal" href="#background" id="id2">背景知识</a></p></li>
+<li><p><a class="reference internal" href="#typical-use" id="id3">典型案例</a></p></li>
 <li><p><a class="reference internal" href="#design-goals" id="id4">Design Goals</a></p></li>
 <li><p><a class="reference internal" href="#overview" id="id5">Overview</a></p>
 <ul>
@@ -376,25 +376,17 @@
 </ul>
 </div>
 <div class="section" id="background">
-<h2><a class="toc-backref" href="#id2">Background</a><a class="headerlink" href="#background" title="永久链接至标题">¶</a></h2>
-<p>TVM is a model deployment framework that has demonstrated good performance across a wide range of
-models on traditional operating systems. Given TVM’s layered approach to compilation, it is a
-natural extension to target bare metal devices. While most of the compilation flow does not need to
-change for a proof-of-concept implementation on such devices, the runtime cannot depend on:</p>
+<h2><a class="toc-backref" href="#id2">背景知识</a><a class="headerlink" href="#background" title="永久链接至标题">¶</a></h2>
+<p>TVM 是一个模型部署框架，在传统操作系统的各种模型中都表现出了良好的性能。鉴于 TVM 的分层编译方法，将TVM应用到微控制器设备成了自然而然的事情。虽然大多数汇编流程不需要为了在此类设备上实现概念验证而更改，但是运行时间不能依赖于：</p>
 <ul class="simple">
-<li><p><strong>Virtual Memory</strong>, and by extension any system-provided <code class="docutils literal notranslate"><span class="pre">malloc</span></code>. Additionally, bare metal
-devices typically have very limited memory (measured in KB). Because of this, libraries designed
-for such platforms typically need to be more judicious in using memory, and need to release
-memory when it is not in use.</p></li>
-<li><p>Traditional OS abstractions, such as <strong>files</strong>, <strong>libraries</strong>, and <strong>kernel functions</strong>. Some
-projects implement support for these, but they are by no means standard.</p></li>
-<li><p>Support for programming languages other than <strong>C</strong>.</p></li>
+<li><p><strong>虚拟内存</strong>，和其他任何系统提供的 <code class="docutils literal notranslate"><span class="pre">malloc</span></code>。另外，微控制器设备的内存资源通常非常有限（以 KB 为单位）。因此，为此类平台设计的库在使用内存时通常需要非常谨慎，并且需要在内存未使用时及时释放内存。</p></li>
+<li><p>传统的操作系统功能，如 <strong>files</strong>，<strong>libraries</strong> 和 <strong>kernel functions</strong>。</p></li>
+<li><p>支持除 <strong>C</strong> 以外的编程语言。</p></li>
 </ul>
-<p>Such changes require a different approach from the TVM C++ runtime typically used on traditional
-Operating Systems.</p>
+<p>这些变化需要一个不同于传统操作系统通常使用的 TVM C++运行时间。</p>
 </div>
 <div class="section" id="typical-use">
-<h2><a class="toc-backref" href="#id3">Typical Use</a><a class="headerlink" href="#typical-use" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">典型案例</a><a class="headerlink" href="#typical-use" title="永久链接至标题">¶</a></h2>
 <p>This section discusses our vision of the “typical” microTVM use case. Each component used to achieve
 this typical use case is intended to be designed for flexibility, but this unifying vision serves to
 motivate the inclusion of each part of the design.</p>
