@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>microTVM设计文档 &mdash; tvm 0.8.dev1944+ge54f3d69b 文档</title>
+  <title>microTVM设计文档 &mdash; tvm 0.8.dev1945+g18c2b4c3b 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1944+ge54f3d69b
+                  0.8.dev1945+g18c2b4c3b
                 </div>
             
           
@@ -380,7 +380,7 @@
 <p>TVM 是一个模型部署框架，在传统操作系统的各种模型中都表现出了良好的性能。鉴于 TVM 的分层编译方法，将TVM应用到微控制器设备成了自然而然的事情。虽然大多数汇编流程不需要为了在此类设备上实现概念验证而更改，但是运行时间不能依赖于：</p>
 <ul class="simple">
 <li><p><strong>虚拟内存</strong>，和其他任何系统提供的 <code class="docutils literal notranslate"><span class="pre">malloc</span></code>。另外，微控制器设备的内存资源通常非常有限（以 KB 为单位）。因此，为此类平台设计的库在使用内存时通常需要非常谨慎，并且需要在内存未使用时及时释放内存。</p></li>
-<li><p>传统的操作系统功能，如 <strong>files</strong>，<strong>libraries</strong> 和 <strong>kernel functions</strong>。</p></li>
+<li><p>传统的操作系统功能，如 <strong>files</strong>，<strong>libraries</strong> 和 <strong>kernel functions</strong>。一些项目实现了对这些的支持，但它们绝不是标准的。</p></li>
 <li><p>支持除 <strong>C</strong> 以外的编程语言。</p></li>
 </ul>
 <p>这些变化需要一个不同于传统操作系统通常使用的 TVM C++运行时间。</p>

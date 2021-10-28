@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Design and Architecture &mdash; tvm 0.8.dev1944+ge54f3d69b 文档</title>
+  <title>Design and Architecture &mdash; tvm 0.8.dev1945+g18c2b4c3b 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1944+ge54f3d69b
+                  0.8.dev1945+g18c2b4c3b
                 </div>
             
           
@@ -226,8 +226,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#key-data-structures">关键数据结构</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#transformations">转换</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#search-space-and-learning-based-transformations">搜索空间和基于学习的转换</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#target-translation">目标转化
-Target Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#target-translation">目标转化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#runtime-execution">Runtime 执行</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#summary-and-discussions">总结与讨论</a></li>
 </ul>
@@ -433,8 +432,7 @@ and code-generation target.</p></li>
 <p>我们使用基于搜索的优化来处理初始tir函数生成问题。该模块的这一部分称为AutoTVM（自动调度程序）。随着我们继续开发TVM堆栈，我们希望将基于学习的转换扩展到更多领域。</p>
 </div>
 <div class="section" id="target-translation">
-<h3>目标转化
-Target Translation<a class="headerlink" href="#target-translation" title="永久链接至标题">¶</a></h3>
+<h3>目标转化<a class="headerlink" href="#target-translation" title="永久链接至标题">¶</a></h3>
 <p>目标转换阶段将IRModule转换为对应目标可执行的文件格式。对于x86和ARM等后端，我们使用LLVM IRBuilder构建内存中的LLVM IR。我们还可以生成源代码级语言，如CUDA C和OpenCL。最后，我们支持通过外部代码生成器将Relay函数（子图）直接转化到特定目标。重要的是，最终代码生成阶段应尽可能轻简。绝大多数转换和底层化应在目标转化阶段之前执行。</p>
 <p>我们还提供了一个目标结构来特定编译目标。目标转化阶段之前的变换也会受到目标的影响-例如，目标的向量长度会改变向量化行为。</p>
 </div>
