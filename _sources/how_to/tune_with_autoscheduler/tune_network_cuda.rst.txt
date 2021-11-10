@@ -639,22 +639,22 @@ so we can read the log file and load the best schedules.
         Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
       File "/tvm_chinese/tvm/src/tir/analysis/verify_memory.cc", line 206
     RuntimeError: Memory verification failed with the following errors:
-    PrimFunc([placeholder, placeholder, placeholder, placeholder, T_relu]) attrs={"target": cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, "tir.noalias": (bool)1, "global_symbol": "tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_add_nn_relu_1", "from_legacy_te_schedule": (bool)1} {
-      allocate data_pad[float32 * 401408], storage_scope = global
-      allocate input_tile[float32 * 401408], storage_scope = global
+    PrimFunc([placeholder, placeholder, placeholder, placeholder, T_relu]) attrs={"target": cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, "tir.noalias": (bool)1, "global_symbol": "tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_add_nn_relu", "from_legacy_te_schedule": (bool)1} {
+      allocate data_pad[float32 * 200704], storage_scope = global
+      allocate input_tile[float32 * 200704], storage_scope = global
       allocate B[float32 * 16], storage_scope = global
-      for (i1, 0, 30) {
-        for (i2, 0, 30) {
-          for (i3, 0, 128) {
-            data_pad[(((i1*3840) + (i2*128)) + i3)] = tir.if_then_else(((((1 <= i1) && (i1 < 29)) && (1 <= i2)) && (i2 < 29)), placeholder[((((i1*3584) + (i2*128)) + i3) - 3712)], 0f)
+      for (i1, 0, 16) {
+        for (i2, 0, 16) {
+          for (i3, 0, 256) {
+            data_pad[(((i1*4096) + (i2*256)) + i3)] = tir.if_then_else(((((1 <= i1) && (i1 < 15)) && (1 <= i2)) && (i2 < 15)), placeholder[((((i1*3584) + (i2*256)) + i3) - 3840)], 0f)
           }
         }
       }
       for (eps, 0, 4) {
         for (nu, 0, 4) {
-          for (p, 0, 196) {
-            for (ci, 0, 128) {
-              input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] = data_pad[(((((floordiv(p, 14)*7680) + (eps*3840)) + (floormod(p, 14)*256)) + (nu*128)) + ci)]
+          for (p, 0, 49) {
+            for (ci, 0, 256) {
+              input_tile[((((eps*50176) + (nu*12544)) + (p*256)) + ci)] = data_pad[(((((floordiv(p, 7)*8192) + (eps*4096)) + (floormod(p, 7)*512)) + (nu*256)) + ci)]
             }
           }
         }
@@ -666,12 +666,12 @@ so we can read the log file and load the best schedules.
       }
       for (eps, 0, 4) {
         for (nu, 0, 4) {
-          for (p, 0, 196) {
-            for (ci, 0, 128) {
-              data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] = 0f
+          for (p, 0, 49) {
+            for (ci, 0, 256) {
+              data_pad[((((eps*50176) + (nu*12544)) + (p*256)) + ci)] = 0f
               for (r_a, 0, 4) {
                 for (r_b, 0, 4) {
-                  data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] = (data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)] + ((input_tile[((((r_a*100352) + (r_b*25088)) + (p*128)) + ci)]*B[((r_a*4) + eps)])*B[((r_b*4) + nu)]))
+                  data_pad[((((eps*50176) + (nu*12544)) + (p*256)) + ci)] = (data_pad[((((eps*50176) + (nu*12544)) + (p*256)) + ci)] + ((input_tile[((((r_a*50176) + (r_b*12544)) + (p*256)) + ci)]*B[((r_a*4) + eps)])*B[((r_b*4) + nu)]))
                 }
               }
             }
@@ -680,11 +680,11 @@ so we can read the log file and load the best schedules.
       }
       for (eps, 0, 4) {
         for (nu, 0, 4) {
-          for (p, 0, 196) {
-            for (co, 0, 128) {
-              input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + co)] = 0f
-              for (ci, 0, 128) {
-                input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + co)] = (input_tile[((((eps*100352) + (nu*25088)) + (p*128)) + co)] + (data_pad[((((eps*100352) + (nu*25088)) + (p*128)) + ci)]*placeholder[((((eps*65536) + (nu*16384)) + (co*128)) + ci)]))
+          for (p, 0, 49) {
+            for (co, 0, 256) {
+              input_tile[((((eps*50176) + (nu*12544)) + (p*256)) + co)] = 0f
+              for (ci, 0, 256) {
+                input_tile[((((eps*50176) + (nu*12544)) + (p*256)) + co)] = (input_tile[((((eps*50176) + (nu*12544)) + (p*256)) + co)] + (data_pad[((((eps*50176) + (nu*12544)) + (p*256)) + ci)]*placeholder[((((eps*262144) + (nu*65536)) + (co*256)) + ci)]))
               }
             }
           }
@@ -697,43 +697,43 @@ so we can read the log file and load the best schedules.
       }
       for (vh, 0, 2) {
         for (vw, 0, 2) {
-          for (p, 0, 196) {
-            for (co, 0, 128) {
-              data_pad[((((vh*50176) + (vw*25088)) + (p*128)) + co)] = 0f
+          for (p, 0, 49) {
+            for (co, 0, 256) {
+              data_pad[((((vh*25088) + (vw*12544)) + (p*256)) + co)] = 0f
               for (r_a, 0, 4) {
                 for (r_b, 0, 4) {
-                  data_pad[((((vh*50176) + (vw*25088)) + (p*128)) + co)] = (data_pad[((((vh*50176) + (vw*25088)) + (p*128)) + co)] + ((input_tile[((((r_a*100352) + (r_b*25088)) + (p*128)) + co)]*B[((r_a*2) + vh)])*B[((r_b*2) + vw)]))
+                  data_pad[((((vh*25088) + (vw*12544)) + (p*256)) + co)] = (data_pad[((((vh*25088) + (vw*12544)) + (p*256)) + co)] + ((input_tile[((((r_a*50176) + (r_b*12544)) + (p*256)) + co)]*B[((r_a*2) + vh)])*B[((r_b*2) + vw)]))
                 }
               }
             }
           }
         }
       }
-      for (h, 0, 28) {
-        for (w, 0, 28) {
-          for (co, 0, 128) {
-            input_tile[(((h*3584) + (w*128)) + co)] = data_pad[(((((floormod(h, 2)*50176) + (floormod(w, 2)*25088)) + (floordiv(h, 2)*1792)) + (floordiv(w, 2)*128)) + co)]
+      for (h, 0, 14) {
+        for (w, 0, 14) {
+          for (co, 0, 256) {
+            input_tile[(((h*3584) + (w*256)) + co)] = data_pad[(((((floormod(h, 2)*25088) + (floormod(w, 2)*12544)) + (floordiv(h, 2)*1792)) + (floordiv(w, 2)*256)) + co)]
           }
         }
       }
-      for (ax1, 0, 28) {
-        for (ax2, 0, 28) {
-          for (ax3, 0, 128) {
-            data_pad[(((ax1*3584) + (ax2*128)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[(((ax1*3584) + (ax2*128)) + ax3)])
+      for (ax1, 0, 14) {
+        for (ax2, 0, 14) {
+          for (ax3, 0, 256) {
+            data_pad[(((ax1*3584) + (ax2*256)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*256)) + ax3)] + placeholder[(((ax1*3584) + (ax2*256)) + ax3)])
           }
         }
       }
-      for (ax1, 0, 28) {
-        for (ax2, 0, 28) {
-          for (ax3, 0, 128) {
-            input_tile[(((ax1*3584) + (ax2*128)) + ax3)] = (data_pad[(((ax1*3584) + (ax2*128)) + ax3)] + placeholder[ax3])
+      for (ax1, 0, 14) {
+        for (ax2, 0, 14) {
+          for (ax3, 0, 256) {
+            input_tile[(((ax1*3584) + (ax2*256)) + ax3)] = (data_pad[(((ax1*3584) + (ax2*256)) + ax3)] + placeholder[ax3])
           }
         }
       }
-      for (ax1, 0, 28) {
-        for (ax2, 0, 28) {
-          for (ax3, 0, 128) {
-            T_relu[(((ax1*3584) + (ax2*128)) + ax3)] = max(input_tile[(((ax1*3584) + (ax2*128)) + ax3)], 0f)
+      for (ax1, 0, 14) {
+        for (ax2, 0, 14) {
+          for (ax3, 0, 256) {
+            T_relu[(((ax1*3584) + (ax2*256)) + ax3)] = max(input_tile[(((ax1*3584) + (ax2*256)) + ax3)], 0f)
           }
         }
       }
