@@ -632,13 +632,15 @@ so we can read the log file and load the best schedules.
       1: tvm::transform::ModulePassNode::operator()(tvm::IRModule, tvm::transform::PassContext const&) const
       0: std::_Function_handler<void (tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*), tvm::runtime::TypedPackedFunc<tvm::IRModule (tvm::IRModule, tvm::transform::PassContext)>::AssignTypedLambda<tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1}>(tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1})::{lambda(tvm::runtime::TVMArgs const&, tvm::runtime::TVMRetValue*)#1}>::_M_invoke(std::_Any_data const&, tvm::runtime::TVMArgs&&, tvm::runtime::TVMRetValue*&&)
       Did you forget to bind?
+        Variable `T_relu` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
         Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
-        Variable `T_add` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
+        Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
+        Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
         Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
         Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.
       File "/tvm_chinese/tvm/src/tir/analysis/verify_memory.cc", line 206
     RuntimeError: Memory verification failed with the following errors:
-    PrimFunc([placeholder, placeholder, placeholder, T_add]) attrs={"target": cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, "tir.noalias": (bool)1, "global_symbol": "tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add", "from_legacy_te_schedule": (bool)1} {
+    PrimFunc([placeholder, placeholder, placeholder, placeholder, placeholder, T_relu]) attrs={"target": cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, "tir.noalias": (bool)1, "global_symbol": "tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_multiply_add_nn_re_11882905421691233276_", "from_legacy_te_schedule": (bool)1} {
       allocate data_pad[float32 * 131072], storage_scope = global
       allocate input_tile[float32 * 131072], storage_scope = global
       allocate B[float32 * 16], storage_scope = global
@@ -718,7 +720,28 @@ so we can read the log file and load the best schedules.
       for (ax1, 0, 7) {
         for (ax2, 0, 7) {
           for (ax3, 0, 512) {
-            T_add[(((ax1*3584) + (ax2*512)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*512)) + ax3)] + placeholder[(((ax1*3584) + (ax2*512)) + ax3)])
+            data_pad[(((ax1*3584) + (ax2*512)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*512)) + ax3)] + placeholder[(((ax1*3584) + (ax2*512)) + ax3)])
+          }
+        }
+      }
+      for (ax1, 0, 7) {
+        for (ax2, 0, 7) {
+          for (ax3, 0, 512) {
+            input_tile[(((ax1*3584) + (ax2*512)) + ax3)] = (data_pad[(((ax1*3584) + (ax2*512)) + ax3)]*placeholder[ax3])
+          }
+        }
+      }
+      for (ax1, 0, 7) {
+        for (ax2, 0, 7) {
+          for (ax3, 0, 512) {
+            data_pad[(((ax1*3584) + (ax2*512)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*512)) + ax3)] + placeholder[ax3])
+          }
+        }
+      }
+      for (ax1, 0, 7) {
+        for (ax2, 0, 7) {
+          for (ax3, 0, 512) {
+            T_relu[(((ax1*3584) + (ax2*512)) + ax3)] = max(data_pad[(((ax1*3584) + (ax2*512)) + ax3)], 0f)
           }
         }
       }
