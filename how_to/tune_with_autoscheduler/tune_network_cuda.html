@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1968 文档</title>
+  <title>Auto-scheduling a Neural Network for NVIDIA GPU &mdash; tvm 0.8.dev1969 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1968
+                  0.8.dev1969
                 </div>
             
           
@@ -481,280 +481,34 @@ The task scheduler will just optimize this objective.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">task</span><span class="o">.</span><span class="n">compute_dag</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Extract tasks...
-========== Task 0  (workload key: [&quot;12b88bedece6984af589a28b43e0f3c4&quot;, [1, 56, 56, 64], [3, 3, 64, 128], [1, 1, 1, 128], [1, 28, 28, 128]]) ==========
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-PaddedInput(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 57)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 57)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-placeholder = PLACEHOLDER [3, 3, 64, 128]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, ((yy*2) + ry), ((xx*2) + rx), rc]*placeholder[ry, rx, rc, ff])
-placeholder = PLACEHOLDER [1, 1, 1, 128]
-T_add(ax0, ax1, ax2, ax3) = (Conv2dOutput[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 1  (workload key: [&quot;c4500b4e2fd04e695c32d2f31bbdc14a&quot;, [1, 28, 28, 128], [4, 4, 128, 128], [1, 28, 28, 128], [1, 1, 1, 128], [1, 28, 28, 128]]) ==========
-placeholder = PLACEHOLDER [1, 28, 28, 128]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 29)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 29)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 196), ((floormod(floordiv(p, 14), 14)*2) + eps), ((floormod(p, 14)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 128, 128]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*14)*14) + (floordiv(h, 2)*14)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 28, 28, 128]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-placeholder = PLACEHOLDER [1, 1, 1, 128]
-T_add(ax0, ax1, ax2, ax3) = (T_add[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 2  (workload key: [&quot;12b88bedece6984af589a28b43e0f3c4&quot;, [1, 14, 14, 256], [3, 3, 256, 512], [1, 1, 1, 512], [1, 7, 7, 512]]) ==========
-placeholder = PLACEHOLDER [1, 14, 14, 256]
-PaddedInput(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 15)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 15)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-placeholder = PLACEHOLDER [3, 3, 256, 512]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, ((yy*2) + ry), ((xx*2) + rx), rc]*placeholder[ry, rx, rc, ff])
-placeholder = PLACEHOLDER [1, 1, 1, 512]
-T_add(ax0, ax1, ax2, ax3) = (Conv2dOutput[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 3  (workload key: [&quot;69115f188984ae34ede37c3b8ca40b43&quot;, [1, 7, 7, 512], [1, 1, 1, 512]]) ==========
-placeholder = PLACEHOLDER [1, 7, 7, 512]
-tensor(ax0, ax1, ax2, ax3) += placeholder[ax0, ((ax1*7) + rv0), ((ax2*7) + rv1), ax3]
-tensor(ax0, ax1, ax2, ax3) = (tensor[ax0, ax1, ax2, ax3]/(float32((select((bool)1, ((ax1 + 1)*7), (((ax1 + 1)*7) + 1)) - (ax1*7)))*float32((select((bool)1, ((ax2 + 1)*7), (((ax2 + 1)*7) + 1)) - (ax2*7)))))
-
-========== Task 4  (workload key: [&quot;7006235cfc29b73be524cf390ed5a977&quot;, [1, 56, 56, 64], [1, 1, 64, 64], [1, 56, 56, 64]]) ==========
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-PaddedInput(i0, i1, i2, i3) = placeholder[i0, i1, i2, i3]
-placeholder = PLACEHOLDER [1, 1, 64, 64]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, (yy + ry), (xx + rx), rc]*placeholder[ry, rx, rc, ff])
-
-========== Task 5  (workload key: [&quot;dac19035dd5fe9424ee8617421b9c817&quot;, [1, 28, 28, 128], [4, 4, 128, 128], [1, 28, 28, 128], [1, 28, 28, 128]]) ==========
-placeholder = PLACEHOLDER [1, 28, 28, 128]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 29)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 29)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 196), ((floormod(floordiv(p, 14), 14)*2) + eps), ((floormod(p, 14)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 128, 128]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*14)*14) + (floordiv(h, 2)*14)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 28, 28, 128]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-
-========== Task 6  (workload key: [&quot;b818b53148cd450f86569dfc3e04cb8a&quot;, [1, 56, 56, 64], [6, 6, 64, 64], [1, 1, 1, 64], [1, 56, 56, 64]]) ==========
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 57)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 57)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 196), ((floormod(floordiv(p, 14), 14)*4) + eps), ((floormod(p, 14)*4) + nu), ci]
-B(i, j) = select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 6) == 5)), 1f, select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 6) == 4)),  ..(OMITTED)..  (floormod(j, 6) == 1)), 0f, select(((floormod(i, 6) == 0) &amp;&amp; (floormod(j, 6) == 0)), 1f, 0f))))))))))))))))))))))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [6, 6, 64, 64]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED)..  6) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 6) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 4), floormod(w, 4), ((((n*14)*14) + (floordiv(h, 4)*14)) + floordiv(w, 4)), co]
-placeholder = PLACEHOLDER [1, 1, 1, 64]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 7  (workload key: [&quot;3a69f9fbc63760d99e36b4c17b3bfc57&quot;, [1, 7, 7, 512], [4, 4, 512, 512], [1, 1, 1, 512], [1, 7, 7, 512]]) ==========
-placeholder = PLACEHOLDER [1, 7, 7, 512]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 8)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 8)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 16), ((floormod(floordiv(p, 4), 4)*2) + eps), ((floormod(p, 4)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 512, 512]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*4)*4) + (floordiv(h, 2)*4)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 1, 1, 512]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 8  (workload key: [&quot;f4380bb1dc62422a69ad4a1a9771f927&quot;, [1, 28, 28, 128], [1, 1, 128, 256], [1, 14, 14, 256]]) ==========
-placeholder = PLACEHOLDER [1, 28, 28, 128]
-PaddedInput(i0, i1, i2, i3) = placeholder[i0, i1, i2, i3]
-placeholder = PLACEHOLDER [1, 1, 128, 256]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, ((yy*2) + ry), ((xx*2) + rx), rc]*placeholder[ry, rx, rc, ff])
-
-========== Task 9  (workload key: [&quot;1e3c4211ffd2f2db91078ae4d04b779d&quot;, [1, 56, 56, 64], [6, 6, 64, 64], [1, 56, 56, 64], [1, 1, 1, 64], [1, 56, 56, 64]]) ==========
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 57)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 57)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 196), ((floormod(floordiv(p, 14), 14)*4) + eps), ((floormod(p, 14)*4) + nu), ci]
-B(i, j) = select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 6) == 5)), 1f, select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 6) == 4)),  ..(OMITTED)..  (floormod(j, 6) == 1)), 0f, select(((floormod(i, 6) == 0) &amp;&amp; (floormod(j, 6) == 0)), 1f, 0f))))))))))))))))))))))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [6, 6, 64, 64]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED)..  6) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 6) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 4), floormod(w, 4), ((((n*14)*14) + (floordiv(h, 4)*14)) + floordiv(w, 4)), co]
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-placeholder = PLACEHOLDER [1, 1, 1, 64]
-T_add(ax0, ax1, ax2, ax3) = (T_add[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 10  (workload key: [&quot;12b88bedece6984af589a28b43e0f3c4&quot;, [1, 28, 28, 128], [3, 3, 128, 256], [1, 1, 1, 256], [1, 14, 14, 256]]) ==========
-placeholder = PLACEHOLDER [1, 28, 28, 128]
-PaddedInput(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 29)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 29)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-placeholder = PLACEHOLDER [3, 3, 128, 256]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, ((yy*2) + ry), ((xx*2) + rx), rc]*placeholder[ry, rx, rc, ff])
-placeholder = PLACEHOLDER [1, 1, 1, 256]
-T_add(ax0, ax1, ax2, ax3) = (Conv2dOutput[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 11  (workload key: [&quot;f3b6c10fcc6ce01ff01add933e4d21e9&quot;, [1, 14, 14, 256], [4, 4, 256, 256], [1, 14, 14, 256], [1, 1, 1, 256], [1, 14, 14, 256]]) ==========
-placeholder = PLACEHOLDER [1, 14, 14, 256]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 15)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 15)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 49), ((floormod(floordiv(p, 7), 7)*2) + eps), ((floormod(p, 7)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 256, 256]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*7)*7) + (floordiv(h, 2)*7)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 14, 14, 256]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-placeholder = PLACEHOLDER [1, 1, 1, 256]
-T_add(ax0, ax1, ax2, ax3) = (T_add[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 12  (workload key: [&quot;f4380bb1dc62422a69ad4a1a9771f927&quot;, [1, 56, 56, 64], [1, 1, 64, 128], [1, 28, 28, 128]]) ==========
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-PaddedInput(i0, i1, i2, i3) = placeholder[i0, i1, i2, i3]
-placeholder = PLACEHOLDER [1, 1, 64, 128]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, ((yy*2) + ry), ((xx*2) + rx), rc]*placeholder[ry, rx, rc, ff])
-
-========== Task 13  (workload key: [&quot;f4380bb1dc62422a69ad4a1a9771f927&quot;, [1, 14, 14, 256], [1, 1, 256, 512], [1, 7, 7, 512]]) ==========
-placeholder = PLACEHOLDER [1, 14, 14, 256]
-PaddedInput(i0, i1, i2, i3) = placeholder[i0, i1, i2, i3]
-placeholder = PLACEHOLDER [1, 1, 256, 512]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, ((yy*2) + ry), ((xx*2) + rx), rc]*placeholder[ry, rx, rc, ff])
-
-========== Task 14  (workload key: [&quot;b8b52b9be9df6102466a22a014c44c1f&quot;, [1, 14, 14, 256], [4, 4, 256, 256], [1, 1, 1, 256], [1, 14, 14, 256]]) ==========
-placeholder = PLACEHOLDER [1, 14, 14, 256]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 15)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 15)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 49), ((floormod(floordiv(p, 7), 7)*2) + eps), ((floormod(p, 7)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 256, 256]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*7)*7) + (floordiv(h, 2)*7)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 1, 1, 256]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 15  (workload key: [&quot;7d44c6e3c81cd80f61ff2265b2bae89a&quot;, [1, 512], [1000, 512], [1, 1000], [1, 1000]]) ==========
-placeholder = PLACEHOLDER [1, 512]
-placeholder = PLACEHOLDER [1000, 512]
-T_matmul_NT(i, j) += (placeholder[i, k]*placeholder[j, k])
-placeholder = PLACEHOLDER [1, 1000]
-T_add(ax0, ax1) = (T_matmul_NT[ax0, ax1] + placeholder[ax0, ax1])
-
-========== Task 16  (workload key: [&quot;3ea73fb9b0364374730d09e068821f95&quot;, [1, 56, 56, 64], [6, 6, 64, 64], [1, 56, 56, 64], [1, 56, 56, 64]]) ==========
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 57)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 57)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 196), ((floormod(floordiv(p, 14), 14)*4) + eps), ((floormod(p, 14)*4) + nu), ci]
-B(i, j) = select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 6) == 5)), 1f, select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 6) == 4)),  ..(OMITTED)..  (floormod(j, 6) == 1)), 0f, select(((floormod(i, 6) == 0) &amp;&amp; (floormod(j, 6) == 0)), 1f, 0f))))))))))))))))))))))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [6, 6, 64, 64]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 6) == 5) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED)..  6) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 6) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 4), floormod(w, 4), ((((n*14)*14) + (floordiv(h, 4)*14)) + floordiv(w, 4)), co]
-placeholder = PLACEHOLDER [1, 56, 56, 64]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-
-========== Task 17  (workload key: [&quot;d7b65649a4dd54becea0a52aabbc5af5&quot;, [1, 1000], [1, 1000]]) ==========
-placeholder = PLACEHOLDER [1, 1000]
-T_softmax_maxelem(i0) max= placeholder[i0, k]
-T_softmax_exp(i0, i1) = tir.exp((placeholder[i0, i1] - T_softmax_maxelem[i0]))
-T_softmax_expsum(i0) += T_softmax_exp[i0, k]
-T_softmax_norm(i0, i1) = (T_softmax_exp[i0, i1]/T_softmax_expsum[i0])
-
-========== Task 18  (workload key: [&quot;64b98c71af70a904fdbb81d7d4188d84&quot;, [1, 112, 112, 64], [1, 1, 1, 64], [1, 56, 56, 64]]) ==========
-placeholder = PLACEHOLDER [1, 112, 112, 64]
-pad_temp(ax0, ax1, ax2, ax3) = tir.if_then_else(((((ax1 &gt;= 1) &amp;&amp; (ax1 &lt; 113)) &amp;&amp; (ax2 &gt;= 1)) &amp;&amp; (ax2 &lt; 113)), placeholder[ax0, (ax1 - 1), (ax2 - 1), ax3], -3.40282e+38f)
-tensor(ax0, ax1, ax2, ax3) max= pad_temp[ax0, ((ax1*2) + rv0), ((ax2*2) + rv1), ax3]
-placeholder = PLACEHOLDER [1, 1, 1, 64]
-T_add(ax0, ax1, ax2, ax3) = (tensor[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 19  (workload key: [&quot;e4cdf917b876dbdd64488c3818d9c141&quot;, [1, 28, 28, 128], [4, 4, 128, 128], [1, 1, 1, 128], [1, 28, 28, 128]]) ==========
-placeholder = PLACEHOLDER [1, 28, 28, 128]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 29)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 29)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 196), ((floormod(floordiv(p, 14), 14)*2) + eps), ((floormod(p, 14)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 128, 128]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*14)*14) + (floordiv(h, 2)*14)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 1, 1, 128]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 20  (workload key: [&quot;d730bcd28f0920f6b97245e2a11bd8d6&quot;, [1, 7, 7, 512], [4, 4, 512, 512], [1, 7, 7, 512], [1, 7, 7, 512]]) ==========
-placeholder = PLACEHOLDER [1, 7, 7, 512]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 8)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 8)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 16), ((floormod(floordiv(p, 4), 4)*2) + eps), ((floormod(p, 4)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 512, 512]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*4)*4) + (floordiv(h, 2)*4)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 7, 7, 512]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-
-========== Task 21  (workload key: [&quot;ad6cecbf5d85cb1cda3c2bb7af170211&quot;, [1, 7, 7, 512], [4, 4, 512, 512], [1, 7, 7, 512], [1, 1, 1, 512], [1, 1, 1, 512], [1, 7, 7, 512]]) ==========
-placeholder = PLACEHOLDER [1, 7, 7, 512]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 8)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 8)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 16), ((floormod(floordiv(p, 4), 4)*2) + eps), ((floormod(p, 4)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 512, 512]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*4)*4) + (floordiv(h, 2)*4)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 7, 7, 512]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-placeholder = PLACEHOLDER [1, 1, 1, 512]
-T_multiply(ax0, ax1, ax2, ax3) = (T_add[ax0, ax1, ax2, ax3]*placeholder[ax0, 0, 0, ax3])
-placeholder = PLACEHOLDER [1, 1, 1, 512]
-T_add(ax0, ax1, ax2, ax3) = (T_multiply[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
-
-========== Task 22  (workload key: [&quot;d374e472bd9d8164892b9e28a0a8cb59&quot;, [1, 14, 14, 256], [4, 4, 256, 256], [1, 14, 14, 256], [1, 14, 14, 256]]) ==========
-placeholder = PLACEHOLDER [1, 14, 14, 256]
-data_pad(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 1) &amp;&amp; (i1 &lt; 15)) &amp;&amp; (i2 &gt;= 1)) &amp;&amp; (i2 &lt; 15)), placeholder[i0, (i1 - 1), (i2 - 1), i3], 0f)
-input_tile(eps, nu, p, ci) = data_pad[floordiv(p, 49), ((floormod(floordiv(p, 7), 7)*2) + eps), ((floormod(p, 7)*2) + nu), ci]
-B(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 3)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 4) == 2)),  ..(OMITTED).. ormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 4) == 0)), 1f, 0f))))))))))))))))
-data_pack(eps, nu, p, ci) += ((input_tile[r_a, r_b, p, ci]*B[r_a, eps])*B[r_b, nu])
-placeholder = PLACEHOLDER [4, 4, 256, 256]
-bgemm(eps, nu, p, co) += (data_pack[eps, nu, p, ci]*placeholder[eps, nu, co, ci])
-A(i, j) = select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 1)), 1f, select(((floormod(i, 4) == 3) &amp;&amp; (floormod(j, 2) == 0)),  ..(OMITTED).. ct(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 1)), 0f, select(((floormod(i, 4) == 0) &amp;&amp; (floormod(j, 2) == 0)), 1f, 0f))))))))
-inverse(vh, vw, p, co) += ((bgemm[r_a, r_b, p, co]*A[r_a, vh])*A[r_b, vw])
-conv2d_winograd(n, h, w, co) = inverse[floormod(h, 2), floormod(w, 2), ((((n*7)*7) + (floordiv(h, 2)*7)) + floordiv(w, 2)), co]
-placeholder = PLACEHOLDER [1, 14, 14, 256]
-T_add(ax0, ax1, ax2, ax3) = (conv2d_winograd[ax0, ax1, ax2, ax3] + placeholder[ax0, ax1, ax2, ax3])
-
-========== Task 23  (workload key: [&quot;12b88bedece6984af589a28b43e0f3c4&quot;, [1, 224, 224, 3], [7, 7, 3, 64], [1, 1, 1, 64], [1, 112, 112, 64]]) ==========
-placeholder = PLACEHOLDER [1, 224, 224, 3]
-PaddedInput(i0, i1, i2, i3) = tir.if_then_else(((((i1 &gt;= 3) &amp;&amp; (i1 &lt; 227)) &amp;&amp; (i2 &gt;= 3)) &amp;&amp; (i2 &lt; 227)), placeholder[i0, (i1 - 3), (i2 - 3), i3], 0f)
-placeholder = PLACEHOLDER [7, 7, 3, 64]
-Conv2dOutput(nn, yy, xx, ff) += (PaddedInput[nn, ((yy*2) + ry), ((xx*2) + rx), rc]*placeholder[ry, rx, rc, ff])
-placeholder = PLACEHOLDER [1, 1, 1, 64]
-T_add(ax0, ax1, ax2, ax3) = (Conv2dOutput[ax0, ax1, ax2, ax3] + placeholder[ax0, 0, 0, ax3])
-T_relu(ax0, ax1, ax2, ax3) = max(T_add[ax0, ax1, ax2, ax3], 0f)
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;/usr/local/lib/python3.6/dist-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">480</span>, in <span class="n">_memory_usage</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+  File <span class="nb">&quot;/usr/local/lib/python3.6/dist-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">465</span>, in <span class="n">__call__</span>
+    <span class="k">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">globals</span><span class="p">)</span>
+  File <span class="nb">&quot;/tvm_chinese/tvm/gallery/how_to/tune_with_autoscheduler/tune_network_cuda.py&quot;</span>, line <span class="m">155</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="n">tasks</span><span class="p">,</span> <span class="n">task_weights</span> <span class="o">=</span> <span class="n">auto_scheduler</span><span class="o">.</span><span class="n">extract_tasks</span><span class="p">(</span><span class="n">mod</span><span class="p">[</span><span class="s2">&quot;main&quot;</span><span class="p">],</span> <span class="n">params</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+  File <span class="nb">&quot;/tvm_chinese/tvm/python/tvm/auto_scheduler/relay_integration.py&quot;</span>, line <span class="m">152</span>, in <span class="n">extract_tasks</span>
+    <span class="n">desc</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">func_names</span><span class="p">),</span>
+  File <span class="nb">&quot;/tvm_chinese/tvm/python/tvm/auto_scheduler/search_task.py&quot;</span>, line <span class="m">481</span>, in <span class="n">__init__</span>
+    <span class="n">desc</span><span class="p">,</span>
+  File <span class="nb">&quot;/tvm_chinese/tvm/python/tvm/_ffi/_ctypes/object.py&quot;</span>, line <span class="m">136</span>, in <span class="n">__init_handle_by_constructor__</span>
+    <span class="n">handle</span> <span class="o">=</span> <span class="n">__init_by_constructor__</span><span class="p">(</span><span class="n">fconstructor</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+  File <span class="nb">&quot;/tvm_chinese/tvm/python/tvm/_ffi/_ctypes/packed_func.py&quot;</span>, line <span class="m">260</span>, in <span class="n">__init_handle_by_constructor__</span>
+    <span class="k">raise</span> <span class="n">get_last_ffi_error</span><span class="p">()</span>
+<span class="gr">tvm._ffi.base.TVMError</span>: <span class="n">Traceback (most recent call last):</span>
+<span class="x">  4: TVMFuncCall</span>
+<span class="x">  3: tvm::runtime::TypedPackedFunc&lt;tvm::auto_scheduler::SearchTask (tvm::auto_scheduler::ComputeDAG, tvm::runtime::String, tvm::Target, tvm::Target, tvm::runtime::Optional&lt;tvm::auto_scheduler::HardwareParams&gt;, int, tvm::runtime::Array&lt;tvm::runtime::String, void&gt;, tvm::runtime::String)&gt;::AssignTypedLambda&lt;tvm::auto_scheduler::{lambda(tvm::auto_scheduler::ComputeDAG, tvm::runtime::String, tvm::Target, tvm::Target, tvm::runtime::Optional&lt;tvm::auto_scheduler::HardwareParams&gt;, int, tvm::runtime::Array&lt;tvm::runtime::String, void&gt;, tvm::runtime::String)#5}&gt;(tvm::auto_scheduler::{lambda(tvm::auto_scheduler::ComputeDAG, tvm::runtime::String, tvm::Target, tvm::Target, tvm::runtime::Optional&lt;tvm::auto_scheduler::HardwareParams&gt;, int, tvm::runtime::Array&lt;tvm::runtime::String, void&gt;, tvm::runtime::String)#5}, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;)::{lambda(tvm::runtime::TVMArgs const&amp;, tvm::runtime::TVMRetValue*)#1}::operator()(tvm::runtime::TVMArgs const, tvm::runtime::TVMRetValue) const</span>
+<span class="x">  2: tvm::auto_scheduler::SearchTask::SearchTask(tvm::auto_scheduler::ComputeDAG, tvm::runtime::String, tvm::Target, tvm::Target, tvm::runtime::Optional&lt;tvm::auto_scheduler::HardwareParams&gt;, tvm::auto_scheduler::LayoutRewriteOption, tvm::runtime::Array&lt;tvm::runtime::String, void&gt;, tvm::runtime::String)</span>
+<span class="x">  1: tvm::auto_scheduler::HardwareParamsNode::GetDefaultHardwareParams(tvm::Target const&amp;, tvm::Target const&amp;)</span>
+<span class="x">  0: tvm::runtime::CUDADeviceAPI::GetAttr(DLDevice, tvm::runtime::DeviceAttrKind, tvm::runtime::TVMRetValue*)</span>
+  File <span class="nb">&quot;/tvm_chinese/tvm/src/runtime/cuda/cuda_device_api.cc&quot;</span>, line <span class="m">58</span>
+<span class="gr">TVMError</span>:
+<span class="x">---------------------------------------------------------------</span>
+<span class="x">An error occurred during the execution of TVM.</span>
+<span class="x">For more information, please see: https://tvm.apache.org/docs/errors.html</span>
+<span class="x">---------------------------------------------------------------</span>
+<span class="x">  Check failed: (e == cudaSuccess || e == cudaErrorCudartUnloading) is false: CUDA: no CUDA-capable device is detected</span>
 </pre></div>
 </div>
 </div>
@@ -879,141 +633,6 @@ so we can read the log file and load the best schedules.</p>
 <span class="c1"># Evaluate</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evaluate inference time cost...&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">benchmark</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_repeat_ms</span><span class="o">=</span><span class="mi">500</span><span class="p">))</span>
-</pre></div>
-</div>
-<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">&quot;/usr/local/lib/python3.6/dist-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">480</span>, in <span class="n">_memory_usage</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
-  File <span class="nb">&quot;/usr/local/lib/python3.6/dist-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">465</span>, in <span class="n">__call__</span>
-    <span class="k">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">globals</span><span class="p">)</span>
-  File <span class="nb">&quot;/tvm_chinese/tvm/gallery/how_to/tune_with_autoscheduler/tune_network_cuda.py&quot;</span>, line <span class="m">281</span>, in <span class="n">&lt;module&gt;</span>
-    <span class="n">lib</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
-  File <span class="nb">&quot;/tvm_chinese/tvm/python/tvm/relay/build_module.py&quot;</span>, line <span class="m">358</span>, in <span class="n">build</span>
-    <span class="n">mod</span><span class="o">=</span><span class="n">ir_mod</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">executor</span><span class="o">=</span><span class="n">executor</span><span class="p">,</span> <span class="n">mod_name</span><span class="o">=</span><span class="n">mod_name</span>
-  File <span class="nb">&quot;/tvm_chinese/tvm/python/tvm/relay/build_module.py&quot;</span>, line <span class="m">172</span>, in <span class="n">build</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">_build</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">target_host</span><span class="p">,</span> <span class="n">executor</span><span class="p">,</span> <span class="n">mod_name</span><span class="p">)</span>
-  File <span class="nb">&quot;/tvm_chinese/tvm/python/tvm/_ffi/_ctypes/packed_func.py&quot;</span>, line <span class="m">237</span>, in <span class="n">__call__</span>
-    <span class="k">raise</span> <span class="n">get_last_ffi_error</span><span class="p">()</span>
-<span class="gr">tvm._ffi.base.TVMError</span>: <span class="n">Traceback (most recent call last):</span>
-<span class="x">  11: TVMFuncCall</span>
-<span class="x">  10: _ZNSt17_Function_handlerIFvN</span>
-<span class="x">  9: tvm::relay::backend::RelayBuildModule::GetFunction(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, tvm::runtime::ObjectPtr&lt;tvm::runtime::Object&gt; const&amp;)::{lambda(tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*)#3}::operator()(tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*) const</span>
-<span class="x">  8: tvm::relay::backend::RelayBuildModule::BuildRelay(tvm::IRModule, std::unordered_map&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;, tvm::runtime::NDArray, std::hash&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;, std::equal_to&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; &gt;, std::allocator&lt;std::pair&lt;std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const, tvm::runtime::NDArray&gt; &gt; &gt; const&amp;, tvm::runtime::String)</span>
-<span class="x">  7: tvm::build(tvm::runtime::Map&lt;tvm::Target, tvm::IRModule, void, void&gt; const&amp;, tvm::Target const&amp;)</span>
-<span class="x">  6: tvm::SplitDevHostFuncs(tvm::IRModule, tvm::Target const&amp;, tvm::Target const&amp;, tvm::transform::PassContext const&amp;)</span>
-<span class="x">  5: tvm::transform::Pass::operator()(tvm::IRModule) const</span>
-<span class="x">  4: tvm::transform::Pass::operator()(tvm::IRModule, tvm::transform::PassContext const&amp;) const</span>
-<span class="x">  3: tvm::transform::SequentialNode::operator()(tvm::IRModule, tvm::transform::PassContext const&amp;) const</span>
-<span class="x">  2: tvm::transform::Pass::operator()(tvm::IRModule, tvm::transform::PassContext const&amp;) const</span>
-<span class="x">  1: tvm::transform::ModulePassNode::operator()(tvm::IRModule, tvm::transform::PassContext const&amp;) const</span>
-<span class="x">  0: std::_Function_handler&lt;void (tvm::runtime::TVMArgs, tvm::runtime::TVMRetValue*), tvm::runtime::TypedPackedFunc&lt;tvm::IRModule (tvm::IRModule, tvm::transform::PassContext)&gt;::AssignTypedLambda&lt;tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1}&gt;(tvm::tir::transform::VerifyMemory()::{lambda(tvm::IRModule, tvm::transform::PassContext)#1})::{lambda(tvm::runtime::TVMArgs const&amp;, tvm::runtime::TVMRetValue*)#1}&gt;::_M_invoke(std::_Any_data const&amp;, tvm::runtime::TVMArgs&amp;&amp;, tvm::runtime::TVMRetValue*&amp;&amp;)</span>
-<span class="x">  Did you forget to bind?</span>
-<span class="x">    Variable `T_relu` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
-<span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
-<span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
-<span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
-<span class="x">    Variable `placeholder` is directly accessed by host memory (it is not contained in a thread environment or in the function arguments.</span>
-  File <span class="nb">&quot;/tvm_chinese/tvm/src/tir/analysis/verify_memory.cc&quot;</span>, line <span class="m">206</span>
-<span class="gr">RuntimeError</span>: <span class="n">Memory verification failed with the following errors:</span>
-<span class="x">PrimFunc([placeholder, placeholder, placeholder, placeholder, T_relu]) attrs={&quot;target&quot;: cuda -keys=cuda,gpu -max_num_threads=1024 -thread_warp_size=32, &quot;tir.noalias&quot;: (bool)1, &quot;global_symbol&quot;: &quot;tvmgen_default_fused_nn_contrib_conv2d_winograd_without_weight_transform_add_add_nn_relu_2&quot;, &quot;from_legacy_te_schedule&quot;: (bool)1} {</span>
-<span class="x">  allocate data_pad[float32 * 451584], storage_scope = global</span>
-<span class="x">  allocate input_tile[float32 * 451584], storage_scope = global</span>
-<span class="x">  allocate B[float32 * 36], storage_scope = global</span>
-<span class="x">  for (i1, 0, 58) {</span>
-<span class="x">    for (i2, 0, 58) {</span>
-<span class="x">      for (i3, 0, 64) {</span>
-<span class="x">        data_pad[(((i1*3712) + (i2*64)) + i3)] = tir.if_then_else(((((1 &lt;= i1) &amp;&amp; (i1 &lt; 57)) &amp;&amp; (1 &lt;= i2)) &amp;&amp; (i2 &lt; 57)), placeholder[((((i1*3584) + (i2*64)) + i3) - 3648)], 0f)</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (eps, 0, 6) {</span>
-<span class="x">    for (nu, 0, 6) {</span>
-<span class="x">      for (p, 0, 196) {</span>
-<span class="x">        for (ci, 0, 64) {</span>
-<span class="x">          input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] = data_pad[(((((floordiv(p, 14)*14848) + (eps*3712)) + (floormod(p, 14)*256)) + (nu*64)) + ci)]</span>
-<span class="x">        }</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (i, 0, 6) {</span>
-<span class="x">    for (j, 0, 6) {</span>
-<span class="x">      B[((i*6) + j)] = select(((i == 5) &amp;&amp; (j == 5)), 1f, select(((i == 5) &amp;&amp; (j == 4)), 0f, select(((i == 5) &amp;&amp; (j == 3)), 0f, select(((i == 5) &amp;&amp; (j == 2)), 0f, select(((i == 5) &amp;&amp; (j == 1)), 0f, select(((i == 5) &amp;&amp; (j == 0)), 0f, select(((i == 4) &amp;&amp; (j == 5)), 1.5f, select(((i == 4) &amp;&amp; (j == 4)), 1f, select(((i == 4) &amp;&amp; (j == 3)), 1f, select(((i == 4) &amp;&amp; (j == 2)), 1f, select(((i == 4) &amp;&amp; (j == 1)), 1f, select(((i == 4) &amp;&amp; (j == 0)), 1f, select(((i == 3) &amp;&amp; (j == 5)), -2f, select(((i == 3) &amp;&amp; (j == 4)), -0.5f, select(((i == 3) &amp;&amp; (j == 3)), 2f, select(((i == 3) &amp;&amp; (j == 2)), 2.5f, select(((i == 3) &amp;&amp; (j == 1)), 0.5f, select(((i == 3) &amp;&amp; (j == 0)), 1.5f, select(((i == 2) &amp;&amp; (j == 5)), -1.5f, select(((i == 2) &amp;&amp; (j == 4)), -1f, select(((i == 2) &amp;&amp; (j == 3)), -1f, select(((i == 2) &amp;&amp; (j == 2)), 0.5f, select(((i == 2) &amp;&amp; (j == 1)), -2.5f, select(((i == 2) &amp;&amp; (j == 0)), -2f, select(((i == 1) &amp;&amp; (j == 5)), 1f, select(((i == 1) &amp;&amp; (j == 4)), 0.5f, select(((i == 1) &amp;&amp; (j == 3)), -2f, select(((i == 1) &amp;&amp; (j == 2)), -1f, select(((i == 1) &amp;&amp; (j == 1)), 1f, select(((i == 1) &amp;&amp; (j == 0)), -1.5f, select(((i == 0) &amp;&amp; (j == 5)), 0f, select(((i == 0) &amp;&amp; (j == 4)), 0f, select(((i == 0) &amp;&amp; (j == 3)), 0f, select(((i == 0) &amp;&amp; (j == 2)), 0f, select(((i == 0) &amp;&amp; (j == 1)), 0f, select(((i == 0) &amp;&amp; (j == 0)), 1f, 0f))))))))))))))))))))))))))))))))))))</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (eps, 0, 6) {</span>
-<span class="x">    for (nu, 0, 6) {</span>
-<span class="x">      for (p, 0, 196) {</span>
-<span class="x">        for (ci, 0, 64) {</span>
-<span class="x">          data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] = 0f</span>
-<span class="x">          for (r_a, 0, 6) {</span>
-<span class="x">            for (r_b, 0, 6) {</span>
-<span class="x">              data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] = (data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)] + ((input_tile[((((r_a*75264) + (r_b*12544)) + (p*64)) + ci)]*B[((r_a*6) + eps)])*B[((r_b*6) + nu)]))</span>
-<span class="x">            }</span>
-<span class="x">          }</span>
-<span class="x">        }</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (eps, 0, 6) {</span>
-<span class="x">    for (nu, 0, 6) {</span>
-<span class="x">      for (p, 0, 196) {</span>
-<span class="x">        for (co, 0, 64) {</span>
-<span class="x">          input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + co)] = 0f</span>
-<span class="x">          for (ci, 0, 64) {</span>
-<span class="x">            input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + co)] = (input_tile[((((eps*75264) + (nu*12544)) + (p*64)) + co)] + (data_pad[((((eps*75264) + (nu*12544)) + (p*64)) + ci)]*placeholder[((((eps*24576) + (nu*4096)) + (co*64)) + ci)]))</span>
-<span class="x">          }</span>
-<span class="x">        }</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (i, 0, 6) {</span>
-<span class="x">    for (j, 0, 4) {</span>
-<span class="x">      B[((i*4) + j)] = select(((i == 5) &amp;&amp; (j == 3)), 1f, select(((i == 5) &amp;&amp; (j == 2)), 0f, select(((i == 5) &amp;&amp; (j == 1)), 0f, select(((i == 5) &amp;&amp; (j == 0)), 0f, select(((i == 4) &amp;&amp; (j == 3)), -8f, select(((i == 4) &amp;&amp; (j == 2)), 4f, select(((i == 4) &amp;&amp; (j == 1)), -2f, select(((i == 4) &amp;&amp; (j == 0)), 1f, select(((i == 3) &amp;&amp; (j == 3)), 0.125f, select(((i == 3) &amp;&amp; (j == 2)), 0.25f, select(((i == 3) &amp;&amp; (j == 1)), 0.5f, select(((i == 3) &amp;&amp; (j == 0)), 1f, select(((i == 2) &amp;&amp; (j == 3)), 1f, select(((i == 2) &amp;&amp; (j == 2)), 1f, select(((i == 2) &amp;&amp; (j == 1)), 1f, select(((i == 2) &amp;&amp; (j == 0)), 1f, select(((i == 1) &amp;&amp; (j == 3)), -1f, select(((i == 1) &amp;&amp; (j == 2)), 1f, select(((i == 1) &amp;&amp; (j == 1)), -1f, select(((i == 1) &amp;&amp; (j == 0)), 1f, select(((i == 0) &amp;&amp; (j == 3)), 0f, select(((i == 0) &amp;&amp; (j == 2)), 0f, select(((i == 0) &amp;&amp; (j == 1)), 0f, select(((i == 0) &amp;&amp; (j == 0)), 1f, 0f))))))))))))))))))))))))</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (vh, 0, 4) {</span>
-<span class="x">    for (vw, 0, 4) {</span>
-<span class="x">      for (p, 0, 196) {</span>
-<span class="x">        for (co, 0, 64) {</span>
-<span class="x">          data_pad[((((vh*50176) + (vw*12544)) + (p*64)) + co)] = 0f</span>
-<span class="x">          for (r_a, 0, 6) {</span>
-<span class="x">            for (r_b, 0, 6) {</span>
-<span class="x">              data_pad[((((vh*50176) + (vw*12544)) + (p*64)) + co)] = (data_pad[((((vh*50176) + (vw*12544)) + (p*64)) + co)] + ((input_tile[((((r_a*75264) + (r_b*12544)) + (p*64)) + co)]*B[((r_a*4) + vh)])*B[((r_b*4) + vw)]))</span>
-<span class="x">            }</span>
-<span class="x">          }</span>
-<span class="x">        }</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (h, 0, 56) {</span>
-<span class="x">    for (w, 0, 56) {</span>
-<span class="x">      for (co, 0, 64) {</span>
-<span class="x">        input_tile[(((h*3584) + (w*64)) + co)] = data_pad[(((((floormod(h, 4)*50176) + (floormod(w, 4)*12544)) + (floordiv(h, 4)*896)) + (floordiv(w, 4)*64)) + co)]</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (ax1, 0, 56) {</span>
-<span class="x">    for (ax2, 0, 56) {</span>
-<span class="x">      for (ax3, 0, 64) {</span>
-<span class="x">        data_pad[(((ax1*3584) + (ax2*64)) + ax3)] = (input_tile[(((ax1*3584) + (ax2*64)) + ax3)] + placeholder[(((ax1*3584) + (ax2*64)) + ax3)])</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (ax1, 0, 56) {</span>
-<span class="x">    for (ax2, 0, 56) {</span>
-<span class="x">      for (ax3, 0, 64) {</span>
-<span class="x">        input_tile[(((ax1*3584) + (ax2*64)) + ax3)] = (data_pad[(((ax1*3584) + (ax2*64)) + ax3)] + placeholder[ax3])</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">  for (ax1, 0, 56) {</span>
-<span class="x">    for (ax2, 0, 56) {</span>
-<span class="x">      for (ax3, 0, 64) {</span>
-<span class="x">        T_relu[(((ax1*3584) + (ax2*64)) + ax3)] = max(input_tile[(((ax1*3584) + (ax2*64)) + ax3)], 0f)</span>
-<span class="x">      }</span>
-<span class="x">    }</span>
-<span class="x">  }</span>
-<span class="x">}</span>
 </pre></div>
 </div>
 </div>
