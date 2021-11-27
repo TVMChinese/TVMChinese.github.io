@@ -2,115 +2,115 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chinese.tvm.wiki</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/benchmark.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/convert_layout.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/debugger.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/device_target_interactions.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/frontend/tensorflow.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/hybrid_script.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/inferbound.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/introduction_to_module_serialization.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/microtvm_design.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/model_library_format.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/pass_infra.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/relay_intro.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/relay_op_strategy.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/runtime.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/runtimes/vulkan.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/security.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/arch/virtual_machine.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
@@ -134,61 +134,61 @@
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/code_guide.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/code_review.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/committer_guide.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/community.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/document.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/error_handling.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/git_howto.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/pull_request.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/contribute/release_process.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
@@ -200,61 +200,61 @@
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/dev/how_to/how_to.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/dev/how_to/pytest_target_parametrization.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/dev/how_to/relay_add_op.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/dev/how_to/relay_add_pass.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/dev/how_to/relay_bring_your_own_codegen.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/dev/tutorial/codebase_walkthrough.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/dev/tutorial/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/errors.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/faq.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/genindex.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -266,919 +266,919 @@
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_caffe2.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_coreml.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_darknet.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_keras.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_mxnet.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_onnx.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_paddle.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_pytorch.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_tensorflow.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/from_tflite.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/compile_models/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/android.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/arm_compute_lib.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/bnns.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/cpp_deploy.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/hls.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/integrate.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/tensorrt.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy/vitis_ai.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_model_on_android.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_model_on_rasp.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_object_detection_pytorch.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_prequantized.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_prequantized_tflite.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_quantized.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_sparse.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/deploy_ssd_gluoncv.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/deploy_models/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/extend_tvm/bring_your_own_datatypes.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/extend_tvm/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/extend_tvm/low_level_custom_pass.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/extend_tvm/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/extend_tvm/use_pass_infra.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/extend_tvm/use_pass_instrument.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/optimize_operators/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/optimize_operators/opt_conv_cuda.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/optimize_operators/opt_conv_tensorcore.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/optimize_operators/opt_gemm.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/optimize_operators/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/profile/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/profile/papi.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/tune_conv2d_layer_cuda.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/tune_network_arm.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/tune_network_cuda.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/tune_network_mali.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/tune_network_x86.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autoscheduler/tune_sparse_x86.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autotvm/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autotvm/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autotvm/tune_conv2d_cuda.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autotvm/tune_relay_arm.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autotvm/tune_relay_cuda.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autotvm/tune_relay_mobile_gpu.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/tune_with_autotvm/tune_relay_x86.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_microtvm/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_microtvm/micro_autotune.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_microtvm/micro_reference_vm.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_microtvm/micro_tflite.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_microtvm/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_relay/build_gcn.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_relay/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_relay/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_relay/using_external_lib.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/extern_op.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/intrin_math.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/reduction.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/scan.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/schedule_primitives.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/tedd.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/tensorize.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/how_to/work_with_schedules/tuple_inputs.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/install/docker.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/install/from_source.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/install/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/install/nnpack.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/install/tlcpack.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/py-modindex.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/links.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/auto_scheduler.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/autotvm.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/contrib.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/driver.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/error.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/graph_executor.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/ir.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/micro.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/ndarray.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/analysis.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/backend.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/dataflow_pattern.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/frontend.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/image.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/nn.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/testing.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/transform.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/relay/vision.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/rpc.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/runtime.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/target.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/te.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/tir.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/topi.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/api/python/vta/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/langref/hybrid_script.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/langref/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/langref/relay_adt.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/langref/relay_expr.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/langref/relay_op.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/langref/relay_pattern.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/langref/relay_type.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/reference/publications.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/search.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/microtvm/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/dev/config.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/dev/hardware.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/dev/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/install.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.51</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/autotvm/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/autotvm/tune_alu_vta.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/autotvm/tune_relay_vta.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/frontend/deploy_classification.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/frontend/deploy_detection.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/frontend/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/matrix_multiply.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/optimize/convolution_opt.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/optimize/matrix_multiply_opt.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/optimize/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.33</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/topic/vta/tutorials/vta_get_started.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.41</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/auto_scheduler_matmul_x86.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/autotvm_matmul_x86.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/autotvm_relay_x86.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/cross_compilation_and_rpc.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/index.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/install.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/intro_topi.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/introduction.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/relay_quick_start.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/sg_execution_times.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/tensor_expr_get_started.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://chinese.tvm.wiki/tutorial/tvmc_command_line_driver.html</loc>
-    <lastmod>2021-11-26</lastmod>
+    <lastmod>2021-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.64</priority>
   </url>
