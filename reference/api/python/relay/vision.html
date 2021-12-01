@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.relay.vision &mdash; tvm 0.8.dev1973 文档</title>
+  <title>tvm.relay.vision &mdash; tvm 0.8.dev1974 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1973
+                  0.8.dev1974
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">Installing TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -225,12 +225,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ndarray.html">tvm.runtime.ndarray</a></li>
@@ -349,7 +349,7 @@
   <div class="section" id="module-tvm.relay.vision">
 <span id="tvm-relay-vision"></span><h1>tvm.relay.vision<a class="headerlink" href="#module-tvm.relay.vision" title="永久链接至标题">¶</a></h1>
 <p>Vision network related operators.</p>
-<p><strong>函数：</strong></p>
+<p><strong>Functions:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -363,7 +363,7 @@
 <td><p>Get valid count of bounding boxes given a score threshold.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.vision.multibox_prior" title="tvm.relay.vision.multibox_prior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multibox_prior</span></code></a>(data[, sizes, ratios, steps, …])</p></td>
-<td><p>在 data 中，根据 sizes 和 ratios 生成先验框（锚框）。</p></td>
+<td><p>Generate prior(anchor) boxes from data, sizes and ratios.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.vision.multibox_transform_loc" title="tvm.relay.vision.multibox_transform_loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multibox_transform_loc</span></code></a>(cls_prob, loc_pred, …)</p></td>
 <td><p>Location transformation for multibox detection</p></td>
@@ -457,7 +457,7 @@ Also moves valid boxes to the top of input data.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.vision.multibox_prior">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.vision.</span></span><span class="sig-name descname"><span class="pre">multibox_prior</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sizes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratios</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(-</span> <span class="pre">1.0,</span> <span class="pre">-</span> <span class="pre">1.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.5,</span> <span class="pre">0.5)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.vision.multibox_prior" title="永久链接至目标">¶</a></dt>
-<dd><p>在 data 中，根据 sizes 和 ratios 生成先验框（锚框）。</p>
+<dd><p>Generate prior(anchor) boxes from data, sizes and ratios.</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -635,7 +635,7 @@ of total stride in convolutional layers, which should be in range (0.0, 1.0]</p>
 This layer shuffles the input tensor values based on the stride value.
 Along with the shuffling, it does the shape transform.
 If ‘(n, c, h, w)’ is the data shape and ‘s’ is stride, output shape is ‘(n, c*s*s, h/s, w/s)’.</p>
-<p>举例：</p>
+<p>Example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="p">[[[[</span> <span class="mi">0</span>  <span class="mi">1</span><span class="p">]</span> <span class="p">[</span> <span class="mi">2</span>  <span class="mi">3</span><span class="p">]]</span>
                     <span class="p">[[</span> <span class="mi">4</span>  <span class="mi">5</span><span class="p">]</span> <span class="p">[</span> <span class="mi">6</span>  <span class="mi">7</span><span class="p">]]</span>
                     <span class="p">[[</span> <span class="mi">8</span>  <span class="mi">9</span><span class="p">]</span> <span class="p">[</span><span class="mi">10</span> <span class="mi">11</span><span class="p">]]</span>

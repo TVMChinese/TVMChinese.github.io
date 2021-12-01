@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>编译PyTorch对象检测模型 &mdash; tvm 0.8.dev1973 文档</title>
+  <title>Compile PyTorch Object Detection Models &mdash; tvm 0.8.dev1974 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="使用TVM部署一个框架预量化模型" href="deploy_prequantized.html" />
-    <link rel="prev" title="在Raspberry Pi上部署预训练模型" href="deploy_model_on_rasp.html" /> 
+    <link rel="next" title="Deploy a Framework-prequantized Model with TVM" href="deploy_prequantized.html" />
+    <link rel="prev" title="Deploy the Pretrained Model on Raspberry Pi" href="deploy_model_on_rasp.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1973
+                  0.8.dev1974
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -214,12 +214,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">构建 TVM 运行 runtime 库</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">为其它架构交叉编译TVM runtime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">针对目标设备优化和调整模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">在目标设备上部署优化的模型</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">其他部署方式</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">Build the TVM runtime library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">Cross compile the TVM runtime for other architectures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">Optimize and tune models for target devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">Deploy optimized model on target devices</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">Additional Deployment How-Tos</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">Deploy Deep Learning Models</a></li>
 </ul>
 </li>
@@ -227,7 +227,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">优化张量算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autotvm/index.html">Auto-Tune with Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autoscheduler/index.html">Use AutoScheduler for Template-Free Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_microtvm/index.html">Work With microTVM</a></li>
@@ -249,12 +249,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
@@ -317,11 +317,11 @@
         
           <li><a href="../index.html">How To Guides</a> <span class="br-arrow">></span></li>
         
-          <li><a href="../deploy/index.html">TVM 部署模型和集成</a> <span class="br-arrow">></span></li>
+          <li><a href="../deploy/index.html">Deploy Models and Integrate TVM</a> <span class="br-arrow">></span></li>
         
           <li><a href="index.html">Deploy Deep Learning Models</a> <span class="br-arrow">></span></li>
         
-      <li>编译PyTorch对象检测模型</li>
+      <li>Compile PyTorch Object Detection Models</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -342,20 +342,25 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-object-detection-pytorch-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-object-detection-pytorch-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="compile-pytorch-object-detection-models">
-<span id="sphx-glr-how-to-deploy-models-deploy-object-detection-pytorch-py"></span><h1>编译PyTorch对象检测模型<a class="headerlink" href="#compile-pytorch-object-detection-models" title="永久链接至标题">¶</a></h1>
-<p>本文是一个介绍性教程，介绍如何使用Relay VM部署PyTorch对象检测模型。</p>
-<p>首先，应该先安装 PyTorch。TorchVision 也是必需的，因为我们将使用它作为我们的模型库。</p>
-<p>我们可以使用 pip 来快速安装依赖</p>
+<span id="sphx-glr-how-to-deploy-models-deploy-object-detection-pytorch-py"></span><h1>Compile PyTorch Object Detection Models<a class="headerlink" href="#compile-pytorch-object-detection-models" title="永久链接至标题">¶</a></h1>
+<p>This article is an introductory tutorial to deploy PyTorch object
+detection models with Relay VM.</p>
+<p>For us to begin with, PyTorch should be installed.
+TorchVision is also required since we will be using it as our model zoo.</p>
+<p>A quick solution is to install via pip</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="nv">torch</span><span class="o">==</span><span class="m">1</span>.7.0
 pip install <span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.8.1
 </pre></div>
 </div>
-<p>或者参考官方网站 <a class="reference external" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
-<p>PyTorch 版本理论上是向后兼容的，但也应与匹配的 TorchVision 版本一起使用。</p>
-<p>目前 TVM 支持 PyTorch 1.7 和 1.4 版本。其它版本可能是不稳定的。</p>
+<p>or please refer to official site
+<a class="reference external" href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></p>
+<p>PyTorch versions should be backwards compatible but should be used
+with the proper TorchVision version.</p>
+<p>Currently, TVM supports PyTorch 1.7 and 1.4. Other versions may
+be unstable.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">relay</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">relay</span>
@@ -371,7 +376,7 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
 </pre></div>
 </div>
 <div class="section" id="load-pre-trained-maskrcnn-from-torchvision-and-do-tracing">
-<h2>从torchvision加载预先训练过的maskrcnn，并进行追踪<a class="headerlink" href="#load-pre-trained-maskrcnn-from-torchvision-and-do-tracing" title="永久链接至标题">¶</a></h2>
+<h2>Load pre-trained maskrcnn from torchvision and do tracing<a class="headerlink" href="#load-pre-trained-maskrcnn-from-torchvision-and-do-tracing" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">in_size</span> <span class="o">=</span> <span class="mi">300</span>
 
 <span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">in_size</span><span class="p">,</span> <span class="n">in_size</span><span class="p">)</span>
@@ -410,7 +415,7 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
     <span class="n">script_module</span> <span class="o">=</span> <span class="n">do_trace</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">inp</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.6/dist-packages/torch/tensor.py:593: RuntimeWarning: Iterating over a tensor might cause the trace to be incorrect. Passing a tensor of different shape won&#39;t change the number of iterations executed (and might lead to errors or silently give incorrect results).
   &#39;incorrect results).&#39;, category=RuntimeWarning)
 /usr/local/lib/python3.6/dist-packages/torch/nn/functional.py:3123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
@@ -429,7 +434,7 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
 </div>
 </div>
 <div class="section" id="download-a-test-image-and-pre-process">
-<h2>下载测试图像并预处理<a class="headerlink" href="#download-a-test-image-and-pre-process" title="永久链接至标题">¶</a></h2>
+<h2>Download a test image and pre-process<a class="headerlink" href="#download-a-test-image-and-pre-process" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">img_url</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s2">&quot;https://raw.githubusercontent.com/dmlc/web-data/&quot;</span> <span class="s2">&quot;master/gluoncv/detection/street_small.jpg&quot;</span>
 <span class="p">)</span>
@@ -444,21 +449,24 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
 </div>
 </div>
 <div class="section" id="import-the-graph-to-relay">
-<h2>将计算图导入到 Relay 中<a class="headerlink" href="#import-the-graph-to-relay" title="永久链接至标题">¶</a></h2>
+<h2>Import the graph to Relay<a class="headerlink" href="#import-the-graph-to-relay" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">input_name</span> <span class="o">=</span> <span class="s2">&quot;input0&quot;</span>
 <span class="n">shape_list</span> <span class="o">=</span> <span class="p">[(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">input_shape</span><span class="p">)]</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_pytorch</span><span class="p">(</span><span class="n">script_module</span><span class="p">,</span> <span class="n">shape_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tvm_chinese/tvm/python/tvm/relay/build_module.py:333: DeprecationWarning: Please use input parameter mod (tvm.IRModule) instead of deprecated parameter mod (tvm.relay.function.Function)
   DeprecationWarning,
 </pre></div>
 </div>
 </div>
 <div class="section" id="compile-with-relay-vm">
-<h2>使用Relay VM编译<a class="headerlink" href="#compile-with-relay-vm" title="永久链接至标题">¶</a></h2>
-<p>备注:目前只支持CPU目标。对于x86目标，由于torchvision rcnn模型中存在大型密集算子，强烈推荐使用Intel MKL和Intel OpenMP构建TVM以获得最佳性能。</p>
+<h2>Compile with Relay VM<a class="headerlink" href="#compile-with-relay-vm" title="永久链接至标题">¶</a></h2>
+<p>Note: Currently only CPU target is supported. For x86 target, it is
+highly recommended to build TVM with Intel MKL and Intel OpenMP to get
+best performance, due to the existence of large dense operator in
+torchvision rcnn models.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add &quot;-libs=mkl&quot; to get best performance on x86 target.</span>
 <span class="c1"># For x86 machine supports AVX512, the complete target is</span>
 <span class="c1"># &quot;llvm -mcpu=skylake-avx512 -libs=mkl&quot;</span>
@@ -470,7 +478,7 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
 </div>
 </div>
 <div class="section" id="inference-with-relay-vm">
-<h2>用Relay VM进行推理<a class="headerlink" href="#inference-with-relay-vm" title="永久链接至标题">¶</a></h2>
+<h2>Inference with Relay VM<a class="headerlink" href="#inference-with-relay-vm" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">tvm</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
 <span class="n">vm</span> <span class="o">=</span> <span class="n">VirtualMachine</span><span class="p">(</span><span class="n">vm_exec</span><span class="p">,</span> <span class="n">dev</span><span class="p">)</span>
 <span class="n">vm</span><span class="o">.</span><span class="n">set_input</span><span class="p">(</span><span class="s2">&quot;main&quot;</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="n">input_name</span><span class="p">:</span> <span class="n">img</span><span class="p">})</span>
@@ -479,7 +487,7 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
 </div>
 </div>
 <div class="section" id="get-boxes-with-score-larger-than-0-9">
-<h2>获取得分大于0.9的框<a class="headerlink" href="#get-boxes-with-score-larger-than-0-9" title="永久链接至标题">¶</a></h2>
+<h2>Get boxes with score larger than 0.9<a class="headerlink" href="#get-boxes-with-score-larger-than-0-9" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">score_threshold</span> <span class="o">=</span> <span class="mf">0.9</span>
 <span class="n">boxes</span> <span class="o">=</span> <span class="n">tvm_res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 <span class="n">valid_boxes</span> <span class="o">=</span> <span class="p">[]</span>
@@ -492,17 +500,17 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get </span><span class="si">{}</span><span class="s2"> valid boxes&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">valid_boxes</span><span class="p">)))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Get 9 valid boxes
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>脚本总运行时间</strong> ( 2 minutes  30.582 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  30.582 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-deploy-models-deploy-object-detection-pytorch-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/7795da4b258c8feff986668b95ef57ad/deploy_object_detection_pytorch.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">deploy_object_detection_pytorch.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/7795da4b258c8feff986668b95ef57ad/deploy_object_detection_pytorch.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_object_detection_pytorch.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/399e1d7889ca66b69d51655784827503/deploy_object_detection_pytorch.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_object_detection_pytorch.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/399e1d7889ca66b69d51655784827503/deploy_object_detection_pytorch.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_object_detection_pytorch.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -519,10 +527,10 @@ pip install <span class="nv">torchvision</span><span class="o">==</span><span cl
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deploy_prequantized.html" class="btn btn-neutral float-right" title="使用TVM部署一个框架预量化模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy_prequantized.html" class="btn btn-neutral float-right" title="Deploy a Framework-prequantized Model with TVM" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="deploy_model_on_rasp.html" class="btn btn-neutral float-left" title="在Raspberry Pi上部署预训练模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="deploy_model_on_rasp.html" class="btn btn-neutral float-left" title="Deploy the Pretrained Model on Raspberry Pi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

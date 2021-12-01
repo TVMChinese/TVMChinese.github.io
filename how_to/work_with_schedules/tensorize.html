@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Use Tensorize to Leverage Hardware Intrinsics &mdash; tvm 0.8.dev1973 文档</title>
+  <title>Use Tensorize to Leverage Hardware Intrinsics &mdash; tvm 0.8.dev1974 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1973
+                  0.8.dev1974
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -214,12 +214,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Work With Tensor Expression and Schedules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">TVM中的调度原语</a></li>
+<li class="toctree-l3"><a class="reference internal" href="schedule_primitives.html">Schedule Primitives in TVM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reduction.html">Reduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">内部函数和数学函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intrin_math.html">Intrinsics and Math Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="scan.html">Scan and Recurrent Kernel</a></li>
 <li class="toctree-l3"><a class="reference internal" href="extern_op.html">External Tensor Functions</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Use Tensorize to Leverage Hardware Intrinsics</a><ul>
@@ -227,14 +227,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#schedule-the-matmul">Schedule the Matmul</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#define-gemv-tensorization-intrinsic">Define GEMV Tensorization Intrinsic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#reduce-update-for-tensorize">Reduce-update for Tensorize</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summary">总结</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="tuple_inputs.html">Compute and Reduce with Tuple Inputs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tedd.html">Use Tensor Expression Debug Display (TEDD) for Visualization</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">优化张量算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autotvm/index.html">Auto-Tune with Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autoscheduler/index.html">Use AutoScheduler for Template-Free Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_microtvm/index.html">Work With microTVM</a></li>
@@ -256,12 +256,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
@@ -347,11 +347,11 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-how-to-work-with-schedules-tensorize-py"><span class="std std-ref">此处</span></a> 获取完整示例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-how-to-work-with-schedules-tensorize-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="use-tensorize-to-leverage-hardware-intrinsics">
 <span id="tutorials-tensorize"></span><span id="sphx-glr-how-to-work-with-schedules-tensorize-py"></span><h1>Use Tensorize to Leverage Hardware Intrinsics<a class="headerlink" href="#use-tensorize-to-leverage-hardware-intrinsics" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://github.com/yzhliu">Yizhi Liu</a></p>
+<p><strong>Author</strong>: <a class="reference external" href="https://github.com/yzhliu">Yizhi Liu</a></p>
 <p>This is an introduction material on how to perform tensorization in TVM.</p>
 <p>By using schedule primitive <code class="code docutils literal notranslate"><span class="pre">tensorize</span></code>,
 people can replace a unit of computation with the corresponding intrinsics,
@@ -382,7 +382,7 @@ The following lines describe the computation <code class="code docutils literal 
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -416,7 +416,7 @@ Thus we break down the matmul loops to make the innermost loops a (16x64) GEMV.<
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -504,7 +504,7 @@ such placeholder can be put to let TVM automatically bind the inferred value for
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -549,7 +549,7 @@ The importing needs to happen before the tensorized GEMV being executed.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">tvm</span><span class="o">.</span><span class="n">lower</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">],</span> <span class="n">simple_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>primfn(A_1: handle, B_1: handle, C_1: handle) -&gt; ()
   attr = {&quot;from_legacy_te_schedule&quot;: True, &quot;global_symbol&quot;: &quot;main&quot;, &quot;tir.noalias&quot;: True}
   buffers = {C: Buffer(C_2: Pointer(float32), float32, [1024, 512], []),
@@ -779,7 +779,7 @@ due to the tiling.</p>
 </div>
 </div>
 <div class="section" id="summary">
-<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial demonstrates the usage of tensorize intrinsic in TVM.
 Tensorize provides a way for users to get fully optimized schedule via micro-kernels.
 For example, INT8 quantization on Intel CPUs uses tensorization
@@ -790,10 +790,10 @@ We also demonstrates how to use inline assembly importing,
 which helps users inject asm easily into the schedule.</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-work-with-schedules-tensorize-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/428c6201e29ce74e73c6b41eee589f62/tensorize.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">源码下载:</span> <span class="pre">tensorize.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/428c6201e29ce74e73c6b41eee589f62/tensorize.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">tensorize.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/3b5e41b16a898b72d18127ebe2182c66/tensorize.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">notebook</span> <span class="pre">下载:</span> <span class="pre">tensorize.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/3b5e41b16a898b72d18127ebe2182c66/tensorize.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tensorize.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

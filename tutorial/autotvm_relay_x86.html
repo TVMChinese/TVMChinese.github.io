@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Compiling and Optimizing a Model with the Python Interface (AutoTVM) &mdash; tvm 0.8.dev1973 文档</title>
+  <title>Compiling and Optimizing a Model with the Python Interface (AutoTVM) &mdash; tvm 0.8.dev1974 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="使用张量表达式来处理运算符" href="tensor_expr_get_started.html" />
-    <link rel="prev" title="使用TVMC编译和优化一个模型" href="tvmc_command_line_driver.html" /> 
+    <link rel="next" title="Working with Operators Using Tensor Expression" href="tensor_expr_get_started.html" />
+    <link rel="prev" title="Compiling and Optimizing a Model with TVMC" href="tvmc_command_line_driver.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1973
+                  0.8.dev1974
                 </div>
             
           
@@ -206,16 +206,16 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installing TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">User Tutorial</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">介绍</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">TVM和模型优化的概述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html">安装 TVM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">使用TVMC编译和优化一个模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#an-overview-of-tvm-and-model-optimization">An Overview of TVM and Model Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html">Installing TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tvmc_command_line_driver.html">Compiling and Optimizing a Model with TVMC</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Compiling and Optimizing a Model with the Python Interface (AutoTVM)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#downloading-and-loading-the-onnx-model">Downloading and Loading the ONNX Model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#downloading-preprocessing-and-loading-the-test-image">Downloading, Preprocessing, and Loading the Test Image</a></li>
@@ -224,16 +224,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#collect-basic-performance-data">Collect Basic Performance Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#postprocess-the-output">Postprocess the output</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tune-the-model">Tune the model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compiling-an-optimized-model-with-tuning-data">使用调优数据编译一个优化后的模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comparing-the-tuned-and-untuned-models">比较调优和未调优的模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#final-remarks">结语</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-an-optimized-model-with-tuning-data">Compiling an Optimized Model with Tuning Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comparing-the-tuned-and-untuned-models">Comparing the Tuned and Untuned Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#final-remarks">Final Remarks</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">使用张量表达式来处理运算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensor_expr_get_started.html">Working with Operators Using Tensor Expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autotvm_matmul_x86.html">Optimizing Operators with Schedule Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto_scheduler_matmul_x86.html">Optimizing Operators with Auto-scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cross_compilation_and_rpc.html">Cross Compilation and RPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">编译深度学习模型的快速开始教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relay_quick_start.html">Quick Start Tutorial for Compiling Deep Learning Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intro_topi.html">Introduction to TOPI</a></li>
 </ul>
 </li>
@@ -250,12 +250,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/publications.html">Publications</a></li>
@@ -354,11 +354,13 @@ that gives you tremendous flexibility in working with machine learning models.</
 it is done with the Python API. Upon completion of this section, we will have
 used the Python API for TVM to accomplish the following tasks:</p>
 <ul class="simple">
-<li><p>将一个预训练的ResNet50 V2模型编译为TVM运行时。</p></li>
-<li><p>基于编译完成的模型运行一张真实的图片，并分析输出和模型的性能。</p></li>
+<li><p>Compile a pre-trained ResNet 50 v2 model for the TVM runtime.</p></li>
+<li><p>Run a real image through the compiled model, and interpret the output and model
+performance.</p></li>
 <li><p>Tune the model that model on a CPU using TVM.</p></li>
-<li><p>基于TVM收集的调优数据再编译一个优化后的模型。</p></li>
-<li><p>基于优化后的模型运行一张真实的图片，并且对比输出和性能（这里是和未优化的模型进行对比）。</p></li>
+<li><p>Re-compile an optimized model using the tuning data collected by TVM.</p></li>
+<li><p>Run the image through the optimized model, and compare the output and model
+performance.</p></li>
 </ul>
 <p>The goal of this section is to give you an overview of TVM’s capabilites and
 how to use them through the Python API.</p>
@@ -419,7 +421,8 @@ section of the TVM Documentation.</p>
 data types. For this reason, most models require some pre and
 post-processing, to ensure the input is valid and to interpret the output.
 TVMC has adopted NumPy’s <code class="docutils literal notranslate"><span class="pre">.npz</span></code> format for both input and output data.</p>
-<p>作为本教程的输入，我们将使用猫的图片，但你可以随意替换为任何你选择的图片。</p>
+<p>As input for this tutorial, we will use the image of a cat, but you can feel
+free to substitute image for any of your choosing.</p>
 <a class="reference internal image-reference" href="https://s3.amazonaws.com/model-server/inputs/kitten.jpg"><img alt="https://s3.amazonaws.com/model-server/inputs/kitten.jpg" class="align-center" src="https://s3.amazonaws.com/model-server/inputs/kitten.jpg" style="width: 224px; height: 224px;" /></a>
 <p>Download the image data, then convert it to a numpy array to use as an input to the model.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://s3.amazonaws.com/model-server/inputs/kitten.jpg&quot;</span>
@@ -453,7 +456,7 @@ runtime module from the library.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>定义正确的目标</p>
+<p>Defining the Correct Target</p>
 <p>Specifying the correct target can have a huge impact on the performance of
 the compiled module, as it can take advantage of hardware features
 available on the target. For more information, please refer to <a class="reference external" href="https://tvm.apache.org/docs/tutorials/autotvm/tune_relay_x86.html#define-network">Auto-tuning
@@ -478,7 +481,7 @@ set.</p>
 <span class="n">module</span> <span class="o">=</span> <span class="n">graph_executor</span><span class="o">.</span><span class="n">GraphModule</span><span class="p">(</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">](</span><span class="n">dev</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>One or more operators have not been tuned. Please tune your model for better performance. Use DEBUG logging level to see more details.
 </pre></div>
 </div>
@@ -490,7 +493,7 @@ predictions with it. To use TVM to run the model and make predictions, we
 need two things:</p>
 <ul class="simple">
 <li><p>The compiled model, which we just produced.</p></li>
-<li><p>模型进行预测的合法输入。</p></li>
+<li><p>Valid input to the model to make predictions on.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;float32&quot;</span>
 <span class="n">module</span><span class="o">.</span><span class="n">set_input</span><span class="p">(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">img_data</span><span class="p">)</span>
@@ -525,14 +528,15 @@ standard deviation.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">unoptimized</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;mean&#39;: 181.74154901411384, &#39;median&#39;: 181.5139171667397, &#39;std&#39;: 0.7785952402085288}
 </pre></div>
 </div>
 </div>
 <div class="section" id="postprocess-the-output">
 <h2>Postprocess the output<a class="headerlink" href="#postprocess-the-output" title="永久链接至标题">¶</a></h2>
-<p>如前所述，每个模型都有自己特定的提供输出张量的方式。</p>
+<p>As previously mentioned, each model will have its own particular way of
+providing output tensors.</p>
 <p>In our case, we need to run some post-processing to render the outputs from
 ResNet-50-V2 into a more human-readable form, using the lookup-table provided
 for the model.</p>
@@ -553,7 +557,7 @@ for the model.</p>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;class=&#39;</span><span class="si">%s</span><span class="s2">&#39; with probability=</span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">rank</span><span class="p">],</span> <span class="n">scores</span><span class="p">[</span><span class="n">rank</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>class=&#39;n02123045 tabby, tabby cat&#39; with probability=0.610551
 class=&#39;n02123159 tiger cat&#39; with probability=0.367180
 class=&#39;n02124075 Egyptian cat&#39; with probability=0.019365
@@ -584,11 +588,11 @@ fine-tuning in that it does not affect the accuracy of the model, but only
 the runtime performance. As part of the tuning process, TVM will try running
 many different operator implementation variants to see which perform best.
 The results of these runs are stored in a tuning records file.</p>
-<p>以最简形式，调优需要你提供三个东西：</p>
+<p>In the simplest form, tuning requires you to provide three things:</p>
 <ul class="simple">
-<li><p>你打算将这个模型运行运行在哪个目标设备</p></li>
+<li><p>the target specification of the device you intend to run this model on</p></li>
 <li><p>the path to an output file in which the tuning records will be stored</p></li>
-<li><p>要调整的模型的路径</p></li>
+<li><p>a path to the model to be tuned.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm.auto_scheduler</span> <span class="k">as</span> <span class="nn">auto_scheduler</span>
 <span class="kn">from</span> <span class="nn">tvm.autotvm.tuner</span> <span class="k">import</span> <span class="n">XGBTuner</span>
@@ -647,7 +651,7 @@ The results of these runs are stored in a tuning records file.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>定义调优搜索算法</p>
+<p>Defining the Tuning Search Algorithm</p>
 <p>By default this search is guided using an <cite>XGBoost Grid</cite> algorithm.
 Depending on your model complexity and amount of time available, you might
 want to choose a different algorithm.</p>
@@ -679,7 +683,7 @@ depending on the specifics of the model and the target platform.</p>
     <span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[Task  1/25]  Current/Best:    0.00/   0.00 GFLOPS | Progress: (0/10) | 0.00 s
 [Task  1/25]  Current/Best:   55.83/  55.83 GFLOPS | Progress: (10/10) | 14.81 s Done.
 
@@ -786,11 +790,12 @@ depending on the specifics of the model and the target platform.</p>
 </div>
 </div>
 <div class="section" id="compiling-an-optimized-model-with-tuning-data">
-<h2>使用调优数据编译一个优化后的模型<a class="headerlink" href="#compiling-an-optimized-model-with-tuning-data" title="永久链接至标题">¶</a></h2>
+<h2>Compiling an Optimized Model with Tuning Data<a class="headerlink" href="#compiling-an-optimized-model-with-tuning-data" title="永久链接至标题">¶</a></h2>
 <p>As an output of the tuning process above, we obtained the tuning records
 stored in <code class="docutils literal notranslate"><span class="pre">resnet-50-v2-autotuning.json</span></code>. The compiler will use the results to
 generate high performance code for the model on your specified target.</p>
-<p>现在我们已经收集了模型的调优数据，我们可以使用优化后的算子来重新编译模型以加快运算速度。</p>
+<p>Now that tuning data for the model has been collected, we can re-compile the
+model using optimized operators to speed up our computations.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">autotvm</span><span class="o">.</span><span class="n">apply_history_best</span><span class="p">(</span><span class="n">tuning_option</span><span class="p">[</span><span class="s2">&quot;tuning_records&quot;</span><span class="p">]):</span>
     <span class="k">with</span> <span class="n">tvm</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">PassContext</span><span class="p">(</span><span class="n">opt_level</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{}):</span>
         <span class="n">lib</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
@@ -799,7 +804,7 @@ generate high performance code for the model on your specified target.</p>
 <span class="n">module</span> <span class="o">=</span> <span class="n">graph_executor</span><span class="o">.</span><span class="n">GraphModule</span><span class="p">(</span><span class="n">lib</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">](</span><span class="n">dev</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>验证优化后模型运行并产生相同的结果：</p>
+<p>Verify that the optimized model runs and produces the same results:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;float32&quot;</span>
 <span class="n">module</span><span class="o">.</span><span class="n">set_input</span><span class="p">(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">img_data</span><span class="p">)</span>
 <span class="n">module</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -823,7 +828,7 @@ generate high performance code for the model on your specified target.</p>
 <span class="c1">#   # class=&#39;n04040759 radiator&#39; with probability=0.000261</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>class=&#39;n02123045 tabby, tabby cat&#39; with probability=0.610552
 class=&#39;n02123159 tiger cat&#39; with probability=0.367180
 class=&#39;n02124075 Egyptian cat&#39; with probability=0.019365
@@ -833,7 +838,7 @@ class=&#39;n04040759 radiator&#39; with probability=0.000261
 </div>
 </div>
 <div class="section" id="comparing-the-tuned-and-untuned-models">
-<h2>比较调优和未调优的模型<a class="headerlink" href="#comparing-the-tuned-and-untuned-models" title="永久链接至标题">¶</a></h2>
+<h2>Comparing the Tuned and Untuned Models<a class="headerlink" href="#comparing-the-tuned-and-untuned-models" title="永久链接至标题">¶</a></h2>
 <p>We want to collect some basic performance data associated with this optimized
 model to compare it to the unoptimized model. Depending on your underlying
 hardware, number of iterations, and other factors, you should see a performance
@@ -854,14 +859,14 @@ improvement in comparing the optimized model to the unoptimized model.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;unoptimized: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">unoptimized</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>optimized: {&#39;mean&#39;: 150.72199111338705, &#39;median&#39;: 150.45831128954887, &#39;std&#39;: 0.8978831455478345}
 unoptimized: {&#39;mean&#39;: 181.74154901411384, &#39;median&#39;: 181.5139171667397, &#39;std&#39;: 0.7785952402085288}
 </pre></div>
 </div>
 </div>
 <div class="section" id="final-remarks">
-<h2>结语<a class="headerlink" href="#final-remarks" title="永久链接至标题">¶</a></h2>
+<h2>Final Remarks<a class="headerlink" href="#final-remarks" title="永久链接至标题">¶</a></h2>
 <p>In this tutorial, we gave a short example of how to use the TVM Python API
 to compile, run, and tune a model. We also discussed the need for pre and
 post-processing of inputs and outputs. After the tuning process, we
@@ -893,10 +898,10 @@ profiling/benchmarking.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tensor_expr_get_started.html" class="btn btn-neutral float-right" title="使用张量表达式来处理运算符" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tensor_expr_get_started.html" class="btn btn-neutral float-right" title="Working with Operators Using Tensor Expression" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tvmc_command_line_driver.html" class="btn btn-neutral float-left" title="使用TVMC编译和优化一个模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="tvmc_command_line_driver.html" class="btn btn-neutral float-left" title="Compiling and Optimizing a Model with TVMC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

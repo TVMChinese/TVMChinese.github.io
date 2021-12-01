@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-tuning a convolutional network on VTA &mdash; tvm 0.8.dev1973 文档</title>
+  <title>Auto-tuning a convolutional network on VTA &mdash; tvm 0.8.dev1974 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../../search.html" />
-    <link rel="next" title="语言参考" href="../../../../reference/langref/index.html" />
+    <link rel="next" title="Language Reference" href="../../../../reference/langref/index.html" />
     <link rel="prev" title="Auto-tuning a ALU fused op on VTA" href="tune_alu_vta.html" /> 
 </head>
 
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1973
+                  0.8.dev1974
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">Installing TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -225,18 +225,18 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">VTA: Versatile Tensor Accelerator</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../install.html">VTA安装指南</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/index.html">VTA设计与开发指南</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html">VTA教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../install.html">VTA Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dev/index.html">VTA Design and Developer Guide</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">VTA Tutorials</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../matrix_multiply.html">Simple Matrix Multiply</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vta_get_started.html">从 VTA 开始</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#compile-deep-learning-models">编译深度学习模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html#optimize-tensor-operators">优化张量算子</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html#auto-tuning">自动调整</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../vta_get_started.html">Get Started with VTA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#compile-deep-learning-models">Compile Deep Learning Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#optimize-tensor-operators">Optimize Tensor Operators</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#auto-tuning">Auto tuning</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html">Auto-tuning a ALU fused op on VTA</a></li>
-<li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#compile-network">编译网络</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#compile-network">Compile network</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tune_alu_vta.html#set-tuning-options">Set Tuning Options</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Auto-tuning a convolutional network on VTA</a></li>
 </ul>
@@ -249,7 +249,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reference/publications.html">Publications</a></li>
@@ -312,7 +312,7 @@
         
           <li><a href="../../index.html">VTA: Versatile Tensor Accelerator</a> <span class="br-arrow">></span></li>
         
-          <li><a href="../index.html">VTA教程</a> <span class="br-arrow">></span></li>
+          <li><a href="../index.html">VTA Tutorials</a> <span class="br-arrow">></span></li>
         
       <li>Auto-tuning a convolutional network on VTA</li>
     
@@ -335,11 +335,11 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-topic-vta-tutorials-autotvm-tune-relay-vta-py"><span class="std std-ref">此处</span></a> 获取完整示例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-topic-vta-tutorials-autotvm-tune-relay-vta-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="auto-tuning-a-convolutional-network-on-vta">
 <span id="sphx-glr-topic-vta-tutorials-autotvm-tune-relay-vta-py"></span><h1>Auto-tuning a convolutional network on VTA<a class="headerlink" href="#auto-tuning-a-convolutional-network-on-vta" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://github.com/merrymercy">Lianmin Zheng</a>, <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
+<p><strong>Author</strong>: <a class="reference external" href="https://github.com/merrymercy">Lianmin Zheng</a>, <a class="reference external" href="https://homes.cs.washington.edu/~moreau/">Thierry Moreau</a></p>
 <p>Auto-tuning for a specific accelerator design is critical for getting the best
 performance for any given operator. This is a tutorial showcases how to tune a
 whole convolutional network on VTA.</p>
@@ -350,7 +350,7 @@ we produce a log file which stores the best schedule parameters for all tuned
 operators. When the TVM compiler compiles these operators, it will query this
 log file to get the best knob parameters.</p>
 <div class="section" id="install-dependencies">
-<h2>安装依赖<a class="headerlink" href="#install-dependencies" title="永久链接至标题">¶</a></h2>
+<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="永久链接至标题">¶</a></h2>
 <p>To use the autotvm package in tvm, we need to install some extra dependencies.
 (change “3” to “2” if you use python2):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install --user psutil xgboost tornado mxnet requests <span class="s2">&quot;Pillow&lt;7&quot;</span> cloudpickle
@@ -384,7 +384,7 @@ sudo make cython3
 </div>
 </div>
 <div class="section" id="compile-network">
-<h2>编译网络<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h2>
+<h2>Compile network<a class="headerlink" href="#compile-network" title="永久链接至标题">¶</a></h2>
 <p>Perform vta-specific compilation with Relay from a Gluon model</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compile_network</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">start_pack</span><span class="p">,</span> <span class="n">stop_pack</span><span class="p">):</span>
 
@@ -423,7 +423,7 @@ sudo make cython3
 </div>
 </div>
 <div class="section" id="start-rpc-tracker">
-<h2>启动 RPC 跟踪器<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
+<h2>Start RPC Tracker<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
 <p>TVM uses an RPC session to communicate with Pynq boards.
 During tuning, the tuner will send the generated code to the board and
 measure the speed of code on the board.</p>
@@ -738,7 +738,7 @@ the <code class="docutils literal notranslate"><span class="pre">`TARGET</span><
 <span class="n">tune_and_evaluate</span><span class="p">(</span><span class="n">tuning_option</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Extract tasks...
 Extracted 10 conv2d tasks:
 (1, 14, 14, 256, 512, 1, 1, 0, 0, 2, 2)
@@ -755,7 +755,7 @@ Extracted 10 conv2d tasks:
 </div>
 </div>
 <div class="section" id="sample-output">
-<h2>样本输出<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
+<h2>Sample Output<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
 <p>The tuning needs to compile many programs and extract feature from them.
 So a high performance CPU is recommended.
 One sample output is listed below.
@@ -807,10 +807,10 @@ error messages.</p>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-topic-vta-tutorials-autotvm-tune-relay-vta-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../../../_downloads/d7b7e50e9f5b4ff04d55a56e52314c71/tune_relay_vta.py"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">源码下载:</span> <span class="pre">tune_relay_vta.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../../../_downloads/d7b7e50e9f5b4ff04d55a56e52314c71/tune_relay_vta.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">tune_relay_vta.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../../../_downloads/b1b0cbd807166348a0eabbad6bfbbdaf/tune_relay_vta.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">notebook</span> <span class="pre">下载:</span> <span class="pre">tune_relay_vta.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../../../_downloads/b1b0cbd807166348a0eabbad6bfbbdaf/tune_relay_vta.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">tune_relay_vta.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -827,7 +827,7 @@ error messages.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../../../reference/langref/index.html" class="btn btn-neutral float-right" title="语言参考" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../../../reference/langref/index.html" class="btn btn-neutral float-right" title="Language Reference" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="tune_alu_vta.html" class="btn btn-neutral float-left" title="Auto-tuning a ALU fused op on VTA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>

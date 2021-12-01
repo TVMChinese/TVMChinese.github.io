@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.relay.image &mdash; tvm 0.8.dev1973 文档</title>
+  <title>tvm.relay.image &mdash; tvm 0.8.dev1974 文档</title>
   
 
   
@@ -180,7 +180,7 @@
             
             
                 <div class="version">
-                  0.8.dev1973
+                  0.8.dev1974
                 </div>
             
           
@@ -207,7 +207,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install/index.html">Installing TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -226,12 +226,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../langref/index.html">Language Reference</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ndarray.html">tvm.runtime.ndarray</a></li>
@@ -350,7 +350,7 @@
   <div class="section" id="module-tvm.relay.image">
 <span id="tvm-relay-image"></span><h1>tvm.relay.image<a class="headerlink" href="#module-tvm.relay.image" title="永久链接至标题">¶</a></h1>
 <p>Image network related operators.</p>
-<p><strong>函数：</strong></p>
+<p><strong>Functions:</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -361,22 +361,22 @@
 <td><p>affine_grid operator that generates 2D sampling grid.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.image.crop_and_resize" title="tvm.relay.image.crop_and_resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">crop_and_resize</span></code></a>(data, boxes, box_indices, …)</p></td>
-<td><p>裁剪并调整输入图像的大小。</p></td>
+<td><p>Crop input images and resize them.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.image.dilation2d" title="tvm.relay.image.dilation2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dilation2d</span></code></a>(data, weight[, strides, padding, …])</p></td>
-<td><p>2D 形态学膨胀。</p></td>
+<td><p>Morphological Dilation 2D.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.image.grid_sample" title="tvm.relay.image.grid_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_sample</span></code></a>(data, grid[, method, layout])</p></td>
 <td><p>Applies bilinear sampling to input feature map.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.image.resize1d" title="tvm.relay.image.resize1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize1d</span></code></a>(data, size[, layout, method, …])</p></td>
-<td><p>图像 1 维重塑算子。</p></td>
+<td><p>Image resize1d operator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#tvm.relay.image.resize2d" title="tvm.relay.image.resize2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize2d</span></code></a>(data, size[, layout, method, …])</p></td>
-<td><p>图像 2 维重塑算子。</p></td>
+<td><p>Image resize2d operator.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#tvm.relay.image.resize3d" title="tvm.relay.image.resize3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize3d</span></code></a>(data, size[, layout, method, …])</p></td>
-<td><p>图像 3 维重塑算子。</p></td>
+<td><p>Image resize3d operator.</p></td>
 </tr>
 </tbody>
 </table>
@@ -406,7 +406,7 @@ transformation is then applied on the sampling grid.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.image.crop_and_resize">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.image.</span></span><span class="sig-name descname"><span class="pre">crop_and_resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boxes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'bilinear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extrapolation_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.image.crop_and_resize" title="永久链接至目标">¶</a></dt>
-<dd><p>裁剪并调整输入图像的大小。</p>
+<dd><p>Crop input images and resize them.</p>
 <p>method indicates the algorithm to be used while calculating the out value
 and method can be either “bilinear” or “nearest_neighbor”.</p>
 <dl class="field-list simple">
@@ -513,7 +513,7 @@ The out-boundary points will be padded with zeros. The shape of the output will 
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.image.resize1d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.image.</span></span><span class="sig-name descname"><span class="pre">resize1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate_transformation_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'half_pixel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cubic_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cubic_exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.image.resize1d" title="永久链接至目标">¶</a></dt>
-<dd><p>图像 1 维重塑算子。</p>
+<dd><p>Image resize1d operator.</p>
 <p>This operator takes data as input and does 1D scaling to the given scale factor.
 In the default case, where the data_layout is <cite>NCW</cite>
 with data of shape (n, c, w)
@@ -550,7 +550,7 @@ Refer to the ONNX Resize operator specification for details.
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.image.resize2d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.image.</span></span><span class="sig-name descname"><span class="pre">resize2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate_transformation_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'half_pixel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cubic_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cubic_exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.image.resize2d" title="永久链接至目标">¶</a></dt>
-<dd><p>图像 2 维重塑算子。</p>
+<dd><p>Image resize2d operator.</p>
 <p>This operator takes data as input and does 2D scaling to the given scale factor.
 In the default case, where the data_layout is <cite>NCHW</cite>
 with data of shape (n, c, h, w)
@@ -587,7 +587,7 @@ Refer to the ONNX Resize operator specification for details.
 <dl class="py function">
 <dt class="sig sig-object py" id="tvm.relay.image.resize3d">
 <span class="sig-prename descclassname"><span class="pre">tvm.relay.image.</span></span><span class="sig-name descname"><span class="pre">resize3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NCDHW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinate_transformation_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'half_pixel'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cubic_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cubic_exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tvm.relay.image.resize3d" title="永久链接至目标">¶</a></dt>
-<dd><p>图像 3 维重塑算子。</p>
+<dd><p>Image resize3d operator.</p>
 <p>This operator takes data as input and does 3D scaling to the given scale factor.
 In the default case, where the data_layout is <cite>NCDHW</cite>
 with data of shape <cite>(n, c, d, h, w)</cite>

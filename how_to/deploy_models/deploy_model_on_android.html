@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>在Android上部署预训练模型 &mdash; tvm 0.8.dev1973 文档</title>
+  <title>Deploy the Pretrained Model on Android &mdash; tvm 0.8.dev1974 文档</title>
   
 
   
@@ -46,7 +46,7 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="在Raspberry Pi上部署预训练模型" href="deploy_model_on_rasp.html" />
+    <link rel="next" title="Deploy the Pretrained Model on Raspberry Pi" href="deploy_model_on_rasp.html" />
     <link rel="prev" title="Deploy Deep Learning Models" href="index.html" /> 
 </head>
 
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1973
+                  0.8.dev1974
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -214,12 +214,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">构建 TVM 运行 runtime 库</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">为其它架构交叉编译TVM runtime</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">针对目标设备优化和调整模型</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">在目标设备上部署优化的模型</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">其他部署方式</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">Build the TVM runtime library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">Cross compile the TVM runtime for other architectures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">Optimize and tune models for target devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">Deploy optimized model on target devices</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">Additional Deployment How-Tos</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">Deploy Deep Learning Models</a></li>
 </ul>
 </li>
@@ -227,7 +227,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">优化张量算子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autotvm/index.html">Auto-Tune with Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autoscheduler/index.html">Use AutoScheduler for Template-Free Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_microtvm/index.html">Work With microTVM</a></li>
@@ -249,12 +249,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
@@ -317,11 +317,11 @@
         
           <li><a href="../index.html">How To Guides</a> <span class="br-arrow">></span></li>
         
-          <li><a href="../deploy/index.html">TVM 部署模型和集成</a> <span class="br-arrow">></span></li>
+          <li><a href="../deploy/index.html">Deploy Models and Integrate TVM</a> <span class="br-arrow">></span></li>
         
           <li><a href="index.html">Deploy Deep Learning Models</a> <span class="br-arrow">></span></li>
         
-      <li>在Android上部署预训练模型</li>
+      <li>Deploy the Pretrained Model on Android</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -342,12 +342,12 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>点击 <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-model-on-android-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-model-on-android-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="deploy-the-pretrained-model-on-android">
-<span id="tutorial-deploy-model-on-android"></span><span id="sphx-glr-how-to-deploy-models-deploy-model-on-android-py"></span><h1>在Android上部署预训练模型<a class="headerlink" href="#deploy-the-pretrained-model-on-android" title="永久链接至标题">¶</a></h1>
-<p><strong>作者</strong>: <a class="reference external" href="https://tkat0.github.io/">Tomohiro Kato</a></p>
-<p>这是一个使用Relay编译keras模型并将其部署到Android设备上的示例。</p>
+<span id="tutorial-deploy-model-on-android"></span><span id="sphx-glr-how-to-deploy-models-deploy-model-on-android-py"></span><h1>Deploy the Pretrained Model on Android<a class="headerlink" href="#deploy-the-pretrained-model-on-android" title="永久链接至标题">¶</a></h1>
+<p><strong>Author</strong>: <a class="reference external" href="https://tkat0.github.io/">Tomohiro Kato</a></p>
+<p>This is an example of using Relay to compile a keras model and deploy it on Android device.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
@@ -362,9 +362,9 @@
 </pre></div>
 </div>
 <div class="section" id="setup-environment">
-<h2>设置环境<a class="headerlink" href="#setup-environment" title="永久链接至标题">¶</a></h2>
-<p>由于Android有许多必需的软件包，因此建议使用官方的Docker映像。</p>
-<p>首先，要构建和运行Docker映像，我们可以运行以下命令。</p>
+<h2>Setup Environment<a class="headerlink" href="#setup-environment" title="永久链接至标题">¶</a></h2>
+<p>Since there are many required packages for Android, it is recommended to use the official Docker Image.</p>
+<p>First, to build and run Docker Image, we can run the following command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recursive https://github.com/apache/tvm tvm
 <span class="nb">cd</span> tvm
 docker build -t tvm.demo_android -f docker/Dockerfile.demo_android ./docker
@@ -372,12 +372,14 @@ docker run --pid<span class="o">=</span>host -h tvm -v <span class="nv">$PWD</sp
        -w /workspace -p <span class="m">9190</span>:9190 --name tvm -it tvm.demo_android bash
 </pre></div>
 </div>
-<p>您现在在容器内。克隆的TVM目录安装在/workspace上。此时，准备一下稍后描述的RPC使用的9190端口。</p>
+<p>You are now inside the container. The cloned TVM directory is mounted on /workspace.
+At this time, mount the 9190 port used by RPC described later.</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>请在容器中执行以下步骤。我们可以执行:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>docker exec -it tvm bash`在容器中打开一个新的终端。</p>
+<p>Please execute the following steps in the container.
+We can execute <code class="code docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">-it</span> <span class="pre">tvm</span> <span class="pre">bash</span></code> to open a new terminal in the container.</p>
 </div>
-<p>接下来我们构建 TVM。</p>
+<p>Next we build the TVM.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build
 <span class="nb">cd</span> build
 cmake -DUSE_LLVM<span class="o">=</span>llvm-config-8 <span class="se">\</span>
@@ -389,29 +391,32 @@ cmake -DUSE_LLVM<span class="o">=</span>llvm-config-8 <span class="se">\</span>
 make -j10
 </pre></div>
 </div>
-<p>成功构建 TVM 后，请设置 PYTHONPATH。</p>
+<p>After building TVM successfully, Please set PYTHONPATH.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;export PYTHONPATH=/workspace/python:/workspace/vta/python:${PYTHONPATH}&#39;</span> &gt;&gt; ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
 </div>
 <div class="section" id="start-rpc-tracker">
-<h2>启动 RPC 跟踪器<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
-<p>TVM 使用 RPC 会话与安卓设备进行通信。</p>
-<p>要启动RPC跟踪器，请在容器中运行此命令。在整个调谐过程中需要跟踪器，因此我们需要为此命令打开一个新的终端：</p>
+<h2>Start RPC Tracker<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
+<p>TVM uses RPC session to communicate with Android device.</p>
+<p>To start an RPC tracker, run this command in the container. The tracker is
+required during the whole tuning process, so we need to open a new terminal for
+this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m tvm.exec.rpc_tracker --host<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
-<p>预期输出是</p>
+<p>The expected output is</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:RPCTracker:bind to <span class="m">0</span>.0.0.0:9190
 </pre></div>
 </div>
 </div>
 <div class="section" id="register-android-device-to-rpc-tracker">
-<h2>将安卓设备注册到 RPC 跟踪器<a class="headerlink" href="#register-android-device-to-rpc-tracker" title="永久链接至标题">¶</a></h2>
-<p>现在我们可以将我们的安卓设备注册到跟踪器上。</p>
-<p>请点击`自述页面 &lt;<a class="reference external" href="https://github.com/apache/tvm/tree/main/apps/android_rpc">https://github.com/apache/tvm/tree/main/apps/android_rpc</a>&gt;`_在android设备上安装TVM RPC APK。</p>
-<p>下面是config.mk 的例子。我启用了Opencl和Vulkan。</p>
+<h2>Register Android device to RPC Tracker<a class="headerlink" href="#register-android-device-to-rpc-tracker" title="永久链接至标题">¶</a></h2>
+<p>Now we can register our Android device to the tracker.</p>
+<p>Follow this <a class="reference external" href="https://github.com/apache/tvm/tree/main/apps/android_rpc">readme page</a> to
+install TVM RPC APK on the android device.</p>
+<p>Here is an example of config.mk. I enabled OpenCL and Vulkan.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">APP_ABI</span> <span class="o">=</span> arm64-v8a
 
 <span class="nv">APP_PLATFORM</span> <span class="o">=</span> android-24
@@ -438,20 +443,22 @@ endif
 </div>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>此时，别忘了`创建一个独立的工具链&lt;<a class="reference external" href="https://github.com/apache/tvm/tree/main/apps/android_rpc#architecture-and-android-standalone-toolchain">https://github.com/apache/tvm/tree/main/apps/android_rpc#architecture-and-android-standalone-toolchain</a>&gt;`_ .。</p>
-<p>例如</p>
+<p>At this time, don’t forget to <a class="reference external" href="https://github.com/apache/tvm/tree/main/apps/android_rpc#architecture-and-android-standalone-toolchain">create a standalone toolchain</a> .</p>
+<p>for example</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$ANDROID_NDK_HOME</span>/build/tools/make-standalone-toolchain.sh <span class="se">\</span>
    --platform<span class="o">=</span>android-24 --use-llvm --arch<span class="o">=</span>arm64 --install-dir<span class="o">=</span>/opt/android-toolchain-arm64
 <span class="nb">export</span> <span class="nv">TVM_NDK_CC</span><span class="o">=</span>/opt/android-toolchain-arm64/bin/aarch64-linux-android-g++
 </pre></div>
 </div>
 </div>
-<p>接下来，启动Android应用程序并输入RPC Tracker的IP地址和端口。然后您就注册好了您的设备。</p>
-<p>注册设备后，我们可以通过查询rpc_tracker确认</p>
+<p>Next, start the Android application and enter the IP address and port of RPC Tracker.
+Then you have already registered your device.</p>
+<p>After registering devices, we can confirm it by querying rpc_tracker</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m tvm.exec.query_rpc_tracker --host<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
-<p>例如，如果我们有 1 个安卓设备。输出是</p>
+<p>For example, if we have 1 Android device.
+the output can be</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Queue Status
 ----------------------------------
 key          total  free  pending
@@ -460,7 +467,8 @@ android      <span class="m">1</span>      <span class="m">1</span>     <span cl
 ----------------------------------
 </pre></div>
 </div>
-<p>要确认您可以与 Android 通信，我们可以按照测试脚本运行。如果您使用 OpenCL 和 Vulkan，请在脚本中设置:code:<cite>test_opencl</cite> 和:code:<cite>test_vulkan</cite></p>
+<p>To confirm that you can communicate with Android, we can run following test script.
+If you use OpenCL and Vulkan, please set <code class="code docutils literal notranslate"><span class="pre">test_opencl</span></code> and <code class="code docutils literal notranslate"><span class="pre">test_vulkan</span></code> in the script.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TVM_TRACKER_HOST</span><span class="o">=</span><span class="m">0</span>.0.0.0
 <span class="nb">export</span> <span class="nv">TVM_TRACKER_PORT</span><span class="o">=</span><span class="m">9190</span>
 </pre></div>
@@ -471,8 +479,8 @@ python3 tests/android_rpc_test.py
 </div>
 </div>
 <div class="section" id="load-pretrained-keras-model">
-<h2>加载预训练 Keras 模型<a class="headerlink" href="#load-pretrained-keras-model" title="永久链接至标题">¶</a></h2>
-<p>我们加载keras提供的预先训练过的MobileNetV2(alpha=0.5)分类模型。</p>
+<h2>Load pretrained keras model<a class="headerlink" href="#load-pretrained-keras-model" title="永久链接至标题">¶</a></h2>
+<p>We load a pretrained MobileNetV2(alpha=0.5) classification model provided by keras.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">keras</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>  <span class="c1"># Destroys the current TF graph and creates a new one.</span>
 <span class="n">weights_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
     <span class="p">[</span>
@@ -489,7 +497,8 @@ python3 tests/android_rpc_test.py
 <span class="n">keras_mobilenet_v2</span><span class="o">.</span><span class="n">load_weights</span><span class="p">(</span><span class="n">weights_path</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>为了测试我们的模型，在这里我们下载了猫的图像，并改变其格式。</p>
+<p>In order to test our model, here we download an image of cat and
+transform its format.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/dmlc/mxnet.js/blob/main/data/cat.png?raw=true&quot;</span>
 <span class="n">img_name</span> <span class="o">=</span> <span class="s2">&quot;cat.png&quot;</span>
 <span class="n">img_path</span> <span class="o">=</span> <span class="n">download_testdata</span><span class="p">(</span><span class="n">img_url</span><span class="p">,</span> <span class="n">img_name</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
@@ -508,7 +517,8 @@ python3 tests/android_rpc_test.py
 <span class="n">x</span> <span class="o">=</span> <span class="n">transform_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>synset用于将标签从ImageNet类的数量转换为人类可以理解的单词。</p>
+<p>synset is used to transform the label from number of ImageNet class to
+the word human can understand.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">synset_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s2">&quot;https://gist.githubusercontent.com/zhreshold/&quot;</span><span class="p">,</span>
@@ -525,8 +535,11 @@ python3 tests/android_rpc_test.py
 </div>
 </div>
 <div class="section" id="compile-the-model-with-relay">
-<h2>通过 Realy 编译模型<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
-<p>如果我们在x86服务器上运行这个示例进行演示，我们只需将其设置为 <code class="code docutils literal notranslate"><span class="pre">llvm</span></code>。如果在Android设备上运行它，我们需要指定它的指令集。如果要使用真实设备运行本教程，请将:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>local_demo`设置为False。</p>
+<h2>Compile the model with relay<a class="headerlink" href="#compile-the-model-with-relay" title="永久链接至标题">¶</a></h2>
+<p>If we run the example on our x86 server for demonstration, we can simply
+set it as <code class="code docutils literal notranslate"><span class="pre">llvm</span></code>. If running it on the Android device, we need to
+specify its instruction set. Set <code class="code docutils literal notranslate"><span class="pre">local_demo</span></code> to False if you want
+to run this tutorial with a real device.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local_demo</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="c1"># by default on CPU target will execute.</span>
@@ -565,8 +578,9 @@ python3 tests/android_rpc_test.py
 </div>
 </div>
 <div class="section" id="deploy-the-model-remotely-by-rpc">
-<h2>通过RPC远程部署模型<a class="headerlink" href="#deploy-the-model-remotely-by-rpc" title="永久链接至标题">¶</a></h2>
-<p>使用RPC，您可以将模型从主机远程部署到远程android设备。</p>
+<h2>Deploy the Model Remotely by RPC<a class="headerlink" href="#deploy-the-model-remotely-by-rpc" title="永久链接至标题">¶</a></h2>
+<p>With RPC, you can deploy the model remotely from your host machine
+to the remote android device.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tracker_host</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;TVM_TRACKER_HOST&quot;</span><span class="p">,</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">)</span>
 <span class="n">tracker_port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;TVM_TRACKER_PORT&quot;</span><span class="p">,</span> <span class="mi">9190</span><span class="p">))</span>
 <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;android&quot;</span>
@@ -597,7 +611,7 @@ python3 tests/android_rpc_test.py
 </div>
 </div>
 <div class="section" id="execute-on-tvm">
-<h2>在 TVM 上执行<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
+<h2>Execute on TVM<a class="headerlink" href="#execute-on-tvm" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set input data</span>
 <span class="n">module</span><span class="o">.</span><span class="n">set_input</span><span class="p">(</span><span class="n">input_name</span><span class="p">,</span> <span class="n">tvm</span><span class="o">.</span><span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)))</span>
 <span class="c1"># run</span>
@@ -613,7 +627,7 @@ python3 tests/android_rpc_test.py
 <span class="nb">print</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">benchmark</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">输出:</p>
+<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>TVM prediction top-1: tiger cat
 Evaluate inference time cost...
 Execution time summary:
@@ -623,9 +637,10 @@ Execution time summary:
 </div>
 </div>
 <div class="section" id="sample-output">
-<h2>样本输出<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
-<p>以下是Snapdragon 820上使用Adreno 530的 ‘cpu’, ‘opencl’ 和 ‘vulkan’ 的结果</p>
-<p>虽然我们可以在GPU上运行，但它比CPU慢。为了加快速度，我们需要根据GPU架构编写和优化调度。</p>
+<h2>Sample Output<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
+<p>The following is the result of ‘cpu’, ‘opencl’ and ‘vulkan’ using Adreno 530 on Snapdragon 820</p>
+<p>Although we can run on a GPU, it is slower than CPU.
+To speed up, we need to write and optimize the schedule according to the GPU architecture.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># cpu</span>
 TVM prediction top-1: tiger cat
 Evaluate inference <span class="nb">time</span> cost...
@@ -644,10 +659,10 @@ Mean inference <span class="nb">time</span> <span class="o">(</span>std dev<span
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-deploy-models-deploy-model-on-android-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/21a9dd883b196be58ca1c5cd02700274/deploy_model_on_android.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">deploy_model_on_android.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/21a9dd883b196be58ca1c5cd02700274/deploy_model_on_android.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_model_on_android.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/eed2658f15243bab719b2de7769fa45a/deploy_model_on_android.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_model_on_android.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/eed2658f15243bab719b2de7769fa45a/deploy_model_on_android.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_model_on_android.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -664,7 +679,7 @@ Mean inference <span class="nb">time</span> <span class="o">(</span>std dev<span
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deploy_model_on_rasp.html" class="btn btn-neutral float-right" title="在Raspberry Pi上部署预训练模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy_model_on_rasp.html" class="btn btn-neutral float-right" title="Deploy the Pretrained Model on Raspberry Pi" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Deploy Deep Learning Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
