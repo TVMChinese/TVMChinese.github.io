@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deploy a Quantized Model on Cuda &mdash; tvm 0.8.dev1974 文档</title>
+  <title>在Cuda上部署一个量化模型 &mdash; tvm 0.8.dev1975 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Deploy a Hugging Face Pruned Model on CPU" href="deploy_sparse.html" />
-    <link rel="prev" title="Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite)" href="deploy_prequantized_tflite.html" /> 
+    <link rel="next" title="在CPU上部署Hugging Face Pruned模型" href="deploy_sparse.html" />
+    <link rel="prev" title="使用TVM部署预先量化的框架模型-第3部分（TFLite）" href="deploy_prequantized_tflite.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1974
+                  0.8.dev1975
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -214,12 +214,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">Build the TVM runtime library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">Cross compile the TVM runtime for other architectures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">Optimize and tune models for target devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">Deploy optimized model on target devices</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">Additional Deployment How-Tos</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">构建 TVM 运行 runtime 库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">为其它架构交叉编译TVM runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">针对目标设备优化和调整模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">在目标设备上部署优化的模型</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">其他部署方式</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">Deploy Deep Learning Models</a></li>
 </ul>
 </li>
@@ -227,7 +227,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">优化张量算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autotvm/index.html">Auto-Tune with Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autoscheduler/index.html">Use AutoScheduler for Template-Free Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_microtvm/index.html">Work With microTVM</a></li>
@@ -249,12 +249,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
@@ -317,11 +317,11 @@
         
           <li><a href="../index.html">How To Guides</a> <span class="br-arrow">></span></li>
         
-          <li><a href="../deploy/index.html">Deploy Models and Integrate TVM</a> <span class="br-arrow">></span></li>
+          <li><a href="../deploy/index.html">TVM 部署模型和集成</a> <span class="br-arrow">></span></li>
         
           <li><a href="index.html">Deploy Deep Learning Models</a> <span class="br-arrow">></span></li>
         
-      <li>Deploy a Quantized Model on Cuda</li>
+      <li>在Cuda上部署一个量化模型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -345,14 +345,9 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-quantized-py"><span class="std std-ref">here</span></a> to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="deploy-a-quantized-model-on-cuda">
-<span id="sphx-glr-how-to-deploy-models-deploy-quantized-py"></span><h1>Deploy a Quantized Model on Cuda<a class="headerlink" href="#deploy-a-quantized-model-on-cuda" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://github.com/vinx13">Wuwei Lin</a></p>
-<p>This article is an introductory tutorial of automatic quantization with TVM.
-Automatic quantization is one of the quantization modes in TVM. More details on
-the quantization story in TVM can be found
-<a class="reference external" href="https://discuss.tvm.apache.org/t/quantization-story/3920">here</a>.
-In this tutorial, we will import a GluonCV pre-trained model on ImageNet to
-Relay, quantize the Relay model and then perform the inference.</p>
+<span id="sphx-glr-how-to-deploy-models-deploy-quantized-py"></span><h1>在Cuda上部署一个量化模型<a class="headerlink" href="#deploy-a-quantized-model-on-cuda" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://github.com/vinx13">Wuwei Lin</a></p>
+<p>本文是使用TVM进行自动量化的介绍性教程。自动量化是TVM中的量化方式之一。关于TVM量化的更多细节可以在`这里 &lt;<a class="reference external" href="https://discuss.tvm.apache.org/t/quantization-story/3920">https://discuss.tvm.apache.org/t/quantization-story/3920</a>&gt;`_. 找到。在本教程中，我们将在ImageNet上导入GluonCV预训练模型到Relay，量化Relay模型，然后执行推理。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">relay</span>
@@ -369,9 +364,8 @@ Relay, quantize the Relay model and then perform the inference.</p>
 </pre></div>
 </div>
 <div class="section" id="prepare-the-dataset">
-<h2>Prepare the Dataset<a class="headerlink" href="#prepare-the-dataset" title="永久链接至标题">¶</a></h2>
-<p>We will demonstrate how to prepare the calibration dataset for quantization.
-We first download the validation set of ImageNet and pre-process the dataset.</p>
+<h2>准备数据集<a class="headerlink" href="#prepare-the-dataset" title="永久链接至标题">¶</a></h2>
+<p>我们将演示如何准备量化的校准数据集。我们首先下载ImageNet的验证集并对数据集进行预处理。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calibration_rec</span> <span class="o">=</span> <span class="n">download_testdata</span><span class="p">(</span>
     <span class="s2">&quot;http://data.mxnet.io.s3-website-us-west-1.amazonaws.com/data/val_256_q90.rec&quot;</span><span class="p">,</span>
     <span class="s2">&quot;val_256_q90.rec&quot;</span><span class="p">,</span>
@@ -403,9 +397,7 @@ We first download the validation set of ImageNet and pre-process the dataset.</p
     <span class="k">return</span> <span class="n">val_data</span><span class="p">,</span> <span class="n">batch_fn</span>
 </pre></div>
 </div>
-<p>The calibration dataset should be an iterable object. We define the
-calibration dataset as a generator object in Python. In this tutorial, we
-only use a few samples for calibration.</p>
+<p>校准的数据集应该是一个可迭代对象。我们在Python中将校准数据集定义为生成器对象。在本教程中，我们只使用一些样本进行校准。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calibration_samples</span> <span class="o">=</span> <span class="mi">10</span>
 
 
@@ -421,8 +413,8 @@ only use a few samples for calibration.</p>
 </div>
 </div>
 <div class="section" id="import-the-model">
-<h2>Import the model<a class="headerlink" href="#import-the-model" title="永久链接至标题">¶</a></h2>
-<p>We use the Relay MxNet frontend to import a model from the Gluon model zoo.</p>
+<h2>导入模型<a class="headerlink" href="#import-the-model" title="永久链接至标题">¶</a></h2>
+<p>我们使用Relay MxNet前端从Gluon模型库导入一个模型。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_model</span><span class="p">():</span>
     <span class="n">gluon_model</span> <span class="o">=</span> <span class="n">gluon</span><span class="o">.</span><span class="n">model_zoo</span><span class="o">.</span><span class="n">vision</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">img_size</span> <span class="o">=</span> <span class="mi">299</span> <span class="k">if</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s2">&quot;inceptionv3&quot;</span> <span class="k">else</span> <span class="mi">224</span>
@@ -433,7 +425,7 @@ only use a few samples for calibration.</p>
 </div>
 </div>
 <div class="section" id="quantize-the-model">
-<h2>Quantize the Model<a class="headerlink" href="#quantize-the-model" title="永久链接至标题">¶</a></h2>
+<h2>量化模型<a class="headerlink" href="#quantize-the-model" title="永久链接至标题">¶</a></h2>
 <p>In quantization, we need to find the scale for each weight and intermediate
 feature map tensor of each layer.</p>
 <p>For weights, the scales are directly calculated based on the value of the
@@ -463,8 +455,8 @@ for calibration. But the accuracy might be impacted.</p>
 </div>
 </div>
 <div class="section" id="run-inference">
-<h2>Run Inference<a class="headerlink" href="#run-inference" title="永久链接至标题">¶</a></h2>
-<p>We create a Relay VM to build and execute the model.</p>
+<h2>运行推理<a class="headerlink" href="#run-inference" title="永久链接至标题">¶</a></h2>
+<p>我们创建一个Relay VM来构建和执行模型。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_inference</span><span class="p">(</span><span class="n">mod</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">create_executor</span><span class="p">(</span><span class="s2">&quot;vm&quot;</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">dev</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
     <span class="n">val_data</span><span class="p">,</span> <span class="n">batch_fn</span> <span class="o">=</span> <span class="n">get_val_data</span><span class="p">()</span>
@@ -485,17 +477,17 @@ for calibration. But the accuracy might be impacted.</p>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tvm_chinese/tvm/python/tvm/relay/build_module.py:333: DeprecationWarning: Please use input parameter mod (tvm.IRModule) instead of deprecated parameter mod (tvm.relay.function.Function)
   DeprecationWarning,
 </pre></div>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-deploy-models-deploy-quantized-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/7810ecf51bfc05f7d5e8a400ac3e815d/deploy_quantized.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_quantized.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/7810ecf51bfc05f7d5e8a400ac3e815d/deploy_quantized.py"><code class="xref download docutils literal notranslate"><span class="pre">下载</span> <span class="pre">Python</span> <span class="pre">源代码:</span> <span class="pre">deploy_quantized.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/a269cb38341b190be980a0bd3ea8a625/deploy_quantized.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_quantized.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/a269cb38341b190be980a0bd3ea8a625/deploy_quantized.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_quantized.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -512,10 +504,10 @@ for calibration. But the accuracy might be impacted.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deploy_sparse.html" class="btn btn-neutral float-right" title="Deploy a Hugging Face Pruned Model on CPU" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy_sparse.html" class="btn btn-neutral float-right" title="在CPU上部署Hugging Face Pruned模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="deploy_prequantized_tflite.html" class="btn btn-neutral float-left" title="Deploy a Framework-prequantized Model with TVM - Part 3 (TFLite)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="deploy_prequantized_tflite.html" class="btn btn-neutral float-left" title="使用TVM部署预先量化的框架模型-第3部分（TFLite）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

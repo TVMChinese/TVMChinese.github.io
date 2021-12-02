@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>tvm.topi &mdash; tvm 0.8.dev1974 文档</title>
+  <title>tvm.topi &mdash; tvm 0.8.dev1975 文档</title>
   
 
   
@@ -180,7 +180,7 @@
             
             
                 <div class="version">
-                  0.8.dev1974
+                  0.8.dev1975
                 </div>
             
           
@@ -207,7 +207,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install/index.html">安装 TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -226,12 +226,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../langref/index.html">语言参考</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Python API</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="runtime.html">tvm.runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ndarray.html">tvm.runtime.ndarray</a></li>
@@ -354,12 +354,10 @@
             
   <div class="section" id="tvm-topi">
 <h1>tvm.topi<a class="headerlink" href="#tvm-topi" title="永久链接至标题">¶</a></h1>
-<p>TVM Operator Inventory.</p>
-<p>TOPI is the operator collection library for TVM, to provide sugars
-for constructing compute declaration as well as optimized schedules.</p>
-<p>Some of the schedule function may have been specially optimized for a
-specific workload.</p>
-<p><strong>Classes:</strong></p>
+<p>TVM 运算符清单</p>
+<p>TOPI是TVM的运算符集合库，为构建计算声明和调度优化提供了支持。</p>
+<p>针对一些特定的工作负载，一些调度函数可能已经被特定优化了。</p>
+<p><strong>类：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -367,7 +365,7 @@ specific workload.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">AssertStmt</span></code>(condition, message, body[, span])</p></td>
-<td><p>AssertStmt node.</p></td>
+<td><p>AssertStmt 节点。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Callable</span></code>(*args, **kwds)</p></td>
 <td><p>Callable type; Callable[[int], str] is a function of (int) -&gt; str.</p></td>
@@ -383,7 +381,7 @@ specific workload.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -415,10 +413,10 @@ specific workload.</p>
 <td><p>Creates a tensor with evenly spaced values within a given interval.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmax</span></code>(data[, axis, keepdims, select_last_index])</p></td>
-<td><p>Returns the indices of the maximum values along an axis.</p></td>
+<td><p>沿轴返回最大值的索引。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmin</span></code>(data[, axis, keepdims, select_last_index])</p></td>
-<td><p>Returns the indices of the minimum values along an axis.</p></td>
+<td><p>沿轴返回最小值的索引。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">argsort</span></code>(data[, valid_count, axis, …])</p></td>
 <td><p>Performs sorting along the given axis and returns an array of indices having the same shape as an input array that index data in sorted order.</p></td>
@@ -553,7 +551,7 @@ specific workload.</p>
 <td><p>Construct a tensor with same shape as input tensor,</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather</span></code>(data, axis, indices)</p></td>
-<td><p>Gather values along given axis from given indices.</p></td>
+<td><p>在给定的轴上对给定索引的值进行聚合。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gather_nd</span></code>(a, indices)</p></td>
 <td><p>Gather elements from a n-dimension array..</p></td>
@@ -622,7 +620,7 @@ specific workload.</p>
 <td><p>Compute element-wise logical and of data.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_not</span></code>(data)</p></td>
-<td><p>Compute element-wise logical not of data.</p></td>
+<td><p>数据的点对应逻辑否运算。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">logical_or</span></code>(lhs, rhs)</p></td>
 <td><p>Compute element-wise logical or of data.</p></td>
@@ -646,7 +644,7 @@ specific workload.</p>
 <td><p>Take element-wise maximum of two tensors with auto-broadcasting</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">meshgrid</span></code>(a_tuple, indexing)</p></td>
-<td><p>Create coordinate matrices from coordinate vectors.</p></td>
+<td><p>从坐标向量中创建坐标矩阵。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code>(data[, axis, keepdims])</p></td>
 <td><p>Minimum of array elements over a given axis or a list of axes</p></td>
@@ -682,13 +680,13 @@ specific workload.</p>
 <td><p>Reinterpret input to specified data type.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">repeat</span></code>(a, repeats, axis)</p></td>
-<td><p>Repeats elements of an array.</p></td>
+<td><p>重复数组元素。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape</span></code>(a, newshape)</p></td>
 <td><p>Reshape the array</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse_sequence</span></code>(a, seq_lengths[, seq_axis, …])</p></td>
-<td><p>Reverse the tensor for variable length slices.</p></td>
+<td><p>将张量内的每个可变长度切片进行翻转。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">right_shift</span></code>(lhs, rhs)</p></td>
 <td><p>Right shift with auto-broadcasting</p></td>
@@ -736,7 +734,7 @@ specific workload.</p>
 <td><p>Reshape a Sparse Tensor</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse_to_dense</span></code>(sparse_indices, …[, …])</p></td>
-<td><p>Converts a sparse representation into a dense tensor.</p></td>
+<td><p>将稀疏张量表示转换为稠密张量。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code>(ary, indices_or_sections[, axis])</p></td>
 <td><p>Split an array into multiple sub-arrays.</p></td>
@@ -748,7 +746,7 @@ specific workload.</p>
 <td><p>Remove single-dimensional entries from the shape of an array.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code>(a, axis)</p></td>
-<td><p>Repeats the whole array multiple times.</p></td>
+<td><p>将整个数组重复若干次。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">strided_set</span></code>(a, v, begin, end[, strides])</p></td>
 <td><p>Set slice of an array.</p></td>
@@ -763,7 +761,7 @@ specific workload.</p>
 <td><p>Sum of array elements over a given axis or a list of axes</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code>(a, indices[, axis, batch_dims, mode])</p></td>
-<td><p>Take elements from an array along an axis.</p></td>
+<td><p>从数组的一条轴上取元素。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">take_legalize</span></code>(attrs, inputs, types)</p></td>
 <td><p>Legalizes dyn.topk op.</p></td>
@@ -778,10 +776,10 @@ specific workload.</p>
 <td><p>A generalization of matrix multiplication to tensor.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code>(a, reps)</p></td>
-<td><p>Repeats the whole array multiple times.</p></td>
+<td><p>将整个数组重复若干次。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">topk</span></code>(data[, k, axis, ret_type, is_ascend, dtype])</p></td>
-<td><p>Get the top k elements in an input tensor along the given axis.</p></td>
+<td><p>沿给定的轴，获取输入张量的最大 k 个元素。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code>(a[, axes])</p></td>
 <td><p>Permute the dimensions of an array.</p></td>
@@ -793,7 +791,7 @@ specific workload.</p>
 <td><p>Find the unique elements of a 1-D tensor.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unravel_index</span></code>(indices, shape)</p></td>
-<td><p>Convert a flat index or array of flat indices into a tuple of coordinate arrays.</p></td>
+<td><p>将平面索引或平面索引数组转换为坐标数组的元组。</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code>(condition, x, y)</p></td>
 <td><p>Get the elements, either from x or y, depending on the condition.</p></td>
@@ -818,7 +816,7 @@ specific workload.</p>
 <dl class="py class">
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">AssertStmt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">condition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">span</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>AssertStmt node.</p>
+<dd><p>AssertStmt 节点。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1053,7 +1051,7 @@ value is 0.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">argmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_last_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Returns the indices of the maximum values along an axis.</p>
+<dd><p>沿轴返回最大值的索引。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1080,7 +1078,7 @@ select the first index.</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">argmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_last_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Returns the indices of the minimum values along an axis.</p>
+<dd><p>沿轴返回最小值的索引。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -2117,7 +2115,7 @@ Otherwise returns Tensor.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">gather</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Gather values along given axis from given indices.</p>
+<dd><p>在给定的轴上对给定索引的值进行聚合。</p>
 <p>E.g. for a 3D tensor, output is computed as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>  <span class="c1"># if axis == 0</span>
 <span class="n">out</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]][</span><span class="n">k</span><span class="p">]</span>  <span class="c1"># if axis == 1</span>
@@ -2550,7 +2548,7 @@ Otherwise returns Tensor.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">logical_not</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Compute element-wise logical not of data.</p>
+<dd><p>数据的点对应逻辑否运算。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><p><strong>data</strong> (<a class="reference internal" href="te.html#tvm.te.Tensor" title="tvm.te.Tensor"><em>tvm.te.Tensor</em></a><em> or </em><em>Expr</em>) – </p>
@@ -2757,7 +2755,7 @@ Otherwise returns Tensor.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">meshgrid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a_tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexing</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Create coordinate matrices from coordinate vectors.</p>
+<dd><p>从坐标向量中创建坐标矩阵。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3024,7 +3022,7 @@ With this option, the result will broadcast correctly against the input array.</
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">repeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeats</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Repeats elements of an array.</p>
+<dd><p>重复数组元素。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3447,7 +3445,7 @@ number of sparse values and n_dim is the number of dimensions of the dense_shape
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">sparse_to_dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sparse_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Converts a sparse representation into a dense tensor.</p>
+<dd><p>将稀疏张量表示转换为稠密张量。</p>
 <p>Example::
 -   sparse_to_dense([[0, 0], [1, 1]], [2, 2], [3, 3], 0) = [[3, 0], [0, 3]]</p>
 <dl class="field-list simple">
@@ -3531,7 +3529,7 @@ If an axis is selected with shape entry greater than one, an error is raised.</p
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Repeats the whole array multiple times.</p>
+<dd><p>将整个数组重复若干次。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3653,7 +3651,7 @@ With this option, the result will broadcast correctly against the input array.</
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">take</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'clip'</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Take elements from an array along an axis.</p>
+<dd><p>从数组的一条轴上取元素。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3756,7 +3754,7 @@ fast - no clip or wrap around (user must make sure indices are in-bound)</p></li
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">tile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reps</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Repeats the whole array multiple times.</p>
+<dd><p>将整个数组重复若干次。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3776,7 +3774,7 @@ fast - no clip or wrap around (user must make sure indices are in-bound)</p></li
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">topk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ret_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'both'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_ascend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int64'</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Get the top k elements in an input tensor along the given axis.</p>
+<dd><p>沿给定的轴，获取输入张量的最大 k 个元素。</p>
 <dl class="field-list simple">
 <dt class="field-odd">参数</dt>
 <dd class="field-odd"><ul class="simple">
@@ -3893,7 +3891,7 @@ sorted.)</p></li>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-prename descclassname"><span class="pre">tvm.topi.</span></span><span class="sig-name descname"><span class="pre">unravel_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Convert a flat index or array of flat indices into a tuple of coordinate arrays.</p>
+<dd><p>将平面索引或平面索引数组转换为坐标数组的元组。</p>
 <p>Example::
 -   unravel_index([22, 41, 37], [7, 6]) = [[3, 6, 6], [4, 5, 1]]</p>
 <dl class="field-list simple">
@@ -3965,7 +3963,7 @@ by the index and False otherwise</p>
 <div class="section" id="module-tvm.topi.nn">
 <span id="tvm-topi-nn"></span><h2>tvm.topi.nn<a class="headerlink" href="#module-tvm.topi.nn" title="永久链接至标题">¶</a></h2>
 <p>Neural network operators</p>
-<p><strong>Classes:</strong></p>
+<p><strong>类：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -3977,7 +3975,7 @@ by the index and False otherwise</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -7009,7 +7007,7 @@ or [batch, in_depth*scale, in_height*scale, in_width*scale, channel]</p>
 <div class="section" id="module-tvm.topi.image">
 <span id="tvm-topi-image"></span><h2>tvm.topi.image<a class="headerlink" href="#module-tvm.topi.image" title="永久链接至标题">¶</a></h2>
 <p>IMAGE network operators</p>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -7443,7 +7441,7 @@ or 5-D with shape
 <div class="section" id="module-tvm.topi.sparse">
 <span id="tvm-topi-sparse"></span><h2>tvm.topi.sparse<a class="headerlink" href="#module-tvm.topi.sparse" title="永久链接至标题">¶</a></h2>
 <p>Sparse operators</p>
-<p><strong>Functions:</strong></p>
+<p><strong>函数：</strong></p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />

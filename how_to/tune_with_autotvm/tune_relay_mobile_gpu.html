@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Auto-tuning a Convolutional Network for Mobile GPU &mdash; tvm 0.8.dev1974 文档</title>
+  <title>Auto-tuning a Convolutional Network for Mobile GPU &mdash; tvm 0.8.dev1975 文档</title>
   
 
   
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1974
+                  0.8.dev1975
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -214,23 +214,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">优化张量算子</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Auto-Tune with Templates and AutoTVM</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="tune_conv2d_cuda.html">Tuning High Performance Convolution on NVIDIA GPUs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tune_relay_cuda.html">Auto-tuning a Convolutional Network for NVIDIA GPU</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tune_relay_x86.html">Auto-tuning a Convolutional Network for x86 CPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tune_relay_x86.html">为x86CPU 自动调优一个卷积网络</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tune_relay_arm.html">Auto-tuning a Convolutional Network for ARM CPU</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Auto-tuning a Convolutional Network for Mobile GPU</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#install-dependencies">Install dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#install-dependencies">安装依赖</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#define-network">Define network</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#start-rpc-tracker">Start RPC Tracker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#start-rpc-tracker">启动 RPC 跟踪器</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#register-devices-to-rpc-tracker">Register Devices to RPC Tracker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#set-tuning-options">Set Tuning Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#begin-tuning">Begin Tuning</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sample-output">Sample Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sample-output">样本输出</a></li>
 </ul>
 </li>
 </ul>
@@ -255,12 +255,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
@@ -367,7 +367,7 @@ to see the results.</p>
 get it to run, you will need to wrap the body of this tutorial in a <code class="code docutils literal notranslate"><span class="pre">if</span>
 <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code> block.</p>
 <div class="section" id="install-dependencies">
-<h2>Install dependencies<a class="headerlink" href="#install-dependencies" title="永久链接至标题">¶</a></h2>
+<h2>安装依赖<a class="headerlink" href="#install-dependencies" title="永久链接至标题">¶</a></h2>
 <p>To use the autotvm package in tvm, we need to install some extra dependencies.
 (change “3” to “2” if you use python2):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install --user psutil xgboost tornado cloudpickle
@@ -442,7 +442,7 @@ We can also load models from MXNet, ONNX and TensorFlow.</p>
 </div>
 </div>
 <div class="section" id="start-rpc-tracker">
-<span id="tutorials-autotvm-start-rpc-tracker"></span><h2>Start RPC Tracker<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
+<span id="tutorials-autotvm-start-rpc-tracker"></span><h2>启动 RPC 跟踪器<a class="headerlink" href="#start-rpc-tracker" title="永久链接至标题">¶</a></h2>
 <p>TVM uses RPC session to communicate with ARM boards.
 During tuning, the tuner will send the generated code to the board and
 measure the speed of code on the board.</p>
@@ -456,7 +456,7 @@ this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.rpc_tracker --host<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
-<p>The expected output is</p>
+<p>预期输出是</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:RPCTracker:bind to <span class="m">0</span>.0.0.0:9190
 </pre></div>
 </div>
@@ -467,7 +467,7 @@ this command:</p>
 build the TVM runtime for the ARM devices.</p>
 <ul>
 <li><p>For Linux:
-Follow this section <a class="reference internal" href="../deploy_models/deploy_model_on_rasp.html#build-tvm-runtime-on-device"><span class="std std-ref">Build TVM Runtime on Device</span></a> to build
+Follow this section <a class="reference internal" href="../deploy_models/deploy_model_on_rasp.html#build-tvm-runtime-on-device"><span class="std std-ref">在设备上构建 TVM 运行时间</span></a> to build
 the TVM runtime on the device. Then register the device to tracker by</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.rpc_server --tracker<span class="o">=[</span>HOST_IP<span class="o">]</span>:9190 --key<span class="o">=</span>rk3399
 </pre></div>
@@ -480,7 +480,7 @@ install TVM RPC APK on the android device. Make sure you can pass the android RP
 Then you have already registered your device. During tuning, you have to go to developer option
 and enable “Keep screen awake during changing” and charge your phone to make it stable.</p></li>
 </ul>
-<p>After registering devices, we can confirm it by querying rpc_tracker</p>
+<p>注册设备后，我们可以通过查询rpc_tracker确认</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.query_rpc_tracker --host<span class="o">=</span><span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9190</span>
 </pre></div>
 </div>
@@ -661,7 +661,7 @@ We will introduce a more sophisticated tuning scheduler in the future.</p>
 </div>
 </div>
 <div class="section" id="sample-output">
-<h2>Sample Output<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
+<h2>样本输出<a class="headerlink" href="#sample-output" title="永久链接至标题">¶</a></h2>
 <p>The tuning needs to compile many programs and extract feature from them.
 So a high performance CPU is recommended.
 One sample output is listed below. It takes about 3 hours on a 32T AMD Ryzen Threadripper.</p>

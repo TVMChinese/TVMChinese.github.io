@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>How to Use TVM Pass Infra &mdash; tvm 0.8.dev1974 文档</title>
+  <title>How to Use TVM Pass Infra &mdash; tvm 0.8.dev1975 文档</title>
   
 
   
@@ -47,7 +47,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="How to Use TVM Pass Instrument" href="use_pass_instrument.html" />
-    <link rel="prev" title="Writing a Customized Pass" href="low_level_custom_pass.html" /> 
+    <link rel="prev" title="编写自定义通行证" href="low_level_custom_pass.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1974
+                  0.8.dev1975
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -214,21 +214,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">优化张量算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autotvm/index.html">Auto-Tune with Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autoscheduler/index.html">Use AutoScheduler for Template-Free Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_microtvm/index.html">Work With microTVM</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Extend TVM</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="low_level_custom_pass.html">Writing a Customized Pass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="low_level_custom_pass.html">编写自定义通行证</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">How to Use TVM Pass Infra</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#create-an-example-relay-program">Create An Example Relay Program</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#optimize-the-program">Optimize the Program</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#implement-a-pass-using-python-decorator">Implement a Pass Using Python Decorator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#debug-a-pass">Debug a Pass</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#summary">总结</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="use_pass_instrument.html">How to Use TVM Pass Instrument</a></li>
@@ -252,12 +252,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
@@ -415,7 +415,7 @@ examples for each of them.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %0 = nn.conv2d(%x, %weight, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */;
   %1 = add(%0, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
@@ -431,7 +431,7 @@ eliminate the common expressions that used by <cite>z</cite> and <cite>z1</cite>
 <span class="nb">print</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %0 = nn.conv2d(%x, %weight, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */;
   %1 = add(%0, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
@@ -450,7 +450,7 @@ opt level 0 will not allow operators to be fused together. Users can pass the
 <span class="nb">print</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %0 = fn (%p03: Tensor[(1, 64, 56, 56), float32], %p12: Tensor[(64, 64, 3, 3), float32], Primitive=1) -&gt; Tensor[(1, 64, 54, 54), float32] {
     nn.conv2d(%p03, %p12, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */
@@ -505,7 +505,7 @@ pass.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">mod1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %4 = fn (%p0: Tensor[(1, 64, 56, 56), float32], %p1: Tensor[(64, 64, 3, 3), float32], %p2: Tensor[(1, 64, 54, 54), float32], %p3: Tensor[(1, 64, 54, 54), float32], Primitive=1) -&gt; Tensor[(1, 64, 54, 54), float32] {
     %0 = nn.conv2d(%p0, %p1, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */;
@@ -530,7 +530,7 @@ for users to customize the optimization level that they want to execute.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">mod2</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %3 = fn (%p0: Tensor[(1, 64, 56, 56), float32], %p1: Tensor[(64, 64, 3, 3), float32], %p2: Tensor[(1, 64, 54, 54), float32], %p3: Tensor[(1, 64, 54, 54), float32], Primitive=1) -&gt; Tensor[(1, 64, 54, 54), float32] {
     %0 = nn.conv2d(%p0, %p1, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */;
@@ -553,7 +553,7 @@ identical addition operations.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">mod3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %4 = fn (%p0: Tensor[(1, 64, 56, 56), float32], %p1: Tensor[(64, 64, 3, 3), float32], %p2: Tensor[(1, 64, 54, 54), float32], %p3: Tensor[(1, 64, 54, 54), float32], Primitive=1) -&gt; Tensor[(1, 64, 54, 54), float32] {
     %0 = nn.conv2d(%p0, %p1, padding=[0, 0, 0, 0]) /* ty=Tensor[(1, 64, 54, 54), float32] */;
@@ -604,7 +604,7 @@ customized pass.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">mod3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>def @main(%x: Tensor[(1, 64, 56, 56), float32], %weight: Tensor[(64, 64, 3, 3), float32]) -&gt; Tensor[(1, 64, 54, 54), float32] {
   %0 = multiply(3f /* ty=float32 */, meta[relay.Constant][0] /* ty=Tensor[(1, 64, 54, 54), float32] */) /* ty=Tensor[(1, 64, 54, 54), float32] */;
   %1 = add(%0, %0) /* ty=Tensor[(1, 64, 54, 54), float32] */;
@@ -664,7 +664,7 @@ a PassInsturment class printing IR before execution of each passes:</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Running pass: {} The meta data of the pass: pass name: sequentialopt_level: 0required passes: [
 ]
 
@@ -804,7 +804,7 @@ done
 </div>
 </div>
 <div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
+<h2>总结<a class="headerlink" href="#summary" title="永久链接至标题">¶</a></h2>
 <p>This tutorial has covered how we can write and invoke passes in TVM more
 conveniently using the pass infra. Different ways of invoking a pass are also
 disucssed. Using <a class="reference internal" href="../../reference/api/python/ir.html#tvm.transform.Sequential" title="tvm.transform.Sequential"><code class="xref py py-class docutils literal notranslate"><span class="pre">tvm.transform.Sequential</span></code></a> can largely help
@@ -836,7 +836,7 @@ how we can debug a pass using the <code class="docutils literal notranslate"><sp
         <a href="use_pass_instrument.html" class="btn btn-neutral float-right" title="How to Use TVM Pass Instrument" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="low_level_custom_pass.html" class="btn btn-neutral float-left" title="Writing a Customized Pass" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="low_level_custom_pass.html" class="btn btn-neutral float-left" title="编写自定义通行证" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

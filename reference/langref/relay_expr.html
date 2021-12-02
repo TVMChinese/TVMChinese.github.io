@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Expressions in Relay &mdash; tvm 0.8.dev1974 文档</title>
+  <title>Expressions in Relay &mdash; tvm 0.8.dev1975 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Relay’s Type System" href="relay_type.html" />
-    <link rel="prev" title="Language Reference" href="index.html" /> 
+    <link rel="next" title="Relay 系统类型" href="relay_type.html" />
+    <link rel="prev" title="语言参考" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1974
+                  0.8.dev1975
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -225,16 +225,16 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Language Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#introduction-to-relay">Introduction to Relay</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">语言参考</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#introduction-to-relay">Relay简介</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Expressions in Relay</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dataflow-and-control-fragments">Dataflow and Control Fragments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variables">变量</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#operators">Operators</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#adt-constructors">ADT Constructors</a></li>
@@ -249,13 +249,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#tempexprs">TempExprs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay’s Type System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_type.html">Relay 系统类型</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_adt.html">Algebraic Data Types in Relay</a></li>
-<li class="toctree-l3"><a class="reference internal" href="relay_op.html">Relay Core Tensor Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="relay_op.html">Relay 基础张量算子</a></li>
 <li class="toctree-l3"><a class="reference internal" href="relay_pattern.html">Pattern Matching in Relay</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#hybrid-script">Hybrid Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hybrid-script">混合式脚本</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/python/index.html">Python API</a></li>
@@ -318,7 +318,7 @@
     
       <li><a href="../../index.html">Docs</a> <span class="br-arrow">></span></li>
         
-          <li><a href="index.html">Language Reference</a> <span class="br-arrow">></span></li>
+          <li><a href="index.html">语言参考</a> <span class="br-arrow">></span></li>
         
       <li>Expressions in Relay</li>
     
@@ -373,7 +373,7 @@ a call to that function is in the dataflow fragment; conversely, if the
 function’s body contains control flow, a call to that function is not part of the dataflow fragment.</p>
 </div>
 <div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="永久链接至标题">¶</a></h2>
+<h2>变量<a class="headerlink" href="#variables" title="永久链接至标题">¶</a></h2>
 <p>Inspired by LLVM, Relay explicitly distinguishes between local and
 global variables both in the AST and in the text format. In the text format,
 global and local variables are distinguished by prefixes, or <em>sigils</em>.
@@ -908,10 +908,10 @@ as the pass tries to fold these into the weights of a convolution.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="relay_type.html" class="btn btn-neutral float-right" title="Relay’s Type System" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="relay_type.html" class="btn btn-neutral float-right" title="Relay 系统类型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Language Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="语言参考" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 

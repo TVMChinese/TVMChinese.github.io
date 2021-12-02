@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deploy the Pretrained Model on Raspberry Pi &mdash; tvm 0.8.dev1974 文档</title>
+  <title>在Raspberry Pi上部署预训练模型 &mdash; tvm 0.8.dev1975 文档</title>
   
 
   
@@ -46,8 +46,8 @@
     <script type="text/javascript" src="../../_static/js/tlcpack_theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="Compile PyTorch Object Detection Models" href="deploy_object_detection_pytorch.html" />
-    <link rel="prev" title="Deploy the Pretrained Model on Android" href="deploy_model_on_android.html" /> 
+    <link rel="next" title="编译PyTorch对象检测模型" href="deploy_object_detection_pytorch.html" />
+    <link rel="prev" title="在Android上部署预训练模型" href="deploy_model_on_android.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -179,7 +179,7 @@
             
             
                 <div class="version">
-                  0.8.dev1974
+                  0.8.dev1975
                 </div>
             
           
@@ -206,7 +206,7 @@
             
               <p class="caption" role="heading"><span class="caption-text">如何开始</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">Installing TVM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install/index.html">安装 TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute/index.html">贡献者指南</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">用户引导</span></p>
@@ -214,12 +214,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">User Tutorial</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">How To Guides</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../compile_models/index.html">编译深度学习模型</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">Deploy Models and Integrate TVM</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">Build the TVM runtime library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">Cross compile the TVM runtime for other architectures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">Optimize and tune models for target devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">Deploy optimized model on target devices</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">Additional Deployment How-Tos</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../deploy/index.html">TVM 部署模型和集成</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#build-the-tvm-runtime-library">构建 TVM 运行 runtime 库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#cross-compile-the-tvm-runtime-for-other-architectures">为其它架构交叉编译TVM runtime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#optimize-and-tune-models-for-target-devices">针对目标设备优化和调整模型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deploy/index.html#deploy-optimized-model-on-target-devices">在目标设备上部署优化的模型</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../deploy/index.html#additional-deployment-how-tos">其他部署方式</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">Deploy Deep Learning Models</a></li>
 </ul>
 </li>
@@ -227,7 +227,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_relay/index.html">Work With Relay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_schedules/index.html">Work With Tensor Expression and Schedules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">Optimize Tensor Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optimize_operators/index.html">优化张量算子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autotvm/index.html">Auto-Tune with Templates and AutoTVM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tune_with_autoscheduler/index.html">Use AutoScheduler for Template-Free Scheduling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../work_with_microtvm/index.html">Work With microTVM</a></li>
@@ -249,12 +249,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">主题引导</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM: TVM on bare-metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/microtvm/index.html">microTVM：裸机使用TVM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../topic/vta/index.html">VTA: Versatile Tensor Accelerator</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">参考指南</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/langref/index.html">语言参考</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/python/index.html">Python API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/api/links.html">Other APIs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/publications.html">Publications</a></li>
@@ -317,11 +317,11 @@
         
           <li><a href="../index.html">How To Guides</a> <span class="br-arrow">></span></li>
         
-          <li><a href="../deploy/index.html">Deploy Models and Integrate TVM</a> <span class="br-arrow">></span></li>
+          <li><a href="../deploy/index.html">TVM 部署模型和集成</a> <span class="br-arrow">></span></li>
         
           <li><a href="index.html">Deploy Deep Learning Models</a> <span class="br-arrow">></span></li>
         
-      <li>Deploy the Pretrained Model on Raspberry Pi</li>
+      <li>在Raspberry Pi上部署预训练模型</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -342,13 +342,12 @@
             
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">注解</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-model-on-rasp-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+<p>点击 <a class="reference internal" href="#sphx-glr-download-how-to-deploy-models-deploy-model-on-rasp-py"><span class="std std-ref">这里</span></a> 下载完整的样例代码</p>
 </div>
 <div class="sphx-glr-example-title section" id="deploy-the-pretrained-model-on-raspberry-pi">
-<span id="tutorial-deploy-model-on-rasp"></span><span id="sphx-glr-how-to-deploy-models-deploy-model-on-rasp-py"></span><h1>Deploy the Pretrained Model on Raspberry Pi<a class="headerlink" href="#deploy-the-pretrained-model-on-raspberry-pi" title="永久链接至标题">¶</a></h1>
-<p><strong>Author</strong>: <a class="reference external" href="https://ziheng.org/">Ziheng Jiang</a>,             <a class="reference external" href="https://makihiro.github.io/">Hiroyuki Makino</a></p>
-<p>This is an example of using Relay to compile a ResNet model and deploy
-it on Raspberry Pi.</p>
+<span id="tutorial-deploy-model-on-rasp"></span><span id="sphx-glr-how-to-deploy-models-deploy-model-on-rasp-py"></span><h1>在Raspberry Pi上部署预训练模型<a class="headerlink" href="#deploy-the-pretrained-model-on-raspberry-pi" title="永久链接至标题">¶</a></h1>
+<p><strong>作者</strong>: <a class="reference external" href="https://ziheng.org/">Ziheng Jiang</a>, <a class="reference external" href="https://makihiro.github.io/">Hiroyuki Makino</a></p>
+<p>这是一个使用Relay编译ResNet模型并将其部署到Raspberry Pi上的示例。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tvm</span>
 <span class="kn">from</span> <span class="nn">tvm</span> <span class="k">import</span> <span class="n">te</span>
 <span class="kn">import</span> <span class="nn">tvm.relay</span> <span class="k">as</span> <span class="nn">relay</span>
@@ -358,17 +357,13 @@ it on Raspberry Pi.</p>
 </pre></div>
 </div>
 <div class="section" id="build-tvm-runtime-on-device">
-<span id="id1"></span><h2>Build TVM Runtime on Device<a class="headerlink" href="#build-tvm-runtime-on-device" title="永久链接至标题">¶</a></h2>
-<p>The first step is to build the TVM runtime on the remote device.</p>
+<span id="id1"></span><h2>在设备上构建 TVM 运行时间<a class="headerlink" href="#build-tvm-runtime-on-device" title="永久链接至标题">¶</a></h2>
+<p>第一步是在远程设备上构建TVM运行时间。</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>All instructions in both this section and next section should be
-executed on the target device, e.g. Raspberry Pi. And we assume it
-has Linux running.</p>
+<p>本节和下一节中的所有指令都应在目标设备上执行，例如Raspberry Pi。并且我们假设目标设备运行Linux。</p>
 </div>
-<p>Since we do compilation on local machine, the remote device is only used
-for running the generated code. We only need to build tvm runtime on
-the remote device.</p>
+<p>由于我们在本地机器上进行编译，因此远程设备仅用于运行生成的代码。我们只需要在远程设备上构建 tvm 运行时间即可。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone --recursive https://github.com/apache/tvm tvm
 <span class="nb">cd</span> tvm
 mkdir build
@@ -378,26 +373,21 @@ cmake ..
 make runtime -j4
 </pre></div>
 </div>
-<p>After building runtime successfully, we need to set environment varibles
-in <code class="code docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file. We can edit <code class="code docutils literal notranslate"><span class="pre">~/.bashrc</span></code>
-using <code class="code docutils literal notranslate"><span class="pre">vi</span> <span class="pre">~/.bashrc</span></code> and add the line below (Assuming your TVM
-directory is in <code class="code docutils literal notranslate"><span class="pre">~/tvm</span></code>):</p>
+<p>成功构建运行时间后，我们需要在 <code class="code docutils literal notranslate"><span class="pre">~/.bashrc`文件中设置环境变量。我们可以使用:code:`vi</span> <span class="pre">~/.bashrc</span></code> 编辑:code:<cite>~/.bashrc`并添加以下行（假设您的TVM目录位于:code:`~/tvm</cite>）：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:~/tvm/python
 </pre></div>
 </div>
-<p>To update the environment variables, execute <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code>.</p>
+<p>要更新环境变量，请执行:code:<cite>source ~/.bashrc</cite>。</p>
 </div>
 <div class="section" id="set-up-rpc-server-on-device">
-<h2>Set Up RPC Server on Device<a class="headerlink" href="#set-up-rpc-server-on-device" title="永久链接至标题">¶</a></h2>
-<p>To start an RPC server, run the following command on your remote device
-(Which is Raspberry Pi in our example).</p>
+<h2>在设备上设置 RPC 服务器<a class="headerlink" href="#set-up-rpc-server-on-device" title="永久链接至标题">¶</a></h2>
+<p>要启动RPC服务器，请在远程设备上运行以下命令（在我们的示例中是Raspberry Pi）。</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m tvm.exec.rpc_server --host <span class="m">0</span>.0.0.0 --port<span class="o">=</span><span class="m">9090</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>If you see the line below, it means the RPC server started
-successfully on your device.</p>
+<p>如果您看到下面的行，则表示RPC服务器在您的设备上成功启动。</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>INFO:root:RPCServer: <span class="nb">bind</span> to <span class="m">0</span>.0.0.0:9090
 </pre></div>
@@ -405,11 +395,9 @@ successfully on your device.</p>
 </div></blockquote>
 </div>
 <div class="section" id="prepare-the-pre-trained-model">
-<h2>Prepare the Pre-trained Model<a class="headerlink" href="#prepare-the-pre-trained-model" title="永久链接至标题">¶</a></h2>
-<p>Back to the host machine, which should have a full TVM installed (with LLVM).</p>
-<p>We will use pre-trained model from
-<a class="reference external" href="https://mxnet.apache.org/api/python/gluon/model_zoo.html">MXNet Gluon model zoo</a>.
-You can found more details about this part at tutorial <a class="reference internal" href="../compile_models/from_mxnet.html#tutorial-from-mxnet"><span class="std std-ref">编译 MXNet 模型</span></a>.</p>
+<h2>准备预先训练的模型<a class="headerlink" href="#prepare-the-pre-trained-model" title="永久链接至标题">¶</a></h2>
+<p>返回主机，主机应安装完整的TVM（带有LLVM）。</p>
+<p>我们将使用`MXNet Gluon model zoo`中预先训练的模型&lt;<a class="reference external" href="https://mxnet.apache.org/api/python/gluon/model_zoo.html">https://mxnet.apache.org/api/python/gluon/model_zoo.html</a>&gt;`_. 您可以在教程ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>tutorial-from-mxnet`中找到有关此部分的更多详细信息。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mxnet.gluon.model_zoo.vision</span> <span class="k">import</span> <span class="n">get_model</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -418,8 +406,7 @@ You can found more details about this part at tutorial <a class="reference inter
 <span class="n">block</span> <span class="o">=</span> <span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;resnet18_v1&quot;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In order to test our model, here we download an image of cat and
-transform its format.</p>
+<p>为了测试我们的模型，在这里我们下载了猫的图像，并改变其格式。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">img_url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/dmlc/mxnet.js/blob/main/data/cat.png?raw=true&quot;</span>
 <span class="n">img_name</span> <span class="o">=</span> <span class="s2">&quot;cat.png&quot;</span>
 <span class="n">img_path</span> <span class="o">=</span> <span class="n">download_testdata</span><span class="p">(</span><span class="n">img_url</span><span class="p">,</span> <span class="n">img_name</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
@@ -437,8 +424,7 @@ transform its format.</p>
 <span class="n">x</span> <span class="o">=</span> <span class="n">transform_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>synset is used to transform the label from number of ImageNet class to
-the word human can understand.</p>
+<p>synset用于将标签从ImageNet类的数量转换为人类可以理解的单词。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">synset_url</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="s2">&quot;https://gist.githubusercontent.com/zhreshold/&quot;</span><span class="p">,</span>
@@ -453,8 +439,7 @@ the word human can understand.</p>
     <span class="n">synset</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>Now we would like to port the Gluon model to a portable computational graph.
-It’s as easy as several lines.</p>
+<p>现在我们想把Gluon model移植到一个可移植的计算图上。这就像几行代码一样简单。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We support MXNet static graph(symbol) and HybridBlock in mxnet.gluon</span>
 <span class="n">shape_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">}</span>
 <span class="n">mod</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">frontend</span><span class="o">.</span><span class="n">from_mxnet</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">shape_dict</span><span class="p">)</span>
@@ -463,7 +448,7 @@ It’s as easy as several lines.</p>
 <span class="n">func</span> <span class="o">=</span> <span class="n">relay</span><span class="o">.</span><span class="n">Function</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="n">relay</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">body</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">type_params</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="n">attrs</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here are some basic data workload configurations.</p>
+<p>下面是一些基本的工作负载配置数据。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">num_classes</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">image_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
@@ -472,18 +457,9 @@ It’s as easy as several lines.</p>
 </div>
 </div>
 <div class="section" id="compile-the-graph">
-<h2>Compile The Graph<a class="headerlink" href="#compile-the-graph" title="永久链接至标题">¶</a></h2>
-<p>To compile the graph, we call the <code class="xref py py-func docutils literal notranslate"><span class="pre">relay.build()</span></code> function
-with the graph configuration and parameters. However, You cannot to
-deploy a x86 program on a device with ARM instruction set. It means
-Relay also needs to know the compilation option of target device,
-apart from arguments <code class="code docutils literal notranslate"><span class="pre">net</span></code> and <code class="code docutils literal notranslate"><span class="pre">params</span></code> to specify the
-deep learning workload. Actually, the option matters, different option
-will lead to very different performance.</p>
-<p>If we run the example on our x86 server for demonstration, we can simply
-set it as <code class="code docutils literal notranslate"><span class="pre">llvm</span></code>. If running it on the Raspberry Pi, we need to
-specify its instruction set. Set <code class="code docutils literal notranslate"><span class="pre">local_demo</span></code> to False if you want
-to run this tutorial with a real device.</p>
+<h2>编译计算图<a class="headerlink" href="#compile-the-graph" title="永久链接至标题">¶</a></h2>
+<p>为了编译图形，我们使用图形配置和参数调用:py:func:<cite>relay.build`函数。但是，不能在具有ARM指令集的设备上部署x86程序。这意味着中继还需要知道目标设备的编译选项，除了参数:code:`net</cite> 和:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>params`来指定深度学习工作负载。实际上，选择很重要，不同的选择会导致结果大不相同。</p>
+<p>如果我们在x86服务器上运行这个示例进行演示，我们只需将其设置为 <code class="code docutils literal notranslate"><span class="pre">llvm</span></code>。如果在Raspberry Pi上运行它，我们需要指定它的指令集。如果要使用真实设备运行本教程，请将:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>local_demo`设置为False。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">local_demo</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">if</span> <span class="n">local_demo</span><span class="p">:</span>
@@ -506,16 +482,15 @@ to run this tutorial with a real device.</p>
 <span class="n">lib</span><span class="o">.</span><span class="n">export_library</span><span class="p">(</span><span class="n">lib_fname</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/tvm_chinese/tvm/python/tvm/relay/build_module.py:333: DeprecationWarning: Please use input parameter mod (tvm.IRModule) instead of deprecated parameter mod (tvm.relay.function.Function)
   DeprecationWarning,
 </pre></div>
 </div>
 </div>
 <div class="section" id="deploy-the-model-remotely-by-rpc">
-<h2>Deploy the Model Remotely by RPC<a class="headerlink" href="#deploy-the-model-remotely-by-rpc" title="永久链接至标题">¶</a></h2>
-<p>With RPC, you can deploy the model remotely from your host machine
-to the remote device.</p>
+<h2>通过RPC远程部署模型<a class="headerlink" href="#deploy-the-model-remotely-by-rpc" title="永久链接至标题">¶</a></h2>
+<p>使用RPC，您可以将模型从主机远程部署到远程设备。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># obtain an RPC session from remote device.</span>
 <span class="k">if</span> <span class="n">local_demo</span><span class="p">:</span>
     <span class="n">remote</span> <span class="o">=</span> <span class="n">rpc</span><span class="o">.</span><span class="n">LocalSession</span><span class="p">()</span>
@@ -543,16 +518,16 @@ to the remote device.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TVM prediction top-1: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">synset</span><span class="p">[</span><span class="n">top1</span><span class="p">]))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
+<p class="sphx-glr-script-out">输出:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>TVM prediction top-1: tiger cat
 </pre></div>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-how-to-deploy-models-deploy-model-on-rasp-py">
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/408ef96692a668b33d94eca33cac7e0a/deploy_model_on_rasp.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">deploy_model_on_rasp.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/408ef96692a668b33d94eca33cac7e0a/deploy_model_on_rasp.py"><code class="xref download docutils literal notranslate"><span class="pre">下载Python源代码:</span> <span class="pre">deploy_model_on_rasp.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/7c392f39b90d93406ef30c6185c5686c/deploy_model_on_rasp.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_model_on_rasp.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/7c392f39b90d93406ef30c6185c5686c/deploy_model_on_rasp.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">下载Jupyter</span> <span class="pre">notebook:</span> <span class="pre">deploy_model_on_rasp.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -569,10 +544,10 @@ to the remote device.</p>
 
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="deploy_object_detection_pytorch.html" class="btn btn-neutral float-right" title="Compile PyTorch Object Detection Models" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="deploy_object_detection_pytorch.html" class="btn btn-neutral float-right" title="编译PyTorch对象检测模型" accesskey="n" rel="next">下一个 <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="deploy_model_on_android.html" class="btn btn-neutral float-left" title="Deploy the Pretrained Model on Android" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
+        <a href="deploy_model_on_android.html" class="btn btn-neutral float-left" title="在Android上部署预训练模型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 上一个</a>
       
     </div>
 
